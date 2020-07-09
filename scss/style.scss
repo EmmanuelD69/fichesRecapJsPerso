@@ -1,13 +1,7 @@
-h1 {
-	font-size: 4rem;
-	color: blue;
-	&:hover {
-		color: red;
-		cursor: pointer;
-	}
-}
-
-.super {
-	font-size: 6rem;
-	color: purples;
-}
+@import "./global";
+@import "./variables";
+@import "./mixin";
+@import "./body";
+@import "./header";
+@import "./main";
+@import "./footer";

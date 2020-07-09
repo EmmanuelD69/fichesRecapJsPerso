@@ -1,14 +1,59 @@
-h1 {
-  font-size: 4rem;
-  color: blue;
+/*** GLOBAL SETTING ***/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-h1:hover {
-  color: red;
-  cursor: pointer;
+html {
+  font-size: 62.5%;
 }
 
-.super {
-  font-size: 6rem;
-  color: purples;
+/*** FONT FAMILIES ***/
+/*** FONT SIZES ***/
+/*** BACKGROUND COLORS ***/
+/*** TEXT COLORS ***/
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #333232;
 }
+
+header {
+  min-height: 10vh;
+  width: 90%;
+  margin: auto;
+  font-family: "Quicksand", sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  background: #9696d1;
+}
+
+main {
+  min-height: 80vh;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  background: #96d196;
+}
+
+footer {
+  min-height: 10vh;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  background: #9ca06c;
+}
+/*# sourceMappingURL=style.css.map */
