@@ -10,240 +10,292 @@
 		<header>
 			<h1 class="titre">JAVASCRIPT GUIDE</h1>
 		</header>
-		
-		<body>
+		<main>
 			<section id="liste">
 				<ul id="liste-p">
 					<li class="article">
 						<h2>INTRODUIRE UN FICHIER JS DANS SON CODE HTML</h2>
-						<p class="paragraphe">Pour ins&eacute;rer un fichier javascript dans notre code, il faut le positioner
-							dans la balise
-							&quot;body&quot; juste avant qu'elle ne se ferme &quot;&lt;/body&gt;&quot;. <br>
-							la m&eacute;thode pour ins&eacute;rer le fichier consiste &agrave; ajouter une balise autofermante
-							&quot;&lt;script&gt;&quot; en y indiquant l'attribut &quot;src&quot; qui va pointer vers le dossier
-							o&ugrave; se trouve le fichier Js voulu. <br>
-							example: <br>
-							&lt;body&gt;
-							&lt;script src=&quot;./guide.js&quot;&gt;&lt;/script&gt;
-							&lt;/body&gt;
+						<p class="paragraphe">
+							Pour ins&eacute;rer un fichier javascript dans notre code, il faut
+							le positioner dans la balise &quot;body&quot; juste avant qu'elle
+							ne se ferme &quot;&lt;/body&gt;&quot;. <br />
+							la m&eacute;thode pour ins&eacute;rer le fichier consiste &agrave;
+							ajouter une balise autofermante &quot;&lt;script&gt;&quot; en y
+							indiquant l'attribut &quot;src&quot; qui va pointer vers le
+							dossier o&ugrave; se trouve le fichier Js voulu. <br />
+							example: <br />
+							&lt;body&gt; &lt;script
+							src=&quot;./guide.js&quot;&gt;&lt;/script&gt; &lt;/body&gt;
 						</p>
 					</li>
 					<li class="article">
 						<h2>CONSTANTES ET VARIABLES</h2>
-						<p class="paragraphe">Javascript est un langage qui g&egrave;re des informations, les comparent, les
-							utilisent.
-							Pour ce faire, il utilise des &quot;boites&quot; dans lesquelles il range ces informations. <br> Les
-							&quot;boites&quot; sont &eacute;tiquet&eacute;es pour les identifier, ont leur attribut un nom
-							distinct.
-							Il existe deux type de boites: <br>
-							LA CONSTANTE =&gt; const (sa valeur doit &ecirc;tre d&eacute;finie et reste la m&ecirc;me, on ne
-							peux pas la changer) <br>
-							Exemple: <br> const nom = &quot;emmanuel&quot;; <br>
-							LA VARIABLE =&gt; let (sa valeur est variable, on n'est pas oblig&eacute; de la d&eacute;finir
-							d&egrave;s le d&eacute;part, on peut tr&egrave;s bien n'attribuer aucune valeur et juste
-							d&eacute;clarer (identifier) la variable.) <br>
-							Exemple: <br> let age = 35; <br>
-							let country = &quot;france&quot;; <br>
+						<p class="paragraphe">
+							Javascript est un langage qui g&egrave;re des informations, les
+							comparent, les utilisent. Pour ce faire, il utilise des
+							&quot;boites&quot; dans lesquelles il range ces informations.
+							<br />
+							Les &quot;boites&quot; sont &eacute;tiquet&eacute;es pour les
+							identifier, ont leur attribut un nom distinct. Il existe deux type
+							de boites: <br />
+							LA CONSTANTE =&gt; const (sa valeur doit &ecirc;tre d&eacute;finie
+							et reste la m&ecirc;me, on ne peux pas la changer) <br />
+							Exemple: <br />
+							const nom = &quot;emmanuel&quot;; <br />
+							LA VARIABLE =&gt; let (sa valeur est variable, on n'est pas
+							oblig&eacute; de la d&eacute;finir d&egrave;s le d&eacute;part, on
+							peut tr&egrave;s bien n'attribuer aucune valeur et juste
+							d&eacute;clarer (identifier) la variable.) <br />
+							Exemple: <br />
+							let age = 35; <br />
+							let country = &quot;france&quot;; <br />
 							let ville;
 						</p>
 					</li>
 					<li class="article">
 						<h2>ECRITURES POSSIBLES DES NOMS DE VARIABLES/CONSTANTES</h2>
-						<p class="paragraphe">1-CAMEL CASE (premi&egrave;re lettre premier mot minuscule, premi&egrave;re lettre
-							deuxi&egrave;me
-							mot Majuscule) <br>
-							const yourVideos = 10; <br>
-							2-PASCAL CASE (Majuscule &agrave; toutes les premi&egrave;res lettres des mots) <br>
-							const YourVideos = 20; <br>
-							3-UNDERSCORE (chaque mot est connect&eacute; par un symbole _) <br>
-							const your_videos = 30;</p>
+						<p class="paragraphe">
+							1-CAMEL CASE (premi&egrave;re lettre premier mot minuscule,
+							premi&egrave;re lettre deuxi&egrave;me mot Majuscule) <br />
+							const yourVideos = 10; <br />
+							2-PASCAL CASE (Majuscule &agrave; toutes les premi&egrave;res
+							lettres des mots) <br />
+							const YourVideos = 20; <br />
+							3-UNDERSCORE (chaque mot est connect&eacute; par un symbole _)
+							<br />
+							const your_videos = 30;
+						</p>
 					</li>
 					<li class="article">
 						<h2>OPERATEURS DE BASE EN JS</h2>
-						<p class="paragraphe">let a = 10; <br>
-							let b = 4; <br>
-							let c; <br>
-		
-							1-ADDITION (+) <br>
-							let c = a + b; <br>
-		
-							2-SOUSTRACTION <br>
-							let c = a - b; <br>
-		
-							3-MULTIPLICATION <br>
-							let c = a * b; <br>
-		
-							4-DIVISION <br>
-							let c = a / b; <br>
-		
-							5-MODULO (c'est le chiffre restant, lors d'une division) <br>
-							let c = a % b; <br>
-							let c = 10 % 4; <br>
-							let c = 2; <br>
-		
-							6-PUISSANCE (Le nombre de fois que l'on mutliplie un nombre par sa valeur) <br>
-							let c = a ** b; <br>
-							let c = 10 ** 4; <br>
-							let c = 10 * 10 * 10 * 10; <br>
-							let c = 10000; <br>
-		
-							7-AJOUTE 1 (++ ajoute 1 à la valeur de la variable) <br>
-							let c = 10; <br>
-							c++; <br>
-							signifie: c = c+1; <br>
-							console.log(c); affichera 11 <br>
-		
-							8-SOUSTRAIT 1 (-- ajoute 1 à la valeur de la variable) <br>
-							let c = 10; <br>
-							c--; <br>
-							signifie: c = c-1; <br>
-							console.log(c); affichera 9 <br>
-		
-							9-AJOUTE UN NOMBRE (+= ajoute un nombre de notre choix à la valeur de la variable) <br>
-							let c = 10; <br>
-							c += 20; <br>
-							signifie: c = c + 20; <br>
-							console.log(c); affichera 30</p>
+						<p class="paragraphe">
+							let a = 10; <br />
+							let b = 4; <br />
+							let c; <br />
+
+							1-ADDITION (+) <br />
+							let c = a + b; <br />
+
+							2-SOUSTRACTION <br />
+							let c = a - b; <br />
+
+							3-MULTIPLICATION <br />
+							let c = a * b; <br />
+
+							4-DIVISION <br />
+							let c = a / b; <br />
+
+							5-MODULO (c'est le chiffre restant, lors d'une division) <br />
+							let c = a % b; <br />
+							let c = 10 % 4; <br />
+							let c = 2; <br />
+
+							6-PUISSANCE (Le nombre de fois que l'on mutliplie un nombre par sa
+							valeur) <br />
+							let c = a ** b; <br />
+							let c = 10 ** 4; <br />
+							let c = 10 * 10 * 10 * 10; <br />
+							let c = 10000; <br />
+
+							7-AJOUTE 1 (++ ajoute 1 à la valeur de la variable) <br />
+							let c = 10; <br />
+							c++; <br />
+							signifie: c = c+1; <br />
+							console.log(c); affichera 11 <br />
+
+							8-SOUSTRAIT 1 (-- ajoute 1 à la valeur de la variable) <br />
+							let c = 10; <br />
+							c--; <br />
+							signifie: c = c-1; <br />
+							console.log(c); affichera 9 <br />
+
+							9-AJOUTE UN NOMBRE (+= ajoute un nombre de notre choix à la valeur
+							de la variable) <br />
+							let c = 10; <br />
+							c += 20; <br />
+							signifie: c = c + 20; <br />
+							console.log(c); affichera 30
+						</p>
 					</li>
 					<li class="article">
-						<h2>DIFFERENTS TYPES D'INFORMATION QUE PEUX STOCKER UNE VARIABLE/CONSTANTE</h2>
-						<p class="paragraphe">la valeur que peux prendre une variable/constante peut être de plusieurs types:
-							<br>
-							1-UN NOMBRE <br>
-							const a = 10; <br>
-		
-							2-UNE CHAINE DE CHARACTERS <br>
-							const a = "toto"; <br>
-							const a = "4"; <br>
-		
-							3-UN BOOLEANS <br>
-							const a = TRUE; <br>
-							const a = FALSE; <br>
-		
-							4-VALEUR INDEFINIE (indique qu'aucune valeur n'a été attribué à la variable. valable uniquement pour
-							let, car (par defaut) la valeur d'une constante doit être définie.) <br>
-							let a; <br>
-							console.log(a); affichera "undefined" <br>
-		
-							5-VALEUR NULLE (on déclare ici, pour la variable, une valeur égale à rien (null)) <br>
-							let a = null; <br>
-		
-							6-SYMBOL (utile pour donner un ID unique à l'intérieur d'un objet) <br>
-							const a = symbol();</p>
+						<h2>
+							DIFFERENTS TYPES D'INFORMATION QUE PEUX STOCKER UNE
+							VARIABLE/CONSTANTE
+						</h2>
+						<p class="paragraphe">
+							la valeur que peux prendre une variable/constante peut être de
+							plusieurs types:
+							<br />
+							1-UN NOMBRE <br />
+							const a = 10; <br />
+
+							2-UNE CHAINE DE CHARACTERS <br />
+							const a = "toto"; <br />
+							const a = "4"; <br />
+
+							3-UN BOOLEANS <br />
+							const a = TRUE; <br />
+							const a = FALSE; <br />
+
+							4-VALEUR INDEFINIE (indique qu'aucune valeur n'a été attribué à la
+							variable. valable uniquement pour let, car (par defaut) la valeur
+							d'une constante doit être définie.) <br />
+							let a; <br />
+							console.log(a); affichera "undefined" <br />
+
+							5-VALEUR NULLE (on déclare ici, pour la variable, une valeur égale
+							à rien (null)) <br />
+							let a = null; <br />
+
+							6-SYMBOL (utile pour donner un ID unique à l'intérieur d'un objet)
+							<br />
+							const a = symbol();
+						</p>
 					</li>
 					<li class="article">
 						<h2>CONCATENATION</h2>
-						<p class="paragraphe"> C'est comme connecter deux valeurs ensemble, <br>
-							example: <br>
-							const greeting = "Welcome to my website "<br>
-							let name = "Emmanuel"<br>
-							console.log(greeting + user);<br>
-							affichera: Welcome to my website Emmanuel <br>
-		
-							1-INCLURE UNE CITATION DANS UNE VARIABLE <br>
-							Example: <br>
-							const citation = "Lafontaine nous dis:"La méfiance est mère de la sûreté."";<br>
-							console.log(citation); <br>nous indiquera un message d'erreur car il considère que le (") rencontré
-							au
-							moment de citer l'auteur, a pour action de fermer le premier (").<br> Le contenu qui suit est donc
-							en
-							dehors des "" et donc au mauvais endroit, d'où le message d'erreur.<br>
-		
-							Pour corriger cela, il faut donc "échaper" le symbole (") se trouvant au début et à la fin de la
-							citation à l'aide du symbole \ (alt+Gr 8).<br>
-							Example:<br>
-							const citation = "Lafontaine nous dis:\"La méfiance est mère de la sûreté.\"";<br>
-							console.log(citation);<br> nous affichera le résultat attendu.<br>
-		
-							Une autre méthode consiste à utiliser les simples guillemets au lieu des doubles guillemets.<br>
-							Example:<br>
-							const citation = 'Lafontaine nous dis:"La méfiance est mère de la sûreté."';<br>
-							console.log(citation);<br> nous affichera le résultat attendu.<br>
-							MAIS encore une fois, dans cette méthode, si l'on utilise quelque part dans notre phrase un
-							apostrophe ('), cela va casser le code..<br>
-							Example:<br>
-							const citation = 'Lafontaine, l'a dit:"La méfiance est mère de la sûreté."';<br>
-							console.log(citation);<br> nous indiquera un message d'erreur car l'apostrophe situé après le (l) de
-							"l'a dit" casse le code.<br>
-							Pour solutionner le problème, il faut donc à nouveau utiliser la méthode (alt+Gr 8) et ainsi
-							"échaper" l'apostrophe en trop.<br>
-							Example:<br>
-							const citation = 'Lafontaine, l\'a dit:"La méfiance est mère de la sûreté."';<br>
-							console.log(citation); <br>nous affichera le résultat attendu.<br>
-		
-							!!!METHODE ULTIME POUR NE PAS SE PRENDRE LA TETE AVEC GUILLEMETS ET APOSTROPHES!!!<br>
-							il suffit d'utiliser (alt+Gr 7) qui nous donnera ces apostrophes arrières (``). <br>Tout le texte se
-							trouvant entre ces deux guillemets arrière sera valide, peu importe qu'il comprenne des gullemets ou
-							des apostrophes.<br>
-							Example:<br>
-							const citation = `Lafontaine, l'a dit:"La méfiance est mère de la sûreté."`;<br>
-							console.log(citation); <br>nous affichera le résultat attendu.<br>
-		
-							!!!METHODE ULTIME POUR UTILISER LA CONCATENATION!!!<br>
-							on abandonne la connection des valeurs en utilisant le symbole (+) et on le remplace par ${variable}
-							tout en conservant l'écriture du contenu de la variable entre apostrophes arrières (alt Gr 7)<br>
-							Example:<br>
-							const auteur = "Lafontaine";<br>
-							const citation = `${auteur} l'a dit:"La méfiance est mère de la sûreté."`;<br>
-							console.log(citation);<br> nous affichera le résultat attendu.<br>
-		
-							Faire attention de bien déclarer les variables/constantes dans le bon ordre, pour ne pas se
-							retrouver avec un message d'erreur.<br> En effet Js lis le code de haut en bas et donc si l'on
-							déclare<br>
-							par example:<br>
-							const citation = `${auteur} l'a dit:"La méfiance est mère de la sûreté."`;<br>
-							const auteur = "Lafontaine";<br>
-							console.log(citation);<br> nous affichera un message d'erreur car la constante "auteur" n'a pas pu
-							etre
-							identifier puisque elle est déclaré après la constante "citation".</p>
+						<p class="paragraphe">
+							C'est comme connecter deux valeurs ensemble, <br />
+							example: <br />
+							const greeting = "Welcome to my website "<br />
+							let name = "Emmanuel"<br />
+							console.log(greeting + user);<br />
+							affichera: Welcome to my website Emmanuel <br />
+
+							1-INCLURE UNE CITATION DANS UNE VARIABLE <br />
+							Example: <br />
+							const citation = "Lafontaine nous dis:"La méfiance est mère de la
+							sûreté."";<br />
+							console.log(citation); <br />nous indiquera un message d'erreur
+							car il considère que le (") rencontré au moment de citer l'auteur,
+							a pour action de fermer le premier (").<br />
+							Le contenu qui suit est donc en dehors des "" et donc au mauvais
+							endroit, d'où le message d'erreur.<br />
+
+							Pour corriger cela, il faut donc "échaper" le symbole (") se
+							trouvant au début et à la fin de la citation à l'aide du symbole \
+							(alt+Gr 8).<br />
+							Example:<br />
+							const citation = "Lafontaine nous dis:\"La méfiance est mère de la
+							sûreté.\"";<br />
+							console.log(citation);<br />
+							nous affichera le résultat attendu.<br />
+
+							Une autre méthode consiste à utiliser les simples guillemets au
+							lieu des doubles guillemets.<br />
+							Example:<br />
+							const citation = 'Lafontaine nous dis:"La méfiance est mère de la
+							sûreté."';<br />
+							console.log(citation);<br />
+							nous affichera le résultat attendu.<br />
+							MAIS encore une fois, dans cette méthode, si l'on utilise quelque
+							part dans notre phrase un apostrophe ('), cela va casser le
+							code..<br />
+							Example:<br />
+							const citation = 'Lafontaine, l'a dit:"La méfiance est mère de la
+							sûreté."';<br />
+							console.log(citation);<br />
+							nous indiquera un message d'erreur car l'apostrophe situé après le
+							(l) de "l'a dit" casse le code.<br />
+							Pour solutionner le problème, il faut donc à nouveau utiliser la
+							méthode (alt+Gr 8) et ainsi "échaper" l'apostrophe en trop.<br />
+							Example:<br />
+							const citation = 'Lafontaine, l\'a dit:"La méfiance est mère de la
+							sûreté."';<br />
+							console.log(citation); <br />nous affichera le résultat
+							attendu.<br />
+
+							!!!METHODE ULTIME POUR NE PAS SE PRENDRE LA TETE AVEC GUILLEMETS
+							ET APOSTROPHES!!!<br />
+							il suffit d'utiliser (alt+Gr 7) qui nous donnera ces apostrophes
+							arrières (``). <br />Tout le texte se trouvant entre ces deux
+							guillemets arrière sera valide, peu importe qu'il comprenne des
+							gullemets ou des apostrophes.<br />
+							Example:<br />
+							const citation = `Lafontaine, l'a dit:"La méfiance est mère de la
+							sûreté."`;<br />
+							console.log(citation); <br />nous affichera le résultat
+							attendu.<br />
+
+							!!!METHODE ULTIME POUR UTILISER LA CONCATENATION!!!<br />
+							on abandonne la connection des valeurs en utilisant le symbole (+)
+							et on le remplace par ${variable} tout en conservant l'écriture du
+							contenu de la variable entre apostrophes arrières (alt Gr 7)<br />
+							Example:<br />
+							const auteur = "Lafontaine";<br />
+							const citation = `${auteur} l'a dit:"La méfiance est mère de la
+							sûreté."`;<br />
+							console.log(citation);<br />
+							nous affichera le résultat attendu.<br />
+
+							Faire attention de bien déclarer les variables/constantes dans le
+							bon ordre, pour ne pas se retrouver avec un message d'erreur.<br />
+							En effet Js lis le code de haut en bas et donc si l'on déclare<br />
+							par example:<br />
+							const citation = `${auteur} l'a dit:"La méfiance est mère de la
+							sûreté."`;<br />
+							const auteur = "Lafontaine";<br />
+							console.log(citation);<br />
+							nous affichera un message d'erreur car la constante "auteur" n'a
+							pas pu etre identifier puisque elle est déclaré après la constante
+							"citation".
+						</p>
 					</li>
 					<li class="article">
 						<h2>LES COMPARAISONS</h2>
-						<p class="paragraphe"> pour comparer deux variables nous avons plusieurs notations à notre disposition:
-							<br>
-							1-(==) est égal à<br>
-							Examples utilisés en console:<br>
-							5 == 5 le résultat est "true"<br>
-							5 == 4 le résultat est "false"<br>
-		
-							2-(!=) n'est pas égal à<br>
-							Examples utilisés en console:<br>
-							5 != 5 le résultat est "false"<br>
-							5 != 4 le résultat est "true"<br>
-		
-							3-(>) supérieur à<br>
-							Examples utilisés en console:<br>
-							5 > 5 le résultat est "false"<br>
-							5 > 4 le résultat est "true"<br>
-		
-							4-(&lt;) inférieur à<br>
-							Examples utilisés en console:<br>
-							5 &lt; 5 le résultat est "false"<br>
-							4 &lt; 5 le résultat est "true"<br>
-		
-							5-(>=) supérieur ou égal à<br>
-							Examples utilisés en console:<br>
-							5 >= 5 le résultat est "true"<br>
-							4 >= 5 le résultat est "false"<br>
-		
-							6-(&lt;=) inférieur ou égal à<br>
-							Examples utilisés en console:<br>
-							5 &lt;= 5 le résultat est "true"<br>
-							5 &lt;= 4 le résultat est "false"<br>
-		
-							!!!CAS PARTICULIER!!!<br>
-							Examples utilisés en console:<br>
-							5 == "5" le résultat est "true"<br>
-							5 est un nombre et "5" est une chaine de charactères (string), on devrait donc avoir false au lieu
-							de true.<br>
-							pouv éviter ce type d'erreur il existe une solution qu'il faut généraliser à notre code.<br>
-							c'est le cas suivant:<br>
-		
-							7-(===) égal et strictement égal à<br>
-							5 === 5 le résultat est "true"<br>
-							5 === "5" le résultat est "false"</p>
+						<p class="paragraphe">
+							pour comparer deux variables nous avons plusieurs notations à
+							notre disposition:
+							<br />
+							1-(==) est égal à<br />
+							Examples utilisés en console:<br />
+							5 == 5 le résultat est "true"<br />
+							5 == 4 le résultat est "false"<br />
+
+							2-(!=) n'est pas égal à<br />
+							Examples utilisés en console:<br />
+							5 != 5 le résultat est "false"<br />
+							5 != 4 le résultat est "true"<br />
+
+							3-(>) supérieur à<br />
+							Examples utilisés en console:<br />
+							5 > 5 le résultat est "false"<br />
+							5 > 4 le résultat est "true"<br />
+
+							4-(&lt;) inférieur à<br />
+							Examples utilisés en console:<br />
+							5 &lt; 5 le résultat est "false"<br />
+							4 &lt; 5 le résultat est "true"<br />
+
+							5-(>=) supérieur ou égal à<br />
+							Examples utilisés en console:<br />
+							5 >= 5 le résultat est "true"<br />
+							4 >= 5 le résultat est "false"<br />
+
+							6-(&lt;=) inférieur ou égal à<br />
+							Examples utilisés en console:<br />
+							5 &lt;= 5 le résultat est "true"<br />
+							5 &lt;= 4 le résultat est "false"<br />
+
+							!!!CAS PARTICULIER!!!<br />
+							Examples utilisés en console:<br />
+							5 == "5" le résultat est "true"<br />
+							5 est un nombre et "5" est une chaine de charactères (string), on
+							devrait donc avoir false au lieu de true.<br />
+							pouv éviter ce type d'erreur il existe une solution qu'il faut
+							généraliser à notre code.<br />
+							c'est le cas suivant:<br />
+
+							7-(===) égal et strictement égal à<br />
+							5 === 5 le résultat est "true"<br />
+							5 === "5" le résultat est "false"
+						</p>
 					</li>
 				</ul>
 			</section>
+		</main>
+		<footer>
+			<h3>&copy;EmmanuelDev 2020</h3>
+		</footer>
 	</body>
 </html>

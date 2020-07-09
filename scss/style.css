@@ -2,12 +2,15 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
   font-size: 62.5%;
+}
+
+ul {
+  list-style: none;
 }
 
 /*** FONT FAMILIES ***/
@@ -15,20 +18,10 @@ html {
 /*** BACKGROUND COLORS ***/
 /*** TEXT COLORS ***/
 body {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: #333232;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 header {
@@ -46,7 +39,8 @@ main {
   width: 90%;
   margin: auto;
   text-align: center;
-  background: #96d196;
+  /* 	background: rgb(150, 209, 150); */
+  font-size: 2rem;
 }
 
 footer {
@@ -56,4 +50,3 @@ footer {
   text-align: center;
   background: #9ca06c;
 }
-/*# sourceMappingURL=style.css.map */

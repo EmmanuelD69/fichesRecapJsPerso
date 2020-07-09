@@ -1,4 +1,3 @@
 body {
-  @include flex(column, center, center);
-  background: $bgColor1;
+	@include flex(column, center, center);
 }
