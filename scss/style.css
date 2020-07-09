@@ -1,0 +1,14 @@
+h1 {
+  font-size: 4rem;
+  color: blue;
+}
+
+h1:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.super {
+  font-size: 6rem;
+  color: purples;
+}
