@@ -6,10 +6,10 @@ const user = {
 	money: 'lolno',
 };
 
-for (let name in names) {
-	console.log(name);
-}
+/* for (let x of user) {
+	console.log(x);
+} */
 
-for (let name of names) {
-	console.log(name);
+for (let x in user) {
+	console.log(x);
 }

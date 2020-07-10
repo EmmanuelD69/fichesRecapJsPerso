@@ -506,7 +506,7 @@ else{
   */
 
 /*** FOR OF LOOP ***
-  Il s'agit d'une variante de la boucle FOR, elle ne fonctionne pas avec Internet Explorer.
+  Il s'agit d'une variante de la boucle FOR, elle ne fonctionne pas avec Internet Explorer et s'utilise principalement avec des Tableaux.
   Examples:
   const names = ["emmanuel", "georgia", "maria", "nikos", "roulis"]; 
 
