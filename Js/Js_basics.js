@@ -506,7 +506,7 @@ else{
   */
 
 /*** FOR OF LOOP ***
-  This is a different way to write the FOR loop, it doesn't work on Microsoft Explorer.
+  Il s'agit d'une variante de la boucle FOR, elle ne fonctionne pas avec Internet Explorer.
   Examples:
   const names = ["emmanuel", "georgia", "maria", "nikos", "roulis"]; 
 
@@ -524,21 +524,8 @@ else{
   "break;" permet aussi dans ce cas de sortir de la boucle immédiatement.
    */
 
-/*** FOR EACH / SPECIALEMENT POUR LES TABLEAUX  ***
- !!!FORE EACH SERA PLUS LONG A PARCOURIR UN TABLEAU QUE FOR OF, A PEU PRET 25% PLUS LONG!!!
- !!!Ne s'utilise uniquement que pour parcourir des tableaux!!!
- Example:
- names.forEach(function(name, index) {
-   console.log(name, index);
- })
- Cela se lit de la manière suivante:
-  A chaque itération du tableau "names", affiche moi, dans la console, le nom et l'index du nom.
-
-  "break;" ne permet pas de sortir de la boucle car il se retrouve dans une fonction et non pas dans une loop aka, on ne peut pas utiliser break dans une fonction!!!
-*/
-
 /*** FOR IN LOOP ***
- C'est une version différente de FOR OF que l'on va utiliser généralement avec des Objets.
+ C'est une version différente de FOR OF que l'on va utiliser avec des Objets, cela ne fonctionne pas avec les tableaux.
  Examples:
  const user = {
      name: "Emmanuel",
@@ -551,14 +538,26 @@ else{
        console.log(x);
      }
      ici la boucle va nous afficher chaque propriétés dans notre object.
-     Pour chaque proriétés (x) faisant parti de l'objet user, affiche moi le nom.
+     Pour chaque proriétés (x) faisant parti de l'objet user, affiche leur nom.
 
      for(let x in user){
-       console.log(user.x);
        console.log(user[x]);       
      }
-     ici la boucle va nous afficher la valeur de la propriété "x", les deux façons de faire sont vraies.
+     Pour chaque proriétés (x) faisant parti de l'objet user, affiche la valeur dont la propriété à pour nom (x).
  */
+
+/*** FOR EACH / SPECIALEMENT POUR LES TABLEAUX  ***
+ !!!FORE EACH SERA PLUS LONG A PARCOURIR UN TABLEAU QUE FOR OF, A PEU PRET 25% PLUS LONG!!!
+ !!!Ne s'utilise uniquement que pour parcourir des tableaux!!!
+ Example:
+ names.forEach(function(name, index) {
+   console.log(name, index);
+ })
+ Cela se lit de la manière suivante:
+  A chaque itération du tableau "names", affiche moi, dans la console, le nom et l'index du nom.
+
+  "break;" ne permet pas de sortir de la boucle car il se retrouve dans une fonction et non pas dans une loop aka, on ne peut pas utiliser break dans une fonction!!!
+*/
 
 /*** WHILE / DO WHILE *** 
   While lance une boucle qui va s'itérer tant qu'on a pas satisfait une condition, le code qui est dans la boucle va donc être relancer à chaque itérations jusqu'à avoir satisfait la condition.
