@@ -345,7 +345,7 @@ else{
 
 /*** OBJETS *** 
  Un objet est comme une armoire à tiroirs, on y stock à l'intérieur des données. Chaque donnée est stockée dans un tiroir qui porte un nom/ID. Ces données peuvent être des nombres, chaines de charactères, booléens, et même des fonctions!
- Un objet se décompose donc en propriétés et leurs valeurs, la propriété étant le nom/ID qui contient la valeur.
+ Un objet se décompose donc en propriétés et leurs valeurs, la propriété étant le nom/ID qui contient des valeurs (key: value).
  !!!IMPORTANT: on appel "Méthode", une fonction se trouvant dans un objet!!!
  Example1:
  const user = {
