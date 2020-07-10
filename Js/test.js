@@ -13,3 +13,16 @@ const user = {
 for (let x in user) {
 	console.log(x);
 }
+
+let i = 20;
+while (i < 30) {
+	console.log(i);
+	i++;
+}
+
+console.log('break');
+
+do {
+	console.log(i);
+	i++;
+} while (i <= 40);
