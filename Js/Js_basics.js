@@ -505,6 +505,19 @@ else{
  "break;" permet de sortir de la boucle immédiatement.
   */
 
+/*** FOR EACH / SPECIALEMENT POUR LES TABLEAUX  ***
+ !!!FORE EACH SERA PLUS LONG A PARCOURIR UN TABLEAU QUE FOR OF, A PEU PRET 25% PLUS LONG!!!
+ !!!Ne s'utilise uniquement que pour parcourir des tableaux!!!
+ Example:
+ names.forEach(function(name, index) {
+   console.log(name, index);
+ })
+ Cela se lit de la manière suivante:
+  A chaque itération du tableau "names", affiche moi, dans la console, le nom et l'index du nom.
+
+  "break;" ne permet pas de sortir de la boucle car il se retrouve dans une fonction et non pas dans une loop aka, on ne peut pas utiliser break dans une fonction!!!
+*/
+
 /*** FOR OF LOOP ***
   Il s'agit d'une variante de la boucle FOR, elle ne fonctionne pas avec Internet Explorer et s'utilise principalement avec des Tableaux.
   Examples:
@@ -545,19 +558,6 @@ else{
      }
      Pour chaque proriétés (x) faisant parti de l'objet user, affiche la valeur dont la propriété à pour nom (x).
  */
-
-/*** FOR EACH / SPECIALEMENT POUR LES TABLEAUX  ***
- !!!FORE EACH SERA PLUS LONG A PARCOURIR UN TABLEAU QUE FOR OF, A PEU PRET 25% PLUS LONG!!!
- !!!Ne s'utilise uniquement que pour parcourir des tableaux!!!
- Example:
- names.forEach(function(name, index) {
-   console.log(name, index);
- })
- Cela se lit de la manière suivante:
-  A chaque itération du tableau "names", affiche moi, dans la console, le nom et l'index du nom.
-
-  "break;" ne permet pas de sortir de la boucle car il se retrouve dans une fonction et non pas dans une loop aka, on ne peut pas utiliser break dans une fonction!!!
-*/
 
 /*** WHILE / DO WHILE *** 
   While lance une boucle qui va s'itérer tant qu'on a pas satisfait une condition, le code qui est dans la boucle va donc être relancer à chaque itérations jusqu'à avoir satisfait la condition.
