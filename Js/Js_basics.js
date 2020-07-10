@@ -534,7 +534,7 @@ else{
  Cela se lit de la manière suivante:
   A chaque itération du tableau "names", affiche moi, dans la console, le nom et l'index du nom.
 
-  "break;" ne permet pas de sortir de la boucle car il se retrouve dans une fonction et non pas dans une loop.
+  "break;" ne permet pas de sortir de la boucle car il se retrouve dans une fonction et non pas dans une loop aka, on ne peut pas utiliser break dans une fonction!!!
 */
 
 /*** FOR IN LOOP ***
