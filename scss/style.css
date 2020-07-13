@@ -46,27 +46,35 @@ main {
 }
 
 main li {
-  margin: 10rem;
+  margin: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-main h2 {
+main li h2 {
   text-decoration: underline;
+  width: 100%;
   text-align: center;
 }
 
-main .paragraphe {
-  margin: 1rem;
+main li .paragraphe {
+  margin: 0.5rem 1rem 1rem;
   padding: 1rem;
+  text-align: center;
 }
 
-main .example {
+main li .example {
+  padding: 2rem;
   color: white;
   background-color: #333232;
   display: inline-block;
   border-radius: 1rem;
+  text-align: left;
 }
 
-main span {
+main li span {
   color: #d41c1c;
 }
 

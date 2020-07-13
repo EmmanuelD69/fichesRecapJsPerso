@@ -3,24 +3,30 @@ main {
 	width: 90%;
 	background-color: rgb(204, 203, 203);
 	font-size: $size3;
+
 	li {
-		margin: 10rem;
-	}
-	h2 {
-		text-decoration: underline;
-		text-align: center;
-	}
-	.paragraphe {
-		margin: 1rem;
-		padding: 1rem;
-	}
-	.example {
-		color: $textColor2;
-		background-color: $bgColor1;
-		display: inline-block;
-		border-radius: 1rem;
-	}
-	span {
-		color: $textColor3;
+		margin: 5rem;
+		@include flex(column, center, center);
+		h2 {
+			text-decoration: underline;
+			width: 100%;
+			text-align: center;
+		}
+		.paragraphe {
+			margin: 0.5rem 1rem 1rem;
+			padding: 1rem;
+			text-align: center;
+		}
+		.example {
+			padding: 2rem;
+			color: $textColor2;
+			background-color: $bgColor1;
+			display: inline-block;
+			border-radius: 1rem;
+			text-align: left;
+		}
+		span {
+			color: $textColor3;
+		}
 	}
 }

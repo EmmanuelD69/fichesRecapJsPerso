@@ -30,30 +30,36 @@
 						</p>
 						<p class="paragraphe example">
 							example: <br />
-							&lt;body&gt; &lt;script src="./guide.js"&gt;&lt;/script&gt;
+							&lt;body&gt; <br>
+							&emsp;&lt;header&gt; <br>
+							&emsp;&emsp;ton code... <br>
+							&emsp;&lt;/header&gt; <br>
+							&emsp;&lt;main&gt; <br>
+							&emsp;&emsp;ton code... <br>
+							&emsp;&lt;/main&gt; <br>
+							&emsp;&lt;footer&gt; <br>
+							&emsp;&emsp;ton code... <br>
+							&emsp;&lt;/footer&gt; <br>
+							&lt;script src="./ton_fichier.js"&gt;&lt;/script&gt; <br>
 							&lt;/body&gt;
 						</p>
 					</li>
 					<li class="article">
 						<h2 class="titre-article">CONSTANTES ET VARIABLES</h2>
 						<p class="paragraphe explication">
-							Javascript est un langage qui gère des informations, les
-							comparent, les utilisent. Pour ce faire, il utilise des "boites"
-							dans lesquelles il range ces informations.
+							Javascript est un langage qui gère des informations, les comparent, les utilisent. Pour ce faire, il utilise des "boites" dans lesquelles il range ces informations.
 							<br />
-							Les "boites" sont étiquetées pour les identifier, ont leur
-							attribut un nom distinct. Il existe deux type de boites: <br />
-							LA CONSTANTE => const (sa valeur doit être définie et reste la
-							même, on ne peux pas la changer)
+							Les "boites" sont étiquetées pour les identifier, ont leur attribut un nom distinct. Il existe deux type de boites: <br />
 						</p>
+						<p class="paragraphe explication">LA CONSTANTE (CONST) <br> <span>(sa valeur doit être définie et reste la
+							même, on ne peux pas la changer sauf cas particulier)</span>
+						</p>	
 						<p class="paragraphe example">
 							Exemple: <br />
 							const nom = "emmanuel";
 						</p>
 						<p class="paragraphe explication">
-							LA VARIABLE => let (sa valeur est variable, on n'est pas obligé de
-							la définir dès le départ, on peut trés bien n'attribuer aucune
-							valeur et juste déclarer (identifier) la variable.) <br />
+							LA VARIABLE (LET) <br> <span>(sa valeur peut changer, on n'est pas obligé de la définir dès le départ.)</span>
 						</p>
 						<p class="paragraphe example">
 							Exemple: <br />
@@ -67,16 +73,16 @@
 							FORMATS D'ECRITURES DES NOMS DE VARIABLES/CONSTANTES
 						</h2>
 						<p class="paragraphe explication">
-							1-CAMEL CASE (première lettre premier mot minuscule, première
-							lettre deuxième mot Majuscule)
+							<span>camel Case</span> <br> (première lettre du premier mot en minuscule, première
+							lettre du deuxième mot en Majuscule)
 						</p>
 						<p class="paragraphe example">const yourVideos = 10;</p>
 						<p class="paragraphe explication">
-							2-PASCAL CASE (Majuscule à toutes les premières lettres des mots)
+							<span>Pascal Case</span> <br> (Majuscule à toutes les premières lettres des mots)
 						</p>
 						<p class="paragraphe example">const YourVideos = 20;</p>
 						<p class="paragraphe explication">
-							3-UNDERSCORE (chaque mot est connecté par un symbole _)
+							<span>under_score</span> <br> (chaque mot est connecté par un symbole _)
 						</p>
 						<p class="paragraphe example">
 							const your_videos = 30;
@@ -90,16 +96,16 @@
 							let b = 4; (est définie)<br />
 							let c; (est indéfinie / undefined)<br />
 						</p>
-						<p class="paragraphe explication">1-ADDITION (+)</p>
+						<p class="paragraphe explication">ADDITION (<span>+</span>) </p>
 						<p class="paragraphe example">let c = a + b;</p>
-						<p class="paragraphe explication">2-SOUSTRACTION</p>
+						<p class="paragraphe explication">SOUSTRACTION (<span>-</span>)</p>
 						<p class="paragraphe example">let c = a - b;</p>
-						<p class="paragraphe explication">3-MULTIPLICATION</p>
+						<p class="paragraphe explication">MULTIPLICATION (<span>*</span>)</p>
 						<p class="paragraphe example">let c = a * b;</p>
-						<p class="paragraphe explication">4-DIVISION</p>
+						<p class="paragraphe explication">DIVISION (<span>/</span>)</p>
 						<p class="paragraphe example">let c = a / b;</p>
 						<p class="paragraphe explication">
-							5-MODULO (c'est le chiffre restant, lors d'une division)
+							MODULO (<span>%</span>)<br> (c'est le chiffre restant, lors d'une division)
 						</p>
 						<p class="paragraphe example">
 							let c = a % b; <br />
@@ -107,7 +113,7 @@
 							let c = 2;
 						</p>
 						<p class="paragraphe explication">
-							6-PUISSANCE (Le nombre de fois que l'on mutliplie un nombre par sa
+							PUISSANCE (<span>**</span>)<br> (Le nombre de fois que l'on mutliplie un nombre par sa
 							valeur)
 						</p>
 						<p class="paragraphe example">
@@ -117,7 +123,7 @@
 							let c = 10000;
 						</p>
 						<p class="paragraphe explication">
-							7-AJOUTE 1 (++ ajoute 1 à la valeur de la variable)
+							AJOUTE 1 (<span>++</span>)<br> (ajoute 1 à la valeur de la variable)
 						</p>
 						<p class="paragraphe example">
 							let c = 10; <br />
@@ -126,7 +132,7 @@
 							console.log(c); affichera 11
 						</p>
 						<p class="paragraphe explication">
-							8-SOUSTRAIT 1 (-- ajoute 1 à la valeur de la variable)
+							SOUSTRAIT 1 (<span>--</span>)<br> (soustrait 1 à la valeur de la variable)
 						</p>
 						<p class="paragraphe example">
 							let c = 10; <br />
@@ -135,8 +141,7 @@
 							console.log(c); affichera 9
 						</p>
 						<p class="paragraphe explication">
-							9-AJOUTE UN NOMBRE (+= ajoute un nombre de notre choix à la valeur
-							de la variable)
+							AJOUTE UN NOMBRE (<span>+=</span>)<br> (ajoute un nombre de notre choix à la valeur de la variable)
 						</p>
 						<p class="paragraphe example">
 							let c = 10; <br />
@@ -154,30 +159,36 @@
 							la valeur que peux prendre une variable/constante peut être de
 							plusieurs types:
 						</p>
-						<p class="paragraphe explication">1-UN NOMBRE</p>
+						<p class="paragraphe explication">UN NOMBRE</p>
 							<p class="paragraphe example">const a = 10;</p>
-							<p class="paragraphe explication">2-UNE CHAINE DE CHARACTERS</p>
+							<p class="paragraphe explication">UNE CHAINE DE CHARACTERS</p>
 							<p class="paragraphe example">const a = "toto"; <br />
 								const a = "4";</p> 
-							<p class="paragraphe explication">3-UN BOOLEANS</p>
+							<p class="paragraphe explication">UN BOOLEANS</p>
 							<p class="paragraphe example">const a = TRUE; <br />
 								const a = FALSE;</p> 
-							<p class="paragraphe explication">4-VALEUR INDEFINIE (indique qu'aucune valeur n'a été attribué à la
-								variable. valable uniquement pour let, car (par defaut) la valeur
-								d'une constante doit être définie.)</p>
+							<p class="paragraphe explication">VALEUR INDEFINIE <br> (signifie qu'aucune valeur n'a été attribué à la
+								variable). <br>
+								<span>valable uniquement pour let, car (par défaut) la valeur
+									d'une constante doit être définie.</span>
+								</p>
 							<p class="paragraphe example">let a; <br />
 								console.log(a); affichera "undefined"</p>
-							<p class="paragraphe explication">5-VALEUR NULLE (on déclare ici, pour la variable, une valeur égale
-								à rien (null))</p>
+							<p class="paragraphe explication">VALEUR NULLE <br> 
+								(on déclare ici une valeur égale
+								à rien (null))
+							</p>
 							<p class="paragraphe example">let a = null;</p> 
-							<p class="paragraphe explication">6-SYMBOL (utile pour donner un ID unique à l'intérieur d'un objet)</p>						
+							<p class="paragraphe explication">SYMBOL <br> 
+								(utile pour donner un ID unique à l'intérieur d'un objet)
+							</p>						
 							<p class="paragraphe example">const a = symbol();</p>
 						</p>
 					</li>
 					<li class="article">
 						<h2 class="titre-article">CONCATENATION</h2>
 						<p class="paragraphe explication">
-							C'est comme connecter deux valeurs ensemble, </p>
+							C'est comme relier les valeurs d'un ensemble de variables entre elles </p>
 							
 							<p class="paragraphe example">example: <br />
 								const greeting = "Welcome to my website "<br />
@@ -185,7 +196,7 @@
 								console.log(greeting + user);<br />
 								affichera: Welcome to my website Emmanuel</p>
 
-								<p class="paragraphe explication">1-INCLURE UNE CITATION DANS UNE VARIABLE</p>
+								<p class="paragraphe explication">INCLURE UNE CITATION DANS UNE VARIABLE</p>
 								<p class="paragraphe example">Example: <br />
 							const citation = "Lafontaine nous dis: <span>"</span>La méfiance est mère de la
 							sûreté.<span>"</span>";<br />
@@ -302,6 +313,60 @@
 							5 === "5" le résultat est "false"
 						</p>
 					</li>
+					<li class="article">
+						<h2 class="titre-article">LES CONDITIONS</h2>
+						<p class="paragraphe explication">Une condition induit qu'elle est vérifiée ou non, en d'autre terme qu'elle est vraie ou fausse. <br>
+						Si elle est vérifiée (true) alors le code entre accolades {...} s'execute, si elle n'est pas vérifiée (false) alors le code entre accolades {...} ne s'execute pas. </p>
+						<p class="paragraphe explication">IF: <br> <span>si ma condition est vraie, alors execute le code entre ses accolades {...}.</span> </p>
+						<p class="paragraphe example">
+							if(condition){ <br>
+								console.log("la condition est vraie"); <br>
+							}
+						</p>
+						<p class="paragraphe example">
+							const condition = true; <br>
+							if(condition){ <br>
+								console.log("la condition est vraie"); <br>
+							} <br>
+							le message s'affichera dans la console car la condition est égale à "true"
+						</p>
+						<p class="paragraphe example">
+							const condition = false; <br>
+							if(condition){ <br>
+								console.log("la condition est vraie"); <br>
+							} <br>
+							rien se s'affichera dans la console car la condition est égale à "false"
+						</p>
+						<p class="paragraphe explication">ATTENTION: <br> <span><u>une variable/constante en fonction de son contenu peut être true/false. (voir article CAS PARTICULIER: VALEUR TRUE OU FALSE)</u></span> 
+						</p>
+						<p class="paragraphe explication">IF / ELSE: <br> <span>si ma condition est vraie, alors on execute le code entre ses accolades {...}, <br> sinon on execute le code entre les accolades {...} situé après "else".</span> 
+						</p>
+						<p class="paragraphe example">
+							if(condition){ <br>
+								console.log("la condition est vraie"); <br>
+							} <br>
+							else{ <br>
+								console.log("la condition est fausse") <br>
+							}
+						</p>
+						<p class="paragraphe explication">IF / ELSE IF (conditions multiples): <br>
+							<span>si ma condition1 est vraie, alors on execute le code entre les accolades {...}, <br> sinon si ma condition2 est vraie, alors on execute le code entre ses accolades {...}, <br> sinon on execute le code entre les accolades {...} situé après "else".</span></p>
+						<p class="paragraphe example">
+							if(condition1){ <br>
+								console.log("la condition1 est vraie"); <br>
+							} <br>
+							else if(condition2){ <br>
+								console.log("la condition2 est vraie") <br>
+							} <br>
+							else{ <br>
+								console.log("aucune des conditions est vraie") <br> 
+							}
+						</p>
+						
+					</li>
+					<li class="article"></li>
+					<li class="article"></li>
+					<li class="article"></li>
 				</ul>
 			</section>
 		</main>
