@@ -22,6 +22,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #e9b526;
 }
 
 header {
@@ -30,17 +31,43 @@ header {
   margin: auto;
   font-family: "Quicksand", sans-serif;
   font-size: 2rem;
-  text-align: center;
-  background: #9696d1;
+  background-color: #e9b526;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
   min-height: 80vh;
   width: 90%;
-  margin: auto;
-  text-align: center;
-  /* 	background: rgb(150, 209, 150); */
+  background-color: #cccbcb;
   font-size: 2rem;
+}
+
+main li {
+  margin: 10rem;
+}
+
+main h2 {
+  text-decoration: underline;
+  text-align: center;
+}
+
+main .paragraphe {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+main .example {
+  color: white;
+  background-color: #333232;
+  display: inline-block;
+  border-radius: 1rem;
+}
+
+main span {
+  color: #d41c1c;
 }
 
 footer {
@@ -48,5 +75,10 @@ footer {
   width: 90%;
   margin: auto;
   text-align: center;
-  background: #9ca06c;
+  background-color: #e9b526;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

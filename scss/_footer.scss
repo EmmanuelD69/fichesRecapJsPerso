@@ -1,7 +1,9 @@
 footer {
-  min-height: 10vh;
-  width: 90%;
-  margin: auto;
-  text-align: center;
-  background: rgb(156, 160, 108);
+	min-height: 10vh;
+	width: 90%;
+	margin: auto;
+	text-align: center;
+	background-color: $bgColor3;
+	font-size: $size3;
+	@include flex(column, center, center);
 }

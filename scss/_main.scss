@@ -1,8 +1,26 @@
 main {
 	min-height: 80vh;
 	width: 90%;
-	margin: auto;
-	text-align: center;
-	/* 	background: rgb(150, 209, 150); */
+	background-color: rgb(204, 203, 203);
 	font-size: $size3;
+	li {
+		margin: 10rem;
+	}
+	h2 {
+		text-decoration: underline;
+		text-align: center;
+	}
+	.paragraphe {
+		margin: 1rem;
+		padding: 1rem;
+	}
+	.example {
+		color: $textColor2;
+		background-color: $bgColor1;
+		display: inline-block;
+		border-radius: 1rem;
+	}
+	span {
+		color: $textColor3;
+	}
 }
