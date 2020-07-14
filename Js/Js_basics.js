@@ -270,7 +270,7 @@ else{
 */
 
 /*** CAS PARTICULIER: VALEUR TRUE OU FALSE ***
- il est possible d'affecter à une constante / variable des valeurs qui auront pour intérprétation par Javascript, soit "vrai" (true) ou "faux" (false).
+ il est possible d'affecter à une constante / variable des valeurs qui auront pour intérprétation par Javascript "faux" (false) quand certaines pourrait sembler être "vraie" (true).
  Example:
  const age = 25; la valeur affectée à cette constante est égale à "true"
  const name = "Emmanuel"; la valeur affectée à cette constante est égale à "true"
