@@ -480,8 +480,10 @@
 					<p class="paragraphe example">
 						function askName(){ <br>
 						&emsp;&emsp;let nom = prompt('Quel est ton nom?'); <br>
-						&emsp;&emsp;console.log(`Bienvenue sur mon site ${nom}`); version (alt Gr 7) <br>
-						&emsp;&emsp;console.log("Bienvenue sur mon site " + nom); version concaténation normale. <br>
+						&emsp;&emsp;console.log(`Bienvenue sur mon site ${nom}`); /* version concaténation ultime */
+						<br>
+						&emsp;&emsp;console.log("Bienvenue sur mon site " + nom); /* version concaténation normale. */
+						<br>
 						}
 					</p>
 					<p class="paragraphe explication">Pour exécuter une fonction, il faut l'appeler par son doux nom :)
@@ -489,6 +491,46 @@
 					<p class="paragraphe example">
 						Example: <br>
 						askName(); <br>
+					</p>
+					<p class="paragraphe explication"> Une fonction peut faire appel à d'autres fonctions, ces appels
+						étant incluent dans la fonction.</p>
+					<p class="paragraphe example">Example: <br><br>
+						1- création de la fonction "greet" <br><br>
+						Ce qui se trouve en rouge entre paranthèses, après le nom de la fonction, est appelé un
+						"paramètre". <br> Il peut y en avoir plusieurs,
+						on appel cela les <span><u>paramètres de la fonction</u></span>. <br><br>
+						function greet(<span>nom</span>){ <br>
+						&emsp;&emsp;console.log(`Bienvenue sur mon site ${nom}`); /* version concaténation ultime */<br>
+						&emsp;&emsp;console.log("Bienvenue sur mon site " + nom); /* version concaténation normale.
+						*/<br>
+						} <br><br>
+						2- création de la fonction "signUp" faisant appel à la fonction "greet": <br><br>
+						function signUp(){ <br>
+						let nom = prompt('Quel est ton nom?');<br>
+						greet(<span style="color:rgb(0, 197, 0)">nom</span>); <br>
+						} <br><br>
+						3- on appel la fonction signUp <br><br>
+						signUp();<br><br>
+						Quand on passe une information d'une variable à une fonction, on appel ce qui se trouve entre
+						paranthèses, <br>
+						<span style="color:rgb(0, 197, 0)"><u>un argument</u></span>. <br>
+						Cet argument peut être un nombre, une chaine de charactères, un booléen, etc... <br> il peut y
+						avoir
+						plusieurs arguments en même temps, il suffit de les séparer par une virgule (,). <br><br>
+
+						Debriefing: <br>
+						Lorsque la fonction "signUp" est appelée, une fenêtre popup apparait, et demande
+						l'information,<br><br>
+						"Quel est ton nom?" <br><br>
+						suivi d'un champ réponse à compléter. <br>
+						Lorsque l'utilisateur entre son nom dans le champ et valide, cette information est enregistrée
+						comme valeur de la variable "nom". <br>
+						La valeur se trouvant dans la variable nom est alors passé en argument de la
+						fonction "greet" lors de son appel, <br>
+						Cet argument devient le paramètre de la fonction "greet", <br>
+						Le message correspondant à la fonction "greet" est affiché dans la console. <br>
+						Fin.
+
 					</p>
 				</li>
 				<li class="article"></li>
