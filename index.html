@@ -533,6 +533,43 @@
 
 					</p>
 				</li>
+				<li class="article">
+					<h2 class="titre-article">PRINCIPE DU "RETURN" DANS UNE FONCTION</h2>
+					<p class="paragraphe explication">Certaines fonctions ne retourne(renvoi) pas forcément une valeur / argument, elles accomplissent ce qu'on leurs demande de faire, puis passent le relais ou s'arrêtent.</p>
+					<p class="paragraphe example">
+						Example 1: <br>
+let greet = console.log("coucou c'est moi"); <br>
+console.log(greet); <br><br>
+un message s'affichera dans la console mais la valeur de la variable "greet" sera considéré comme "undefined". <br>
+La variable contient le résultat de l'application de la méthode(fonction) ".log" qui n'a pas pour but de "retourner" une valeur <br> mais simplement d'afficher ce qui est contenu entre ses paranthèses. <br>
+Afin d'obtenir une valeur pour une variable contenant une fonction, il faut que la fonction contienne une instruction de "retour"(return).
+					</p>
+					<p class="paragraphe example">
+						Example 2: <br>
+		function max(nr1, nr2){ <br>
+			&emsp;&emsp;if(nr1 > nr2){ <br>
+				&emsp;&emsp;<span>return</span> nr1; <br> 
+    } <br>
+    else{ <br>
+		&emsp;&emsp;<span>return</span> nr2; <br> 
+	} <br><br>
+	
+	l'instruction "<span>return</span>"  permet de renvoyer/retourner le nombre1 si la condition est vérifiée (true), <br> sinon de renvoyer / retourner le nombre2 si la condition n'est pas vérifiée (false). <br><br>
+
+    let inbox = max(1, 5); <br>
+	console.log(inbox); <br><br>
+	Debriefing: <br>
+	on fait un console.log de la variable "inbox", ce qui doit nous afficher son contenu, une valeur. <br>
+    Mais la variable inbox contient un appel vers une fonction, la fonction "max" qui contient deux "paramètres". <br>
+    Si la fonction que nous avons écrit au dessus, n'existait pas, nous aurions une valeur "indéfinie". <br>
+    Mais étant donné que cette fonction est prévu et qu'elle contient dans son code l'instruction "return", <br> la fonction "max" va nous renvoyer la valeur nr1 ou nr2 en fonction que la condition IF/ELSE soit vérifiée ou pas. <br>
+    Nous aurons donc bien une valeur qui ici est un nombre et qui sera attribuée à la variable "inbox". <br>
+    A partir de là, le console log de "inbox" nous affichera le nombre "retourné" par la fonction "max" et non pas la valeur "undefined".
+					</p>
+				</li>
+				<li class="article"></li>
+				<li class="article"></li>
+				<li class="article"></li>
 				<li class="article"></li>
 			</ul>
 		</section>

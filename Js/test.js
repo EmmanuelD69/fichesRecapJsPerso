@@ -26,3 +26,6 @@ do {
 	console.log(i);
 	i++;
 } while (i <= 40);
+
+let greet = console.log("coucou c'est moi");
+console.log(greet);

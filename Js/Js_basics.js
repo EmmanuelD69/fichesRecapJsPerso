@@ -316,35 +316,35 @@ else{
 
 
  *** PRINCIPE DU "RETURN" ***
- Certaines fonctions ne retourne pas forcément une valeur / argument, elles accomplissent ce qu'on leurs demande de faire, puis passe le relais ou s'arrête. 
- Example:
- let greet = console.log("coucou c'est moi"); 
- console.log(greet); le message s'affichera dans la console mais la valeur de la variable "greet" sera indéfinie "undefined".
- afin d'obtenir la valeur d'une variable, il faut que celle ci nous soit "Retournée".
- Example:
- function max(nr1, nr2){
-     if(nr1 > nr2){
-         return nr1; le mot clé "return" permet de renvoyer/retourner le nombre1 si la condition est vérifiée (true).
-     }
-     else{
-         return nr2; sinon renvoyer / retourner le nombre2 si la condition n'est pas vérifiée (false).
-     }
+Certaines fonctions ne retourne pas forcément une valeur / argument, elles accomplissent ce qu'on leurs demande de faire, puis passe le relais ou s'arrête. 
+Example:
+let greet = console.log("coucou c'est moi"); 
+console.log(greet); le message s'affichera dans la console mais la valeur de la variable "greet" sera indéfinie "undefined".
+afin d'obtenir la valeur d'une variable, il faut que celle ci nous soit "Retournée".
+Example:
+function max(nr1, nr2){
+    if(nr1 > nr2){
+        return nr1; le mot clé "return" permet de renvoyer/retourner le nombre1 si la condition est vérifiée (true).
+    }
+    else{
+        return nr2; sinon renvoyer / retourner le nombre2 si la condition n'est pas vérifiée (false).
+    }
 
-     let inbox = max(1, 5);
-     console.log(inbox);
+    let inbox = max(1, 5);
+    console.log(inbox);
 
-     on fait un console.log de la variable "inbox", ce qui doit nous afficher son contenu, une valeur.
-     Mais la variable inbox contient un appel vers une fonction, la fonction max, qui contient deux "paramètres".
-     Si la fonction que nous avons écris au dessus, n'existait pas, nous aurions une valeur "indéfinie".
-     Mais étant donné que cette fonction est prévu, et qu'elle compare plusieurs conditions, son résultat nous sera retourné grâce à l'utilisation du mot clé "return".
-     En effet, selon la condition, la fonction max va nous "returner" la valeur nr1 ou nr2.
-     Nous aurons donc bien une valeur, qui ici est un nombre, qui sera attribué à la variable "inbox".
-     A partir de là, le console log de "inbox" nous affichera le nombre "retourné" par la fonction max.
- }
+    on fait un console.log de la variable "inbox", ce qui doit nous afficher son contenu, une valeur.
+    Mais la variable inbox contient un appel vers une fonction, la fonction max, qui contient deux "paramètres".
+    Si la fonction que nous avons écris au dessus, n'existait pas, nous aurions une valeur "indéfinie".
+    Mais étant donné que cette fonction est prévu, et qu'elle compare plusieurs conditions, son résultat nous sera retourné grâce à l'utilisation du mot clé "return".
+    En effet, selon la condition, la fonction max va nous "returner" la valeur nr1 ou nr2.
+    Nous aurons donc bien une valeur, qui ici est un nombre, qui sera attribué à la variable "inbox".
+    A partir de là, le console log de "inbox" nous affichera le nombre "retourné" par la fonction max.
+}
 */
 
 /*** OBJETS *** 
- Un objet est comme une armoire à tiroirs, on y stock à l'intérieur des données. Chaque donnée est stockée dans un tiroir qui porte un nom/ID. Ces données peuvent être des nombres, chaines de charactères, booléens, et même des fonctions!
+Un objet est comme une armoire à tiroirs, on y stock à l'intérieur des données. Chaque donnée est stockée dans un tiroir qui porte un nom/ID. Ces données peuvent être des nombres, chaines de charactères, booléens, et même des fonctions!
  Un objet se décompose donc en propriétés et leurs valeurs, la propriété étant le nom/ID qui contient des valeurs (key: value).
  !!!IMPORTANT: on appel "Méthode", une fonction se trouvant dans un objet!!!
  Example1:
