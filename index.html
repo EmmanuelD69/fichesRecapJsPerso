@@ -537,23 +537,18 @@
 					<h2 class="titre-article">PRINCIPE DU "RETURN" DANS UNE FONCTION</h2>
 					<p class="paragraphe explication">Certaines fonctions ne retourne(renvoi) pas forcément une valeur / argument, elles accomplissent ce qu'on leurs demande de faire, puis passent le relais ou s'arrêtent.</p>
 					<p class="paragraphe example">
-						Example 1: <br>
-let greet = console.log("coucou c'est moi"); <br>
-console.log(greet); <br><br>
-un message s'affichera dans la console mais la valeur de la variable "greet" sera considéré comme "undefined". <br>
-La variable contient le résultat de l'application de la méthode(fonction) ".log" qui n'a pas pour but de "retourner" une valeur <br> mais simplement d'afficher ce qui est contenu entre ses paranthèses. <br>
-Afin d'obtenir une valeur pour une variable contenant une fonction, il faut que la fonction contienne une instruction de "retour"(return).
+					Example 1: <br>
+					let greet = console.log("coucou c'est moi"); <br>console.log(greet); <br><br>un message s'affichera dans la console mais la valeur de la variable "greet" sera considéré comme "undefined". <br>La variable contient le résultat de l'application de la méthode(fonction) ".log" qui n'a pas pour but de "retourner" une valeur <br> mais simplement d'afficher ce qui est contenu entre ses paranthèses. <br>Afin d'obtenir une valeur pour une variable contenant une fonction, il faut que la fonction contienne une instruction de "retour"(return).
 					</p>
 					<p class="paragraphe example">
-						Example 2: <br>
-		function max(nr1, nr2){ <br>
-			&emsp;&emsp;if(nr1 > nr2){ <br>
-				&emsp;&emsp;<span>return</span> nr1; <br> 
-    } <br>
-    else{ <br>
-		&emsp;&emsp;<span>return</span> nr2; <br> 
-	} <br><br>
-	
+						Example 2: <br>	
+						function max(nr1, nr2){ <br>
+							&emsp;&emsp;if(nr1 > nr2){ <br>	
+							&emsp;&emsp;<span>return</span> nr1; <br>
+						} <br>
+						else{ <br>
+							&emsp;&emsp;<span>return</span> nr2; <br> 
+						} <br><br>	
 	l'instruction "<span>return</span>"  permet de renvoyer/retourner le nombre1 si la condition est vérifiée (true), <br> sinon de renvoyer / retourner le nombre2 si la condition n'est pas vérifiée (false). <br><br>
 
     let inbox = max(1, 5); <br>
@@ -567,7 +562,59 @@ Afin d'obtenir une valeur pour une variable contenant une fonction, il faut que 
     A partir de là, le console log de "inbox" nous affichera le nombre "retourné" par la fonction "max" et non pas la valeur "undefined".
 					</p>
 				</li>
-				<li class="article"></li>
+				<li class="article">
+					<h2 class="titre-article">LES OBJETS (présentation rapide)</h2>
+					<p class="paragraphe explication">
+						Un objet est comme un livre qui possède un nom et contient des chapitres ayant chacun un titre et du contenu. <br><br> 
+						En version Javascript cela donne: <br> 
+						<span>Un objet est une variable qui possède un nom et contient des propriétées ayant chacune une clé d'identification(key) et du contenu(value).</span><br><br>
+						!!! PROPERTY = KEY / VALUE - PROPRIETE = CLEF / VALEUR !!! <br>
+						Le contenu de cette variable s'écrit entre accolades <span>{}</span>. <br>
+						ATTENTION: on peut stocker des fonctions dans un objet, elles sont alors renommées "<span>méthodes</span>".
+					</p>
+					<p class="paragraphe example">
+						Example1: <br>
+						const user = { <br>
+							&emsp;name: "Emmanuel", <br>
+							&emsp;age: 36, <br>
+							&emsp;married: false, <br>
+							&emsp;greet: function(){ /* Version longue*/ <br>
+								&emsp;console.log("hello there!"); <br>
+								&emsp;}, <br>
+						};
+					</p>
+					<p class="paragraphe explication">On peut utiliser un raccourci pour écrire une méthode en supprimant ": function", cela correspond exactement à la même chose en version simplifié.</p>
+					<p class="paragraphe example">
+						Example2: <br>
+						const user = { <br>
+							&emsp;name: "Emmanuel", <br>
+							&emsp;age: 36, <br>
+							&emsp;married: false, <br>
+							&emsp;greet(){ /* Version simplifiée */ <br>
+								&emsp;console.log("hello there!"); <br>
+								&emsp;}, <br>
+						};
+					</p>
+					<p class="paragraphe explication">
+						Un objet peut par exemple identifier une personne et contenir
+						des informations concernant cette personne. <br>
+						Un objet est composé de propriétés qui se décompose en deux temps, tout d'abord la clé, puis sa valeur. <br>
+						Dans notre example, "name" est la clé, et "Emmanuel" est la valeur, l'ensemble formant la première propriété de l'objet "user".
+					</p>
+					<p class="paragraphe explication">
+						pour acceder à une information dans un objet, il faut le nommer et ajouter un point (.) avant de nommer la propriété qui nous intéresse.
+					</p>
+					<p class="paragraphe example">
+						Example: <br>
+						console.log(user.name);
+					</p>
+					<p class="paragraphe explication">
+						ou directement dans la console avec:						
+					</p>
+					<p class="paragraphe example">
+						user.name;
+					</p>
+				</li>
 				<li class="article"></li>
 				<li class="article"></li>
 				<li class="article"></li>

@@ -345,40 +345,40 @@ function max(nr1, nr2){
 
 /*** OBJETS *** 
 Un objet est comme une armoire à tiroirs, on y stock à l'intérieur des données. Chaque donnée est stockée dans un tiroir qui porte un nom/ID. Ces données peuvent être des nombres, chaines de charactères, booléens, et même des fonctions!
- Un objet se décompose donc en propriétés et leurs valeurs, la propriété étant le nom/ID qui contient des valeurs (key: value).
- !!!IMPORTANT: on appel "Méthode", une fonction se trouvant dans un objet!!!
- Example1:
- const user = {
-     name: "Emmanuel",
-     age: 36,
-     married: false,
-     greet: function(){ Version longue
-         console.log("hello there!");
-     };
+Un objet se décompose donc en propriétés et leurs valeurs, la propriété étant le nom/ID qui contient des valeurs (key: value).
+!!!IMPORTANT: on appel "Méthode", une fonction se trouvant dans un objet!!!
+Example1:
+const user = {
+    name: "Emmanuel",
+    age: 36,
+    married: false,
+    greet: function(){ Version longue
+        console.log("hello there!");
+    };
   
   Example2:
   const user = {
-     name: "Emmanuel",
-     age: 36,
-     married: false,
-     greet(){ Version simplifiée
-         console.log("hello there!");
-     };
- !!! On peut utiliser un raccourci pour écrire une méthode en supprimant ": function", cela correspond exactement à la même chose en version simplifié. !!!
+    name: "Emmanuel",
+    age: 36,
+    married: false,
+    greet(){ Version simplifiée
+        console.log("hello there!");
+    };
+!!!On peut utiliser un raccourci pour écrire une méthode en supprimant ": function", cela correspond exactement à la même chose en version simplifié.  !!!
 
 
- Un objet peut par exemple identifier une personne et contenir les informations concernant cette personne.
- !!! PROPERTY = KEY / VALUE - PROPRIETE = CLEF / VALEUR !!!
- Un objet est composé de propriétés qui se décompose en deux temps, tout d'abord la clé, puis sa valeur.
- Dans notre example, "name" est la clé, et "Emmanuel" est la valeur, l'ensemble formant la première propriété de l'objet "user".
- 
- }
+Un objet peut par exemple identifier une personne et contenir les informations concernant cette personne.
+!!! PROPERTY = KEY / VALUE - PROPRIETE = CLEF / VALEUR !!!
+Un objet est composé de propriétés qui se décompose en deux temps, tout d'abord la clé, puis sa valeur.
+Dans notre example, "name" est la clé, et "Emmanuel" est la valeur, l'ensemble formant la première propriété de l'objet "user".
 
- pour acceder à une information dans un objet, il faut le nommer et ajouter un point (.) pour nommer ensuite la propriété qui intéresse.
- Example:
- console.log(user.name);
- ou directement dans la console avec:
- user.name;
+}
+
+pour acceder à une information dans un objet, il faut le nommer et ajouter un point (.) pour nommer ensuite la propriété qui intéresse.
+Example:
+console.log(user.name);
+ou directement dans la console avec:
+user.name;
 */
 
 /*** TABLEAU / ARRAY ***

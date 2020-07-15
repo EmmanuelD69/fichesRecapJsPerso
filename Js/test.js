@@ -29,3 +29,12 @@ do {
 
 let greet = console.log("coucou c'est moi");
 console.log(greet);
+
+const eD = {
+	name: 'Emmanuel',
+	age: 36,
+	married: false,
+	greet: function () {
+		console.log('hello there!');
+	},
+};
