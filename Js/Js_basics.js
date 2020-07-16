@@ -312,7 +312,7 @@ else{
     Quand on passe une information à une fonction, on appel ce qui se trouve entre paranthèses (), un argument.
     Cet argument peut être un nombre, une chaine de charactères, un booléen, etc... il peut y avoir plusieurs arguments en même temps, il suffit de les séparer par une virgule (,).
     Nous passons donc l'argument correspondant à la valeur se trouvant dans la variable "nom" vers la fonction "greet"
- }
+}
 
 
  *** PRINCIPE DU "RETURN" ***
@@ -382,70 +382,70 @@ user.name;
 */
 
 /*** TABLEAU / ARRAY ***
- Un tableau, ou plutôt un array en anglais, est une variable qui contient plusieurs valeurs, appelées items. Chaque item est accessible au moyen d'un indice (index en anglais) et dont la numérotation commence à partir de 0. 
- Le contenu du tableau se définit entre crochets, et chaque valeur est séparée par une virgule. Les valeurs sont introduites comme pour des variables simples, c'est-à-dire qu'il faut des guillemets ou des apostrophes pour définir les chaînes de caractères.
- Example:
- const listUsers = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline', 'Guillaume'];
+Un tableau, ou plutôt un array en anglais, est une variable qui contient plusieurs valeurs, appelées items. Chaque item est accessible au moyen d'un indice (index en anglais) et dont la numérotation commence à partir de 0. 
+Le contenu du tableau se définit entre crochets, et chaque valeur est séparée par une virgule. Les valeurs sont introduites comme pour des variables simples, c'est-à-dire qu'il faut des guillemets ou des apostrophes pour définir les chaînes de caractères.
+Example:
+const listUsers = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline', 'Guillaume'];
 
- Il est possible d'interagir avec un tableau de plusieurs façons, pour cela on utilise comme pour une objet un point (.) suivi de la méthode que l'on souhaite appliquer à notre tableau.
- Exemples:
+Il est possible d'interagir avec un tableau de plusieurs façons, pour cela on utilise comme pour une objet un point (.) suivi de la méthode que l'on souhaite appliquer à notre tableau.
+Exemples:
  listUsers.shift(); // Retire « Sébastien »
  listUsers.pop(); // Retire « Guillaume »
  alert(listUsers); // Affiche « Laurence,Ludovic,Pauline »
 
- Quelques méthodes les plus fréquemment utilisées:
- -La méthode "push()" permet d'ajouter un ou plusieurs items à un tableau, 
- const myFriends = ['Sébastien', 'Laurence'];
- myFriends.push('Ludovic'); Ajoute « Ludovic » à la fin du tableau
- myFriends.push('Pauline', 'Guillaume'); Ajoute « Pauline » et « Guillaume » à la fin du tableau
- les méthodes sont des fonctions, et peuvent donc recevoir des paramètres. "push()" peut recevoir un nombre illimité de paramètres, et chaque paramètre représente un item à ajouter à la fin du tableau.
+Quelques méthodes les plus fréquemment utilisées:
+-La méthode "push()" permet d'ajouter un ou plusieurs items à un tableau, 
+const myFriends = ['Sébastien', 'Laurence'];
+myFriends.push('Ludovic'); Ajoute « Ludovic » à la fin du tableau
+myFriends.push('Pauline', 'Guillaume'); Ajoute « Pauline » et « Guillaume » à la fin du tableau
+les méthodes sont des fonctions, et peuvent donc recevoir des paramètres. "push()" peut recevoir un nombre illimité de paramètres, et chaque paramètre représente un item à ajouter à la fin du tableau.
 
- -La méthode "unshift()" fonctionne comme "push()", excepté que les items sont ajoutés au début du tableau. Cette méthode n'est pas très fréquente mais peut être utile.
+-La méthode "unshift()" fonctionne comme "push()", excepté que les items sont ajoutés au début du tableau. Cette méthode n'est pas très fréquente mais peut être utile.
 
- -Les méthodes "shift()" et "pop()" retirent respectivement le premier et le dernier élément du tableau.
+-Les méthodes "shift()" et "pop()" retirent respectivement le premier et le dernier élément du tableau.
 
- -Les chaînes de caractères possèdent une méthode "split()" qui permet de les découper en un tableau:
- Example:
- const myFamily = 'Pauline Guillaume Clarisse',
-       myFamily = myFamily.split(' ');
- 
- La méthode "split()" va couper la chaîne de caractères à chaque fois qu'elle va rencontrer une espace. 
- Les portions ainsi découpées sont placées dans un tableau, ici dans "myFamily".
+-Les chaînes de caractères possèdent une méthode "split()" qui permet de les découper en un tableau:
+Example:
+const myFamily = 'Pauline Guillaume Clarisse',
+      myFamily = myFamily.split(' ');
 
- !!!Remarquez que quand vous affichez un tableau via "alert()" les éléments sont séparés par des virgules et il n'y a pas d'apostrophes ou de guillemets. C'est dû à "alert()" qui, pour afficher un objet (un tableau, un booléen, un nombre…), le transforme en une chaîne de caractères grâce à une méthode nommée "toString()".!!!
- Example:
- alert(cousinsString);
- alert(cousinsArray);
+La méthode "split()" va couper la chaîne de caractères à chaque fois qu'elle va rencontrer une espace. 
+Les portions ainsi découpées sont placées dans un tableau, ici dans "myFamily".
 
- -L'inverse de "split()", c'est-à-dire créer une chaîne de caractères depuis un tableau, se nomme "join()":
- Example:
- var myFamily_2 = myFamily.join('-');
- alert(myFamily_2);
- une chaîne de caractères va être créée, et les valeurs de chaque "item" seront séparées par un tiret. Si vous ne spécifiez rien comme séparateur, les chaînes de caractères seront collées les unes aux autres.
+!!!Remarquez que quand vous affichez un tableau via "alert()" les éléments sont séparés par des virgules et il n'y a pas d'apostrophes ou de guillemets. C'est dû à "alert()" qui, pour afficher un objet (un tableau, un booléen, un nombre…), le transforme en une chaîne de caractères grâce à une méthode nommée "toString()".!!!
+Example:
+alert(cousinsString);
+alert(cousinsArray);
 
- -La méthode "length" permet d'afficher le nombre d'éléments que comporte un tableau.
- Example:
- const listUsers = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline', 'Guillaume'];
- console.log(listUsers.length); nous affichera 5 dans la console.
+-L'inverse de "split()", c'est-à-dire créer une chaîne de caractères depuis un tableau, se nomme "join()":
+Example:
+var myFamily_2 = myFamily.join('-');
+alert(myFamily_2);
+une chaîne de caractères va être créée, et les valeurs de chaque "item" seront séparées par un tiret. Si vous ne spécifiez rien comme séparateur, les chaînes de caractères seront collées les unes aux autres.
 
- -La méthode "indexOf()" permet d'afficher l'ID/la position ou se trouve l'éléments que l'on a passé en argument de la fonction indexOf.
- Example:
- const listUsers = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline', 'Guillaume'];
- console.log(listUsers.indexOf('Laurence')); nous affichera 1 dans la console.
+-La méthode "length" permet d'afficher le nombre d'éléments que comporte un tableau.
+Example:
+const listUsers = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline', 'Guillaume'];
+console.log(listUsers.length); nous affichera 5 dans la console.
 
- -Et enfin pour acceder à un élément d'un tableau, il suffit de nommer le tableau et de mettre entre crochets l'ID correspondant à cet élément dans le tableau.
- Example:
- const listUsers = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline', 'Guillaume'];
- console.log(listUsers[2]); nous affichera Ludovic dans la console.
+-La méthode "indexOf()" permet d'afficher l'ID/la position ou se trouve l'éléments que l'on a passé en argument de la fonction indexOf.
+Example:
+const listUsers = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline', 'Guillaume'];
+console.log(listUsers.indexOf('Laurence')); nous affichera 1 dans la console.
+
+-Et enfin pour acceder à un élément d'un tableau, il suffit de nommer le tableau et de mettre entre crochets l'ID correspondant à cet élément dans le tableau.
+Example:
+const listUsers = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline', 'Guillaume'];
+console.log(listUsers[2]); nous affichera Ludovic dans la console.
  */
 
 /*** SWITCH STATEMENT ***
- Un "switch()" est une fonction qui permet d'analyser une variable et d'exécuter du code en fonction que la valeur cherchée existe ou non.
- c'est comme utiliser IF / IF ELSE / IF ELSE IF sauf qu'esthétiquement c'est plus compact.
- Example:
- let userInput = prompt("Entrez le nom d'un fruit");
+Un "switch()" est une fonction qui permet d'analyser une variable et d'exécuter du code en fonction que la valeur cherchée existe ou non.
+c'est comme utiliser IF / IF ELSE / IF ELSE IF sauf qu'esthétiquement c'est plus compact.
+Example:
+let userInput = prompt("Entrez le nom d'un fruit");
 
- switch (userInput) {
+switch (userInput) {
   case "kiwi":
     console.log("Le kiwi est un fruit vert");
     break;
@@ -458,20 +458,20 @@ user.name;
   default:
     console.log("Je n'ai pas reconnu de fruits.");
     break;
- }
+}
 
- "break" permet de sortir du switch une fois que la bonne condition a été trouvée, sinon le code continuerai de s'executer et toutes conditions afficheraient leur message dans la console.
- 
- !!!Pour s'assurer que l'entrée de l'utilisateur soit bien conforme à ce que l'on attend (texte en majuscules ou minuscules), il est de bonne pratique de convertir ce que l'utilisateur entre au clavier dans le format que l'on souhaite. Pour ce faire, il existe deux standard:
- -toLowerCase() qui va convertir tout le texte en lettres minuscules.
- -toUpperCase() qui va convertir tout le texte en lettres majuscules.
- pour l'implémenter il suffit de rajouter la fonction soit dans la variable:
- let userInput = prompt("Entrez le nom d'un fruit".toLowerCase());
- let userInput = prompt("Entrez le nom d'un fruit".toUpperCase());
- ou alors en créant une nouvelle variable qui va servir à convertir la variable contenant la donnée enregistré:
- let userInput = prompt("Entrez le nom d'un fruit";
- let controlUserInput = userInput.toLowerCase();
- let controlUserInput = userInput.toUpperCase();
+"break" permet de sortir du switch une fois que la bonne condition a été trouvée, sinon le code continuerai de s'executer et toutes conditions afficheraient leur message dans la console.
+
+!!!Pour s'assurer que l'entrée de l'utilisateur soit bien conforme à ce que l'on attend (texte en majuscules ou minuscules), il est de bonne pratique de convertir ce que l'utilisateur entre au clavier dans le format que l'on souhaite. Pour ce faire, il existe deux standard:
+-toLowerCase() qui va convertir tout le texte en lettres minuscules.
+-toUpperCase() qui va convertir tout le texte en lettres majuscules.
+pour l'implémenter il suffit de rajouter la fonction soit dans la variable:
+let userInput = prompt("Entrez le nom d'un fruit".toLowerCase());
+let userInput = prompt("Entrez le nom d'un fruit".toUpperCase());
+ou alors en créant une nouvelle variable qui va servir à convertir la variable contenant la donnée enregistré:
+let userInput = prompt("Entrez le nom d'un fruit";
+let controlUserInput = userInput.toLowerCase();
+let controlUserInput = userInput.toUpperCase();
  */
 
 /*** FOR LOOP ***
@@ -501,18 +501,18 @@ user.name;
     }
     console.log(i);
   }
- "continue;" permet de zapper le code qui suit afin de passer directement à l'itération suivante.
- "break;" permet de sortir de la boucle immédiatement.
+"continue;" permet de zapper le code qui suit afin de passer directement à l'itération suivante.
+"break;" permet de sortir de la boucle immédiatement.
   */
 
 /*** FOR EACH / SPECIALEMENT POUR LES TABLEAUX  ***
- !!!FORE EACH SERA PLUS LONG A PARCOURIR UN TABLEAU QUE FOR OF, A PEU PRET 25% PLUS LONG!!!
- !!!Ne s'utilise uniquement que pour parcourir des tableaux!!!
- Example:
- names.forEach(function(name, index) {
-   console.log(name, index);
- })
- Cela se lit de la manière suivante:
+!!!FORE EACH SERA PLUS LONG A PARCOURIR UN TABLEAU QUE FOR OF, A PEU PRET 25% PLUS LONG!!!
+!!!Ne s'utilise uniquement que pour parcourir des tableaux!!!
+Example:
+names.forEach(function(name, index) {
+  console.log(name, index);
+})
+Cela se lit de la manière suivante:
   A chaque itération du tableau "names", affiche moi, dans la console, le nom et l'index du nom.
 
   "break;" ne permet pas de sortir de la boucle car il se retrouve dans une fonction et non pas dans une loop aka, on ne peut pas utiliser break dans une fonction!!!
