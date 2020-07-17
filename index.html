@@ -832,6 +832,52 @@
 						/* nous affichera Ludovic dans la console. */
 					</p>
 				</li>
+				<li class="article">
+					<h2 class="titre-article">LES BOUCLES</h2>
+					<p class="paragraphe explication">
+						Les boucles nous permettent d'éffectuer un balayage sur un ensemble de
+						données(variable, objet, tableau) <br> et de répéter ou d’"itérer" des instructions(du code)
+						tant qu'une condition est vérifié.
+					</p>
+					<p class="paragraphe explication"> <u>FOR:</u><br>
+						"for" est une boucle qui va s'exécuter sur un nombre d'itérations prédéfinies. <br>
+						à chaque répétition(itération), la/les conditions contenues dans la boucle va/vont être
+						controlé(es) et leur code exécuté si reconnu comme "True". <br>
+						A moins de trouver un "break" dans le code, la boucle continuera de se répéter jusqu'à avoir
+						atteint sa valeur limite d'itération.
+					</p>
+					<p class="paragraphe example">
+						structure d'une boucle for: <br><br>
+						for (X ; Y ; Z){ <br>
+						&emsp;if(condition){ <br>
+						&emsp;&emsp;code... <br>
+						&emsp;} <br>
+						} <br><br>
+						X= valeur de départ de la boucle <br>
+						Y= Condition déterminant de la valeur de fin de la boucle <br>
+						Z= Valeur d'incrémentation de X à chaque fin de cycle<br><br>
+						Tant que Y est "true", la boucle se répète. <br>
+						Si la condition Y est "false", on sort de la boucle. <br>
+						Si une instruction "break" est executé dans le code, on sort de la boucle. <br>
+						Si une instruction "continue" est exécuté dans le code, on passe directement à l'itération
+						suivant sans balayer le code restant. <br><br>
+						for (let i = 0 ; i <= 100 ; i++) { <br>
+							&emsp;if (i===20){ <br>
+							&emsp;&emsp;console.log("Hey, tu as atteint 20!");<br>
+							&emsp;&emsp;continue; <br>
+							&emsp;} <br>
+							&emsp;if (i===40){ <br>
+							&emsp;&emsp;console.log("Hey, tu as atteint 40!"); <br>
+							&emsp;&emsp;break; <br>
+							&emsp;} <br>
+							console.log(i); <br>
+							}
+					</p>
+					<p class="paragraphe example" style="color:green">La suite arrive bientôt, en cours d'intégration
+					</p>
+				</li>
+				<li class="article"></li>
+				<li class="article"></li>
 				<li class="article"></li>
 			</ul>
 		</section>
