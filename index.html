@@ -848,7 +848,7 @@
 					</p>
 					<p class="paragraphe example">
 						structure d'une boucle for: <br><br>
-						for (X ; Y ; Z){ <br>
+						for ( <span style="color: rgb(63, 63, 177);">X</span> ; Y ; <span>Z</span> ){ <br>
 						&emsp;if(condition){ <br>
 						&emsp;&emsp;code... <br>
 						&emsp;} <br>
@@ -861,17 +861,27 @@
 						Si une instruction "break" est executé dans le code, on sort de la boucle. <br>
 						Si une instruction "continue" est exécuté dans le code, on passe directement à l'itération
 						suivant sans balayer le code restant. <br><br>
-						for (let i = 0 ; i <= 100 ; i++) { <br>
-							&emsp;if (i===20){ <br>
+						for (<span style="color: rgb(63, 63, 177);">let i = 0</span> ; i <= 100 ; <span>i++</span> ) {
+							<br>
+							&emsp;if (<span style="color: chartreuse;">i===20</span>){ <br>
 							&emsp;&emsp;console.log("Hey, tu as atteint 20!");<br>
 							&emsp;&emsp;continue; <br>
 							&emsp;} <br>
-							&emsp;if (i===40){ <br>
+							&emsp;if (<span style="color: chartreuse;">i===40</span>){ <br>
 							&emsp;&emsp;console.log("Hey, tu as atteint 40!"); <br>
 							&emsp;&emsp;break; <br>
 							&emsp;} <br>
 							console.log(i); <br>
-							}
+							} <br><br>
+
+							Légende: <br>
+							<span style="color: rgb(63, 63, 177);">X: La variable i qui a pour valeur 0, on démarre
+								donc de 0. </span><br>
+							Y: La condition qui va determiner combien d'itérations maximum il faudra effectuer
+							avant de sortir de la boucle. <br>
+							ici la condition est: tant que i est inférieur ou égal à 100 on boucle. <br>
+							<span>Z: A chaque itération(boucle) on ajoute +1 à la valeur de i (X).</span> <br>
+							<span style="color: chartreuse;">Conditions à vérifier à chaque itération.</span>
 					</p>
 					<p class="paragraphe example" style="color:green">La suite arrive bientôt, en cours d'intégration
 					</p>
