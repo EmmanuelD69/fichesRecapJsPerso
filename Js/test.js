@@ -85,3 +85,13 @@ for (let i = 0; i <= 100; i++) {
   }
   console.log(i);
 }
+
+const friendsName = ["emmanuel", "georgia", "maria", "nikos", "roulis"];
+
+for (let name of friendsName) {
+  console.log(name);
+}
+
+for (let name of friendsName) {
+  console.log(friendsName.indexOf(name));
+}

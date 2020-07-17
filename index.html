@@ -860,7 +860,7 @@
 						Si la condition Y est "false", on sort de la boucle. <br>
 						Si une instruction "break" est executé dans le code, on sort de la boucle. <br>
 						Si une instruction "continue" est exécuté dans le code, on passe directement à l'itération
-						suivant sans balayer le code restant. <br><br>
+						suivante sans balayer le code restant. <br><br>
 						for (<span style="color: rgb(63, 63, 177);">let i = 0</span> ; i <= 100 ; <span>i++</span> ) {
 							<br>
 							&emsp;if (<span style="color: chartreuse;">i===20</span>){ <br>
@@ -883,8 +883,30 @@
 							<span>Z: A chaque itération(boucle) on ajoute +1 à la valeur de i (X).</span> <br>
 							<span style="color: chartreuse;">Conditions à vérifier à chaque itération.</span>
 					</p>
+					<p class="paragraphe explication"> <u>FOR OF:</u><br>
+						Il s'agit d'une variante de la boucle FOR, elle ne fonctionne pas avec Internet Explorer et
+						s'utilise principalement avec des Tableaux.
+					</p>
+					<p class="paragraphe example">
+						Soit une constante "names" contenant un tableau de noms: <br><br>
+						const names = ["emmanuel", "georgia", "maria", "nikos", "roulis"]; <br><br>
+						for (let name of names) { <br>
+						&emsp;console.log(name);<br>
+						} <br><br>
+						Cela se lit de la manière suivante: <br>
+						Pour chaque nom du tableau "names", affiche moi, dans la console, le nom. <br><br>
+						for (let name of names) { <br>
+						&emsp;console.log(names.indexOf(name));<br>
+						} <br><br>
+						Cela se lit de la manière suivante: <br>
+						Pour chaque nom du tableau "names", affiche moi, dans la console, l'indice du nom. <br>
+						L'instruction "break", si présente dans le code de la boucle, permet de sortir
+						de la boucle.
+					</p>
 					<p class="paragraphe example" style="color:green">La suite arrive bientôt, en cours d'intégration
 					</p>
+					<p class="paragraphe explication"> <u>FOR IN:</u><br>
+
 				</li>
 				<li class="article"></li>
 				<li class="article"></li>
