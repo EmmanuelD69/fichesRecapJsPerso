@@ -884,8 +884,9 @@
 							<span style="color: chartreuse;">Conditions à vérifier à chaque itération.</span>
 					</p>
 					<p class="paragraphe explication"> <u>FOR OF:</u><br>
-						Il s'agit d'une variante de la boucle FOR, elle ne fonctionne pas avec Internet Explorer et
-						s'utilise principalement avec des Tableaux.
+						Il s'agit d'une variante de la boucle FOR, elle <span>ne fonctionne pas avec Internet
+							Explorer</span> et
+						<u>s'utilise principalement avec des Tableaux</u>.
 					</p>
 					<p class="paragraphe example">
 						Soit une constante "names" contenant un tableau de noms: <br><br>
@@ -903,10 +904,36 @@
 						L'instruction "break", si présente dans le code de la boucle, permet de sortir
 						de la boucle.
 					</p>
+					<p class="paragraphe explication"> <u>FOR IN:</u><br>
+						C'est une version différente de FOR OF que l'on va <u>utiliser avec des Objets</u>, cela
+						<span>ne fonctionne pas avec les tableaux</span>.
+					</p>
+					<p class="paragraphe example">
+						Rappel objet: <br>
+						Un objet est une variable/constante qui possède un nom et contient <br> des propriétées ayant
+						chacune une clé d'identification(key) à laquelle est associé une valeur(value). <br><br>
+						Soit une constante "user" contenant un objet avec des propriétés: <br><br>
+						const user = { <br>
+						&emsp;name: "Laurent", <br>
+						&emsp;age: 36, <br>
+						&emsp;suscribers: 200, <br>
+						&emsp;passion: "histoire" <br>
+						}; <br><br>
+
+						for(let key in user){ <br>
+						console.log(key); <br>
+						} <br><br>
+						Cela se lit de la manière suivante: <br>
+						Pour chaque "key" rencontrés dans l'objet "user", affiche moi son nom. <br><br>
+
+						for(let key in user){<br>
+						console.log(user[key]); <br>
+						} <br><br>
+						Cela se lit de la manière suivante: <br>
+						Pour chaque "key" rencontrés dans l'objet "user", affiche moi la valeur correspondante. <br>
+					</p>
 					<p class="paragraphe example" style="color:green">La suite arrive bientôt, en cours d'intégration
 					</p>
-					<p class="paragraphe explication"> <u>FOR IN:</u><br>
-
 				</li>
 				<li class="article"></li>
 				<li class="article"></li>

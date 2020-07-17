@@ -95,3 +95,18 @@ for (let name of friendsName) {
 for (let name of friendsName) {
   console.log(friendsName.indexOf(name));
 }
+
+const user1 = {
+  name: "laurent",
+  age: 36,
+  suscribers: 200,
+  passion: "histoire",
+};
+
+for (let key in user1) {
+  console.log(key);
+}
+
+for (let key in user1) {
+  console.log(user1[key]);
+}
