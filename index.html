@@ -21,7 +21,7 @@
 					</h2>
 					<p class="paragraphe intro">
 						Pour insérer un fichier javascript dans notre code, il faut le
-						<span>positioner à la fin de la balise "body" juste avant sa
+						<span>positionner à la fin de la balise "body" juste avant sa
 							fermeture "&lt;/body&gt;"</span>.
 						<br />
 						la méthode pour insérer le fichier consiste à ajouter une balise
@@ -337,9 +337,12 @@
 						Si elle est vérifiée (true) alors le code entre accolades {...} s'execute, si elle n'est pas
 						vérifiée (false) alors le code entre accolades {...} ne s'execute pas. </p>
 					<p class="paragraphe explication">ATTENTION: <br> <span><u>une variable/constante peut prendre la
-								valeur "false" de plusieurs façons différentes. <br> (cf- CAS PARTICULIER: DIFFERENTES VALEURS FALSE)</u></span>
+								valeur "false" de plusieurs façons différentes.</u></span> <br> (Voir - CAS PARTICULIER:
+						DIFFERENTES
+						VALEURS FALSE)
 					</p>
-					<p class="paragraphe explication">IF: <br> <span>si ma condition est vraie (true), alors execute le
+					<p class="paragraphe explication"> <u>IF:</u><br> <span>si ma condition est vraie (true), alors
+							execute le
 							code
 							entre les accolades {...}.</span> </p>
 					<p class="paragraphe example">
@@ -400,7 +403,8 @@
 						On vérifie l'exactitude de l'information / de la comparaison et on execute ou pas le code.
 					</p>
 
-					<p class="paragraphe explication">IF / ELSE: <br> <span>si ma condition est vraie, alors on execute
+					<p class="paragraphe explication"> <u>IF / ELSE:</u><br> <span>si ma condition est vraie, alors on
+							execute
 							le code entre les premières accolades {...}, <br> sinon on execute le code entre les
 							accolades {...}
 							situées après "else".</span>
@@ -415,7 +419,7 @@
 					</p>
 					<p class="paragraphe explication">!!!à noter que plusieurs conditions peuvent être vraies, et donc
 						plusieurs codes peuvent s'executer!!!</p>
-					<p class="paragraphe explication">IF / ELSE IF (conditions multiples): <br>
+					<p class="paragraphe explication"> <u>IF / ELSE IF (conditions multiples):</u> <br>
 						<span>si ma condition1 est vraie, alors on execute le code entre ses accolades {...}, <br> sinon
 							si ma condition2 est vraie, alors on execute le code entre ses accolades {...}, <br> sinon
 							on execute le code entre les accolades {...} situé après "else".</span></p>
@@ -430,14 +434,14 @@
 						console.log("aucune des conditions est vraie") <br>
 						}
 					</p>
-					<p class="paragraphe explication">Soit deux constantes "age" et "money": <br>
+					<p class="paragraphe explication">Soit deux constantes "age" et "contacts": <br>
 						const age = 18; <br>
-						const money = 100;</p>
+						const contacts = 100;</p>
 					<p class="paragraphe example">
 						if(age >= 18){ <br>
 						console.log("la condition1 est vraie"); <br>
 						} <br>
-						else if(money >= 50){ <br>
+						else if(contacts >= 50){ <br>
 						console.log("la condition2 est vraie") <br>
 						} <br>
 						else{ <br>
@@ -446,7 +450,40 @@
 						le message de la première condition s'affichera car la condition
 						est vérifiée, age est bien supérieur ou égal à 18. <br>
 						le message de la deuxième condition s'affichera car la condition
-						est vérifiée, money est bien supérieur ou égal à 50.
+						est vérifiée, contacts est bien supérieur ou égal à 50.
+					</p>
+					<p class="paragraphe explication"> <u>L'INSTRUCTION SWITCH</u></p>
+					<p class="paragraphe explication">
+						"switch(condition)" est une instruction qui en fonction du résultat de la condition qui lui est
+						appliqué, <br>
+						propose plusieurs cas de fonctionnement listés les uns à la suite des autres. <br>
+						c'est comme utiliser IF / IF ELSE / IF ELSE IF à la différence que le code globale est plus
+						compact.
+					</p>
+					<p class="paragraphe example">
+						Example: <br><br>
+						let userInput = prompt("Entrez le nom d'un fruit");<br><br>
+						switch (userInput) {<br>
+						&emsp;&emsp;case "kiwi": <br>
+						&emsp;&emsp;&emsp;console.log("Le kiwi est un fruit vert");<br>
+						&emsp;&emsp;&emsp;<span>break</span>; <br><br>
+						&emsp;&emsp;case "banane": <br>
+						&emsp;&emsp;&emsp;console.log("La banane est un fruit jaune"); <br>
+						&emsp;&emsp;&emsp;<span>break</span>; <br><br>
+						&emsp;&emsp;case "abricot": <br>
+						&emsp;&emsp;&emsp;console.log("L'abricot est un fruit orange"); <br>
+						&emsp;&emsp;&emsp;<span>break</span>; <br><br>
+						&emsp;&emsp;default: <br>
+						&emsp;&emsp;&emsp;console.log("Je n'ai pas reconnu de fruits."); <br>
+						&emsp;&emsp;&emsp;<span>break</span>; <br>
+						}
+					</p>
+					<p class="paragraphe explication">
+						"<span>break</span>" permet de sortir du switch une fois que le code correspondant au cas
+						souhaité a
+						été exécuté. <br>
+						Dans le cas contraire, le code continuerait de s'exécuter en passant en revu tous les cas
+						possibles, et en affichant en dernier recours le message par defaut.
 					</p>
 				</li>
 				<li class="article">
@@ -534,81 +571,104 @@
 				</li>
 				<li class="article">
 					<h2 class="titre-article">PRINCIPE DU "RETURN" DANS UNE FONCTION</h2>
-					<p class="paragraphe explication">Certaines fonctions ne retourne(renvoi) pas forcément une valeur / argument, elles accomplissent ce qu'on leurs demande de faire, puis passent le relais ou s'arrêtent.</p>
+					<p class="paragraphe explication">Certaines fonctions ne retourne(renvoi) pas forcément une valeur /
+						argument, elles accomplissent ce qu'on leurs demande de faire, puis passent le relais ou
+						s'arrêtent.</p>
 					<p class="paragraphe example">
-					Example 1: <br>
-					let greet = console.log("coucou c'est moi"); <br>console.log(greet); <br><br>un message s'affichera dans la console mais la valeur de la variable "greet" sera considéré comme "undefined". <br>La variable contient le résultat de l'application de la méthode(fonction) ".log" qui n'a pas pour but de "retourner" une valeur <br> mais simplement d'afficher ce qui est contenu entre ses paranthèses. <br>Afin d'obtenir une valeur pour une variable contenant une fonction, il faut que la fonction contienne une instruction de "retour"(return).
+						Example 1: <br>
+						let greet = console.log("coucou c'est moi"); <br>console.log(greet); <br><br>un message
+						s'affichera dans la console mais la valeur de la variable "greet" sera considéré comme
+						"undefined". <br>La variable contient le résultat de l'application de la méthode(fonction)
+						".log" qui n'a pas pour but de "retourner" une valeur <br> mais simplement d'afficher ce qui est
+						contenu entre ses paranthèses. <br>Afin d'obtenir une valeur pour une variable contenant une
+						fonction, il faut que la fonction contienne une instruction de "retour"(return).
 					</p>
 					<p class="paragraphe example">
-						Example 2: <br>	
+						Example 2: <br>
 						function max(nr1, nr2){ <br>
-							&emsp;&emsp;if(nr1 > nr2){ <br>	
-							&emsp;&emsp;<span>return</span> nr1; <br>
+						&emsp;&emsp;if(nr1 > nr2){ <br>
+						&emsp;&emsp;<span>return</span> nr1; <br>
 						} <br>
 						else{ <br>
-							&emsp;&emsp;<span>return</span> nr2; <br> 
-						} <br><br>	
-	l'instruction "<span>return</span>"  permet de renvoyer/retourner le nombre1 si la condition est vérifiée (true), <br> sinon de renvoyer / retourner le nombre2 si la condition n'est pas vérifiée (false). <br><br>
+						&emsp;&emsp;<span>return</span> nr2; <br>
+						} <br><br>
+						l'instruction "<span>return</span>" permet de renvoyer/retourner le nombre1 si la condition est
+						vérifiée (true), <br> sinon de renvoyer / retourner le nombre2 si la condition n'est pas
+						vérifiée (false). <br><br>
 
-    let inbox = max(1, 5); <br>
-	console.log(inbox); <br><br>
-	Debriefing: <br>
-	on fait un console.log de la variable "inbox", ce qui doit nous afficher son contenu, une valeur. <br>
-    Mais la variable inbox contient un appel vers une fonction, la fonction "max" qui contient deux "paramètres". <br>
-    Si la fonction que nous avons écrit au dessus, n'existait pas, nous aurions une valeur "indéfinie". <br>
-    Mais étant donné que cette fonction est prévu et qu'elle contient dans son code l'instruction "return", <br> la fonction "max" va nous renvoyer la valeur nr1 ou nr2 en fonction que la condition IF/ELSE soit vérifiée ou pas. <br>
-    Nous aurons donc bien une valeur qui ici est un nombre et qui sera attribuée à la variable "inbox". <br>
-    A partir de là, le console log de "inbox" nous affichera le nombre "retourné" par la fonction "max" et non pas la valeur "undefined".
+						let inbox = max(1, 5); <br>
+						console.log(inbox); <br><br>
+						Debriefing: <br>
+						on fait un console.log de la variable "inbox", ce qui doit nous afficher son contenu, une
+						valeur. <br>
+						Mais la variable inbox contient un appel vers une fonction, la fonction "max" qui contient deux
+						"paramètres". <br>
+						Si la fonction que nous avons écrit au dessus, n'existait pas, nous aurions une valeur
+						"indéfinie". <br>
+						Mais étant donné que cette fonction est prévu et qu'elle contient dans son code l'instruction
+						"return", <br> la fonction "max" va nous renvoyer la valeur nr1 ou nr2 en fonction que la
+						condition IF/ELSE soit vérifiée ou pas. <br>
+						Nous aurons donc bien une valeur qui ici est un nombre et qui sera attribuée à la variable
+						"inbox". <br>
+						A partir de là, le console log de "inbox" nous affichera le nombre "retourné" par la fonction
+						"max" et non pas la valeur "undefined".
 					</p>
 				</li>
 				<li class="article">
 					<h2 class="titre-article">LES OBJETS (présentation rapide)</h2>
 					<p class="paragraphe explication">
-						Un objet est comme un livre qui possède un nom et contient des chapitres ayant chacun un titre et du contenu. <br><br> 
-						En version Javascript cela donne: <br> 
-						<span>Un objet est une variable qui possède un nom et contient des propriétées ayant chacune une clé d'identification(key) et du contenu(value).</span><br><br>
+						Un objet est comme un livre qui possède un nom et contient des chapitres ayant chacun un titre
+						et du contenu. <br><br>
+						En version Javascript cela donne: <br>
+						<span>Un objet est une variable qui possède un nom et contient des propriétées ayant chacune une
+							clé d'identification(key) et du contenu(value).</span><br><br>
 						!!! PROPERTY = KEY / VALUE - PROPRIETE = CLEF / VALEUR !!! <br>
 						Le contenu de cette variable s'écrit entre accolades <span>{}</span>. <br>
-						ATTENTION: on peut stocker des fonctions dans un objet, elles sont alors renommées "<span>méthodes</span>".
+						ATTENTION: on peut stocker des fonctions dans un objet, elles sont alors renommées
+						"<span>méthodes</span>".
 					</p>
 					<p class="paragraphe example">
 						Example1: <br>
 						const user = { <br>
-							&emsp;name: "Emmanuel", <br>
-							&emsp;age: 36, <br>
-							&emsp;married: false, <br>
-							&emsp;greet: function(){ /* Version longue*/ <br>
-								&emsp;console.log("hello there!"); <br>
-								&emsp;}, <br>
+						&emsp;name: "Jean-luc", <br>
+						&emsp;age: 36, <br>
+						&emsp;married: false, <br>
+						&emsp;greet: function(){ /* Version longue*/ <br>
+						&emsp;console.log("hello there!"); <br>
+						&emsp;}, <br>
 						};
 					</p>
-					<p class="paragraphe explication">On peut utiliser un raccourci pour écrire une méthode en supprimant ": function", cela correspond exactement à la même chose en version simplifié.</p>
+					<p class="paragraphe explication">On peut utiliser un raccourci pour écrire une méthode en
+						supprimant ": function", cela correspond exactement à la même chose en version simplifié.</p>
 					<p class="paragraphe example">
 						Example2: <br>
 						const user = { <br>
-							&emsp;name: "Emmanuel", <br>
-							&emsp;age: 36, <br>
-							&emsp;married: false, <br>
-							&emsp;greet(){ /* Version simplifiée */ <br>
-								&emsp;console.log("hello there!"); <br>
-								&emsp;}, <br>
+						&emsp;name: "Jean-luc", <br>
+						&emsp;age: 36, <br>
+						&emsp;married: false, <br>
+						&emsp;greet(){ /* Version simplifiée */ <br>
+						&emsp;console.log("hello there!"); <br>
+						&emsp;}, <br>
 						};
 					</p>
 					<p class="paragraphe explication">
 						Un objet peut par exemple identifier une personne et contenir
 						des informations concernant cette personne. <br>
-						Un objet est composé de propriétés qui se décompose en deux temps, tout d'abord la clé, puis sa valeur. <br>
-						Dans notre example, "name" est la clé, et "Emmanuel" est la valeur, l'ensemble formant la première propriété de l'objet "user".
+						Un objet est composé de propriétés qui se décompose en deux temps, tout d'abord la clé, puis sa
+						valeur. <br>
+						Dans notre example, "name" est la clé, et "Emmanuel" est la valeur, l'ensemble formant la
+						première propriété de l'objet "user".
 					</p>
 					<p class="paragraphe explication">
-						pour acceder à une information dans un objet, il faut le nommer et ajouter un point (.) avant de nommer la propriété qui nous intéresse.
+						pour acceder à une information dans un objet, il faut le nommer et ajouter un point (.) avant de
+						nommer la propriété qui nous intéresse.
 					</p>
 					<p class="paragraphe example">
 						Example: <br>
 						console.log(user.name);
 					</p>
 					<p class="paragraphe explication">
-						ou directement dans la console avec:						
+						ou directement dans la console avec:
 					</p>
 					<p class="paragraphe example">
 						user.name;
@@ -617,17 +677,20 @@
 				<li class="article">
 					<h2 class="titre-article">LES TABLEAUX (présentation rapide)</h2>
 					<p class="paragraphe explication">
-						Un tableau, ou plutôt un "array" en anglais, est une variable qui contient plusieurs valeurs, appelées "<span>items</span>". <br>
-						Chaque item est accessible au moyen d'un "<span>indice</span>" (index en anglais) qui <u>commence à partir de 0.</u>  <br><br>
-						Le contenu du tableau se définit entre crochets "<span>[...]</span>" et chaque valeur est séparée par une virgule. <br> <br>
+						Un tableau, ou plutôt un "array" en anglais, est une variable qui contient plusieurs valeurs,
+						appelées "<span>items</span>". <br>
+						Chaque item est accessible au moyen d'un "<span>indice</span>" (index en anglais) qui
+						<u>commence à partir de 0.</u> <br><br>
+						Le contenu du tableau se définit entre crochets "<span>[...]</span>" et chaque valeur est
+						séparée par une virgule. <br> <br>
 						Pour schématiser: <br>
 						Un tableau c'est comme un catalogue dans lequel on trouve à telle page tel produit. <br><br>
 						En version Javascript cela donne: <br>
 						<span>Un tableau c'est une variable où l'on trouve à tel indice telle valeur.</span><br><br>
-						Ces valeurs peuvent être: un nombre, une chaine de caractères,	un objet, une fonction, ...						
+						Ces valeurs peuvent être: un nombre, une chaine de caractères, un objet, une fonction, ...
 					</p>
 					<p class="paragraphe example">
-						Examples: <br>						
+						Examples: <br>
 						const listStrings = ['Sébastien', 'Laurence', 'Ludovic','Pauline', 'Guillaume'];<br>
 						indice 0 = Sébastien <br>
 						indice 1 = Laurence <br>
@@ -660,31 +723,38 @@
 				<li class="article">
 					<h2 class="titre-article">FONCTIONS/METHODES FREQUEMMENT UTILISEES POUR LES TABLEAUX</h2>
 					<p class="paragraphe explication">
-						les méthodes sont des fonctions, et peuvent donc recevoir des paramètres. 
+						les méthodes sont des fonctions, et peuvent donc recevoir des paramètres.
 					</p>
 					<p class="paragraphe explication">
-						Il est possible d'interagir avec un tableau de plusieurs façons, <br> pour cela on utilise, comme pour intéragir avec un objet, un point (<span>.</span>) <br> suivi de la méthode que l'on souhaite appliquer à notre tableau.
+						Il est possible d'interagir avec un tableau de plusieurs façons, <br> pour cela on utilise,
+						comme pour intéragir avec un objet, un point (<span>.</span>) <br> suivi de la méthode que l'on
+						souhaite appliquer à notre tableau.
 					</p>
 					<p class="paragraphe explication">
 						-La méthode "push()" permet d'ajouter un ou plusieurs items à la fin d'un tableau, <br>
-						"push()" peut recevoir un nombre illimité de paramètres, <br> et chaque paramètre représente un item à ajouter à la fin du tableau.
+						"push()" peut recevoir un nombre illimité de paramètres, <br> et chaque paramètre représente un
+						item à ajouter à la fin du tableau.
 					</p>
 					<p class="paragraphe example">
 						const myFriends = ['Sébastien', 'Laurence']; <br><br>
 						myFriends.push('Ludovic'); <br> /* Ajoute « Ludovic » à la fin du tableau */ <br> <br>
-						myFriends.push('Pauline', 'Guillaume'); <br> Ajoute « Pauline » et « Guillaume » à la fin du tableau
+						myFriends.push('Pauline', 'Guillaume'); <br> Ajoute « Pauline » et « Guillaume » à la fin du
+						tableau
 					</p>
 					<p class="paragraphe explication">
 						-La méthode "unshift()" fonctionne comme "push()", <br>
-						excepté que les items sont ajoutés au début du tableau. <br> Cette méthode n'est pas très fréquente mais peut être utile.
+						excepté que les items sont ajoutés au début du tableau. <br> Cette méthode n'est pas très
+						fréquente mais peut être utile.
 					</p>
 					<p class="paragraphe example">
 						const myFriends = ['Sébastien', 'Laurence']; <br><br>
 						myFriends.unshift('Ludovic'); <br> /* Ajoute « Ludovic » au début du tableau */ <br> <br>
-						myFriends.unshift('Pauline', 'Guillaume'); <br> Ajoute « Pauline » et « Guillaume » au début du tableau
+						myFriends.unshift('Pauline', 'Guillaume'); <br> Ajoute « Pauline » et « Guillaume » au début du
+						tableau
 					</p>
 					<p class="paragraphe explication">
-						-Les méthodes "shift()" et "pop()" retirent respectivement le premier et le dernier élément du tableau.
+						-Les méthodes "shift()" et "pop()" retirent respectivement le premier et le dernier élément du
+						tableau.
 					</p>
 					<p class="paragraphe example">
 						Soit le tableau: <br>
@@ -694,12 +764,16 @@
 						alert(listUsers); // Affichera « Laurence, Ludovic, Pauline »
 					</p>
 					<p class="paragraphe explication">
-						-"split()": appliqué à une variable contenant une chaine de caractères, <br> cette méthode permet de découper cette string en un tableau de valeurs.
+						-"split()": appliqué à une variable contenant une chaine de caractères, <br> cette méthode
+						permet de découper cette string en un tableau de valeurs.
 					</p>
 					<p class="paragraphe explication">
 						Le découpage se fait en fonction du paramètre que l'on passe (ou pas) à la méthode split. <br>
-						Dans notre example, on passe en paramètre un "espace", <br> ce qui indique à la méthode qu'il lui faut prendre en compte chaque espace <br> qu'elle va rencontrer pour construire le tableau. <br> 
-						On est donc passé d'une variable contenant une chaine de caractères <br> à une variable contenant un tableau d'items.
+						Dans notre example, on passe en paramètre un "espace", <br> ce qui indique à la méthode qu'il
+						lui faut prendre en compte chaque espace <br> qu'elle va rencontrer pour construire le tableau.
+						<br>
+						On est donc passé d'une variable contenant une chaine de caractères <br> à une variable
+						contenant un tableau d'items.
 					</p>
 					<p class="paragraphe example">
 						Soit une variable "myFamily" contenant une string: <br><br>
@@ -711,20 +785,22 @@
 						/* affichage en console: ["Pauline", "Guillaume", "Clarisse"] */
 					</p>
 					<p class="paragraphe explication">
-						-"join()": appliqué à une variable contenant un tableau d'items, <br> cette méthode va transformer le contenu de la variable en une chaine de charactères.
+						-"join()": appliqué à une variable contenant un tableau d'items, <br> cette méthode va
+						transformer le contenu de la variable en une chaine de charactères.
 					</p>
 					<p class="paragraphe explication">
 						Même principe pour le découpage que pour la méthode split() mais en sens inverse. <br>
-						Dans notre cas, un espace séparera chaque items rencontrés dans le tableau pour en faire une chaine de caractères.
+						Dans notre cas, un espace séparera chaque items rencontrés dans le tableau pour en faire une
+						chaine de caractères.
 					</p>
 					<p class="paragraphe example">
 						Soit une variable "myFamily" contenant un tableau: <br><br>
-						let myFamily = ["Pauline", "Guillaume", "Clarisse"];  <br>
+						let myFamily = ["Pauline", "Guillaume", "Clarisse"]; <br>
 						console.log(myFamily); <br>
 						/* affichage en console: ["Pauline", "Guillaume", "Clarisse"] */ <br><br>
 						myFamily = myFamily.join(<span>' '</span>); <br>
 						console.log(myFamily); <br>
-						/* affichage en console: Pauline Guillaume Clarisse */ 
+						/* affichage en console: Pauline Guillaume Clarisse */
 					</p>
 					<p class="paragraphe explication">
 						-La méthode "length" permet d'afficher le nombre d'éléments que comporte un tableau.
@@ -745,7 +821,9 @@
 						/* nous affichera 1 dans la console. */
 					</p>
 					<p class="paragraphe explication">
-						-Et enfin pour cibler un item, il suffit de nommer le tableau auxcquel il appartient <br> et de mettre à la suite, entre crochets, l'indice correspondant à la position de l'item dans le tableau.
+						-Et enfin pour cibler un item, il suffit de nommer le tableau auquel il appartient <br> et de
+						mettre à la suite, entre crochets, l'indice correspondant à la position de l'item dans le
+						tableau.
 					</p>
 					<p class="paragraphe example">
 						Soit un tableau d'utilisateurs: <br><br>
