@@ -924,13 +924,28 @@
 						console.log(key); <br>
 						} <br><br>
 						Cela se lit de la manière suivante: <br>
-						Pour chaque "key" rencontrés dans l'objet "user", affiche moi son nom. <br><br>
+						Pour chaque "key" rencontré dans l'objet "user", affiche moi son nom. <br><br>
 
 						for(let key in user){<br>
 						console.log(user[key]); <br>
 						} <br><br>
 						Cela se lit de la manière suivante: <br>
-						Pour chaque "key" rencontrés dans l'objet "user", affiche moi la valeur correspondante. <br>
+						Pour chaque "key" rencontré dans l'objet "user", affiche moi la valeur correspondante. <br>
+					</p>
+					<p class="paragraphe explication"> <u>FOR EACH:</u><br>
+						Cette boucle <span>s'utilise uniquement avec des tableaux</span> et <br> <u>prend environ 25% de
+							temps en plus à les parcourir</u> qu'une boucle FOR OF.</p>
+					<p class="paragraphe example">
+						Soit une constante "names" contenant un tableau de noms: <br><br>
+						const names = ["emmanuel", "georgia", "maria", "nikos", "roulis"]; <br><br>
+						names.forEach(function(name, index) { <br>
+						&emsp;console.log(name, index);<br>
+						}) <br><br>
+						Cela se lit de la manière suivante: <br>
+						A chaque itération du tableau "names", affiche moi, dans la console, le nom et l'index du nom.
+						<br><br>
+						"break;" ne peut pas être utilisé car for each utilise une fonction <br> et pas une boucle, on
+						ne peut pas utiliser break dans une fonction!!!
 					</p>
 					<p class="paragraphe example" style="color:green">La suite arrive bientôt, en cours d'intégration
 					</p>
@@ -944,7 +959,7 @@
 	<footer>
 		<h3>&copy;EmmanuelDev 2020</h3>
 	</footer>
-	<script src="./Js/test.js"></script>
+	<script src="./js/test.js"></script>
 </body>
 
 </html>

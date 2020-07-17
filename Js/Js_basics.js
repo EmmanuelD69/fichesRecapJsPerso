@@ -506,7 +506,7 @@ let controlUserInput = userInput.toUpperCase();
   */
 
 /*** FOR EACH / SPECIALEMENT POUR LES TABLEAUX  ***
-!!!FORE EACH SERA PLUS LONG A PARCOURIR UN TABLEAU QUE FOR OF, A PEU PRET 25% PLUS LONG!!!
+!!!FOR EACH SERA PLUS LONG A PARCOURIR UN TABLEAU QUE FOR OF, A PEU PRET 25% PLUS LONG!!!
 !!!Ne s'utilise uniquement que pour parcourir des tableaux!!!
 Example:
 names.forEach(function(name, index) {
