@@ -509,7 +509,7 @@
 							definie affichera un message d'erreur en console et bloquera l'exécution du code</span> </p>
 				</li>
 				<li class="article">
-					<h2 class="titre-article">LES FONCTIONS</h2>
+					<h2 class="titre-article">LES FONCTIONS (présentation rapide)</h2>
 					<p class="paragraphe explication"> Une fonction est un ensemble d'actions secondaires ayant pour but
 						d'accomplir une action globale. <br> <br>
 						Example d'une fonction pour demander le nom d'une personne:</p>
@@ -933,8 +933,9 @@
 						Pour chaque "key" rencontré dans l'objet "user", affiche moi la valeur correspondante. <br>
 					</p>
 					<p class="paragraphe explication"> <u>FOR EACH:</u><br>
-						Cette boucle <span>s'utilise uniquement avec des tableaux</span> et <br> <u>prend environ 25% de
-							temps en plus à les parcourir</u> qu'une boucle FOR OF.</p>
+						Cette instruction <span>s'utilise uniquement avec des tableaux</span> et <br> <u>prend environ
+							25% de temps en plus à les parcourir</u> qu'une boucle FOR OF. <br>
+						Un bon usage pour des petits tableaux.</p>
 					<p class="paragraphe example">
 						Soit une constante "names" contenant un tableau de noms: <br><br>
 						const names = ["emmanuel", "georgia", "maria", "nikos", "roulis"]; <br><br>
@@ -942,10 +943,13 @@
 						&emsp;console.log(name, index);<br>
 						}) <br><br>
 						Cela se lit de la manière suivante: <br>
-						A chaque itération du tableau "names", affiche moi, dans la console, le nom et l'index du nom.
+						Pour chaque élément du tableau "names", affiche moi, dans la console, son nom et son index.
 						<br><br>
-						"break;" ne peut pas être utilisé car for each utilise une fonction <br> et pas une boucle, on
-						ne peut pas utiliser break dans une fonction!!!
+						"break" ne peut pas être utilisé car la boucle for each utilise une fonction "callback"<br> et
+						pas une boucle, on ne peut pas utiliser break dans une fonction, <br> uniquement dans une
+						loop ou un switch!!!
+						<br>
+						L'explication sur ce qu'est une fonction "callback" se trouve plus loin
 					</p>
 					<p class="paragraphe example" style="color:green">La suite arrive bientôt, en cours d'intégration
 					</p>
