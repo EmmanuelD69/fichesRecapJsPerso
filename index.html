@@ -1010,12 +1010,86 @@
 								peu importe que la condition soit vérifiée ou pas.<br>
 
 					</p>
+					
+				</li>
+				<li class="article">
+					<h2 class="titre-article">NOTION DE SCOPE</h2>
+					<p class="paragraphe explication">
+						<u>GLOBAL SCOPE:</u>
+					</p>
+					<p class="paragraphe explication">
+						Le scope global représente <span>l'ensemble des lignes de code  du fichier Javascript</span>, de la ligne 1 jusqu'à la dernière.. <br>
+						Les variables/constantes définient dans le "global scope" sont accèssibles depuis n'importe où dans le code.
+					</p>
+					<p class="paragraphe example" style="color: greenyellow;">
+						DEBUT// <br>
+						1// const userName = "Paul";<br>
+						2// let fruitFavorie = prompt("Quel est ton fruit préféré?");<br>
+						3// <br>
+						4// function info(){<br>
+						5//	&emsp;console.log(`${userName} aime
+						les ${fruitFavorie}`); <br>
+						6// &emsp;if (fruitFavorie === "pomme"){ <br>
+						7// &emsp;&emsp;console.log(`Mangez des ${fruitFavorie}s`);<br>
+						8// &emsp;} <br>
+						9// } <br><br>
+						<span style="color: white;">GLOBAL SCOPE = TOUTES LES LIGNES DE CODE DU FICHIER <br><br></span> 
+						FIN//
+					</p>
+					<p class="paragraphe explication">
+						<u>FUNCTION SCOPE:</u>
+					</p>
+					<p class="paragraphe explication">
+						Le scope de la fonction représente l'ensemble des <span>lignes de code qui compose une fonction</span> . <br>
+						Tout ce qui se trouve en dehors	n'est pas pris en compte. Le scope se limite à la fonction. <br>
+						Les variables/constantes définient dans le "function scope" ne
+						sont accèssibles que dans la fonction en question et nulle part ailleurs.
+					</p>
+					<p class="paragraphe example">
+						<span>DEBUT// <br>
+						1// <br>
+						2// <br></span> 
+						<span style="color: greenyellow;">3// function store(){<br>
+						4// &emsp;let food = prompt("Quel est le fruit choisi?");<br>
+						5// &emsp;let fruits = 50;<br>
+						6// &emsp;if (food === "banane"){ <br>
+						7//	&emsp;&emsp;console.log(`vous avez ${fruits} bananes`); <br>
+						8// &emsp;} <br>
+						9// } <br><br></span>
+						FUNCTION SCOPE = TOUTES LES LIGNES DE CODE DE LA FONCTION<br><br>
+						<span>FIN//</span> 
+					</p>
+					<p class="paragraphe explication">
+						<u>BLOCK SCOPE:</u>
+					</p>
+					<p class="paragraphe explication">
+						Le scope de block représente l'ensemble des
+						<span>lignes de code se trouvant dans une condition ou une boucle</span>
+						qui se trouveraient elles même dans une fonction. <br> Tout ce qui se trouve en dehors n'est pas pris en compte. Le scope se limite à la boucle ou la condition. <br>
+						Les variables/constantes définient dans le "block scope" utilisable que dans ce block scope et nulle part ailleurs. <br>
+					</p>
+					<p class="paragraphe example">
+						<span>DEBUT// <br>
+						1// <br>
+						2// <br>
+						3// function store(){<br>
+						4// &emsp;let food = prompt("Quel est le fruit choisi?");<br></span> 
+						
+						<span style="color: greenyellow;">5// &emsp;if (food === "banane"){ <br>
+						6// &emsp;&emsp;let fruits = 50;<br>
+						7//	&emsp;&emsp;console.log(`vous avez ${fruits} bananes`); <br>
+						8// &emsp;} <br></span>
+						<span> 9// } <br><br></span>
+						BLOCK SCOPE = TOUTES LES LIGNES DE CODE DU BLOCK "CONDITION" OU "BOUCLE"<br><br>
+						<span>FIN//</span> 
+					</p>
+				</li>
+
+				<li class="article">
 					<p class="paragraphe example" style="color:green">La suite arrive bientôt, en cours
 						d'intégration
 					</p>
 				</li>
-				<li class="article"></li>
-				<li class="article"></li>
 				<li class="article"></li>
 			</ul>
 		</section>
