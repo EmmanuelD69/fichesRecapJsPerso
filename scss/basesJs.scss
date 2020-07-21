@@ -1,0 +1,44 @@
+@import "./global";
+@import "./variables";
+@import "./mixin";
+@import "./body";
+@import "./header";
+@import "./footer";
+
+main {
+  min-height: 80vh;
+  width: 90%;
+  background-color: rgb(204, 203, 203);
+  font-size: $size3;
+  h2 {
+    @include flex(column, center, center);
+    height: 10vh;
+  }
+
+  li {
+    margin: 5rem;
+    @include flex(column, center, center);
+    flex: 1;
+    h2 {
+      text-decoration: underline;
+      width: 100%;
+      text-align: center;
+    }
+    .paragraphe {
+      margin: 0.5rem 1rem 1rem;
+      padding: 1rem;
+      text-align: center;
+    }
+    .example {
+      padding: 2rem;
+      color: $textColor2;
+      background-color: $bgColor1;
+      display: inline-block;
+      border-radius: 1rem;
+      text-align: left;
+    }
+    span {
+      color: $textColor3;
+    }
+  }
+}
