@@ -91,8 +91,8 @@
 							"faiblesse", sa valeur peut être accidentellement modifié si l'on
 							ne fait pas attention. <br />
 							<u
-								>C'est pourquoi l'usage actuel serait de privilégier "let"
-								plutot que "var".</u
+								>C'est pourquoi l'usage actuel est de privilégier "let" plutot
+								que "var".</u
 							>
 						</p>
 						<p class="paragraphe example">
@@ -123,74 +123,6 @@
 						</p>
 						<p class="paragraphe example">
 							const your_videos = 30;
-						</p>
-					</li>
-					<li class="article">
-						<h2 class="titre-article">OPERATEURS DE BASE EN JS</h2>
-						<p class="paragraphe explication">
-							soit 3 variables: <br />
-							let a = 10; (est définie) <br />
-							let b = 4; (est définie)<br />
-							let c; (est indéfinie / undefined)<br />
-						</p>
-						<p class="paragraphe explication">ADDITION (<span>+</span>)</p>
-						<p class="paragraphe example">let c = a + b;</p>
-						<p class="paragraphe explication">SOUSTRACTION (<span>-</span>)</p>
-						<p class="paragraphe example">let c = a - b;</p>
-						<p class="paragraphe explication">
-							MULTIPLICATION (<span>*</span>)
-						</p>
-						<p class="paragraphe example">let c = a * b;</p>
-						<p class="paragraphe explication">DIVISION (<span>/</span>)</p>
-						<p class="paragraphe example">let c = a / b;</p>
-						<p class="paragraphe explication">
-							MODULO (<span>%</span>)<br />
-							(c'est le chiffre restant, lors d'une division)
-						</p>
-						<p class="paragraphe example">
-							let c = a % b; <br />
-							let c = 10 % 4; <br />
-							let c = 2;
-						</p>
-						<p class="paragraphe explication">
-							PUISSANCE (<span>**</span>)<br />
-							(Le nombre de fois que l'on mutliplie un nombre par sa valeur)
-						</p>
-						<p class="paragraphe example">
-							let c = a ** b; <br />
-							let c = 10 ** 4; <br />
-							let c = 10 * 10 * 10 * 10; <br />
-							let c = 10000;
-						</p>
-						<p class="paragraphe explication">
-							AJOUTE 1 (<span>++</span>)<br />
-							(ajoute 1 à la valeur de la variable)
-						</p>
-						<p class="paragraphe example">
-							let c = 10; <br />
-							c++; <br />
-							signifie: c = c+1; <br />
-							console.log(c); affichera 11
-						</p>
-						<p class="paragraphe explication">
-							SOUSTRAIT 1 (<span>--</span>)<br />
-							(soustrait 1 à la valeur de la variable)
-						</p>
-						<p class="paragraphe example">
-							let c = 10; <br />
-							c--; <br />
-							signifie: c = c-1; <br />
-							console.log(c); affichera 9
-						</p>
-						<p class="paragraphe explication">
-							AJOUTE UN NOMBRE (<span>+=</span>)<br />
-							(ajoute un nombre de notre choix à la valeur de la variable)
-						</p>
-						<p class="paragraphe example">
-							let c = 10; <br />
-							c += 20; <br />
-							signifie: c = c + 20; <br />
-							console.log(c); affichera 30
 						</p>
 					</li>
 					<li class="article">
@@ -277,6 +209,74 @@
 							>
 							<br />
 							J'expliquerai plus en détail ce cas de figure plus loin
+						</p>
+					</li>
+					<li class="article">
+						<h2 class="titre-article">OPERATEURS DE BASE EN JS</h2>
+						<p class="paragraphe explication">
+							soit 3 variables: <br />
+							let a = 10; (est définie) <br />
+							let b = 4; (est définie)<br />
+							let c; (est indéfinie / undefined)<br />
+						</p>
+						<p class="paragraphe explication">ADDITION (<span>+</span>)</p>
+						<p class="paragraphe example">let c = a + b;</p>
+						<p class="paragraphe explication">SOUSTRACTION (<span>-</span>)</p>
+						<p class="paragraphe example">let c = a - b;</p>
+						<p class="paragraphe explication">
+							MULTIPLICATION (<span>*</span>)
+						</p>
+						<p class="paragraphe example">let c = a * b;</p>
+						<p class="paragraphe explication">DIVISION (<span>/</span>)</p>
+						<p class="paragraphe example">let c = a / b;</p>
+						<p class="paragraphe explication">
+							MODULO (<span>%</span>)<br />
+							(c'est le chiffre restant, lors d'une division)
+						</p>
+						<p class="paragraphe example">
+							let c = a % b; <br />
+							let c = 10 % 4; <br />
+							let c = 2;
+						</p>
+						<p class="paragraphe explication">
+							PUISSANCE (<span>**</span>)<br />
+							(Le nombre de fois que l'on mutliplie un nombre par sa valeur)
+						</p>
+						<p class="paragraphe example">
+							let c = a ** b; <br />
+							let c = 10 ** 4; <br />
+							let c = 10 * 10 * 10 * 10; <br />
+							let c = 10000;
+						</p>
+						<p class="paragraphe explication">
+							AJOUTE 1 (<span>++</span>)<br />
+							(ajoute 1 à la valeur de la variable)
+						</p>
+						<p class="paragraphe example">
+							let c = 10; <br />
+							c++; <br />
+							signifie: c = c+1; <br />
+							console.log(c); affichera 11
+						</p>
+						<p class="paragraphe explication">
+							SOUSTRAIT 1 (<span>--</span>)<br />
+							(soustrait 1 à la valeur de la variable)
+						</p>
+						<p class="paragraphe example">
+							let c = 10; <br />
+							c--; <br />
+							signifie: c = c-1; <br />
+							console.log(c); affichera 9
+						</p>
+						<p class="paragraphe explication">
+							AJOUTE UN NOMBRE (<span>+=</span>)<br />
+							(ajoute un nombre de notre choix à la valeur de la variable)
+						</p>
+						<p class="paragraphe example">
+							let c = 10; <br />
+							c += 20; <br />
+							signifie: c = c + 20; <br />
+							console.log(c); affichera 30
 						</p>
 					</li>
 					<li class="article">
