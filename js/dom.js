@@ -1,7 +1,9 @@
 /*** DOM / DOCUMENT OBJET MODEL ***
- c'est une representation de notre page au travers d'une cascade d'objets avec lesquels on peut intéragir via Js.
- On peut imaginer cette cascade comme un arbre dont la racine est l'object "window".
- Pour acceder à l'objet contenant notre page, il faut taper dans la console "window.document" ou directement "document".
+
+On peut schématiser le DOM comme un arbre généalogique que l'on appel l'objet "window".
+Cet objet contient un ensemble de paramètres représentant l'ensemble des éléments contenus dans une page web
+et dont l'objet "document" est le point d'origine/la racine.
+Pour y acceder il suffit de taper dans la console "window.document" ou directement "document".
 */
 
 /*** SELECTING ELEMENTS IN THE DOM ***
@@ -120,23 +122,23 @@
  !!! NodeList étant "STATIC", on contourne ce problème en appliquant à la NodeList, la méthode (.children) qui nous renverra alors une HTMLCollection mise à jour. !!!
 */
 
-const headers = document.getElementsByTagName("h2");
-const headers2 = document.querySelectorAll("h2");
-const list = document.getElementsByClassName("paragraphe");
-const list2 = document.querySelector(".paragraphe");
-const list3 = document.querySelectorAll(".paragraphe");
-const section = document.getElementById("liste");
-const section1 = document.querySelector("#liste");
+const headers = document.getElementsByTagName('h2');
+const headers2 = document.querySelectorAll('h2');
+const list = document.getElementsByClassName('paragraphe');
+const list2 = document.querySelector('.paragraphe');
+const list3 = document.querySelectorAll('.paragraphe');
+const section = document.getElementById('liste');
+const section1 = document.querySelector('#liste');
 
-const listPage = document.querySelector("#liste-p");
+const listPage = document.querySelector('#liste-p');
 const articles = listPage.children;
 
-const newArticle = document.createElement("li");
-newArticle.classList.add("article");
+const newArticle = document.createElement('li');
+newArticle.classList.add('article');
 newArticle.innerText = "Cet article viens juste d'être ajouté.";
 listPage.appendChild(newArticle);
 
-const articleCount = document.querySelector(".list-paragraph-count");
+const articleCount = document.querySelector('.list-paragraph-count');
 articleCount.innerText = articles.length;
 console.log(articles);
 
@@ -393,48 +395,48 @@ console.log(articles);
  */
 
 /* DECLARATION DES CONSTANTES */
-const button = document.querySelector("#submit");
-const listeArticles = document.querySelector("#liste-p");
+const button = document.querySelector('#submit');
+const listeArticles = document.querySelector('#liste-p');
 const articles = listeArticles.children;
-const articlesCount = document.querySelector(".list-paragraph-count b");
-const title = document.querySelector(".list-paragraph-count");
-const nameInput = document.querySelector(".name-input");
+const articlesCount = document.querySelector('.list-paragraph-count b');
+const title = document.querySelector('.list-paragraph-count');
+const nameInput = document.querySelector('.name-input');
 articlesCount.innerText = articles.length;
 
 /* AJOUT D'UN ARTICLE */
-button.addEventListener("click", function (e) {
-  e.preventDefault();
-  const newArticle = document.createElement("li");
-  newArticle.classList.add("article");
-  newArticle.innerText = nameInput.value;
-  listeArticles.appendChild(newArticle);
-  articlesCount.innerText = articles.length;
-  nameInput.value = "";
-  newArticle.addEventListener("click", deleteArticle);
-  console.log(nameInput);
+button.addEventListener('click', function (e) {
+	e.preventDefault();
+	const newArticle = document.createElement('li');
+	newArticle.classList.add('article');
+	newArticle.innerText = nameInput.value;
+	listeArticles.appendChild(newArticle);
+	articlesCount.innerText = articles.length;
+	nameInput.value = '';
+	newArticle.addEventListener('click', deleteArticle);
+	console.log(nameInput);
 });
 
 for (article of articles) {
-  article.addEventListener("click", deleteArticle);
-  console.log("ajout event");
+	article.addEventListener('click', deleteArticle);
+	console.log('ajout event');
 }
 
 function deleteArticle(click) {
-  click.stopPropagation();
-  click.target.remove();
+	click.stopPropagation();
+	click.target.remove();
 }
 
 /* AJOUT/SUPPRESSION D'UNE CLASSE SUR UN ELEMENT AVEC UN CLICK */
-button.addEventListener("click", function () {
-  title.classList.toggle("nouvelArticle");
+button.addEventListener('click', function () {
+	title.classList.toggle('nouvelArticle');
 });
 
 /* AJOUT/SUPPRESSION D'saUNE CLASSE SUR UN ELEMENT AVEC UNE TOUCHE CLAVIER */
-button.addEventListener("keydown", function (e) {
-  console.log(e);
-  if (e.keyCode === 65) {
-    title.classList.toggle("nouvelArticle");
-  }
+button.addEventListener('keydown', function (e) {
+	console.log(e);
+	if (e.keyCode === 65) {
+		title.classList.toggle('nouvelArticle');
+	}
 });
 
 /*** LE WEB STORAGE OU DOM STORAGE ***
