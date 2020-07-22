@@ -57,17 +57,23 @@
 						</p>
 						<p class="paragraphe explication">
 							LA CONSTANTE (CONST) <br />
+							Permet de déclarer une variable qui doit avoir une valeur initiale
+							et ne peut pas être réassignée... <br />
 							<span
-								>(sa valeur doit être définie et reste la même, on ne peux pas
-								la changer sauf cas particulier)</span
-							>
+								>Cela ne veut pas dire qu'une variable déclarée avec const est
+								une constante.</span
+							><br />
+							Par exemple, si la variable contient un objet, on peut modifier
+							les propriétés de cet objet.
 						</p>
 						<p class="paragraphe example">
 							Exemple: <br />
-							const nom = "emmanuel";
+							const idUser = "EmmanuelDev";
 						</p>
 						<p class="paragraphe explication">
 							LA VARIABLE (LET) <br />
+							Permet de déclarer une variable qui peut ne pas avoir de valeur
+							initiale et qui peut être réassignée. <br />
 							<span
 								>(sa valeur peut changer, on n'est pas obligé de la définir dès
 								le départ.)</span
@@ -81,25 +87,92 @@
 						</p>
 						<p class="paragraphe explication">
 							LA VARIABLE (VAR) <br />
-
+							Elle a été utilisé depuis l'origine de Javascript, mais elle a une
+							"faiblesse", <br />
+							sa valeur peut être accidentellement modifié si l'on ne fait pas
+							attention. (cf.notions de scope) <br />
+							<u
+								>C'est pourquoi la bonne pratique est d'utiliser "let" plutot
+								que "var".</u
+							>
+							<br />
 							<span
 								>(sa valeur peut changer, on n'est pas obligé de la définir dès
 								le départ.)</span
 							>
 							<br />
-							Elle a été utilisé depuis l'origine de Javascript, mais elle a une
-							"faiblesse", sa valeur peut être accidentellement modifié si l'on
-							ne fait pas attention. <br />
-							<u
-								>C'est pourquoi l'usage actuel est de privilégier "let" plutot
-								que "var".</u
-							>
 						</p>
 						<p class="paragraphe example">
 							Exemple: <br />
 							var age = 35; <br />
 							var country = "france"; <br />
 							var ville;
+						</p>
+					</li>
+					<li class="article">
+						<h2 class="titre-article">CONST vs LET</h2>
+						<p class="paragraphe explication">Prenons deux examples:</p>
+						<p class="paragraphe example">
+							Définissons une constante "bank", sa valeur est un nombre qui est
+							une donnée primitive. <br /><br />
+							const bank = 250; <br />
+							<br />
+							essayons de changer sa valeur! <br />
+							bank = 100; <br /><br />
+							cela ne fonctionnera pas et nous aurons en console un message
+							d'erreur: <br />
+							"Uncaught TypeError: Assignment to constant variable."
+							<br /><br />
+							<span
+								>Il n'est pas possible de modifier une valeur primitive
+								enregistrée dans une variable CONST.</span
+							>
+							<br /><br />
+							Avec une variable LET on peut changer cette valeur sans
+							difficultées, <br />
+							c'est pourquoi
+							<span style="color: greenyellow;"
+								><u
+									>on préférera l'utilisation de LET pour les données
+									primitives</u
+								>.</span
+							>
+						</p>
+						<p class="paragraphe example">
+							Meme principe que pour l'example1 mais cette fois avec une
+							variable qui contiendra une donnée de type référence. <br /><br />
+							on définit une constante contenant un tableau avec des
+							noms(strings).
+							<br />
+							const names = ["Eric", "Sophie", "Maria"]; <br /><br />
+							on définit une nouvelle constante contenant un tableau qui va
+							avoir pour "référence" le tableau "names". <br />
+							En gros, on copie le tableau names dans newNames <br />
+							const newNames = names; <br /><br />
+							on rajoute un nom dans le tableau newNames. <br />
+							newNames.push("Louis"); <br /><br />
+							on affiche le contenu du tableau "newNames"<br />
+							console.log(newNames); <br /><br />
+							on affiche le contenu du tableau "names"<br />
+							console.log(names); <br /><br />
+							Les deux console.log vont nous donner le même résultat, à savoir:
+							<br />
+							Array(4) [ "Eric", "Sophie", "Maria", "Louis" ] <br /><br />
+							Le tableau d'origine a été, lui aussi, modifié alors que nous
+							voulions ajouter un nom que dans le tableau "newNames", <br />
+							pourquoi? <br /><br />
+							Parce que le tableau "newNames" ne fait que faire
+							<u>référence</u> au tableau "names", <br />
+							ce n'est pas un nouveau tableau avec un contenu vierge (const
+							newNames = [];) <br />
+							il se réfère à "names" et fait office de "relais/rooter" avec le
+							tableau d'origine. <br /><br />
+							<span style="color: greenyellow;"
+								><u
+									>on préférera l'utilisation de CONST pour les données
+									références</u
+								>.</span
+							>
 						</p>
 					</li>
 					<li class="article">
@@ -1185,6 +1258,6 @@
 		<footer>
 			<h3>&copy;EmmanuelDev 2020</h3>
 		</footer>
-		<script src="./js/test.js"></script>
+		<script src="../js/test.js"></script>
 	</body>
 </html>

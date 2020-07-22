@@ -22,28 +22,28 @@
 */
 
 /*** USAGE DE CONST vs LET ***
- Example1: 
- on a défini pour la constante "bank", une valeur qui est un nombre, c'est une donnée primitive. 
- const bank = 250; 
- bank = 100; 
- si on essai de changer la valeur de la constante "bank", nous allons avoir un message d'erreur car on ne peux pas modifier avec const un donnée primitive, ici notre donnée est de type "number".
- 
- !!!Avec "let" on peut changer cette valeur, et c'est pourquoi on préférera l'utilisation de let pour les données primitives au lieu d'une constante.!!!
+Example1: 
+on a défini pour la constante "bank", une valeur qui est un nombre, c'est une donnée primitive. 
+const bank = 250; 
+bank = 100; 
+si on essai de changer la valeur de la constante "bank", nous allons avoir un message d'erreur car on ne peux pas modifier avec const un donnée primitive, ici notre donnée est de type "number".
 
- Example2:
- Meme principe que pour l'example1 mais cette fois avec une variable qui contiendra une donnée de type référence.
- const names = ["Emmanuel", "Georgia", "Maria"]; on définit une constante contenant un tableau avec des noms.
- const newNames = names; on définit une nouvelle constante contenant un tableau qui va avoir pour "référence" le tableau "names".
- newNames.push("Nikos"); on rajoute un nom dans le tableau newNames.
- console.log(newNames); on affiche le contenu du tableau "newNames"
- console.log(names); on affiche le contenu du tableau "names"
+!!!Avec "let" on peut changer cette valeur, et c'est pourquoi on préférera l'utilisation de let pour les données primitives au lieu d'une constante.!!!
 
- Les deux console.log vont nous donner le même résultat, à savoir:
- Array(4) [ "Emmanuel", "Georgia", "Maria", "Nikos" ]
- En effet le tableau d'origine a été, lui aussi, modifié alors qu'on ne penser ajouter un nom que dans le tableau "newName", pourquoi?
- Parce que le tableau "newNames" ne fait que faire référence au tableau "names", ce n'est pas un nouveau tableau avec un contenu vierge, il récupère le contenu de "names" et fais office de "relais/rooter" entre le développeur et la constante contenant le tableau d'origine.
+Example2:
+Meme principe que pour l'example1 mais cette fois avec une variable qui contiendra une donnée de type référence.
+const names = ["Emmanuel", "Georgia", "Maria"]; on définit une constante contenant un tableau avec des noms.
+const newNames = names; on définit une nouvelle constante contenant un tableau qui va avoir pour "référence" le tableau "names".
+newNames.push("Nikos"); on rajoute un nom dans le tableau newNames.
+console.log(newNames); on affiche le contenu du tableau "newNames"
+console.log(names); on affiche le contenu du tableau "names"
 
- On priviligiera "const" pour les data de type références.
+Les deux console.log vont nous donner le même résultat, à savoir:
+Array(4) [ "Emmanuel", "Georgia", "Maria", "Nikos" ]
+En effet le tableau d'origine a été, lui aussi, modifié alors qu'on ne penser ajouter un nom que dans le tableau "newName", pourquoi?
+Parce que le tableau "newNames" ne fait que faire référence au tableau "names", ce n'est pas un nouveau tableau avec un contenu vierge, il récupère le contenu de "names" et fais office de "relais/rooter" entre le développeur et la constante contenant le tableau d'origine.
+
+On priviligiera "const" pour les data de type références.
 */
 const names = ['Emmanuel', 'Georgia', 'Maria'];
 
