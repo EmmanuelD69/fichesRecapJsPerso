@@ -1,33 +1,33 @@
 main {
-  max-height: 80vh;
-  width: 90%;
-  background-color: whitesmoke;
-  font-size: $size3;
+	max-height: 80vh;
+	width: 90%;
+	background-color: whitesmoke;
+	font-size: $size3;
 
-  .menu {
-    height: 80vh;
-    display: flex;
-    flex-wrap: wrap;
-    .section {
-      background: rgb(51, 51, 51);
-      color: whitesmoke;
-      height: 50%;
-      width: 50%;
-      font-size: $size1;
-      border: 0.2rem solid whitesmoke;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: all 0.5s ease-in-out;
-      &:hover {
-        background-color: rgb(221, 65, 65);
-        // color: black;
-        border: 0.2rem solid black;
-      }
-    }
-    .bases:hover {
-      background-color: rgb(115, 133, 39);
-      border: 0.2rem solid black;
-    }
-  }
+	.menu {
+		height: 80vh;
+		display: flex;
+		flex-wrap: wrap;
+		.section {
+			background: rgb(51, 51, 51);
+			color: whitesmoke;
+			height: 50%;
+			width: 50%;
+			font-size: $size1;
+			border: 0.2rem solid whitesmoke;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transition: all 0.5s ease-in-out;
+			&:hover {
+				background-color: whitesmoke;
+				color: black;
+				border: 0.2rem solid black;
+			}
+		}
+		/* 		.bases:hover {
+			background-color: rgb(115, 133, 39);
+			border: 0.2rem solid black;
+		} */
+	}
 }

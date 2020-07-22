@@ -2,8 +2,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -19,19 +18,10 @@ ul {
 /*** BACKGROUND COLORS ***/
 /*** TEXT COLORS ***/
 body {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #e9b526;
 }
 
@@ -42,19 +32,10 @@ header {
   font-family: "Quicksand", sans-serif;
   font-size: 2rem;
   background-color: #e9b526;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
@@ -66,11 +47,12 @@ main {
 
 main .menu {
   height: 80vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
+  /* 		.bases:hover {
+			background-color: rgb(115, 133, 39);
+			border: 0.2rem solid black;
+		} */
 }
 
 main .menu .section {
@@ -80,26 +62,15 @@ main .menu .section {
   width: 50%;
   font-size: 4rem;
   border: 0.2rem solid whitesmoke;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transition: all 0.5s ease-in-out;
+  justify-content: center;
+  align-items: center;
   transition: all 0.5s ease-in-out;
 }
 
 main .menu .section:hover {
-  background-color: #dd4141;
-  border: 0.2rem solid black;
-}
-
-main .menu .bases:hover {
-  background-color: #738527;
+  background-color: whitesmoke;
+  color: black;
   border: 0.2rem solid black;
 }
 
@@ -110,18 +81,8 @@ footer {
   text-align: center;
   background-color: #e9b526;
   font-size: 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-/*# sourceMappingURL=style.css.map */
