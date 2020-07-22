@@ -1,9 +1,9 @@
 /*** DOM / DOCUMENT OBJET MODEL ***
 
 On peut schématiser le DOM comme un arbre généalogique que l'on appel l'objet "window".
-Cet objet contient un ensemble de paramètres représentant l'ensemble des éléments contenus dans une page web
-et dont l'objet "document" est le point d'origine/la racine.
-Pour y acceder il suffit de taper dans la console "window.document" ou directement "document".
+Cet objet contient un ensemble de paramètres représentant les éléments contenus dans une page web
+et dont l'objet "document" est le point d'origine / la racine.
+Pour y accéder il suffit de taper dans la console "window.document" ou "document".
 */
 
 /*** SELECTING ELEMENTS IN THE DOM ***
