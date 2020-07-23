@@ -288,7 +288,42 @@
 							function() est notre fonction callback
 						</p>
 					</li>
-					<li class="article"></li>
+					<li class="article">
+						<h2>"MAP" Qu'est-ce que c'est??</h2>
+						<p class="paragraphe explication">
+							une méthode qui appliquée à une variable contenant un tableau,
+							<br />
+							permet de cloner le contenu de la variable et d'y apporter
+							d'éventuelles modifications <br />
+							sans pour autant modifier le tableau d'origine. <br />
+							<br />
+							Son fonctionnement est similaire à FOR EACH, On boucle sur un
+							tableau.
+						</p>
+						<p class="paragraphe example">
+							Soit une variable "mixes" contenant un tableau: <br />
+							const mixes = ["Techno", "House", "Disco", "Funk"];<br /><br />
+							const newMix = mixes.map(function(mix){<br />
+							&emsp;return mix.toUpperCase();<br />
+							});<br /><br />
+							console.log(mixes);<br />
+							Array(4) [ "Techno", "House", "Disco", "Funk" ] <br /><br />
+							console.log(newMixes);<br />
+							Array(4) [ "TECHNO", "HOUSE", "DISCO", "FUNK" ] <br /><br />
+							newMix.push("Deep");<br />
+							console.log(newMix);<br />
+							Array(5) [ "TECHNO", "HOUSE", "DISCO", "FUNK", "Deep" ]
+							<br /><br />
+							console.log(mixes);<br />
+							Array(4) [ "Techno", "House", "Disco", "Funk" ] <br /><br />
+							<span
+								>MAP NOUS PERMET DE RETOURNER UNE VALEUR ET DE LA SAUVER <br />
+								DANS UN NOUVEAU TABLEAU SANS POUR AUTANT CHANGER LES VALEURS
+								<br />
+								DU TABLEAU REFERENT (TABLEAU D'ORIGINE).</span
+							>
+						</p>
+					</li>
 					<li class="article"></li>
 					<li class="article"></li>
 					<li class="article"></li>

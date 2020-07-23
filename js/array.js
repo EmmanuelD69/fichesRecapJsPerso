@@ -123,7 +123,7 @@ repeater(sayHello);
  Example:
  const mixes = ["Techno", "House", "Disco", "Funk"];
  const newMix = mixes.map(funtion(mix){ map va agir comme foreach, en survolant chaque éléments du tableau les uns après les autres
-     return video.toUpperCase(); on va renvoyer(return) la valeur de l'élément survolé en la passant en Majuscule (toUpperCase). Ce renvoi va remplacer / écraser la valeur actuelle sans pour autant modifier la valeur dans le tableau de référence.
+    return mix.toUpperCase(); on va renvoyer(return) la valeur de l'élément survolé en la passant en Majuscule (toUpperCase). Ce renvoi va remplacer / écraser la valeur actuelle sans pour autant modifier la valeur dans le tableau de référence.
  });
  console.log(mixes);
  Array(4) [ "Techno", "House", "Disco", "Funk" ]

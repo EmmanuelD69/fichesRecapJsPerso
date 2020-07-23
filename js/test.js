@@ -171,3 +171,14 @@ function sayHello() {
 }
 
 repeater(sayHello);
+
+console.log(names);
+const newNames = names.map(function (name) {
+	return name.toUpperCase();
+});
+console.log(`contenu du tableau d'origine: ${names}`);
+console.log(`contenu du tableau après map: ${newNames}`);
+
+newNames.push('Didier');
+console.log(`contenu du tableau d'origine: ${names}`);
+console.log(`contenu du tableau après map: ${newNames}`);
