@@ -99,7 +99,7 @@
 					</li>
 					<li class="article">
 						<h2 class="titre-article">
-							FONCTIONS/METHODES FREQUEMMENT UTILISEES POUR LES TABLEAUX
+							METHODES FREQUEMMENT UTILISEES AVEC LES TABLEAUX
 						</h2>
 						<p class="paragraphe explication">
 							les méthodes sont des fonctions, et peuvent donc recevoir des
@@ -113,8 +113,8 @@
 							suivi de la méthode que l'on souhaite appliquer à notre tableau.
 						</p>
 						<p class="paragraphe explication">
-							-La méthode <span>"push()"</span> permet d'ajouter un ou plusieurs
-							items à la fin d'un tableau, <br />
+							<span>"push()"</span> permet d'ajouter un ou plusieurs items à la
+							fin d'un tableau, <br />
 							"push()" peut recevoir un nombre illimité de paramètres, <br />
 							et chaque paramètre représente un item à ajouter à la fin du
 							tableau.
@@ -128,7 +128,7 @@
 							Ajoute « Pauline » et « Guillaume » à la fin du tableau
 						</p>
 						<p class="paragraphe explication">
-							-La méthode <span>"unshift()"</span> fonctionne comme "push()",
+							<span>"unshift()"</span> fonctionne comme "push()",
 							<br />
 							excepté que les items sont ajoutés au début du tableau. <br />
 							Cette méthode n'est pas très fréquente mais peut être utile.
@@ -142,8 +142,8 @@
 							Ajoute « Pauline » et « Guillaume » au début du tableau
 						</p>
 						<p class="paragraphe explication">
-							-Les méthodes <span>"shift()" et "pop()"</span> retirent
-							respectivement le premier et le dernier élément du tableau.
+							<span>"shift()" et "pop()"</span> retirent respectivement le
+							premier et le dernier élément du tableau.
 						</p>
 						<p class="paragraphe example">
 							Soit le tableau: <br />
@@ -156,7 +156,7 @@
 							alert(listUsers); // Affichera « Laurence, Ludovic, Pauline »
 						</p>
 						<p class="paragraphe explication">
-							- <span>"split()"</span>: appliqué à une variable contenant une
+							<span>"split()"</span>: appliqué à une variable contenant une
 							chaine de caractères, <br />
 							cette méthode permet de découper cette string en un tableau de
 							valeurs.
@@ -184,7 +184,7 @@
 							/* affichage en console: ["Pauline", "Guillaume", "Clarisse"] */
 						</p>
 						<p class="paragraphe explication">
-							- <span>"join()"</span>: appliqué à une variable contenant un
+							<span>"join()"</span>: appliqué à une variable contenant un
 							tableau d'items,
 							<br />
 							cette méthode va transformer le contenu de la variable en une
@@ -207,8 +207,8 @@
 							/* affichage en console: Pauline Guillaume Clarisse */
 						</p>
 						<p class="paragraphe explication">
-							-La méthode <span>"indexOf()"</span> permet d'afficher l'indice de
-							l'item que l'on a passé en paramètre.
+							<span>"indexOf()"</span> permet d'afficher l'indice de l'item que
+							l'on a passé en paramètre.
 						</p>
 						<p class="paragraphe example">
 							Example: <br /><br />
@@ -303,24 +303,57 @@
 						<p class="paragraphe example">
 							Soit une variable "mixes" contenant un tableau: <br />
 							const mixes = ["Techno", "House", "Disco", "Funk"];<br /><br />
-							const newMix = mixes.map(function(mix){<br />
+							<span style="color: greenyellow;"
+								>1- Création de la variable newMixes qui va cloner grâce à la
+								méthode
+								<br />
+								"map()" le tableau contenu dans la variable mixes. <br
+							/></span>
+							On décide d'appliquer à ce nouveau tableau, par l'intermédiaire
+							d'une fonction anonyme (callback), <br />
+							une modification des items en les passant en Majuscule
+							(toUpperCase). <br /><br />
+							const newMixes = mixes.map(function(mix){<br />
 							&emsp;return mix.toUpperCase();<br />
 							});<br /><br />
+							<span style="color: greenyellow;"
+								>2- Affichage du tableau contenu dans la variable
+								d'origine:</span
+							><br />
 							console.log(mixes);<br />
 							Array(4) [ "Techno", "House", "Disco", "Funk" ] <br /><br />
+							<span style="color: greenyellow;"
+								>3- Affichage du tableau contenu dans la nouvelle
+								variable:</span
+							><br />
 							console.log(newMixes);<br />
 							Array(4) [ "TECHNO", "HOUSE", "DISCO", "FUNK" ] <br /><br />
-							newMix.push("Deep");<br />
-							console.log(newMix);<br />
+							<span style="color: greenyellow;"
+								>4- On "push"/ajoute un nouvel item dans le tableau de la
+								nouvelle variable(newMixes):</span
+							><br />
+							newMixes.push("Deep");<br /><br />
+							<span style="color: greenyellow;"
+								>5- Affichage du tableau contenu dans la variable
+								newMixes:</span
+							><br />
+							console.log(newMixes);<br />
 							Array(5) [ "TECHNO", "HOUSE", "DISCO", "FUNK", "Deep" ]
 							<br /><br />
+							<span style="color: greenyellow;"
+								>6- Affichage du tableau contenu dans la variable
+								d'origine:</span
+							><br />
 							console.log(mixes);<br />
 							Array(4) [ "Techno", "House", "Disco", "Funk" ] <br /><br />
+							On constate que le tableau d'origine n'a pas changé tandis que le
+							nouveau à bien été modifié. <br /><br />
+							Conclusion: <br />
 							<span
-								>MAP NOUS PERMET DE RETOURNER UNE VALEUR ET DE LA SAUVER <br />
-								DANS UN NOUVEAU TABLEAU SANS POUR AUTANT CHANGER LES VALEURS
+								>MAP NOUS PERMET DE CLONER UNE VARIABLE CONTENANT UN TABLEAU ET
 								<br />
-								DU TABLEAU REFERENT (TABLEAU D'ORIGINE).</span
+								DE MODIFIER LE CONTENU DE LA NOUVELLE VARIABLE <br />
+								SANS POUR AUTANT CHANGER CELUI DE LA VARIABLE D'ORIGINE.</span
 							>
 						</p>
 					</li>

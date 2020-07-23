@@ -182,3 +182,8 @@ console.log(`contenu du tableau après map: ${newNames}`);
 newNames.push('Didier');
 console.log(`contenu du tableau d'origine: ${names}`);
 console.log(`contenu du tableau après map: ${newNames}`);
+const test1 = ['Emmanuel'];
+const test2 = test1.map(function (toto) {
+	return toto.toUpperCase();
+});
+console.log(test2);
