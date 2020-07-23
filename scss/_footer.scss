@@ -5,5 +5,9 @@ footer {
 	text-align: center;
 	background-color: $bgColor3;
 	font-size: $size3;
-	@include flex(column, center, center);
+	@include flex(row, space-around, center);
+	ul {
+		@include flex(row, space-around, center);
+		width: 30%;
+	}
 }
