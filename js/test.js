@@ -158,4 +158,16 @@ function detectClick(click) {
 } */
 
 const bank = 250;
-bank = 100;
+// bank = 100;
+
+function repeater(fn) {
+	fn();
+	fn();
+	fn();
+}
+
+function sayHello() {
+	console.log('Hello There!');
+}
+
+repeater(sayHello);

@@ -72,6 +72,30 @@
 							indice 2 = user <br />
 							indice 3 = max(20, 50) <br />
 						</p>
+						<p class="paragraphe explication">
+							Pour cibler un item, il suffit de nommer le tableau auquel il
+							appartient <br />
+							et de mettre à la suite, entre crochets, l'indice correspondant à
+							la position de l'item dans le tableau.
+						</p>
+						<p class="paragraphe example">
+							Soit un tableau d'utilisateurs: <br /><br />
+							const listUsers = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline',
+							'Guillaume']; <br />
+							console.log(listUsers[2]); <br /><br />
+							/* nous affichera Ludovic dans la console. */
+						</p>
+						<p class="paragraphe explication">
+							<span>"length"</span> est une propriété qui permet d'afficher le
+							nombre d'éléments que comporte un tableau.
+						</p>
+						<p class="paragraphe example">
+							Example: <br /><br />
+							const listUsers = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline',
+							'Guillaume']; <br />
+							console.log(listUsers.length); <br /><br />
+							/* nous affichera 5 dans la console. */
+						</p>
 					</li>
 					<li class="article">
 						<h2 class="titre-article">
@@ -89,8 +113,8 @@
 							suivi de la méthode que l'on souhaite appliquer à notre tableau.
 						</p>
 						<p class="paragraphe explication">
-							-La méthode "push()" permet d'ajouter un ou plusieurs items à la
-							fin d'un tableau, <br />
+							-La méthode <span>"push()"</span> permet d'ajouter un ou plusieurs
+							items à la fin d'un tableau, <br />
 							"push()" peut recevoir un nombre illimité de paramètres, <br />
 							et chaque paramètre représente un item à ajouter à la fin du
 							tableau.
@@ -104,7 +128,8 @@
 							Ajoute « Pauline » et « Guillaume » à la fin du tableau
 						</p>
 						<p class="paragraphe explication">
-							-La méthode "unshift()" fonctionne comme "push()", <br />
+							-La méthode <span>"unshift()"</span> fonctionne comme "push()",
+							<br />
 							excepté que les items sont ajoutés au début du tableau. <br />
 							Cette méthode n'est pas très fréquente mais peut être utile.
 						</p>
@@ -117,8 +142,8 @@
 							Ajoute « Pauline » et « Guillaume » au début du tableau
 						</p>
 						<p class="paragraphe explication">
-							-Les méthodes "shift()" et "pop()" retirent respectivement le
-							premier et le dernier élément du tableau.
+							-Les méthodes <span>"shift()" et "pop()"</span> retirent
+							respectivement le premier et le dernier élément du tableau.
 						</p>
 						<p class="paragraphe example">
 							Soit le tableau: <br />
@@ -131,8 +156,8 @@
 							alert(listUsers); // Affichera « Laurence, Ludovic, Pauline »
 						</p>
 						<p class="paragraphe explication">
-							-"split()": appliqué à une variable contenant une chaine de
-							caractères, <br />
+							- <span>"split()"</span>: appliqué à une variable contenant une
+							chaine de caractères, <br />
 							cette méthode permet de découper cette string en un tableau de
 							valeurs.
 						</p>
@@ -159,7 +184,8 @@
 							/* affichage en console: ["Pauline", "Guillaume", "Clarisse"] */
 						</p>
 						<p class="paragraphe explication">
-							-"join()": appliqué à une variable contenant un tableau d'items,
+							- <span>"join()"</span>: appliqué à une variable contenant un
+							tableau d'items,
 							<br />
 							cette méthode va transformer le contenu de la variable en une
 							chaine de charactères.
@@ -181,19 +207,8 @@
 							/* affichage en console: Pauline Guillaume Clarisse */
 						</p>
 						<p class="paragraphe explication">
-							-La méthode "length" permet d'afficher le nombre d'éléments que
-							comporte un tableau.
-						</p>
-						<p class="paragraphe example">
-							Example: <br /><br />
-							const listUsers = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline',
-							'Guillaume']; <br />
-							console.log(listUsers.length); <br /><br />
-							/* nous affichera 5 dans la console. */
-						</p>
-						<p class="paragraphe explication">
-							-La méthode "indexOf()" permet d'afficher l'indice de l'item que
-							l'on a passé en paramètre.
+							-La méthode <span>"indexOf()"</span> permet d'afficher l'indice de
+							l'item que l'on a passé en paramètre.
 						</p>
 						<p class="paragraphe example">
 							Example: <br /><br />
@@ -202,32 +217,65 @@
 							console.log(listUsers.indexOf('Laurence')); <br /><br />
 							/* nous affichera 1 dans la console. */
 						</p>
+					</li>
+					<li class="article">
+						<h2>HIGHER ORDER FUNCTION / FONCTION DE HAUT RANG</h2>
 						<p class="paragraphe explication">
-							-Et enfin pour cibler un item, il suffit de nommer le tableau
-							auquel il appartient <br />
-							et de mettre à la suite, entre crochets, l'indice correspondant à
-							la position de l'item dans le tableau.
+							Qu'est-ce que c'est??<br />
+							C'est une fonction qui utilise une autre fonction en
+							paramètres/argument.
 						</p>
 						<p class="paragraphe example">
-							Soit un tableau d'utilisateurs: <br /><br />
-							const listUsers = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline',
-							'Guillaume']; <br />
-							console.log(listUsers[2]); <br /><br />
-							/* nous affichera Ludovic dans la console. */
+							Example: <br />
+							Const mixes = ["Techno", "House", "Disco", "Funk"];<br /><br />
+							mixes.forEach(function(mix)){<br />
+							&emsp;console.log(mix);<br />
+							} <br /><br />
+							la fonction "forEach" utilise une fonction anonyme en
+							paramètre/argument. <br />
+							<span
+								>Une fonction anonyme est une fonction qui n'a pas de nom</span
+							>.
+						</p>
+						<p class="paragraphe explication">Autre example:</p>
+						<p class="paragraphe example">
+							on crée une fonction, de type "High order", que l'on nommera
+							"repeater". <br />
+							Elle prendra en paramètre une autre fonction. <br /><br />
+							1-Création de la fonction "repeater": <br />
+							funtion repeater(function) { <br />
+							&emsp;function();<br />
+							&emsp;function();<br />
+							&emsp;function();<br />
+							} <br /><br />
+							2-Création de la fonction "sayHello": <br />
+							function sayHello(){ <br />
+							&emsp;console.log("Hello There!");<br />
+							} <br /><br />
+							3-Appel de la fonction "repeater" en lui passant la fonction
+							"sayHello" en argument: <br />
+							repeater(sayHello); <br /><br />
+							Le résultat de la fonction repeater sera d'afficher <br />
+							trois fois "Hello There!" dans la console.
 						</p>
 					</li>
+					<li class="article"></li>
+					<li class="article"></li>
+					<li class="article"></li>
+					<li class="article"></li>
+					<li class="article"></li>
+					<li class="article"></li>
 					<li class="article">
 						<p class="paragraphe example" style="color: green;">
 							La suite arrive bientôt, en cours d'intégration.
 						</p>
 					</li>
-					<li class="article"></li>
 				</ul>
 			</section>
 		</main>
 		<footer>
 			<h3>&copy;EmmanuelDev 2020</h3>
 		</footer>
-		<script src="./js/test.js"></script>
+		<script src="../js/test.js"></script>
 	</body>
 </html>

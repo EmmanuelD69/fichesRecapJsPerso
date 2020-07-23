@@ -54,43 +54,43 @@ console.log(newNames);
 console.log(names);
 
 /*** HIGHER ORDER FUNCTION ***
- Qu'est-ce que c'est??
- C'est une fonction qui utilise une autre fonction en paramètres/argument.
- Example:
- Const mixes = ["Techno", "House", "Disco", "Funk"];
+Qu'est-ce que c'est??
+C'est une fonction qui utilise une autre fonction en paramètres/argument.
+Example:
+Const mixes = ["Techno", "House", "Disco", "Funk"];
 
- mixes.forEach(function(mix)){ la fonction "forEach" utilise une fonction anonyme en paramètre/argument.
-     console.log(mix);
- }
+mixes.forEach(function(mix)){ la fonction "forEach" utilise une fonction anonyme en paramètre/argument.
+console.log(mix);
+}
 
- Example2:
- funtion repeater(fn) { on crée la fonction, de type "High order", "repeater". elle prend en paramètre une autre fonction.
-     fn();
-     fn();
-     fn();
- }
+Example2:
+funtion repeater(fn) { on crée la fonction, de type "High order", "repeater". elle prend en paramètre une autre fonction.
+    fn();
+    fn();
+    fn();
+}
 
- function sayHello(){
-     console.log("Hello There!");
- }
+function sayHello(){
+    console.log("Hello There!");
+}
 
- repeater(sayHello);
+repeater(sayHello);
 */
 
 /*** CALLBACK FUNCTION ***
- Qu'est ce que c'est?
- C'est une fonction qui est utilisé à un moment précis, déterminé par une autre fonction (ex: high order function) ou par une action précise "ex: addEventListener".
- Example: (high order fonction)
- Const mixes = ["Techno", "House", "Disco", "Funk"];
+Qu'est ce que c'est?
+C'est une fonction qui est utilisé à un moment précis, déterminé par une autre fonction (ex: high order function) ou par une action précise "ex: addEventListener".
+Example: (high order fonction)
+Const mixes = ["Techno", "House", "Disco", "Funk"];
 
- mixes.forEach(function(mix)){ function (mix) est notre fonction callback
-     console.log(mix);
- }
+mixes.forEach(function(mix)){ function (mix) est notre fonction callback
+    console.log(mix);
+}
 
- Example2:
- button.addEventListener("click", function(){ function() est notre fonction callback
+Example2:
+button.addEventListener("click", function(){ function() est notre fonction callback
     console.log("Hello There!");
- });
+});
 */
 
 const mixes = [
