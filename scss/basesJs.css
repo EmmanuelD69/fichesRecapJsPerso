@@ -51,12 +51,16 @@ footer {
   align-items: center;
 }
 
+footer h4 {
+  flex: 1;
+}
+
 footer ul {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  width: 30%;
+  flex: 1;
 }
 
 main {

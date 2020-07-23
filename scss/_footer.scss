@@ -6,8 +6,11 @@ footer {
 	background-color: $bgColor3;
 	font-size: $size3;
 	@include flex(row, space-around, center);
+	h4 {
+		flex: 1;
+	}
 	ul {
 		@include flex(row, space-around, center);
-		width: 30%;
+		flex: 1;
 	}
 }
