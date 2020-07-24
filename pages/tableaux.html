@@ -378,16 +378,57 @@
 							On applique la méthode find() à la variable mixes dont la fonction
 							anonyme(callback) <br />
 							à pour rôle de renvoyer la valeur du premier élément/item qui
-							correspondra à la condition qu'on a fixé. <br />
+							correspondra à la condition qu'on a fixée. <br />
 							Dans le cas présent, le premier item qui inclut la chaine de
 							charactères "Disco". <br /><br />
 							console.log(searchMix); <br /><br />
 							La console va bien nous afficher le mot "Disco" car il existe bien
 							dans notre tableau. <br />
 							S'il n'avait pas existé, find() nous aurait renvoyé "undefined".
+							<br /><br />
+							<span
+								>FIND RENVOI UNIQUEMENT LE PREMIER ITEM CORRESPONDANT A
+								<br />
+								LA CONDITION, PUIS SORT DU TABLEAU.
+							</span>
 						</p>
 					</li>
-					<li class="article"></li>
+					<li class="article">
+						<h2>"FILTER" Qu'est-ce que c'est??</h2>
+						<p class="paragraphe explication">
+							C'est une méthode qui fonctionne exactement comme find() à la
+							différence que <br />
+							<span>filter() parcourt un tableau dans son intégralité </span>
+							<br />
+							et ne s'arrête pas à la première valeur trouvée correspondant à la
+							condition fixée.
+						</p>
+						<p class="paragraphe example">
+							Example: <br />
+							Soit une variable mixes contenant un tableau: <br />
+							const mixes = ["Techno", "House Music", "Disco House", "Funk"];
+							<br /><br />
+							const searchMix = mixes.filter(function (mix) { <br />
+							return mix.includes("House"); <br />
+							}); <br /><br />
+							On applique la méthode filter() à la variable mixes dont la
+							fonction anonyme(callback) <br />
+							à pour rôle de renvoyer la valeur de chaque item qui correspondra
+							à la condition qu'on lui a fixée. <br />
+							Dans le cas présent, tous les items qui incluentt la chaine de
+							charactères "House". <br /><br />
+							console.log(searchMix); <br /><br />
+							La console va nous afficher les items "House Music" et "Disco
+							House" car ils contiennent bien la string "House". <br />
+							S'il n'avait pas existé d'item contenant la string "House" nous
+							aurions eu en retour une valeur "undefined".
+							<br /><br />
+							<span
+								>FILTER PARCOURT L'ENSEMBLE D'UN TABLEAU ET AFFICHE <br />
+								TOUS LES ELEMENTS/ITEMS CORRESPONDANT A LA CONDITION.
+							</span>
+						</p>
+					</li>
 					<li class="article"></li>
 					<li class="article"></li>
 					<li class="article">
