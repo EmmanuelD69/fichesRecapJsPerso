@@ -1,4 +1,4 @@
-const names = ['emmanuel', 'georgia', 'maria', 'nikos', 'roulis'];
+const names = ['emmanuel', 'georgia', 'georgia2', 'nikos', 'roulis'];
 const user = {
 	name: 'Emmanuel',
 	age: 36,
@@ -187,3 +187,8 @@ const test2 = test1.map(function (toto) {
 	return toto.toUpperCase();
 });
 console.log(test2);
+
+const searchName = names.find(function (name) {
+	return name.includes('geor');
+});
+console.log(searchName);

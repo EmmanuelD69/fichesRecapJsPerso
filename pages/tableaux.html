@@ -291,7 +291,7 @@
 					<li class="article">
 						<h2>"MAP" Qu'est-ce que c'est??</h2>
 						<p class="paragraphe explication">
-							une méthode qui appliquée à une variable contenant un tableau,
+							Une méthode qui appliquée à une variable contenant un tableau,
 							<br />
 							permet de cloner le contenu de la variable et d'y apporter
 							d'éventuelles modifications <br />
@@ -357,7 +357,36 @@
 							>
 						</p>
 					</li>
-					<li class="article"></li>
+					<li class="article">
+						<h2>"FIND" Qu'est-ce que c'est??</h2>
+						<p class="paragraphe explication">
+							<span
+								>Une méthode qui parcourt un tableau et compare chaque
+								élément(item) à une condition.</span
+							>
+							<br />
+							Si la condition est respectée elle nous retourne une valeur, si ce
+							n'est pas le cas elle nous retourne "undefined".
+						</p>
+						<p class="paragraphe example">
+							Example: <br />
+							Soit une variable mixes contenant un tableau: <br />
+							const mixes = ["Techno", "House", "Disco", "Funk"]; <br /><br />
+							const searchMix = mixes.find(function (mix) { <br />
+							return mix.includes("Disco"); <br />
+							}); <br /><br />
+							On applique la méthode find() à la variable mixes dont la fonction
+							anonyme(callback) <br />
+							à pour rôle de renvoyer la valeur du premier élément/item qui
+							correspondra à la condition qu'on a fixé. <br />
+							Dans le cas présent, le premier item qui inclut la chaine de
+							charactères "Disco". <br /><br />
+							console.log(searchMix); <br /><br />
+							La console va bien nous afficher le mot "Disco" car il existe bien
+							dans notre tableau. <br />
+							S'il n'avait pas existé, find() nous aurait renvoyé "undefined".
+						</p>
+					</li>
 					<li class="article"></li>
 					<li class="article"></li>
 					<li class="article"></li>
