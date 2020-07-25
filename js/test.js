@@ -192,3 +192,17 @@ const searchName = names.filter(function (name) {
   return name.length > 7;
 });
 console.log(searchName);
+
+const games = [
+  { title: "Mass Effect", rating: 9.5 },
+  { title: "League of Legends", rating: 5 },
+  { title: "Last of Us", rating: 10 },
+  { title: "God of War", rating: 10 },
+  { title: "WWE 2k20", rating: 4 },
+];
+
+const highRates = games.some(function (game) {
+  return game.rating > 8;
+});
+
+console.log(highRates);

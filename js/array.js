@@ -45,11 +45,11 @@ Parce que le tableau "newNames" ne fait que faire référence au tableau "names"
 
 On priviligiera "const" pour les data de type références.
 */
-const names = ['Emmanuel', 'Georgia', 'Maria'];
+const names = ["Emmanuel", "Georgia", "Maria"];
 
 const newNames = names;
 
-newNames.push('Nikos');
+newNames.push("Nikos");
 console.log(newNames);
 console.log(names);
 
@@ -94,24 +94,24 @@ button.addEventListener("click", function(){ function() est notre fonction callb
 */
 
 const mixes = [
-	'Techno party 2020',
-	'You are in da House tonight',
-	'Disco House fever',
-	'Funky sensation in da House',
+  "Techno party 2020",
+  "You are in da House tonight",
+  "Disco House fever",
+  "Funky sensation in da House",
 ];
 
 mixes.forEach(function (mix) {
-	console.log(mix);
+  console.log(mix);
 });
 
 function repeater(toto) {
-	toto();
-	toto();
-	toto();
+  toto();
+  toto();
+  toto();
 }
 
 function sayHello() {
-	console.log('Hello There!');
+  console.log("Hello There!");
 }
 
 repeater(sayHello);
@@ -135,9 +135,9 @@ repeater(sayHello);
 */
 
 const newMix = mixes.map(function (mix) {
-	return mix.toUpperCase();
+  return mix.toUpperCase();
 });
-newMix.push('deep into my house');
+newMix.push("deep into my house");
 console.log(newMix);
 console.log(mixes);
 
@@ -153,7 +153,7 @@ console.log(mixes);
 */
 
 const searchMix = mixes.find(function (mix) {
-	return mix.includes('Disco');
+  return mix.includes("Disco");
 });
 console.log(searchMix);
 
@@ -169,43 +169,43 @@ console.log(searchMix);
 */
 
 const filterMix = mixes.filter(function (mix) {
-	// return mix.includes("House");
-	return (
-		mix.length < 20
-	); /* UNE SEULE CONDITION A LA FOIS, APRES UN PREMIER RETURN ON NE PEUX PAS ENCHAINER DU CODE DERRIERE DANS LE SCOPE DE LA FONCTION */
+  // return mix.includes("House");
+  return (
+    mix.length < 20
+  ); /* UNE SEULE CONDITION A LA FOIS, APRES UN PREMIER RETURN ON NE PEUX PAS ENCHAINER DU CODE DERRIERE DANS LE SCOPE DE LA FONCTION */
 });
 console.log(filterMix);
 
 const games = [
-	{ title: 'Mass Effect', rating: 9.5 },
-	{ title: 'League of Legends', rating: 5 },
-	{ title: 'Last of Us', rating: 10 },
-	{ title: 'God of War', rating: 10 },
-	{ title: 'WWE 2k20', rating: 4 },
+  { title: "Mass Effect", rating: 9.5 },
+  { title: "League of Legends", rating: 5 },
+  { title: "Last of Us", rating: 10 },
+  { title: "God of War", rating: 10 },
+  { title: "WWE 2k20", rating: 4 },
 ];
 
 const highRates = games.filter(function (game) {
-	return game.rating > 7;
+  return game.rating > 7;
 });
 
 console.log(highRates);
 
 /*** "SOME" ET "EVERY" QU'EST CE QUE C'EST? ***
- SOME et EVERY sont des fonctions(méthodes) qui permettent de parcourir un tableau(array) et comparer chaque éléments à une condition que l'on a fixé. Selon que la condition soit respecté ou non, on aura un retour "True" ou "False". Le but est donc d'avoir une confirmation ou non.
+ Méthodes qui permettent de parcourir un tableau et comparer chaque éléments à une condition que l'on a fixé. Selon que la condition soit respecté ou non, on aura un retour "True" ou "False". Le but est donc d'avoir une confirmation ou non.
  SOME est utilisé dans le cas où l'on souhaite que certains des éléments (un ou plus) correspondent à la condition.
  EVERY est utilisé dans le cas où l'on souhaite que tous les éléments correspondent à la condition.
 */
 
 /* EXAMPLE EVERY */
 const checkRating = games.every(function (game) {
-	return game.rating > 8;
+  return game.rating > 8;
 });
 
 console.log(checkRating);
 
 /* EXAMPLE SOME */
 const someRating = games.some(function (game) {
-	return game.rating > 8;
+  return game.rating > 8;
 });
 
 console.log(someRating);
@@ -219,7 +219,7 @@ console.log(someRating);
  */
 
 const goodGame = games.map(function (game) {
-	return game.rating > 8 ? game : 'bad';
+  return game.rating > 8 ? game : "bad";
 });
 
 console.log(goodGame);
@@ -227,11 +227,11 @@ console.log(goodGame);
 /* EQUIVALENT A: */
 
 const goodGames = games.map(function (game) {
-	if (game.rating > 8) {
-		return game;
-	} else {
-		return 'bad';
-	}
+  if (game.rating > 8) {
+    return game;
+  } else {
+    return "bad";
+  }
 });
 
 // console.log(goodGames);
@@ -282,15 +282,15 @@ const goodGames = games.map(function (game) {
 
 /* LES 3 VERSIONS SONT EGALES */
 const arrowGames1 = games.map(function (game) {
-	return game.rating > 8 ? game : 'bad';
+  return game.rating > 8 ? game : "bad";
 });
 
 const arrowGames2 = games.map((game) => {
-	return game.rating > 8 ? game : 'bad';
+  return game.rating > 8 ? game : "bad";
 });
 
 /* L'extension "prettier" rajoute par default les parantheses à la propriété "game" */
-const arrowGames3 = games.map((game) => (game.rating > 8 ? game : 'bad'));
+const arrowGames3 = games.map((game) => (game.rating > 8 ? game : "bad"));
 
 console.log(arrowGames1);
 console.log(arrowGames2);
@@ -348,7 +348,7 @@ console.log(mixes);
 const points = [10, 95, 1, 16, 45, 3, 12, 25, 76];
 /* version normale */
 points.sort(function (a, b) {
-	return a - b;
+  return a - b;
 });
 
 /* version factorisé avec fonction arrow */
@@ -374,15 +374,15 @@ console.log(games);
 */
 
 const points2 = [
-	10,
-	95,
-	1,
-	16,
-	45,
-	3,
-	12,
-	25,
-	76,
+  10,
+  95,
+  1,
+  16,
+  45,
+  3,
+  12,
+  25,
+  76,
 ]; /* tableau référence original */
 const croissant = [...points2]; /* copie1 du tableau original */
 const decroissant = [...points2]; /* copie2 du tableau original */
@@ -416,8 +416,8 @@ console.log(points2);
 */
 
 /* 1ère méthode en utilisant split() */
-const titre = 'leboncoin';
-const lettresTitre = titre.split('');
+const titre = "leboncoin";
+const lettresTitre = titre.split("");
 console.log(lettresTitre);
 
 /* 2ème méthode en utilisant "..." */
@@ -447,8 +447,8 @@ console.log(lettresTitre2);
  const utilisateur = ["jean", "est", "né", ...birthday]; Nouveau tableau
 */
 
-const table1 = ['je', " m'", 'appel', ' jean'];
-const table2 = ['je', ' suis', ' plombier'];
+const table1 = ["je", " m'", "appel", " jean"];
+const table2 = ["je", " suis", " plombier"];
 const table3 = table1.concat(table2);
 const table4 = [...table1, ...table2];
 
@@ -457,8 +457,8 @@ console.log(table4);
 console.log(table1);
 console.log(table2);
 
-const birthday = ['le', '30', 'décembre', '1988'];
-const utilisateur = ['jean', 'est', 'né', ...birthday];
+const birthday = ["le", "30", "décembre", "1988"];
+const utilisateur = ["jean", "est", "né", ...birthday];
 
 console.log(utilisateur);
 console.log(birthday);

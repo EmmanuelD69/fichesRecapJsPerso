@@ -18,8 +18,8 @@
 				<li class="article">
 					<h2 class="titre-article">LES TABLEAUX</h2>
 					<p class="paragraphe explication">
-						Un tableau, ou plutôt un "array" en anglais, est une variable qui
-						contient plusieurs valeurs, appelées "<span>items</span>". <br />
+						Un tableau est un contenant
+						qui possède une ou plusieurs valeurs aussi appelées "<span>items</span>".<br />
 						Chaque item est accessible au moyen d'un "<span>indice</span>"
 						(index en anglais) qui
 						<u>commence à partir de 0.</u> <br /><br />
@@ -31,7 +31,7 @@
 						Un tableau c'est comme un catalogue dans lequel on trouve à telle
 						page tel produit. <br /><br />
 						En version Javascript cela donne: <br />
-						<span>Un tableau c'est une variable où l'on trouve à tel indice telle
+						<span>Un tableau c'est un contenant où l'on trouve à tel indice telle
 							valeur.</span><br /><br />
 						Ces valeurs peuvent être: un nombre, une chaine de caractères, un
 						objet, une fonction, ...
@@ -405,6 +405,49 @@
 						<span>FILTER PARCOURT L'ENSEMBLE D'UN TABLEAU ET AFFICHE <br />
 							TOUS LES ELEMENTS/ITEMS CORRESPONDANT A LA CONDITION.
 						</span>
+					</p>
+				</li>
+				<li class="article">
+					<h2>"SOME" ET "EVERY" Qu'est-ce que c'est??</h2>
+					<p class="paragraphe explication">
+						Méthodes qui permettent de parcourir et comparer chaque éléments d'un tableau à une condition.
+						<br>
+						Selon que la condition soit respecté ou non, on aura un retour "True" ou "False". <br>
+						<span>Le but de "some()" et "every()" est de renvoyer "true" ou "false".</span><br>
+						SOME renverra "true" si certains des items du tableau sont vérifiés comme "true" par la
+						condition. <br>
+						EVERY renverra "true" uniquement si tous les items du tableau sont vérifiés comme "true" par la
+						condition.
+					</p>
+					<p class="paragraphe example">
+						Soit "games" un tableau d'objets: <br><br>
+						Rappel: <span>Un objet est un contenant possédant une ou plusieurs propriétés<br>
+							une propriété est l'association d'un nom(key) et d'une valeur(value).</span><br><br>
+						const games=[ <br>
+						&emsp;{ title: 'Mass Effect', rating: 9.5 },<br>
+						&emsp;{ title: 'League of Legends', rating: 5 },<br>
+						&emsp;{ title: 'Last of Us', rating: 10 },<br>
+						&emsp;{ title: 'God of War', rating: 10 },<br>
+						&emsp;{ title: 'WWE 2k20', rating: 4 },<br>
+						];<br><br>
+						Example some(): <br />
+						const checkRating = games.some(function (game) { <br />
+						&emsp;return game.rating > 8; <br />
+						}); <br /><br />
+						<span>Une seule condition à la fois, après un return on ne peux pas enchainer de code dans le
+							scope de la fonction</span> <br><br>
+						On applique la méthode some() à la variable games dont la
+						fonction anonyme(callback) <br />
+						à pour rôle de vérifier une condition et de nous retourner soit "true" ou "false".
+						<br />
+						Dans le cas présent, on verifie s'il existe des propriétés dont la valeur associé à la key
+						"rating" est supérieur à 8.<br /><br />
+						console.log(checkRating); <br /><br />
+						La console va nous afficher "true" car quelques proriétés ont bien une valeur rating supérieur à
+						8. <br />
+						Si nous n'avions pas trouvé de valeurs rating supérieur à 8 sur l'ensemble des objets du
+						tableau, nous aurions eu "false".
+						<br /><br />
 					</p>
 				</li>
 				<li class="article"></li>
