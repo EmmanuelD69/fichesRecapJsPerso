@@ -430,7 +430,7 @@
 						&emsp;{ title: 'God of War', rating: 10 },<br>
 						&emsp;{ title: 'WWE 2k20', rating: 4 },<br>
 						];<br><br>
-						Example some(): <br />
+						<span style="color: greenyellow;">Example some(): </span><br />
 						const checkRating = games.some(function (game) { <br />
 						&emsp;return game.rating > 8; <br />
 						}); <br /><br />
@@ -448,6 +448,22 @@
 						Si nous n'avions pas trouvé de valeurs rating supérieur à 8 sur l'ensemble des objets du
 						tableau, nous aurions eu "false".
 						<br /><br />
+						<span style="color: greenyellow;">Example every(): </span><br />
+						const checkRating = games.every(function (game) { <br />
+						&emsp;return game.rating > 8; <br />
+						}); <br /><br />
+						<span>Une seule condition à la fois, après un return on ne peux pas enchainer de code dans le
+							scope de la fonction</span> <br><br>
+						On applique la méthode every() à la variable games dont la
+						fonction anonyme(callback) <br />
+						à pour rôle de vérifier une condition et de nous retourner soit "true" ou "false".
+						<br />
+						Dans le cas présent, on verifie si toutes(every) les propriétés dont la valeur associé à la key
+						"rating" sont supérieur à 8.<br /><br />
+						console.log(checkRating); <br /><br />
+						La console va nous afficher "false" car quelques propriétés ont des valeurs rating inférieur à
+						8. <br />
+						Si toutes les valeurs avait été supérieur à 8, nous aurions eu "true".
 					</p>
 				</li>
 				<li class="article"></li>

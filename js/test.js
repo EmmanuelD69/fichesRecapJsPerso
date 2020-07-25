@@ -201,8 +201,8 @@ const games = [
   { title: "WWE 2k20", rating: 4 },
 ];
 
-const highRates = games.some(function (game) {
-  return game.rating > 8;
+const highRates = games.some(function (item) {
+  return item.title.length > 8;
 });
 
 console.log(highRates);
