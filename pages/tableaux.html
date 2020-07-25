@@ -1,447 +1,426 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>EmmanuelDev Mémo Javascript - TABLEAUX</title>
-		<link rel="stylesheet" href="../scss/basesJs.css" />
-	</head>
 
-	<body>
-		<header>
-			<h1 class="titre">JAVASCRIPT MEMO</h1>
-		</header>
-		<main>
-			<section id="liste">
-				<ul id="liste-p">
-					<li class="article">
-						<h2 class="titre-article">LES TABLEAUX</h2>
-						<p class="paragraphe explication">
-							Un tableau, ou plutôt un "array" en anglais, est une variable qui
-							contient plusieurs valeurs, appelées "<span>items</span>". <br />
-							Chaque item est accessible au moyen d'un "<span>indice</span>"
-							(index en anglais) qui
-							<u>commence à partir de 0.</u> <br /><br />
-							Le contenu du tableau se définit entre crochets
-							"<span>[...]</span>" et chaque valeur est séparée par une virgule.
-							<br />
-							<br />
-							Pour schématiser: <br />
-							Un tableau c'est comme un catalogue dans lequel on trouve à telle
-							page tel produit. <br /><br />
-							En version Javascript cela donne: <br />
-							<span
-								>Un tableau c'est une variable où l'on trouve à tel indice telle
-								valeur.</span
-							><br /><br />
-							Ces valeurs peuvent être: un nombre, une chaine de caractères, un
-							objet, une fonction, ...
-						</p>
-						<p class="paragraphe example">
-							Examples: <br />
-							const listStrings = ['Sébastien', 'Laurence', 'Ludovic','Pauline',
-							'Guillaume'];<br />
-							indice 0 = Sébastien <br />
-							indice 1 = Laurence <br />
-							indice 2 = Ludovic <br />
-							indice 3 = Pauline <br />
-							indice 4 = Guillaume <br />
-							<br />
-							const listNumbers = [5, 10, 15, 20, 25];<br />
-							indice 0 = 5 <br />
-							indice 1 = 10 <br />
-							indice 2 = 15 <br />
-							indice 3 = 20 <br />
-							indice 4 = 25 <br />
-							<br />
-							const listObjets = [user1, user2, user3, user4, user5]; <br />
-							indice 0 = user1 <br />
-							indice 1 = user2 <br />
-							indice 2 = user3 <br />
-							indice 3 = user4 <br />
-							indice 4 = user5 <br />
-							<br />
-							const listFonctions = [max(1, 5), min(1, 5)];<br />
-							indice 0 = max(1, 5) <br />
-							indice 1 = min(1, 5) <br />
-							<br />
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>EmmanuelDev Mémo Javascript - TABLEAUX</title>
+	<link rel="stylesheet" href="../scss/basesJs.css" />
+</head>
 
-							const list = [10, 'Laurent', user, max(20,50)]; <br />
-							indice 0 = 10 <br />
-							indice 1 = Laurent <br />
-							indice 2 = user <br />
-							indice 3 = max(20, 50) <br />
-						</p>
-						<p class="paragraphe explication">
-							Pour cibler un item, il suffit de nommer le tableau auquel il
-							appartient <br />
-							et de mettre à la suite, entre crochets, l'indice correspondant à
-							la position de l'item dans le tableau.
-						</p>
-						<p class="paragraphe example">
-							Soit un tableau d'utilisateurs: <br /><br />
-							const listUsers = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline',
-							'Guillaume']; <br />
-							console.log(listUsers[2]); <br /><br />
-							/* nous affichera Ludovic dans la console. */
-						</p>
-						<p class="paragraphe explication">
-							<span>"length"</span> est une propriété qui permet d'afficher le
-							nombre d'éléments que comporte un tableau.
-						</p>
-						<p class="paragraphe example">
-							Example: <br /><br />
-							const listUsers = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline',
-							'Guillaume']; <br />
-							console.log(listUsers.length); <br /><br />
-							/* nous affichera 5 dans la console. */
-						</p>
-					</li>
-					<li class="article">
-						<h2 class="titre-article">
-							METHODES FREQUEMMENT UTILISEES AVEC LES TABLEAUX
-						</h2>
-						<p class="paragraphe explication">
-							les méthodes sont des fonctions, et peuvent donc recevoir des
-							paramètres.
-						</p>
-						<p class="paragraphe explication">
-							Il est possible d'interagir avec un tableau de plusieurs façons,
+<body>
+	<header>
+		<h1 class="titre">JAVASCRIPT MEMO</h1>
+	</header>
+	<main>
+		<section id="liste">
+			<ul id="liste-p">
+				<li class="article">
+					<h2 class="titre-article">LES TABLEAUX</h2>
+					<p class="paragraphe explication">
+						Un tableau, ou plutôt un "array" en anglais, est une variable qui
+						contient plusieurs valeurs, appelées "<span>items</span>". <br />
+						Chaque item est accessible au moyen d'un "<span>indice</span>"
+						(index en anglais) qui
+						<u>commence à partir de 0.</u> <br /><br />
+						Le contenu du tableau se définit entre crochets
+						"<span>[...]</span>" et chaque valeur est séparée par une virgule.
+						<br />
+						<br />
+						Pour schématiser: <br />
+						Un tableau c'est comme un catalogue dans lequel on trouve à telle
+						page tel produit. <br /><br />
+						En version Javascript cela donne: <br />
+						<span>Un tableau c'est une variable où l'on trouve à tel indice telle
+							valeur.</span><br /><br />
+						Ces valeurs peuvent être: un nombre, une chaine de caractères, un
+						objet, une fonction, ...
+					</p>
+					<p class="paragraphe example">
+						Examples: <br />
+						const listStrings = ['Sébastien', 'Laurence', 'Ludovic','Pauline',
+						'Guillaume'];<br />
+						indice 0 = Sébastien <br />
+						indice 1 = Laurence <br />
+						indice 2 = Ludovic <br />
+						indice 3 = Pauline <br />
+						indice 4 = Guillaume <br />
+						<br />
+						const listNumbers = [5, 10, 15, 20, 25];<br />
+						indice 0 = 5 <br />
+						indice 1 = 10 <br />
+						indice 2 = 15 <br />
+						indice 3 = 20 <br />
+						indice 4 = 25 <br />
+						<br />
+						const listObjets = [user1, user2, user3, user4, user5]; <br />
+						indice 0 = user1 <br />
+						indice 1 = user2 <br />
+						indice 2 = user3 <br />
+						indice 3 = user4 <br />
+						indice 4 = user5 <br />
+						<br />
+						const listFonctions = [max(1, 5), min(1, 5)];<br />
+						indice 0 = max(1, 5) <br />
+						indice 1 = min(1, 5) <br />
+						<br />
+
+						const list = [10, 'Laurent', user, max(20,50)]; <br />
+						indice 0 = 10 <br />
+						indice 1 = Laurent <br />
+						indice 2 = user <br />
+						indice 3 = max(20, 50) <br />
+					</p>
+					<p class="paragraphe explication">
+						Pour cibler un item, il suffit de nommer le tableau auquel il
+						appartient <br />
+						et de mettre à la suite, entre crochets, l'indice correspondant à
+						la position de l'item dans le tableau.
+					</p>
+					<p class="paragraphe example">
+						Soit un tableau d'utilisateurs: <br /><br />
+						const listUsers = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline',
+						'Guillaume']; <br />
+						console.log(listUsers[2]); <br /><br />
+						/* nous affichera Ludovic dans la console. */
+					</p>
+					<p class="paragraphe explication">
+						<span>"length"</span> est une propriété qui permet d'afficher le
+						nombre d'éléments que comporte un tableau.
+					</p>
+					<p class="paragraphe example">
+						Example: <br /><br />
+						const listUsers = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline',
+						'Guillaume']; <br />
+						console.log(listUsers.length); <br /><br />
+						/* nous affichera 5 dans la console. */
+					</p>
+				</li>
+				<li class="article">
+					<h2 class="titre-article">
+						METHODES FREQUEMMENT UTILISEES AVEC LES TABLEAUX
+					</h2>
+					<p class="paragraphe explication">
+						les méthodes sont des fonctions, et peuvent donc recevoir des
+						paramètres.
+					</p>
+					<p class="paragraphe explication">
+						Il est possible d'interagir avec un tableau de plusieurs façons,
+						<br />
+						pour cela on utilise, comme pour intéragir avec un objet, un point
+						(<span>.</span>) <br />
+						suivi de la méthode que l'on souhaite appliquer à notre tableau.
+					</p>
+					<p class="paragraphe explication">
+						<span>"push()"</span> permet d'ajouter un ou plusieurs items à la
+						fin d'un tableau, <br />
+						"push()" peut recevoir un nombre illimité de paramètres, <br />
+						et chaque paramètre représente un item à ajouter à la fin du
+						tableau.
+					</p>
+					<p class="paragraphe example">
+						const myFriends = ['Sébastien', 'Laurence']; <br /><br />
+						myFriends.push('Ludovic'); <br />
+						/* Ajoute « Ludovic » à la fin du tableau */ <br />
+						<br />
+						myFriends.push('Pauline', 'Guillaume'); <br />
+						Ajoute « Pauline » et « Guillaume » à la fin du tableau
+					</p>
+					<p class="paragraphe explication">
+						<span>"unshift()"</span> fonctionne comme "push()",
+						<br />
+						excepté que les items sont ajoutés au début du tableau. <br />
+						Cette méthode n'est pas très fréquente mais peut être utile.
+					</p>
+					<p class="paragraphe example">
+						const myFriends = ['Sébastien', 'Laurence']; <br /><br />
+						myFriends.unshift('Ludovic'); <br />
+						/* Ajoute « Ludovic » au début du tableau */ <br />
+						<br />
+						myFriends.unshift('Pauline', 'Guillaume'); <br />
+						Ajoute « Pauline » et « Guillaume » au début du tableau
+					</p>
+					<p class="paragraphe explication">
+						<span>"shift()" et "pop()"</span> retirent respectivement le
+						premier et le dernier élément du tableau.
+					</p>
+					<p class="paragraphe example">
+						Soit le tableau: <br />
+						const listUsers = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline',
+						'Guillaume']; <br /><br />
+						listUsers<span>.</span>shift(); // Retire le premier indice et sa
+						valeur: « Sébastien » <br />
+						listUsers<span>.</span>pop(); // Retire le dernier indice et sa
+						valeur: « Guillaume » <br />
+						alert(listUsers); // Affichera « Laurence, Ludovic, Pauline »
+					</p>
+					<p class="paragraphe explication">
+						<span>"split()"</span>: appliqué à une variable contenant une
+						chaine de caractères, <br />
+						cette méthode permet de découper cette string en un tableau de
+						valeurs.
+					</p>
+					<p class="paragraphe explication">
+						Le découpage se fait en fonction du paramètre que l'on passe (ou
+						pas) à la méthode split. <br />
+						Dans notre example, on passe en paramètre un "espace", <br />
+						ce qui indique à la méthode qu'il lui faut prendre en compte
+						chaque espace <br />
+						qu'elle va rencontrer pour construire le tableau.
+						<br />
+						On est donc passé d'une variable contenant une chaine de
+						caractères <br />
+						à une variable contenant un tableau d'items.
+					</p>
+					<p class="paragraphe example">
+						Soit une variable "myFamily" contenant une string: <br /><br />
+						let myFamily = 'Pauline Guillaume Clarisse'; <br />
+						console.log(myFamily); <br />
+						/* affichage en console: Pauline Guillaume Clarisse */
+						<br /><br />
+						myFamily = myFamily.split(<span>' '</span>); <br />
+						console.log(myFamily); <br />
+						/* affichage en console: ["Pauline", "Guillaume", "Clarisse"] */
+					</p>
+					<p class="paragraphe explication">
+						<span>"join()"</span>: appliqué à une variable contenant un
+						tableau d'items,
+						<br />
+						cette méthode va transformer le contenu de la variable en une
+						chaine de charactères.
+					</p>
+					<p class="paragraphe explication">
+						Même principe pour le découpage que pour la méthode split() mais
+						en sens inverse. <br />
+						Dans notre cas, un espace séparera chaque items rencontrés dans le
+						tableau pour en faire une chaine de caractères.
+					</p>
+					<p class="paragraphe example">
+						Soit une variable "myFamily" contenant un tableau: <br /><br />
+						let myFamily = ["Pauline", "Guillaume", "Clarisse"]; <br />
+						console.log(myFamily); <br />
+						/* affichage en console: ["Pauline", "Guillaume", "Clarisse"] */
+						<br /><br />
+						myFamily = myFamily.join(<span>' '</span>); <br />
+						console.log(myFamily); <br />
+						/* affichage en console: Pauline Guillaume Clarisse */
+					</p>
+					<p class="paragraphe explication">
+						<span>"indexOf()"</span> permet d'afficher l'indice de l'item que
+						l'on a passé en paramètre.
+					</p>
+					<p class="paragraphe example">
+						Example: <br /><br />
+						const listUsers = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline',
+						'Guillaume']; <br />
+						console.log(listUsers.indexOf('Laurence')); <br /><br />
+						/* nous affichera 1 dans la console. */
+					</p>
+				</li>
+				<li class="article">
+					<h2>HIGHER ORDER FUNCTION / FONCTION DE HAUT RANG</h2>
+					<p class="paragraphe explication">
+						Qu'est-ce que c'est??<br />
+						C'est une fonction qui utilise une autre fonction en
+						paramètre/argument.
+					</p>
+					<p class="paragraphe example">
+						Example: <br />
+						Const mixes = ["Techno", "House", "Disco", "Funk"];<br /><br />
+						mixes.forEach(function(mix)){<br />
+						&emsp;console.log(mix);<br />
+						} <br /><br />
+						la fonction "forEach" utilise une fonction anonyme en
+						paramètre/argument. <br />
+						<span>Une fonction anonyme est une fonction qui n'a pas de nom</span>.
+					</p>
+					<p class="paragraphe explication">Autre example:</p>
+					<p class="paragraphe example">
+						on crée une fonction, de type "High order", que l'on nommera
+						"repeater". <br />
+						Elle prendra en paramètre une autre fonction. <br /><br />
+						1-Création de la fonction "repeater": <br />
+						funtion repeater(function) { <br />
+						&emsp;function();<br />
+						&emsp;function();<br />
+						&emsp;function();<br />
+						} <br /><br />
+						2-Création de la fonction "sayHello": <br />
+						function sayHello(){ <br />
+						&emsp;console.log("Hello There!");<br />
+						} <br /><br />
+						3-Appel de la fonction "repeater" en lui passant la fonction
+						"sayHello" en argument: <br />
+						repeater(sayHello); <br /><br />
+						Le résultat de la fonction repeater sera d'afficher <br />
+						trois fois "Hello There!" dans la console.
+					</p>
+				</li>
+				<li class="article">
+					<h2>CALLBACK FUNCTION / FONCTION DE RAPPEL</h2>
+					<p class="paragraphe explication">
+						Qu'est-ce que c'est??<br />
+						C'est une fonction qui est utilisée à un moment précis, <br />
+						déterminé par une autre fonction (high order function) <br />
+						ou par une action précise (addEventListener). <br /><br />
+						Pour résumer
+						<span>c'est la fonction que l'on passe en argurment/paramètre d'une
+							autre fonction</span>(higer rank function).
+					</p>
+					<p class="paragraphe example">
+						Example1: <br /><br />
+						Const mixes = ["Techno", "House", "Disco", "Funk"];<br /><br />
+						mixes.forEach(function(mix)){ <br />
+						&emsp;console.log(mix); <br />
+						} <br /><br />
+						function (mix) est notre fonction callback
+					</p>
+					<p class="paragraphe example">
+						Example2: <br /><br />
+						button.addEventListener("click", function(){<br />
+						&emsp;console.log("Hello There!");<br />
+						}); <br /><br />
+						function() est notre fonction callback
+					</p>
+				</li>
+				<li class="article">
+					<h2>"MAP" Qu'est-ce que c'est??</h2>
+					<p class="paragraphe explication">
+						Une méthode qui appliquée à une variable contenant un tableau,
+						<br />
+						permet de cloner le contenu de la variable et d'y apporter
+						d'éventuelles modifications <br />
+						sans pour autant modifier le tableau d'origine. <br />
+						<br />
+						Son fonctionnement est similaire à FOR EACH, On boucle sur un
+						tableau.
+					</p>
+					<p class="paragraphe example">
+						Soit une variable "mixes" contenant un tableau: <br />
+						const mixes = ["Techno", "House", "Disco", "Funk"];<br /><br />
+						<span style="color: greenyellow;">1- Création de la variable newMixes qui va cloner grâce à la
+							méthode
 							<br />
-							pour cela on utilise, comme pour intéragir avec un objet, un point
-							(<span>.</span>) <br />
-							suivi de la méthode que l'on souhaite appliquer à notre tableau.
-						</p>
-						<p class="paragraphe explication">
-							<span>"push()"</span> permet d'ajouter un ou plusieurs items à la
-							fin d'un tableau, <br />
-							"push()" peut recevoir un nombre illimité de paramètres, <br />
-							et chaque paramètre représente un item à ajouter à la fin du
-							tableau.
-						</p>
-						<p class="paragraphe example">
-							const myFriends = ['Sébastien', 'Laurence']; <br /><br />
-							myFriends.push('Ludovic'); <br />
-							/* Ajoute « Ludovic » à la fin du tableau */ <br />
+							"map()" le tableau contenu dans la variable mixes. <br /></span>
+						On décide d'appliquer à ce nouveau tableau, par l'intermédiaire
+						d'une fonction anonyme (callback), <br />
+						une modification des items en les passant en Majuscule
+						(toUpperCase). <br /><br />
+						const newMixes = mixes.map(function(mix){<br />
+						&emsp;return mix.toUpperCase();<br />
+						});<br /><br />
+						<span style="color: greenyellow;">2- Affichage du tableau contenu dans la variable
+							d'origine:</span><br />
+						console.log(mixes);<br />
+						Array(4) [ "Techno", "House", "Disco", "Funk" ] <br /><br />
+						<span style="color: greenyellow;">3- Affichage du tableau contenu dans la nouvelle
+							variable:</span><br />
+						console.log(newMixes);<br />
+						Array(4) [ "TECHNO", "HOUSE", "DISCO", "FUNK" ] <br /><br />
+						<span style="color: greenyellow;">4- On "push"/ajoute un nouvel item dans le tableau de la
+							nouvelle variable(newMixes):</span><br />
+						newMixes.push("Deep");<br /><br />
+						<span style="color: greenyellow;">5- Affichage du tableau contenu dans la variable
+							newMixes:</span><br />
+						console.log(newMixes);<br />
+						Array(5) [ "TECHNO", "HOUSE", "DISCO", "FUNK", "Deep" ]
+						<br /><br />
+						<span style="color: greenyellow;">6- Affichage du tableau contenu dans la variable
+							d'origine:</span><br />
+						console.log(mixes);<br />
+						Array(4) [ "Techno", "House", "Disco", "Funk" ] <br /><br />
+						On constate que le tableau d'origine n'a pas changé tandis que le
+						nouveau à bien été modifié. <br /><br />
+						Conclusion: <br />
+						<span>MAP NOUS PERMET DE CLONER UNE VARIABLE CONTENANT UN TABLEAU ET
 							<br />
-							myFriends.push('Pauline', 'Guillaume'); <br />
-							Ajoute « Pauline » et « Guillaume » à la fin du tableau
-						</p>
-						<p class="paragraphe explication">
-							<span>"unshift()"</span> fonctionne comme "push()",
+							DE MODIFIER LE CONTENU DE LA NOUVELLE VARIABLE <br />
+							SANS POUR AUTANT CHANGER CELUI DE LA VARIABLE D'ORIGINE.</span>
+					</p>
+				</li>
+				<li class="article">
+					<h2>"FIND" Qu'est-ce que c'est??</h2>
+					<p class="paragraphe explication">
+						<span>Une méthode qui parcourt un tableau et compare chaque
+							élément(item) à une condition.</span>
+						<br />
+						Si la condition est respectée elle nous retourne une valeur, si ce
+						n'est pas le cas elle nous retourne "undefined".
+					</p>
+					<p class="paragraphe example">
+						Example: <br />
+						Soit une variable mixes contenant un tableau: <br />
+						const mixes = ["Techno", "House", "Disco", "Funk"]; <br /><br />
+						const searchMix = mixes.find(function (mix) { <br />
+						return mix.includes("Disco"); <br />
+						}); <br /><br />
+						On applique la méthode find() à la variable mixes dont la fonction
+						anonyme(callback) <br />
+						à pour rôle de renvoyer la valeur du premier élément/item qui
+						correspondra à la condition qu'on a fixée. <br />
+						Dans le cas présent, le premier item qui inclut la chaine de
+						charactères "Disco". <br /><br />
+						console.log(searchMix); <br /><br />
+						La console va bien nous afficher le mot "Disco" car il existe bien
+						dans notre tableau. <br />
+						S'il n'avait pas existé, find() nous aurait renvoyé "undefined".
+						<br /><br />
+						<span>FIND RENVOI UNIQUEMENT LE PREMIER ITEM CORRESPONDANT A
 							<br />
-							excepté que les items sont ajoutés au début du tableau. <br />
-							Cette méthode n'est pas très fréquente mais peut être utile.
-						</p>
-						<p class="paragraphe example">
-							const myFriends = ['Sébastien', 'Laurence']; <br /><br />
-							myFriends.unshift('Ludovic'); <br />
-							/* Ajoute « Ludovic » au début du tableau */ <br />
-							<br />
-							myFriends.unshift('Pauline', 'Guillaume'); <br />
-							Ajoute « Pauline » et « Guillaume » au début du tableau
-						</p>
-						<p class="paragraphe explication">
-							<span>"shift()" et "pop()"</span> retirent respectivement le
-							premier et le dernier élément du tableau.
-						</p>
-						<p class="paragraphe example">
-							Soit le tableau: <br />
-							const listUsers = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline',
-							'Guillaume']; <br /><br />
-							listUsers<span>.</span>shift(); // Retire le premier indice et sa
-							valeur: « Sébastien » <br />
-							listUsers<span>.</span>pop(); // Retire le dernier indice et sa
-							valeur: « Guillaume » <br />
-							alert(listUsers); // Affichera « Laurence, Ludovic, Pauline »
-						</p>
-						<p class="paragraphe explication">
-							<span>"split()"</span>: appliqué à une variable contenant une
-							chaine de caractères, <br />
-							cette méthode permet de découper cette string en un tableau de
-							valeurs.
-						</p>
-						<p class="paragraphe explication">
-							Le découpage se fait en fonction du paramètre que l'on passe (ou
-							pas) à la méthode split. <br />
-							Dans notre example, on passe en paramètre un "espace", <br />
-							ce qui indique à la méthode qu'il lui faut prendre en compte
-							chaque espace <br />
-							qu'elle va rencontrer pour construire le tableau.
-							<br />
-							On est donc passé d'une variable contenant une chaine de
-							caractères <br />
-							à une variable contenant un tableau d'items.
-						</p>
-						<p class="paragraphe example">
-							Soit une variable "myFamily" contenant une string: <br /><br />
-							let myFamily = 'Pauline Guillaume Clarisse'; <br />
-							console.log(myFamily); <br />
-							/* affichage en console: Pauline Guillaume Clarisse */
-							<br /><br />
-							myFamily = myFamily.split(<span>' '</span>); <br />
-							console.log(myFamily); <br />
-							/* affichage en console: ["Pauline", "Guillaume", "Clarisse"] */
-						</p>
-						<p class="paragraphe explication">
-							<span>"join()"</span>: appliqué à une variable contenant un
-							tableau d'items,
-							<br />
-							cette méthode va transformer le contenu de la variable en une
-							chaine de charactères.
-						</p>
-						<p class="paragraphe explication">
-							Même principe pour le découpage que pour la méthode split() mais
-							en sens inverse. <br />
-							Dans notre cas, un espace séparera chaque items rencontrés dans le
-							tableau pour en faire une chaine de caractères.
-						</p>
-						<p class="paragraphe example">
-							Soit une variable "myFamily" contenant un tableau: <br /><br />
-							let myFamily = ["Pauline", "Guillaume", "Clarisse"]; <br />
-							console.log(myFamily); <br />
-							/* affichage en console: ["Pauline", "Guillaume", "Clarisse"] */
-							<br /><br />
-							myFamily = myFamily.join(<span>' '</span>); <br />
-							console.log(myFamily); <br />
-							/* affichage en console: Pauline Guillaume Clarisse */
-						</p>
-						<p class="paragraphe explication">
-							<span>"indexOf()"</span> permet d'afficher l'indice de l'item que
-							l'on a passé en paramètre.
-						</p>
-						<p class="paragraphe example">
-							Example: <br /><br />
-							const listUsers = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline',
-							'Guillaume']; <br />
-							console.log(listUsers.indexOf('Laurence')); <br /><br />
-							/* nous affichera 1 dans la console. */
-						</p>
-					</li>
-					<li class="article">
-						<h2>HIGHER ORDER FUNCTION / FONCTION DE HAUT RANG</h2>
-						<p class="paragraphe explication">
-							Qu'est-ce que c'est??<br />
-							C'est une fonction qui utilise une autre fonction en
-							paramètre/argument.
-						</p>
-						<p class="paragraphe example">
-							Example: <br />
-							Const mixes = ["Techno", "House", "Disco", "Funk"];<br /><br />
-							mixes.forEach(function(mix)){<br />
-							&emsp;console.log(mix);<br />
-							} <br /><br />
-							la fonction "forEach" utilise une fonction anonyme en
-							paramètre/argument. <br />
-							<span
-								>Une fonction anonyme est une fonction qui n'a pas de nom</span
-							>.
-						</p>
-						<p class="paragraphe explication">Autre example:</p>
-						<p class="paragraphe example">
-							on crée une fonction, de type "High order", que l'on nommera
-							"repeater". <br />
-							Elle prendra en paramètre une autre fonction. <br /><br />
-							1-Création de la fonction "repeater": <br />
-							funtion repeater(function) { <br />
-							&emsp;function();<br />
-							&emsp;function();<br />
-							&emsp;function();<br />
-							} <br /><br />
-							2-Création de la fonction "sayHello": <br />
-							function sayHello(){ <br />
-							&emsp;console.log("Hello There!");<br />
-							} <br /><br />
-							3-Appel de la fonction "repeater" en lui passant la fonction
-							"sayHello" en argument: <br />
-							repeater(sayHello); <br /><br />
-							Le résultat de la fonction repeater sera d'afficher <br />
-							trois fois "Hello There!" dans la console.
-						</p>
-					</li>
-					<li class="article">
-						<h2>CALLBACK FUNCTION / FONCTION DE RAPPEL</h2>
-						<p class="paragraphe explication">
-							Qu'est-ce que c'est??<br />
-							C'est une fonction qui est utilisée à un moment précis, <br />
-							déterminé par une autre fonction (high order function) <br />
-							ou par une action précise (addEventListener). <br /><br />
-							Pour résumer
-							<span
-								>c'est la fonction que l'on passe en argurment/paramètre d'une
-								autre fonction</span
-							>(higer rank function).
-						</p>
-						<p class="paragraphe example">
-							Example1: <br /><br />
-							Const mixes = ["Techno", "House", "Disco", "Funk"];<br /><br />
-							mixes.forEach(function(mix)){ <br />
-							&emsp;console.log(mix); <br />
-							} <br /><br />
-							function (mix) est notre fonction callback
-						</p>
-						<p class="paragraphe example">
-							Example2: <br /><br />
-							button.addEventListener("click", function(){<br />
-							&emsp;console.log("Hello There!");<br />
-							}); <br /><br />
-							function() est notre fonction callback
-						</p>
-					</li>
-					<li class="article">
-						<h2>"MAP" Qu'est-ce que c'est??</h2>
-						<p class="paragraphe explication">
-							Une méthode qui appliquée à une variable contenant un tableau,
-							<br />
-							permet de cloner le contenu de la variable et d'y apporter
-							d'éventuelles modifications <br />
-							sans pour autant modifier le tableau d'origine. <br />
-							<br />
-							Son fonctionnement est similaire à FOR EACH, On boucle sur un
-							tableau.
-						</p>
-						<p class="paragraphe example">
-							Soit une variable "mixes" contenant un tableau: <br />
-							const mixes = ["Techno", "House", "Disco", "Funk"];<br /><br />
-							<span style="color: greenyellow;"
-								>1- Création de la variable newMixes qui va cloner grâce à la
-								méthode
-								<br />
-								"map()" le tableau contenu dans la variable mixes. <br
-							/></span>
-							On décide d'appliquer à ce nouveau tableau, par l'intermédiaire
-							d'une fonction anonyme (callback), <br />
-							une modification des items en les passant en Majuscule
-							(toUpperCase). <br /><br />
-							const newMixes = mixes.map(function(mix){<br />
-							&emsp;return mix.toUpperCase();<br />
-							});<br /><br />
-							<span style="color: greenyellow;"
-								>2- Affichage du tableau contenu dans la variable
-								d'origine:</span
-							><br />
-							console.log(mixes);<br />
-							Array(4) [ "Techno", "House", "Disco", "Funk" ] <br /><br />
-							<span style="color: greenyellow;"
-								>3- Affichage du tableau contenu dans la nouvelle
-								variable:</span
-							><br />
-							console.log(newMixes);<br />
-							Array(4) [ "TECHNO", "HOUSE", "DISCO", "FUNK" ] <br /><br />
-							<span style="color: greenyellow;"
-								>4- On "push"/ajoute un nouvel item dans le tableau de la
-								nouvelle variable(newMixes):</span
-							><br />
-							newMixes.push("Deep");<br /><br />
-							<span style="color: greenyellow;"
-								>5- Affichage du tableau contenu dans la variable
-								newMixes:</span
-							><br />
-							console.log(newMixes);<br />
-							Array(5) [ "TECHNO", "HOUSE", "DISCO", "FUNK", "Deep" ]
-							<br /><br />
-							<span style="color: greenyellow;"
-								>6- Affichage du tableau contenu dans la variable
-								d'origine:</span
-							><br />
-							console.log(mixes);<br />
-							Array(4) [ "Techno", "House", "Disco", "Funk" ] <br /><br />
-							On constate que le tableau d'origine n'a pas changé tandis que le
-							nouveau à bien été modifié. <br /><br />
-							Conclusion: <br />
-							<span
-								>MAP NOUS PERMET DE CLONER UNE VARIABLE CONTENANT UN TABLEAU ET
-								<br />
-								DE MODIFIER LE CONTENU DE LA NOUVELLE VARIABLE <br />
-								SANS POUR AUTANT CHANGER CELUI DE LA VARIABLE D'ORIGINE.</span
-							>
-						</p>
-					</li>
-					<li class="article">
-						<h2>"FIND" Qu'est-ce que c'est??</h2>
-						<p class="paragraphe explication">
-							<span
-								>Une méthode qui parcourt un tableau et compare chaque
-								élément(item) à une condition.</span
-							>
-							<br />
-							Si la condition est respectée elle nous retourne une valeur, si ce
-							n'est pas le cas elle nous retourne "undefined".
-						</p>
-						<p class="paragraphe example">
-							Example: <br />
-							Soit une variable mixes contenant un tableau: <br />
-							const mixes = ["Techno", "House", "Disco", "Funk"]; <br /><br />
-							const searchMix = mixes.find(function (mix) { <br />
-							return mix.includes("Disco"); <br />
-							}); <br /><br />
-							On applique la méthode find() à la variable mixes dont la fonction
-							anonyme(callback) <br />
-							à pour rôle de renvoyer la valeur du premier élément/item qui
-							correspondra à la condition qu'on a fixée. <br />
-							Dans le cas présent, le premier item qui inclut la chaine de
-							charactères "Disco". <br /><br />
-							console.log(searchMix); <br /><br />
-							La console va bien nous afficher le mot "Disco" car il existe bien
-							dans notre tableau. <br />
-							S'il n'avait pas existé, find() nous aurait renvoyé "undefined".
-							<br /><br />
-							<span
-								>FIND RENVOI UNIQUEMENT LE PREMIER ITEM CORRESPONDANT A
-								<br />
-								LA CONDITION, PUIS SORT DU TABLEAU.
-							</span>
-						</p>
-					</li>
-					<li class="article">
-						<h2>"FILTER" Qu'est-ce que c'est??</h2>
-						<p class="paragraphe explication">
-							C'est une méthode qui fonctionne exactement comme find() à la
-							différence que <br />
-							<span>filter() parcourt un tableau dans son intégralité </span>
-							<br />
-							et ne s'arrête pas à la première valeur trouvée correspondant à la
-							condition fixée.
-						</p>
-						<p class="paragraphe example">
-							Example: <br />
-							Soit une variable mixes contenant un tableau: <br />
-							const mixes = ["Techno", "House Music", "Disco House", "Funk"];
-							<br /><br />
-							const searchMix = mixes.filter(function (mix) { <br />
-							return mix.includes("House"); <br />
-							}); <br /><br />
-							On applique la méthode filter() à la variable mixes dont la
-							fonction anonyme(callback) <br />
-							à pour rôle de renvoyer la valeur de chaque item qui correspondra
-							à la condition qu'on lui a fixée. <br />
-							Dans le cas présent, tous les items qui incluentt la chaine de
-							charactères "House". <br /><br />
-							console.log(searchMix); <br /><br />
-							La console va nous afficher les items "House Music" et "Disco
-							House" car ils contiennent bien la string "House". <br />
-							S'il n'avait pas existé d'item contenant la string "House" nous
-							aurions eu en retour une valeur "undefined".
-							<br /><br />
-							<span
-								>FILTER PARCOURT L'ENSEMBLE D'UN TABLEAU ET AFFICHE <br />
-								TOUS LES ELEMENTS/ITEMS CORRESPONDANT A LA CONDITION.
-							</span>
-						</p>
-					</li>
-					<li class="article"></li>
-					<li class="article"></li>
-					<li class="article">
-						<p class="paragraphe example" style="color: green;">
-							La suite arrive bientôt, en cours d'intégration.
-						</p>
-					</li>
-				</ul>
-			</section>
-		</main>
-		<footer>
-			<h3>&copy;EmmanuelDev 2020</h3>
-		</footer>
-		<script src="../js/test.js"></script>
-	</body>
+							LA CONDITION, PUIS SORT DU TABLEAU.
+						</span>
+					</p>
+				</li>
+				<li class="article">
+					<h2>"FILTER" Qu'est-ce que c'est??</h2>
+					<p class="paragraphe explication">
+						C'est une méthode qui fonctionne exactement comme find() à la
+						différence que <br />
+						<span>filter() parcourt un tableau dans son intégralité </span>
+						<br />
+						et ne s'arrête pas à la première valeur trouvée correspondant à la
+						condition fixée.
+					</p>
+					<p class="paragraphe example">
+						Example: <br />
+						Soit une variable mixes contenant un tableau: <br />
+						const mixes = ["Techno", "House Music", "Disco House", "Funk"];
+						<br /><br />
+						const searchMix = mixes.filter(function (mix) { <br />
+						return mix.length > 9; <br />
+						}); <br /><br />
+						<span>Une seule condition à la fois, après un return on ne peux pas enchainer de code dans le
+							scope de la fonction</span> <br><br>
+						On applique la méthode filter() à la variable mixes dont la
+						fonction anonyme(callback) <br />
+						à pour rôle de renvoyer la valeur de chaque item qui correspondra
+						à la condition qu'on lui a fixée. <br />
+						Dans le cas présent, tous les items dont la longueur est supérieur à 9 caractères. <br /><br />
+						console.log(searchMix); <br /><br />
+						La console va nous afficher les items "House Music" et "Disco
+						House" car ils contiennent bien la string "House". <br />
+						S'il n'avait pas existé d'item contenant la string "House" nous
+						aurions eu en retour une valeur "undefined".
+						<br /><br />
+						<span>FILTER PARCOURT L'ENSEMBLE D'UN TABLEAU ET AFFICHE <br />
+							TOUS LES ELEMENTS/ITEMS CORRESPONDANT A LA CONDITION.
+						</span>
+					</p>
+				</li>
+				<li class="article"></li>
+				<li class="article"></li>
+				<li class="article">
+					<p class="paragraphe example" style="color: green;">
+						La suite arrive bientôt, en cours d'intégration.
+					</p>
+				</li>
+			</ul>
+		</section>
+	</main>
+	<footer>
+		<h3>&copy;EmmanuelDev 2020</h3>
+	</footer>
+	<script src="../js/test.js"></script>
+</body>
+
 </html>
