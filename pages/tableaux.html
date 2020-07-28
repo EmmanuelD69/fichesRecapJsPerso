@@ -517,8 +517,8 @@
 						<p class="paragraphe explication">
 							C'est une méthode qui permet de
 							<span
-								>trier le contenu d'un tableau par ordre alphabetique ou
-								chiffres croissant / décroissant</span
+								>trier le contenu d'un tableau par ordre alphabetique ou nombres
+								croissant / décroissant</span
 							>.
 						</p>
 						<p class="paragraphe example">
@@ -533,13 +533,33 @@
 							par ordre alphabétique
 						</p>
 						<p class="paragraphe example">
-							Cas 2 - Ordre Croissant: <br />
-							Ce cas de figure est un peu plus complexe, car "sort", par defaut,
-							trie des srtings et non des chiffres. <br />
+							Cas 2 - Ordre Croissant: (Pour les tableaux de nombres) <br />
+							Ce cas de figure est un peu plus complexe, car "sort()", par
+							défaut, trie des srtings et non des nombres. <br />
 							Mais on peut réussir à faire comprendre à la méthode "sort()" en
-							lui faisant comparer <br />
-							les chiffres d'un tableau les uns après les autres par série de 2,
-							"a" étant le premier chiffre et "b" le second.
+							utilisant une astuce <br />
+							qui consiste à comparer les nombres les uns après les autres sous
+							la forme d'une fonction anonyme à laquelle on passe 2 propriétés,
+							a et b. <br />
+							"a" étant le premier nombre et "b" le second. <br /><br />
+							Prenons un tableau de chiffres. <br />
+							const points = [10, 95, 1, 16, 45, 3, 12, 25, 76]; <br /><br />
+							appliquons la méthode "sort()" à ce tableau en lui appliquant une
+							fonction callback de comparaison. <br /><br />
+							points.sort(function(a,b){ <br />
+							return a - b; <br />
+							});<br /><br />
+							3 possibilitées: <br />
+							1) a - b est un nombre négatif alors "a" sera compris comme
+							inférieur à "b" et placé avant. <br />
+							2) a - b est un nombre positif alors "a" sera compris comme
+							supérieur à "b" et placé après. <br />
+							3) a - b est un nombre nul alors "a" sera compris comme égal à "b"
+							rien ne change dans l'ordre. <br /><br />
+							le résultat est un tableau ordonnée par ordre croissant, du plus
+							petit au plus grand. <br />
+							si on fait un console log de "point", on obtient: <br />
+							Array(9) [ 1, 3, 10, 12, 16, 25, 45, 76, 95 ]
 						</p>
 					</li>
 					<li class="article"></li>
