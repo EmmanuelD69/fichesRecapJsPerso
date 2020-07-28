@@ -517,8 +517,8 @@
 						<p class="paragraphe explication">
 							C'est une méthode qui permet de
 							<span
-								>trier le contenu d'un tableau par ordre alphabetique ou nombres
-								croissant / décroissant</span
+								>trier le contenu d'un tableau ou d'un objet par ordre
+								alphabetique, nombres croissant / décroissant</span
 							>.
 						</p>
 						<p class="paragraphe example">
@@ -539,15 +539,15 @@
 							Mais on peut réussir à faire comprendre à la méthode "sort()" en
 							utilisant une astuce <br />
 							qui consiste à comparer les nombres les uns après les autres sous
-							la forme d'une fonction anonyme à laquelle on passe 2 propriétés,
-							a et b. <br />
-							"a" étant le premier nombre et "b" le second. <br /><br />
+							la forme d'une fonction anonyme <br />
+							à laquelle on passe 2 propriétés, a et b. "a" étant le premier
+							nombre et "b" le second. <br /><br />
 							Prenons un tableau de chiffres. <br />
 							const points = [10, 95, 1, 16, 45, 3, 12, 25, 76]; <br /><br />
 							appliquons la méthode "sort()" à ce tableau en lui appliquant une
 							fonction callback de comparaison. <br /><br />
 							points.sort(function(a,b){ <br />
-							return a - b; <br />
+							return <span style="color: greenyellow;">a - b</span>; <br />
 							});<br /><br />
 							3 possibilitées: <br />
 							1) a - b est un nombre négatif alors "a" sera compris comme
@@ -557,9 +557,24 @@
 							3) a - b est un nombre nul alors "a" sera compris comme égal à "b"
 							rien ne change dans l'ordre. <br /><br />
 							le résultat est un tableau ordonnée par ordre croissant, du plus
-							petit au plus grand. <br />
+							petit au plus grand: <br />
 							si on fait un console log de "point", on obtient: <br />
 							Array(9) [ 1, 3, 10, 12, 16, 25, 45, 76, 95 ]
+						</p>
+						<p class="paragraphe example">
+							Cas 3 - Ordre Décroissant: <br />
+							Il suffit d'inverser "a" avec "b" dans la fonction callback de
+							comparaison pour obtenir le classement du plus grand au plus
+							petit. <br /><br />
+							Example, si le tableau référence d'origine est: <br />
+							const points = [10, 95, 1, 16, 45, 3, 12, 25, 76]; <br /><br />
+							points.sort(function(a,b){ <br />
+							return <span style="color: greenyellow;">b - a</span>; <br />
+							});<br /><br />
+							Le résultat sera un tableau ordonnée par ordre décroissant, du
+							plus grand au plus petit: <br />
+							si on fait un console log de "point", on obtient: <br />
+							Array(9) [ 95, 76, 45, 25, 16, 12, 10, 3, 1 ] <br />
 						</p>
 					</li>
 					<li class="article"></li>
