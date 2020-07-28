@@ -577,7 +577,52 @@
 							Array(9) [ 95, 76, 45, 25, 16, 12, 10, 3, 1 ] <br />
 						</p>
 					</li>
-					<li class="article"></li>
+					<li class="article">
+						<h2>COPIER UN TABLEAU & AGIR DESSUS SANS MODIFIER L'ORIGINAL</h2>
+						<p class="paragraphe explication">
+							Nous allons voir comment créer une copie d'un tableau référence et
+							agir dessus sans modifier le tableau référence d'origine. <br />
+							pour ce faire
+							<span
+								>il suffit d'utiliser "..." suivi du nom du tableau référence
+								que l'on souhaite copier</span
+							>.
+						</p>
+
+						<p class="paragraphe example">
+							Soit "points" le tableau référence d'origine: <br />
+							const points = [10, 95, 1, 16, 45, 3, 12, 25, 76]; <br /><br />
+							On veux créer une copie de "points" pour pouvoir y appliquer une
+							méthode sans risquer de modifier le tableau d'origine: <br />
+							const decroissant = <span>[...points]</span>; <br />
+							Avec [...points] on effectue une copie du tableau d'origine.
+							<br />
+							La nouvelle variable "decroissant" ne fait pas référence à la
+							variable d'origine mais possède son propre tableau! <br /><br />
+							On peut alors lui appliquer une méthode sans risquer de modifier
+							le tableau d'origine "points" puisque "decroissant" ne s'y réfère
+							pas. <br />
+							decroissant.sort(function(a,b){ <br />
+							return <span style="color: greenyellow;">b - a</span>; <br />
+							});<br /><br />
+							si on fait un console log de "points", on obtient: <br />
+							Array(9) [10, 95, 1, 16, 45, 3, 12, 25, 76] <br />
+							et si on fait un console log de "decroissant", on obtient: <br />
+							Array(9) [ 95, 76, 45, 25, 16, 12, 10, 3, 1 ] <br /><br />
+							On constate que <span>le tableau "points" est inchangé</span>,
+							uniquement le tableau "decroissant" a été modifié par la méthode
+							"sort()".
+						</p>
+					</li>
+					<li class="article">
+						<h2>"FILTER" Qu'est-ce que c'est??</h2>
+					</li>
+					<li class="article">
+						<h2>"FILTER" Qu'est-ce que c'est??</h2>
+					</li>
+					<li class="article">
+						<h2>"FILTER" Qu'est-ce que c'est??</h2>
+					</li>
 					<li class="article">
 						<p class="paragraphe example" style="color: green;">
 							La suite arrive bientôt, en cours d'intégration.
