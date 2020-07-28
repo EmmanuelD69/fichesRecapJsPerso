@@ -615,7 +615,37 @@
 						</p>
 					</li>
 					<li class="article">
-						<h2>"FILTER" Qu'est-ce que c'est??</h2>
+						<h2>CREER UN TABLEAU A PARTIR D'UNE VARIABLE STRING</h2>
+						<p class="paragraphe explication">
+							Il existe plusieurs façons de procéder et nous allons en voir 2:
+						</p>
+						<p class="paragraphe example">
+							-1ère version avec la méthode "split()" que nous avons évoquée
+							plus haut dans la liste: <br /><br />
+							Soit une variable "titre" contenant du texte(string). <br />
+							const titre = "leboncoin"; <br /><br />
+							pour transformer cette variable en tableau, il nous suffit de lui
+							<br />
+							appliquer la méthode "split()" de sorte qu'elle convertisse le
+							texte
+							<br />
+							contenu dans la variable "titre" en tableau de lettres. <br />
+							Pour cela on crée une nouvelle variable: <br />
+							const lettresTitre = titre.split(""); <br /><br />
+							si on effectue maintenant un console log de notre variable
+							"lettresTitre", on obtiendra le résultat suivant: <br />
+							Array(9) [ "l", "e", "b", "o", "n", "c", "o", "i", "n" ]
+							<br /><br /><br />
+							-2ème version en utilisant la méthode "...": <br /><br />
+							On va utiliser la même variable "titre" et tranformer son contenu
+							en tableau par l'utilisation des "..." <br />
+							que nous avons vu plus tôt pour créer une copie d'un tableau:
+							<br />
+							const lettresTitre2 = [...titre]; <br /><br />
+							si on effectue maintenant un console log de notre tableau
+							"lettresTitre2", on obtiendra le résultat suivant: <br />
+							Array(9) [ "l", "e", "b", "o", "n", "c", "o", "i", "n" ]
+						</p>
 					</li>
 					<li class="article">
 						<h2>"FILTER" Qu'est-ce que c'est??</h2>
