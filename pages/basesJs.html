@@ -788,138 +788,6 @@
 						</p>
 					</li>
 					<li class="article">
-						<h2 class="titre-article">LES FONCTIONS (présentation rapide)</h2>
-						<p class="paragraphe explication">
-							Une fonction est un ensemble d'actions secondaires ayant pour but
-							d'accomplir une action globale. <br />
-							<br />
-							Example d'une fonction pour demander le nom d'une personne:
-						</p>
-						<p class="paragraphe example">
-							function askName(){ <br />
-							&emsp;&emsp;let nom = prompt('Quel est ton nom?'); <br />
-							&emsp;&emsp;console.log(`Bienvenue sur mon site ${nom}`); /*
-							version concaténation ultime */
-							<br />
-							&emsp;&emsp;console.log("Bienvenue sur mon site " + nom); /*
-							version concaténation normale. */
-							<br />
-							}
-						</p>
-						<p class="paragraphe explication">
-							Pour exécuter une fonction, il faut l'appeler par son doux nom :)
-						</p>
-						<p class="paragraphe example">
-							Example: <br />
-							askName(); <br />
-						</p>
-						<p class="paragraphe explication">
-							Une fonction peut faire appel à d'autres fonctions, ces appels
-							étant incluent dans la fonction.
-						</p>
-						<p class="paragraphe example">
-							Example: <br /><br />
-							1- création de la fonction "greet" <br /><br />
-							Ce qui se trouve en rouge entre paranthèses, après le nom de la
-							fonction, est appelé un "paramètre". <br />
-							Il peut y en avoir plusieurs, on appel cela les
-							<span><u>paramètres de la fonction</u></span
-							>. <br /><br />
-							function greet(<span>nom</span>){ <br />
-							&emsp;&emsp;console.log(`Bienvenue sur mon site ${nom}`); /*
-							version concaténation ultime */<br />
-							&emsp;&emsp;console.log("Bienvenue sur mon site " + nom); /*
-							version concaténation normale. */<br />
-							} <br /><br />
-							2- création de la fonction "signUp" faisant appel à la fonction
-							"greet": <br /><br />
-							function signUp(){ <br />
-							let nom = prompt('Quel est ton nom?');<br />
-							greet(<span style="color: rgb(0, 197, 0);">nom</span>); <br />
-							} <br /><br />
-							3- on appel la fonction signUp <br /><br />
-							signUp();<br /><br />
-							Quand on passe une information d'une variable à une fonction, on
-							appel ce qui se trouve entre paranthèses, <br />
-							<span style="color: rgb(0, 197, 0);"><u>un argument</u></span
-							>. <br />
-							Cet argument peut être un nombre, une chaine de charactères, un
-							booléen, etc... <br />
-							il peut y avoir plusieurs arguments en même temps, il suffit de
-							les séparer par une virgule (,). <br /><br />
-
-							Debriefing: <br />
-							Lorsque la fonction "signUp" est appelée, une fenêtre popup
-							apparait, et demande l'information,<br /><br />
-							"Quel est ton nom?" <br /><br />
-							suivi d'un champ réponse à compléter. <br />
-							Lorsque l'utilisateur entre son nom dans le champ et valide, cette
-							information est enregistrée comme valeur de la variable "nom".
-							<br />
-							La valeur se trouvant dans la variable nom est alors passé en
-							argument de la fonction "greet" lors de son appel, <br />
-							Cet argument devient le paramètre de la fonction "greet", <br />
-							Le message correspondant à la fonction "greet" est affiché dans la
-							console. <br />
-							Fin.
-						</p>
-					</li>
-					<li class="article">
-						<h2 class="titre-article">
-							PRINCIPE DU "RETURN" DANS UNE FONCTION
-						</h2>
-						<p class="paragraphe explication">
-							Certaines fonctions ne retourne(renvoi) pas forcément une valeur /
-							argument, elles accomplissent ce qu'on leurs demande de faire,
-							puis passent le relais ou s'arrêtent.
-						</p>
-						<p class="paragraphe example">
-							Example 1: <br />
-							let greet = console.log("coucou c'est moi");
-							<br />console.log(greet); <br /><br />un message s'affichera dans
-							la console mais la valeur de la variable "greet" sera considéré
-							comme "undefined". <br />La variable contient le résultat de
-							l'application de la méthode(fonction) ".log" qui n'a pas pour but
-							de "retourner" une valeur <br />
-							mais simplement d'afficher ce qui est contenu entre ses
-							paranthèses. <br />Afin d'obtenir une valeur pour une variable
-							contenant une fonction, il faut que la fonction contienne une
-							instruction de "retour"(return).
-						</p>
-						<p class="paragraphe example">
-							Example 2: <br />
-							function max(nr1, nr2){ <br />
-							&emsp;&emsp;if(nr1 > nr2){ <br />
-							&emsp;&emsp;<span>return</span> nr1; <br />
-							} <br />
-							else{ <br />
-							&emsp;&emsp;<span>return</span> nr2; <br />
-							} <br /><br />
-							l'instruction "<span>return</span>" permet de renvoyer/retourner
-							le nombre1 si la condition est vérifiée (true), <br />
-							sinon de renvoyer / retourner le nombre2 si la condition n'est pas
-							vérifiée (false). <br /><br />
-
-							let inbox = max(1, 5); <br />
-							console.log(inbox); <br /><br />
-							Debriefing: <br />
-							on fait un console.log de la variable "inbox", ce qui doit nous
-							afficher son contenu, une valeur. <br />
-							Mais la variable inbox contient un appel vers une fonction, la
-							fonction "max" qui contient deux "paramètres". <br />
-							Si la fonction que nous avons écrit au dessus, n'existait pas,
-							nous aurions une valeur "indéfinie". <br />
-							Mais étant donné que cette fonction est prévu et qu'elle contient
-							dans son code l'instruction "return", <br />
-							la fonction "max" va nous renvoyer la valeur nr1 ou nr2 en
-							fonction que la condition IF/ELSE soit vérifiée ou pas. <br />
-							Nous aurons donc bien une valeur qui ici est un nombre et qui sera
-							attribuée à la variable "inbox". <br />
-							A partir de là, le console log de "inbox" nous affichera le nombre
-							"retourné" par la fonction "max" et non pas la valeur "undefined".
-						</p>
-					</li>
-					<li class="article">
 						<h2 class="titre-article">LES BOUCLES</h2>
 						<p class="paragraphe explication">
 							Les boucles nous permettent d'éffectuer un balayage sur un
@@ -1145,6 +1013,167 @@
 							peu importe que la condition soit vérifiée ou pas.<br />
 						</p>
 					</li>
+
+					<li class="article">
+						<h2 class="titre-article">LES FONCTIONS</h2>
+						<p class="paragraphe explication">
+							Une fonction est un ensemble d'actions secondaires ayant pour but
+							d'accomplir une action globale. <br />
+							<br />
+							Example d'une fonction pour demander le nom d'une personne:
+						</p>
+						<p class="paragraphe example">
+							function askName(){ <br />
+							&emsp;&emsp;let nom = prompt('Quel est ton nom?'); <br />
+							&emsp;&emsp;console.log(`Bienvenue sur mon site ${nom}`); /*
+							version concaténation ultime */
+							<br />
+							&emsp;&emsp;console.log("Bienvenue sur mon site " + nom); /*
+							version concaténation normale. */
+							<br />
+							}
+						</p>
+						<p class="paragraphe explication">
+							Pour exécuter une fonction, il faut l'appeler par son doux nom :)
+						</p>
+						<p class="paragraphe example">
+							Example: <br />
+							askName(); <br />
+						</p>
+						<p class="paragraphe explication">
+							Une fonction peut faire appel à d'autres fonctions, ces appels
+							étant incluent dans la fonction.
+						</p>
+						<p class="paragraphe example">
+							Example: <br /><br />
+							1- création de la fonction "greet" <br /><br />
+							Ce qui se trouve en rouge entre paranthèses, après le nom de la
+							fonction, est appelé un "paramètre". <br />
+							Il peut y en avoir plusieurs, on appel cela les
+							<span><u>paramètres de la fonction</u></span
+							>. <br /><br />
+							function greet(<span>nom</span>){ <br />
+							&emsp;&emsp;console.log(`Bienvenue sur mon site ${nom}`); /*
+							version concaténation ultime */<br />
+							&emsp;&emsp;console.log("Bienvenue sur mon site " + nom); /*
+							version concaténation normale. */<br />
+							} <br /><br />
+							2- création de la fonction "signUp" faisant appel à la fonction
+							"greet": <br /><br />
+							function signUp(){ <br />
+							let nom = prompt('Quel est ton nom?');<br />
+							greet(<span style="color: rgb(0, 197, 0);">nom</span>); <br />
+							} <br /><br />
+							3- on appel la fonction signUp <br /><br />
+							signUp();<br /><br />
+							Quand on passe une information d'une variable à une fonction, on
+							appel ce qui se trouve entre paranthèses, <br />
+							<span style="color: rgb(0, 197, 0);"><u>un argument</u></span
+							>. <br />
+							Cet argument peut être un nombre, une chaine de charactères, un
+							booléen, etc... <br />
+							il peut y avoir plusieurs arguments en même temps, il suffit de
+							les séparer par une virgule (,). <br /><br />
+
+							Debriefing: <br />
+							Lorsque la fonction "signUp" est appelée, une fenêtre popup
+							apparait, et demande l'information,<br /><br />
+							"Quel est ton nom?" <br /><br />
+							suivi d'un champ réponse à compléter. <br />
+							Lorsque l'utilisateur entre son nom dans le champ et valide, cette
+							information est enregistrée comme valeur de la variable "nom".
+							<br />
+							La valeur se trouvant dans la variable nom est alors passé en
+							argument de la fonction "greet" lors de son appel, <br />
+							Cet argument devient le paramètre de la fonction "greet", <br />
+							Le message correspondant à la fonction "greet" est affiché dans la
+							console. <br />
+							Fin.
+						</p>
+					</li>
+					<li class="article">
+						<h2 class="titre-article">
+							PRINCIPE DU "RETURN" DANS UNE FONCTION
+						</h2>
+						<p class="paragraphe explication">
+							Certaines fonctions ne retourne(renvoi) pas forcément une valeur /
+							argument, elles accomplissent ce qu'on leurs demande de faire,
+							puis passent le relais ou s'arrêtent.
+						</p>
+						<p class="paragraphe example">
+							Example 1: <br />
+							let greet = console.log("coucou c'est moi");
+							<br />console.log(greet); <br /><br />un message s'affichera dans
+							la console mais la valeur de la variable "greet" sera considéré
+							comme "undefined". <br />La variable contient le résultat de
+							l'application de la méthode(fonction) ".log" qui n'a pas pour but
+							de "retourner" une valeur <br />
+							mais simplement d'afficher ce qui est contenu entre ses
+							paranthèses. <br />Afin d'obtenir une valeur pour une variable
+							contenant une fonction, il faut que la fonction contienne une
+							instruction de "retour"(return).
+						</p>
+						<p class="paragraphe example">
+							Example 2: <br />
+							function max(nr1, nr2){ <br />
+							&emsp;&emsp;if(nr1 > nr2){ <br />
+							&emsp;&emsp;<span>return</span> nr1; <br />
+							} <br />
+							else{ <br />
+							&emsp;&emsp;<span>return</span> nr2; <br />
+							} <br /><br />
+							l'instruction "<span>return</span>" permet de renvoyer/retourner
+							le nombre1 si la condition est vérifiée (true), <br />
+							sinon de renvoyer / retourner le nombre2 si la condition n'est pas
+							vérifiée (false). <br /><br />
+
+							let inbox = max(1, 5); <br />
+							console.log(inbox); <br /><br />
+							Debriefing: <br />
+							on fait un console.log de la variable "inbox", ce qui doit nous
+							afficher son contenu, une valeur. <br />
+							Mais la variable inbox contient un appel vers une fonction, la
+							fonction "max" qui contient deux "paramètres". <br />
+							Si la fonction que nous avons écrit au dessus, n'existait pas,
+							nous aurions une valeur "indéfinie". <br />
+							Mais étant donné que cette fonction est prévu et qu'elle contient
+							dans son code l'instruction "return", <br />
+							la fonction "max" va nous renvoyer la valeur nr1 ou nr2 en
+							fonction que la condition IF/ELSE soit vérifiée ou pas. <br />
+							Nous aurons donc bien une valeur qui ici est un nombre et qui sera
+							attribuée à la variable "inbox". <br />
+							A partir de là, le console log de "inbox" nous affichera le nombre
+							"retourné" par la fonction "max" et non pas la valeur "undefined".
+						</p>
+					</li>
+					<li class="article">
+						<h2>FONCTION TERNAIRE - TERNARY FUNCTION</h2>
+						<p class="paragraphe explication">
+							Qu'est ce que c'est?<br />
+							C'est une fonction écrite en condensées et qui permet alléger le
+							code de notre fichier. <br />
+							<span
+								>On utilisera ce type de fonction on souhaite vérifier une
+								condition "simple" de type "If / Else"</span
+							>. <br /><br />
+							Les fonctions ternaires vont se présenter sous la forme suivante :
+							<br />
+							<span style="color: blue;">(condition) </span> ?
+							<span style="color: rgb(79, 117, 21);"
+								>(code à exécuter si true)</span
+							>
+							: <span>(code à exécuter si false)</span>.
+						</p>
+						<p class="paragraphe example">
+							Example: <br />
+							const goodGame = games.map(function (game) { <br />
+							return <span style="color: blue;">game.rating > 8 </span> ?
+							<span style="color: rgb(79, 117, 21);">game</span> :
+							<span>"bad"</span>; <br />
+							}); <br />
+						</p>
+					</li>
+
 					<li class="article">
 						<h2 class="titre-article">NOTION DE SCOPE</h2>
 						<p class="paragraphe explication">
