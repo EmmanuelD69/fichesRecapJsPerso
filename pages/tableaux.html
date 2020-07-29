@@ -648,7 +648,37 @@
 						</p>
 					</li>
 					<li class="article">
-						<h2>"FILTER" Qu'est-ce que c'est??</h2>
+						<h2>COMBINER/MERGER DES TABLEAUX ENSEMBLE</h2>
+						<p class="paragraphe example">
+							Partons du principe que nous avons plusieurs tableaux et que nous
+							souhaitons combiner(merger) leurs contenus. <br />
+							Soit 2 tableaux, table1 et table2: <br /><br />
+							const table1 = ["je", " m'", "appel", " jean"];<br />
+							const table2 = ["je", " suis", " plombier"];<br /><br />
+							Nous allons combiner ces deux tableau en 1 seul que nous
+							appellerons "table3". <br />
+							pour cela nous allons utiliser 2 méthodes différentes:
+							<br /><br />
+							-1ère méthode avec la méthode "<span>concat()</span>": <br />
+							const table3 = table1.concat(table2);<br />
+							la méthode "concat()" ne va pas modifier les tableaux référents
+							d'origine. <br /><br />
+
+							-2ème méthode avec l'utilisation des "<span>...</span>": <br />
+							const table3 = [...table1, ...table2];<br /><br />
+							Dans les deux cas, le résultat sera le même. <br />
+							Maintenant, partons du principe que l'on veux créer un nouveau
+							tableau <br />
+							en y ajoutant les données contenues dans un tableau deja existant.
+							<br /><br />
+							Tableau existant: <br />
+							const birthday = ["le", "30", "décembre", "1988"]; <br /><br />
+							Nouveau tableau: <br />
+							const utilisateur = ["jean", "est", "né", ...birthday];
+							<br /><br />
+							console.log(utilisateur);<br />
+							Array(7)["jean", "est", "né", "le", "30", "décembre", "1988"];
+						</p>
 					</li>
 					<li class="article">
 						<h2>"FILTER" Qu'est-ce que c'est??</h2>
