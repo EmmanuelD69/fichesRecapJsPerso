@@ -1172,6 +1172,17 @@
 							<span>"bad"</span>; <br />
 							}); <br />
 						</p>
+						<p class="paragraphe explication">Equivalent à:</p>
+						<p class="paragraphe example">
+							const goodGames = games.map(function (game) { <br />
+							if <span style="color: blue;">(game.rating > 8)</span> { <br />
+							&emsp;<span style="color: rgb(79, 117, 21);">return game;</span>
+							<br />
+							} else { <br />
+							&emsp;<span>return "bad";</span> <br />
+							} <br />
+							});
+						</p>
 					</li>
 
 					<li class="article">
