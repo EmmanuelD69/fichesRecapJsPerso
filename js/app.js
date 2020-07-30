@@ -34,5 +34,5 @@ function detectClick(click) {
 }
 
 console.log(
-	'Bonjour et bienvenue sur mon espace Memo. \nLa partie "notions de base" est la seule accessible pour l\'instant. \nLes autres parties seront rajoutées progressivement. \nBonne lecture!'
+	"Bonjour et bienvenue sur mon espace Memo. \nJe rajoute du contenu au quotidien donc ne vous étonnez pas de trouver des parties en cours d'intégration\nBonne lecture!\n30/07/20: add Notions de base > Fonction Ternaire."
 );

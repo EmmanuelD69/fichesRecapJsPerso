@@ -1147,11 +1147,53 @@
 						</p>
 					</li>
 					<li class="article">
-						<h2>FONCTION TERNAIRE - TERNARY FUNCTION</h2>
+						<h2>OPERATEUR TERNAIRE - TERNARY OPERATOR</h2>
 						<p class="paragraphe explication">
 							Qu'est ce que c'est?<br />
-							C'est une fonction écrite en condensées et qui permet alléger le
-							code de notre fichier. <br />
+							<span
+								>C'est un ensemble d'éléments permettant d'effectuer une
+								opération qui retournera un résultat.</span
+							><br /><br />
+							Nos éléments sont au nombre de 3 et sont: <br />
+							<span style="color: blue;">Une condition,</span><br />
+							<span style="color: rgb(79, 117, 21);"
+								>Une valeur si la condition est vraie,</span
+							>
+							<br />
+							<span>Une valeur si la condition est fausse,</span> <br /><br />
+							Un opérateur ternaire se présente sous la forme suivante :
+							<br />
+							<span style="color: blue;">(condition) </span> ?
+							<span style="color: rgb(79, 117, 21);">(valeur si true)</span>
+							: <span>(valeur si false)</span>.
+						</p>
+						<p class="paragraphe example">
+							Example: <br />
+							const goodGame = games.map(function (game) { <br />
+							return <span style="color: blue;">game.rating > 8 </span> ?
+							<span style="color: rgb(79, 117, 21);">game</span> :
+							<span>"bad"</span>; <br />
+							}); <br />
+						</p>
+						<p class="paragraphe explication">Equivalent à:</p>
+						<p class="paragraphe example">
+							const goodGames = games.map(function (game) { <br />
+							if <span style="color: blue;">(game.rating > 8)</span> { <br />
+							&emsp;<span style="color: rgb(79, 117, 21);">return game;</span>
+							<br />
+							} else { <br />
+							&emsp;<span>return "bad";</span> <br />
+							} <br />
+							});
+						</p>
+					</li>
+					<li class="article">
+						<h2>FONCTION FLECHE - ARROW FUNCTIONS</h2>
+						<p class="paragraphe explication">
+							Qu'est ce que c'est?<br />
+							C'est une fonction simple (une ligne de code à executer dans la
+							fonction) et que l'on reécri de manière condensé de sorte à
+							alléger le code. <br />
 							<span
 								>On utilisera ce type de fonction quand on souhaite vérifier une
 								condition "simple" de type "If / Else"</span
