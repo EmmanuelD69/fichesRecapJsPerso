@@ -1201,39 +1201,83 @@
 						<h2>FONCTION FLECHE - ARROW FUNCTIONS</h2>
 						<p class="paragraphe explication">
 							Qu'est ce que c'est?<br />
-							C'est une fonction simple (une ligne de code à executer dans la
-							fonction) et que l'on reécri de manière condensé de sorte à
-							alléger le code. <br />
 							<span
-								>On utilisera ce type de fonction quand on souhaite vérifier une
-								condition "simple" de type "If / Else"</span
+								>C'est une nouvelle façon d'écrire une fonction, un format
+								réduit adapté aux nouvelles normes d'écritures ES6.</span
 							>. <br /><br />
-							Les fonctions ternaires vont se présenter sous la forme suivante :
-							<br />
-							<span style="color: blue;">(condition) </span> ?
-							<span style="color: rgb(79, 117, 21);"
-								>(code à exécuter si true)</span
-							>
-							: <span>(code à exécuter si false)</span>.
 						</p>
+
 						<p class="paragraphe example">
-							Example: <br />
-							const goodGame = games.map(function (game) { <br />
-							return <span style="color: blue;">game.rating > 8 </span> ?
-							<span style="color: rgb(79, 117, 21);">game</span> :
-							<span>"bad"</span>; <br />
-							}); <br />
+							Ecriturne native (AVANT): <br />
+							const goodGames = games.map(function (game) { <br />
+							if (game.rating > 8) { <br />
+							&emsp;return game; <br />
+							} else { <br />
+							&emsp;return "bad"; <br />
+							} <br />
+							}); <br /><br />
 						</p>
 						<p class="paragraphe explication">Equivalent à:</p>
 						<p class="paragraphe example">
-							const goodGames = games.map(function (game) { <br />
-							if <span style="color: blue;">(game.rating > 8)</span> { <br />
-							&emsp;<span style="color: rgb(79, 117, 21);">return game;</span>
+							Ecriturne ES6 (APRES): <br />
+							const goodGames = games.map (game => game.rating > 8 ? game :
+							"bad");
+						</p>
+						<p class="paragraphe explication">
+							<u>DECOMPOSITION DE LA FACTORISATION(SIMPLIFICATION):</u
+							><br /><br />
+						</p>
+						<p class="paragraphe example">
+							Original: <br />
+							const goodGames = games.map( <span>function (game)</span> { <br />
+							&emsp;return game.rating > 8 ? game : "bad"; <br />
+							}); <br /><br />
+							<span style="color: blue;">Step1:</span> suppréssion de "function"
+							au bénéfice du symbole "=>"
 							<br />
-							} else { <br />
-							&emsp;<span>return "bad";</span> <br />
-							} <br />
-							});
+							qui vient se placer après le paramètre dont on peut retirer les
+							paranthèses.
+							<br /><br />
+							const goodGames =games.map( <span>game => </span> { <br />
+							return game.rating >8 ? game : "bad"; <br />
+							}); <br /><br />
+						</p>
+						<p class="paragraphe explication">
+							SI LA FONCTION NECESSITE PLUS D'UN PARAMETRES POUR FONCTIONNER
+							ALORS ON
+							<br />
+							LES METS ENTRE PARANTHESES SINON JAVASCRIPT NE VA PAS COMPRENDRE
+							LE CODE.
+						</p>
+						<p class="paragraphe example">
+							Example: <br />
+							const goodGames =games.map(
+							<span style="color: greenyellow;">(game,index)</span> => { <br />
+							return game.rating >8 ? game : "bad"; <br />
+							}); <br /><br />
+						</p>
+						<p class="paragraphe example">
+							<span style="color: blue;">Step2:</span> Suppréssion des accolades
+							"{}" et du "return". <br /><br />
+							const arrowGames =games.map( game => game.rating >8 ? game :
+							"bad");
+						</p>
+						<p class="paragraphe explication">
+							<u
+								>TOUT CE QUI SE RETROUVE APRES LA FLECHE SERA IMPLICITEMENT
+								COMPRIS COMME UN RETOUR(RETURN) D'INFORMATIONS</u
+							>
+						</p>
+						<p class="paragraphe example">
+							Les trois écritures donnerons le même résultat: <br /><br />
+							const arrowGames1 = games.map(function (game) { <br />
+							return game.rating > 8 ? game : "bad"; <br />
+							}); <br /><br />
+							const arrowGames2 = games.map((game) => { <br />
+							return game.rating > 8 ? game : "bad"; <br />
+							}); <br /><br />
+							const arrowGames3 = games.map( game => game.rating > 8 ? game :
+							"bad");
 						</p>
 					</li>
 
