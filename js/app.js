@@ -34,7 +34,5 @@ function detectClick(click) {
 }
 
 console.log(
-	"Bonjour et bienvenue sur mon espace Memo. \nJe rajoute du contenu au quotidien donc ne vous étonnez pas de trouver des parties en cours d'intégration\nBonne lecture!\n
-	30/07/20: add Notions de base > Opérateur Ternaire.\n
-	31/07/20: add Notions de base > Fonction flèche (ES6)"
+	"Bonjour et bienvenue sur mon espace Memo. \nJe rajoute du contenu au quotidien donc ne vous étonnez pas de trouver des parties en cours 'intégration\nBonne lecture!\n	30/07/20: add Notions de base > OpérateurTernaire,\n31/07/20: add Notions de base > Fonction flèche (ES6),"
 );
