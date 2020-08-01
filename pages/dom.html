@@ -40,6 +40,17 @@
 							<span>C'est la capacité à enregister dans la mémoire de l'objet global les fonctions que l'on a déclaré.</span><br>
 							Pour résumer, une fois nos fonctions déclarées dans notre fichier js, il y'a une lecture passive <br> qui vient les enregister dans une "espace tampon" de l'objet global. <br> elles  restent accessibles à tout moment par l'intermédiaire de la console<br> en appelant l'objet global "window".
 						</p>
+						<p class="paragraphe example">
+							Soit une fonction simple "sayHi()": <br><br>
+							1 - Appel de la fonction avant la déclaration <br>
+							sayHi();<br><br>
+							2 - Déclaration de la fonction: <br>
+							function sayHi(){ <br>
+								&emsp;console.log("Hello");<br>
+								} <br><br>
+								3 - Une lecture passive de la fonction s'effectue lorsque l'on sauvegarde (CTRL+S) <br> le fichier Javascript, ce qui entraine par la même occasion la mémorisation de la fonction. <br><br>
+								4 - La console affiche le message "Hello".
+						</p>
 					</li>
 					<li class="article">
 						<p class="paragraphe example" style="color: green;">
