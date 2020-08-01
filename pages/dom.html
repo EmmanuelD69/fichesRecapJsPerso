@@ -20,10 +20,10 @@
 						</h2>
 						<p class="paragraphe explication">
 							On peut schématiser le DOM comme un arbre généalogique que l'on
-							appel l'objet "window". <br />
-							Cet objet contient un ensemble de paramètres représentant
+							appel l'objet "window" ou l' <u>objet global</u>. <br />
+							Il contient un ensemble de paramètres représentant
 							les éléments contenus dans une page web <br />
-							et dont l'objet "document" est le point d'origine / la racine.
+							et dont l'<span>objet "document" est le point d'origine / la racine</span>.
 							<br />
 							Pour y accéder il suffit de taper dans la console
 							"window.document" ou "document". <br />
@@ -31,7 +31,15 @@
                             <h2>REPRESENTATION GRAPHIQUE DU DOM</h2>
 							<img src="../img/DOM.png" alt="représentation graphique du DOM" />
 						</p>
-						<!-- <p class="paragraphe example"></p> -->
+					</li>
+					<li class="article">
+						<h2 class="titre-article"> NOTIONS DE HOISTING - LEVAGE</h2>
+						<p class="paragraphe explication">
+							Lorsque l'on déclare une fonction il est important de  garder à l'esprit la notion de "hoisting". Cette notion ne s'applique pas aux variables. <br><br>
+							Qu'est ce que c'est? <br><br>
+							<span>C'est la capacité à enregister dans la mémoire de l'objet global les fonctions que l'on a déclaré.</span><br>
+							Pour résumer, une fois nos fonctions déclarées dans notre fichier js, il y'a une lecture passive <br> qui vient les enregister dans une "espace tampon" de l'objet global. <br> elles  restent accessibles à tout moment par l'intermédiaire de la console<br> en appelant l'objet global "window".
+						</p>
 					</li>
 					<li class="article">
 						<p class="paragraphe example" style="color: green;">
