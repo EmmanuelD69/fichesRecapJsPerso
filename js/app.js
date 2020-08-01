@@ -38,3 +38,4 @@ console.log(
 );
 console.log('30/07/20: add Notions de base > Opérateur Ternaire,');
 console.log('31/07/20: add Notions de base > Fonction flèche (ES6),');
+console.log('01/08/20: add DOM > Notions de Hoisting - Levage,');
