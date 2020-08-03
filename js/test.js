@@ -211,3 +211,6 @@ const mixes = ['Techno', 'House Music', 'Disco House', 'Funk'];
 console.log(mixes);
 mixes.sort();
 console.log(mixes);
+
+let tutu = 'Emmanuel';
+console.log(tutu);
