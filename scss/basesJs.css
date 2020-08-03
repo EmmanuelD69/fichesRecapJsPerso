@@ -67,7 +67,7 @@ main {
   min-height: 80vh;
   width: 90%;
   background-color: #cccbcb;
-  font-size: 2rem;
+  font-size: calc(1.3rem + 1vw);
 }
 
 main h2 {
@@ -76,6 +76,11 @@ main h2 {
   justify-content: center;
   align-items: center;
   height: 10vh;
+}
+
+main img {
+  max-width: 100%;
+  height: auto;
 }
 
 main li {
@@ -91,6 +96,11 @@ main li h2 {
   text-decoration: underline;
   width: 100%;
   text-align: center;
+}
+
+main li img {
+  max-width: 100%;
+  height: auto;
 }
 
 main li .paragraphe {
