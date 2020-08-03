@@ -100,6 +100,29 @@
 							const lienSite1 = document. <span>querySelector( <span style="color: greenyellow;">"#liste a"</span>)</span>; <br>dans cet example, on cible un lien se trouvant dans un élément ayant pour ID "liste".</p>
 					</li>
 					<li class="article">
+						<h2 class="titre-article"> HTMLCollection Vs NodeList</h2>
+						<p class="paragraphe explication"><u>HTMLCollection:</u></p>
+						<p class="paragraphe example">
+							const collectionArticles = document. <span>getElementsByClassName( <span style="color: greenyellow;">"article"</span>)</span>; <br>
+							Sélection de tous les éléments ayant pour classe "article".
+						</p>
+						<p class="paragraphe explication">Si l'on effectue un console log, cela nous affichera une "HTMLcollection" contenant l'ensemble des éléments ayant pour classe "article".</p>
+						<p class="paragraphe example">HTMLCollection { 0: li.article, 1: li.article, 2: li.article, 3: li.article, 4: li.article, 5: li.article, 6: li.article, length: 7 }</p>
+						<p class="paragraphe explication">"li.article" est aussi appelé un node de type élément. <u>Il s'agit des balises HTML</u>. <br><span>HTMLCollection n'affiche que des nodes de types élément</span>, il ne peut pas en afficher d'autres. <br><br><span>Si l'on souhaite modifier le contenu d'une balise HTML avec Javascript, il faut le faire via une HTMLCollection</span></p>
+						<p class="paragraphe explication"><u>NodeList:</u></p>
+						<p class="paragraphe example">
+							const nodeArticles = document. <span>querySelectorAll( <span style="color: greenyellow;">".article"</span>)</span>; <br>
+							Sélection de tous les éléments ayant pour classe "article".
+						</p>
+						<p class="paragraphe explication">Si l'on effectue un console log, cela nous affichera une "NodeList" contenant l'ensemble des éléments ayant pour classe "article".</p>
+						<p class="paragraphe example">NodeList(7) [ li.article, li.article, li.article, li.article, li.article, li.article, li.article ]</p>
+						<p class="paragraphe explication"><span>NodeList peut afficher différents types de nodes: élément node, text node, comment node, etc..</p>
+							<p class="paragraphe example">Example: <br>const nodeArticles = document. <span>querySelector( <span style="color: greenyellow;">".liste-p"</span>)</span>;<br>console.log(nodeArticles.childNodes);<br>
+								childNodes demande à afficher les nodes enfant de l'élément ciblé(nodeArticles). <br><br>NodeList(27) [ #text, li.article, #text, li.article, #text, li.article, #text, li.article, #text, li.article, … ]</p>
+								<p class="paragraphe explication">!!! POUR ACCEDER UNIQUEMENT AUX "NODES ELEMENTS" DEPUIS UNE NODELIST, ON UTILISE LA METHODE "CHILDREN" SUR L'ELEMENT CIBLE !!!</p>
+								<p class="paragraphe example">Example: <br>console.log(nodeArticles.children);<br><br>HTMLCollection { 0: li.article, 1: li.article, 2: li.article, 3: li.article, 4: li.article, 5: li.article, 6: li.article, 7: li, 8: li, 9: li, … } <br><br> ON PEUT DONC UTILISER FACILEMENT QUERYSELECTOR POUR AFFICHER UNE HTMLCOLLECTION
+					</li>
+					<li class="article">
 						<p class="paragraphe example" style="color: green;">
 							La suite arrive bientôt, en cours d'intégration.
 						</p>
