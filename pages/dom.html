@@ -33,12 +33,13 @@
 						</p>
 					</li>
 					<li class="article">
-						<h2 class="titre-article"> NOTIONS DE HOISTING - LEVAGE</h2>
+						<h2 class="titre-article"> NOTIONS DE HOISTING - HISSAGE</h2>
 						<p class="paragraphe explication">
-							Lorsque l'on déclare une fonction il est important de  garder à l'esprit la notion de "hoisting". Cette notion ne s'applique pas aux variables. <br><br>
+							Lorsque l'on déclare des fonctions ou/et des variables il est important de  garder à l'esprit la notion de "hoisting".<br><br>
 							Qu'est ce que c'est? <br><br>
-							<span>C'est la capacité à enregister dans la mémoire de l'objet global les fonctions que l'on a déclaré.</span><br>
-							Pour résumer, une fois nos fonctions déclarées dans notre fichier js, il y'a une lecture passive <br> qui vient les enregister dans une "espace tampon" de l'objet global. <br> elles  restent accessibles à tout moment par l'intermédiaire de la console<br> en appelant l'objet global "window".
+							<span>C'est la capacité à enregister dans la mémoire de l'objet global les fonctions et variables que l'on a déclaré.</span><br>
+							Pour résumer, une fois déclarées dans notre fichier js, il y'a une lecture passive <br> qui va les garder en mémoire dans l'objet global. <br> elles  restent accessibles à tout moment par l'intermédiaire de la console<br> et sont visibles dans l'objet global "window". <br><br>
+							Source MDN: <br> <cite>une définition stricte du hissage suggère que les déclarations de variables et de fonctions <br> sont déplacées physiquement en haut de votre code, mais ce n'est pas ce qui se passe en fait. <br> A la place, les déclarations de variables et de fonctions sont mises en mémoire <br> pendant la phase de compilation, mais restent exactement là où vous les avez tapées dans votre code.</cite>
 						</p>
 						<p class="paragraphe example">
 							Soit une fonction simple "sayHi()": <br><br>
@@ -51,6 +52,7 @@
 								3 - Une lecture passive de la fonction s'effectue lorsque l'on sauvegarde (CTRL+S) <br> le fichier Javascript, ce qui entraine par la même occasion la mémorisation de la fonction. <br><br>
 								4 - La console affiche le message "Hello".
 						</p>
+						<!-- <p class="paragraphe explication">Les variables "const" et "let" ne permettrai pas cette sauvegarde en mémoire, il faut les déclarer avant de les appeler.</p> -->
 					</li>
 					<li class="article">
 						<p class="paragraphe example" style="color: green;">
