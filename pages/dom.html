@@ -77,6 +77,29 @@
 						</p>
 					</li>
 					<li class="article">
+						<h2 class="titre-article"> CIBLER UN ELEMENT DU DOM</h2>
+						<p class="paragraphe explication">AVEC "GETELEMENTBY" qui va retourner une "HTMLCollection" dans la console. <br><br>1 - Selectionner un ou plusieurs éléments par leur nom de balise:</p>
+						<p class="paragraphe example">const headers = document. <span>getElementsByTagName( <span style="color: greenyellow;">"h2"</span>)</span>; </p>
+						<p class="paragraphe explication">2 - Sélectionner un ou plusieurs éléments par leur nom de classe:</p>
+						<p class="paragraphe example">const list = document. <span>getElementsByClassName( <span style="color: greenyellow;">"paragraphe"</span>)</span>; </p>
+						<p class="paragraphe explication">3 - Sélectionner un élément par son ID:</p>
+						<p class="paragraphe example">const section1 = document. <span>getElementById( <span style="color: greenyellow;">"liste"</span>)</span>;</p><br>
+						<p class="paragraphe explication">AVEC "QUERYSELECTOR" qui va retourner une "NodeList" dans la console. <br><u>On utilise les selecteurs CSS pour identifier ce que l'on veux cibler:</u> (.classe) / (#Id) / (balise) <br><br> 1 - Sélectionner un élément par son nom de balise: <br>!!! Si plusieurs éléments h2 existent, celui qui s'affichera dans la console sera le premier rencontré en partant du haut vers le bas. !!! </p>
+						<p class="paragraphe example">const header = document. <span>querySelector( <span style="color: greenyellow;">"h2"</span>)</span>;</p>
+						<p class="paragraphe explication">2 - Selectionner tous les éléments portant le même nom de balise:</p>
+						<p class="paragraphe example">const headers = document. <span>querySelectorAll( <span style="color: greenyellow;">"h2"</span>)</span>;</p>
+						<p class="paragraphe explication">3 - Sélectionner un éléments par son nom de classe: <br>!!! Si plusieurs éléments portent le même nom de classe, celui qui s'affichera dans la console sera le premier rencontré en partant du haut vers le bas. !!!</p>
+						<p class="paragraphe example">const liste = document. <span>querySelector( <span style="color: greenyellow;">".paragraphe"</span>)</span>;</p>
+						<p class="paragraphe explication">4 - Selectionner tous les éléments portant le même nom de classe:</p>
+						<p class="paragraphe example">const listeAll = document. <span>querySelectorAll( <span style="color: greenyellow;">".paragraphe"</span>)</span>;</p>
+						<p class="paragraphe explication">5 - Sélectionner un élément par son ID:</p>
+						<p class="paragraphe example">const section1 = document. <span>querySelector( <span style="color: greenyellow;">"#intro"</span>)</span>;</p>
+						<p class="paragraphe explication">PS: LA METHODE QUERYSELECTOR EST UN PEU PLUS LENTE A S'EXECUTER QUE GETELEMENTBY.</p>
+						<p class="paragraphe example">Quelques exemples: <br> const header3 = document. <span>querySelector( <span style="color: greenyellow;">"h2.item"</span>)</span>; <br>
+							dans cet example, on cible une balise h2 qui porte le nom de class "item". <br><br>
+							const lienSite1 = document. <span>querySelector( <span style="color: greenyellow;">"#liste a"</span>)</span>; <br>dans cet example, on cible un lien se trouvant dans un élément ayant pour ID "liste".</p>
+					</li>
+					<li class="article">
 						<p class="paragraphe example" style="color: green;">
 							La suite arrive bientôt, en cours d'intégration.
 						</p>
