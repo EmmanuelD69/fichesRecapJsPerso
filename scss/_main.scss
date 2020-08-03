@@ -13,7 +13,7 @@ main {
 			color: whitesmoke;
 			height: 50%;
 			width: 50%;
-			font-size: $size1;
+			font-size: calc(1.7rem + 1vw);
 			border: 0.2rem solid whitesmoke;
 			display: flex;
 			justify-content: center;
