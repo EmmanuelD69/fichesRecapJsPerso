@@ -49,10 +49,6 @@ main .menu {
   height: 80vh;
   display: flex;
   flex-wrap: wrap;
-  /* 		.bases:hover {
-			background-color: rgb(115, 133, 39);
-			border: 0.2rem solid black;
-		} */
 }
 
 main .menu .section {
@@ -97,4 +93,26 @@ footer ul {
   justify-content: space-around;
   align-items: center;
   flex: 1;
+}
+
+/* ATTENTION LES MEDIA QUERIES DOIVENT ETRE EN FIN SINON RISQUE DE CREER CONFLITS AVEC LE RESPONSIVE*/
+/* TABLETS */
+@media (max-width: 1024px) {
+  /* HEADER */
+  .titre {
+    font-size: 3rem;
+  }
+  main .menu .section {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 560px) {
+  /* HEADER */
+  .titre {
+    font-size: 2rem;
+  }
+  main .menu .section {
+    font-size: 1.2rem;
+  }
 }

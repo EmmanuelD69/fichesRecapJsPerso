@@ -5,3 +5,5 @@
 @import './header';
 @import './main';
 @import './footer';
+/* ATTENTION LES MEDIA QUERIES DOIVENT ETRE EN FIN SINON RISQUE DE CREER CONFLITS AVEC LE RESPONSIVE*/
+@import './responsive';

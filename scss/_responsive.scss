@@ -1,0 +1,28 @@
+/* TABLETS */
+@media (max-width: 1024px) {
+	/* HEADER */
+	.titre {
+		font-size: $size2;
+	}
+	main {
+		.menu {
+			.section {
+				font-size: 1.5rem;
+			}
+		}
+	}
+}
+
+@media (max-width: 560px) {
+	/* HEADER */
+	.titre {
+		font-size: $size3;
+	}
+	main {
+		.menu {
+			.section {
+				font-size: 1.2rem;
+			}
+		}
+	}
+}
