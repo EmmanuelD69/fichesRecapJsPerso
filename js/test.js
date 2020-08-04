@@ -231,3 +231,18 @@ userX.fn = sayHi;
 console.log(userX);
 userX.sayHi;
 sayHi();
+
+const userZ = {
+	name: 'emmanueldev',
+	videos: ['html', 'css', 'javascript', 'react'],
+	greet() {
+		console.log(`Hello there ${this.name}`);
+		//add function
+		const getVideos = () => {
+			console.log(`You currently have ${this.videos.length} videos`);
+		};
+		getVideos();
+	},
+};
+
+userZ.greet();

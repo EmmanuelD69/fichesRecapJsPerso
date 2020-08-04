@@ -254,6 +254,48 @@
 								ERROR.</span
 							>
 						</p>
+						<p class="paragraphe example">
+							Example2: fonctionnel <br /><br />
+							<span style="color: rgb(133, 133, 211);"
+								>const user = {<br />
+								&emsp;name: "emmanueldev",<br />
+								&emsp;videos: ["html", "css", "javascript", "react"],<br />
+								&emsp;greet() {<br />
+								&emsp;&emsp;console.log(`Hello there ${this.name}`);<br />
+								&emsp;&emsp;//add function</span
+							>
+							<br />
+							&emsp;&emsp;<span style="color: greenyellow;"
+								>const getVideos = () => { <br />
+								&emsp;&emsp;&emsp;console.log(`You currently have
+								${this.videos.length} videos`);<br />
+								&emsp;&emsp;};</span
+							><br />
+							<span style="color: rgb(133, 133, 211);"
+								>&emsp;&emsp;getVideos();<br />
+								&emsp;}, <br />
+								};</span
+							><br /><br />
+							La fonction arrow est introduite avec l'écriture suivante =>.
+							<br />
+							<span
+								>Une fonction arrow ne crée pas un nouveau "this", elle prolonge
+								celui déjà existant</span
+							>, <br />
+							il n'y a donc pas de "reset" de this et la référence à l'objet est
+							conservée. <br /><br />
+
+							user.greet();<br /><br />
+							Résultat en console: <br />
+							<span style="color: rgb(133, 133, 211);"
+								>Hello there emmanueldev</span
+							>
+							<br />
+							<span style="color: greenyellow;"
+								>You currently have 4 videos</span
+							>
+							<br />
+						</p>
 					</li>
 					<li class="article">
 						<p class="paragraphe example" style="color: green;">
