@@ -214,3 +214,20 @@ console.log(mixes);
 
 let tutu = 'Emmanuel';
 console.log(tutu);
+
+const userX = {
+	name: 'emmanueldev',
+};
+
+const userY = {
+	name: 'admin',
+};
+
+function sayHi() {
+	console.log(this);
+}
+
+userX.fn = sayHi;
+console.log(userX);
+userX.sayHi;
+sayHi();

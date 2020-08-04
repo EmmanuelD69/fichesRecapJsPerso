@@ -85,6 +85,92 @@
 						</p>
 					</li>
 					<li class="article">
+						<h2 class="titre-article">THIS - Qu'est ce que c'est?</h2>
+						<p class="paragraphe explication">
+							Il s'agit d'un pointeur qui cible un objet. Par default, si l'on
+							fait un console.log de "this", il va cibler l'objet "window".
+						</p>
+						<p class="paragraphe example">
+							console.log(this); <br /><br />
+							Résultat: <br />
+							Window {parent: Window, opener: null, top: Window, length: 0,
+							frames: Window, …}
+						</p>
+						<p class="paragraphe explication">
+							<u>"this" dans un objet:</u> <br />
+							Si on utilise "this" dans une méthode(fonction) se trouvant dans
+							un objet, <br />
+							"this" va pointer vers l'objet qui le contient.
+						</p>
+						<p class="paragraphe example">
+							Soit l'objet "user": <br /><br />
+							const user = { <br />
+							&emsp;name: "emmanueldev", <br />
+							&emsp;sayHi() { <br />
+							&emsp;&emsp;console.log(this);<br />
+							&emsp;},<br />
+							};<br /><br />
+							on appel la méthode se trouvant dans l'objet "user"<br />
+							user.sayHi();<br /><br />
+							le résultat qui s'affichera en console est l'objet "user": <br />
+							Object { name: "emmanueldev", sayHi: sayHi() }
+						</p>
+						<p class="paragraphe explication">
+							<u>"this" dans une fonction du scope global:</u> <br />
+							On peut créer une fonction dans le scope global contenant "this"
+							et l'insérer dans un objet.
+						</p>
+						<p class="paragraphe example">
+							Soit 2 objets "user" et "admin": <br />
+							<span style="color: rgb(133, 133, 211);"
+								>const user = { <br />
+								&emsp;name: "emmanueldev", <br />
+								};</span
+							><br /><br />
+							<span style="color: greenyellow;"
+								>const admin = { <br />
+								&emsp;name: "admin", <br />
+								};</span
+							><br /><br />
+							On crée la fonction "sayHi()" dans le scope global:<br />
+							function sayHi() { <br />
+							&emsp;console.log(this); <br />
+							}<br /><br />
+							On ajoute une propriété à l'objet "user" qui aura pour clé "fn" et
+							pour valeur "sayHi", <br />
+							"sayHi" étant la fonction que nous avons crée dans le scope
+							global.
+							<br />
+							<span style="color: rgb(133, 133, 211);">user.fn = sayHi;</span>
+							<br /><br />
+							Même chose avec l'objet "admin", on ajoute une propriété qui aura
+							pour clé "fn" et pour valeur "sayHi", <br />
+							<span style="color: greenyellow;">admin.fn = sayHi;</span>
+							<br /><br />
+
+							pour appeler la fonction dans l'objet, il suffit simplement
+							d'utiliser le code suivant: <br />
+							<span style="color: rgb(133, 133, 211);">user.fn();</span><br />
+							<span style="color: greenyellow;">admin.fn();</span><br /><br />
+							on obtiendra dans la console: <br />
+							<span style="color: rgb(133, 133, 211);"
+								>Object { name: "emmanueldev", fn: sayHi() }</span
+							>
+							<br />
+							<span style="color: greenyellow;"
+								>Object { name: "admin", fn: sayHi() }</span
+							>
+						</p>
+						<p class="paragraphe explication">
+							<u>ASTUCE:</u> <br />
+							UNE FONCTION SITUE DANS LE SCOPE GLOBAL, UTILISANT "THIS", PEUT
+							PERMETTRE DE FACTORISER SON CODE.
+							<br />
+							PLUS BESOIN DE REECRIRE LA FONCTION DANS CHAQUE OBJET.!!! <br />
+							IL SUFFIT DE L'AJOUTER A UN OBJET POUR QU'IL EN DEVIENNE LA CIBLE.
+						</p>
+					</li>
+					<li class="article">
 						<p class="paragraphe example" style="color: green;">
 							La suite arrive bientôt, en cours d'intégration.
 						</p>
@@ -96,6 +182,6 @@
 		<footer>
 			<h3>&copy;EmmanuelDev 2020</h3>
 		</footer>
-		<script src="./js/test.js"></script>
+		<script src="../js/test.js"></script>
 	</body>
 </html>
