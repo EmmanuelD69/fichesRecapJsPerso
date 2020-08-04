@@ -39,3 +39,7 @@ console.log(
 console.log('30/07/20: add Notions de base > Opérateur Ternaire,');
 console.log('31/07/20: add Notions de base > Fonction flèche (ES6),');
 console.log('01/08/20: add DOM > Notions de Hoisting - Levage,');
+console.log('03/08/20: add DOM > Notions de Contexte Global Execution,');
+console.log('03/08/20: add DOM > Cibler un élément du DOM,');
+console.log('03/08/20: add DOM > HTMLCollection vs NodeList,');
+console.log('03/08/20: add Responsive design,');
