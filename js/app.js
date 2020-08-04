@@ -43,3 +43,4 @@ console.log('03/08/20: add DOM > Notions de Contexte Global Execution,');
 console.log('03/08/20: add DOM > Cibler un élément du DOM,');
 console.log('03/08/20: add DOM > HTMLCollection vs NodeList,');
 console.log('03/08/20: add Responsive design,');
+console.log("04/08/20: add DOM > THIS - Qu'est-ce que c'est?,");
