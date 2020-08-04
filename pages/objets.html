@@ -178,6 +178,79 @@
 							propriété "name" en majuscule. <br />
 							"this" permet de cibler l'objet qui à fait appel à la fonction.
 						</p>
+						<p class="paragraphe explication">
+							<u
+								><span>Cas particulier</span> - "this" dans une fonction faisant
+								partie d'une méthode contenue dans un objet.</u
+							>
+						</p>
+						<p class="paragraphe explication">
+							Vous me suivez? non? je m'explique! <br />
+							Rappel: une fonction se trouvant à l'intérieur d'un objet est
+							appelée une "méthode". <br />
+							Et une fonction peut faire appel dans son propre scope à une autre
+							fonction. Une fonction dans une fonction! <br />
+							Donc, une méthode peut faire appel à une fonction dans son propre
+							scope. <br />
+							Vous me suivez maintenant?
+						</p>
+						<p class="paragraphe example">
+							const user = { <br />
+							name: "emmanueldev", <br />
+							videos: ["html", "css", "javascript", "react"], <br />
+							<span style="color: rgb(133, 133, 211);"
+								>greet(){ <br />
+								&emsp;console.log(`Hello there ${this.name}`);<br />
+								&emsp;//add function</span
+							>
+							<br />
+							&emsp;<span style="color: greenyellow;"
+								>const getVideos = function() { <br />
+								&emsp;&emsp;console.log(`You currently have
+								${this.videos.length} videos`);
+								<br />
+								&emsp;&emsp;};</span
+							><br />
+							&emsp;<span style="color: rgb(133, 133, 211);"
+								>getVideos();<br />
+								&emsp;}</span
+							>
+							<br />
+							}; <br /><br />
+							user.greet(); <br />
+							On lance l'exécution de la méthode "greet()" faisant parti de
+							l'objet "user" <br />
+							ce qui induit que "this" va cibler l'objet "user". <br />
+							Ce qui est vrai dans la méthode, ne l'est plus dans la fonction
+							"getVideos()" <br /><br />
+							la fonction getVideos étant <u>"indirectement"</u> appelée dans
+							l'execution de la méthode "greet", <br />
+							<span
+								>le "this" qu'elle contient ne fais donc pas directement
+								référence à l'objet qui la contient</span
+							>, <br />
+							par conséquent "this" ne sais pas ce qu'il doit pointer et affiche
+							un message d'erreur. <br /><br />
+							résultat dans la console: <br />
+							<span style="color: rgb(133, 133, 211);"
+								>Hello there emmanueldev</span
+							>
+							<br />
+							<span style="color: greenyellow;"
+								>TypeError: can't access property "length", this.videos is
+								undefined</span
+							>
+							<br /><br />
+							Quand on crée une fonction dans une méthode, le terme "this" ne
+							fais plus référence à l'objet qui le contient. <br />
+							<span
+								>Pour pallier à ce problème, il faut utiliser une "fonction
+								arrow" <br /><br />
+								"THIS" NECESSITE L'USAGE D'UNE FONCTION ARROW POUR CIBLER
+								L'OBJET QUI LE CONTIENT, SINON "THIS" SERA RESET ET NE CIBLERA
+								PLUS L'OBJET.</span
+							>
+						</p>
 					</li>
 					<li class="article">
 						<p class="paragraphe example" style="color: green;">
