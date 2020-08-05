@@ -64,4 +64,4 @@ console.log('03/08/20: add DOM > Cibler un élément du DOM,');
 console.log('03/08/20: add DOM > HTMLCollection vs NodeList,');
 console.log('03/08/20: add Responsive design,');
 console.log("04/08/20: add OBJET > THIS - Qu'est-ce que c'est?,");
-console.log("05/08/20: add OBJET > THIS - Qu'est-ce que c'est?,");
+console.log("05/08/20: add OBJET > BIND - Qu'est-ce que c'est?,");
