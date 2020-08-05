@@ -238,8 +238,8 @@ const userZ = {
 	greet() {
 		console.log(`Hello there ${this.name}`);
 		//add function
-		const getVideos = () => {
-			console.log(`You currently have ${this.videos.length} videos`);
+		const getVideos = function () {
+			console.log(this);
 		};
 		getVideos();
 	},

@@ -162,12 +162,10 @@
 							>
 						</p>
 						<p class="paragraphe explication">
-							<u>ASTUCE:</u> <br />
-							UNE FONCTION SITUE DANS LE SCOPE GLOBAL, UTILISANT "THIS", PEUT
-							PERMETTRE DE FACTORISER SON CODE.
+							PAS BESOIN DE DUPLIQUER UNE FONCTION, ON LA DECLARE UNE SEULE FOIS
 							<br />
-							PLUS BESOIN DE REECRIRE LA FONCTION DANS CHAQUE OBJET.!!! <br />
-							IL SUFFIT DE L'AJOUTER A UN OBJET POUR QU'IL EN DEVIENNE LA CIBLE.
+							ET ON L'AJOUTE DANS LES OBJETS DE NOTRE CHOIX SANS RETAPER SON
+							CODE.
 						</p>
 						<p class="paragraphe example">
 							Example d'usage de this: <br />
@@ -229,8 +227,9 @@
 								>le "this" qu'elle contient ne fais donc pas directement
 								référence à l'objet qui la contient</span
 							>, <br />
-							par conséquent "this" ne sais pas ce qu'il doit pointer et affiche
-							un message d'erreur. <br /><br />
+							par conséquent nous obtiendrons un message d'erreur car sans
+							cibler directement un objet, <br />
+							this se réfèrera par défaut à l'objet "Window". <br /><br />
 							résultat dans la console: <br />
 							<span style="color: rgb(133, 133, 211);"
 								>Hello there emmanueldev</span
@@ -240,22 +239,18 @@
 								>TypeError: can't access property "length", this.videos is
 								undefined</span
 							>
-							<br /><br />
-							Quand on crée une fonction dans une méthode, le terme "this" ne
-							fais plus référence à l'objet qui le contient. <br />
-							<span
-								>Pour pallier à ce problème, il faut utiliser une "fonction
-								arrow" <br /><br />
-								"THIS" SITUE DANS LE SCOPE D'UNE FONCTION COMPRISE DANS UNE
-								METHODE, <br />
-								NECESSITE L'USAGE D'UNE FONCTION ARROW POUR CIBLER L'OBJET QUI
-								LE CONTIENT, <br />
-								SINON "THIS" SERA INCAPABLE DE CIBLER L'OBJET ET AFFICHERA
-								ERROR.</span
-							>
 						</p>
+						<p class="paragraphe explication">
+							Pour pallier à ce problème, il faut utiliser une
+							<span><u>"fonction arrow"</u></span
+							>.<br />
+							Pour cela on retire le terme "function" et on place après les
+							paranthèses "()" le symbole "<span>=></span>"<br />
+							C'est actuellement une bonne pratique à utiliser qui correspond à
+							la norme ES6 cela évite bien des problèmes...
+						</p>
+
 						<p class="paragraphe example">
-							Example2: fonctionnel <br /><br />
 							<span style="color: rgb(133, 133, 211);"
 								>const user = {<br />
 								&emsp;name: "emmanueldev",<br />
@@ -297,6 +292,50 @@
 							<br />
 						</p>
 					</li>
+					<li class="article">
+						<h2 class="titre-article">BIND - qu'est ce que c'est?</h2>
+						<p class="paragraphe explication">
+							<span
+								>"bind()"" est une méthode qui permet de lier une fonction
+								située dans le scope global à un objet.</span
+							><br /><br />
+							La fonction qui aura été associée à l'objet pourra accéder à
+							l'ensemble de son contenu grâce à l'usage de "this". <br /><br />
+							RAPPEL: Une fonction est soit: <br />
+							Déclarée dans le scope global, "this" fait référence à l'objet
+							"window" <br />
+							ou <br />
+							Déclarée dans un objet et on l'appelle alors une "méthode", "this"
+							fait référence à l'objet la contenant<br />
+							ou <br />
+							Déclarée au sein d'une méthode, "this" fait référence à l'objet
+							"window" <u>si on n'utilise pas de fonction arrow(=>)</u>.<br />
+							Si une fonction arrow (=>) est utilisée, alors "this" fera
+							référence à l'objet qui contient la méthode dans laquelle la
+							fonction est incluse.
+						</p>
+						<p class="paragraphe example">
+							Example: <br />
+							1-CREATION OBJET "PERSON" AVEC METHODE "<span
+								style="color: rgb(133, 133, 211);"
+								>GETFULLNAME"</span
+							>
+							<br /><br />
+							const person = { <br />
+							&emsp;firstName: "emmanuel", <br />
+							&emsp;lastName: "dev", <br />
+							&emsp;<span style="color: rgb(133, 133, 211);"
+								>getFullName(){ <br />
+								&emsp;&emsp;console.log(this.firstName + this.lastName); <br />
+								&emsp;},</span
+							>
+							<br />
+							};
+						</p>
+					</li>
+					<!-- <li class="article">
+						<h2 class="titre-article">THIS - Qu'est ce que c'est?</h2>
+					</li> -->
 					<li class="article">
 						<p class="paragraphe example" style="color: green;">
 							La suite arrive bientôt, en cours d'intégration.
