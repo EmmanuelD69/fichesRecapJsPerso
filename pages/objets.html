@@ -318,9 +318,8 @@
 							Example: <br />
 							1-CREATION OBJET "PERSON" AVEC METHODE "<span
 								style="color: rgb(133, 133, 211);"
-								>GETFULLNAME"</span
-							>
-							<br /><br />
+								>GETFULLNAME</span
+							>" <br /><br />
 							const person = { <br />
 							&emsp;firstName: "emmanuel", <br />
 							&emsp;lastName: "dev", <br />
@@ -330,7 +329,32 @@
 								&emsp;},</span
 							>
 							<br />
-							};
+							};<br /><br />
+							2-CREATION FONCTION "<span style="color: greenyellow;"
+								>REGISTERUSER</span
+							>" DANS LE SCOPE GLOBAL <br />
+							Au moment de la déclaration de la fonction, this n'est pas lié à
+							l'objet "person". <br /><br />
+
+							<span style="color: greenyellow;"
+								>function registerUser(country, lang, methode) {<br />
+								//fonctionnalitées additionnelles.... <br />
+								console.log(this);<br />
+								this.getFullName(); <br />
+								}</span
+							>
+							<br /><br />
+							3-CREATION D'UNE CONSTANTE REGISTER CONTENANT LA FONCTION
+							"REGISTERUSER" QU'ON LIE A L'OBJET "PERSON" <br /><br />
+							const register =
+							<span style="color: greenyellow;">registerUser</span
+							>.<span>bind(person)</span>; <br />
+							La fonction registerUser est liée à l'objet "person" en utilisant
+							".bind()", dont "person" est l'argument. <br /><br />
+							4-EXECUTION DE LA CONSTANTE CONTENANT LA FONCTION REGISTERUSER
+							POUR LAQUELLE ON FOURNIT 3 PARAMETRES:
+							<br />
+							register('France', 'Fr', 'BIND'); <br />
 						</p>
 					</li>
 					<!-- <li class="article">
@@ -348,6 +372,6 @@
 		<footer>
 			<h3>&copy;EmmanuelDev 2020</h3>
 		</footer>
-		<script src="../js/test.js"></script>
+		<!-- <script src="../js/test.js"></script> -->
 	</body>
 </html>
