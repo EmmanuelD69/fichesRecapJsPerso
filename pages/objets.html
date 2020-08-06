@@ -1,377 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>EmmanuelDev Mémo Javascript - TABLEAUX</title>
-		<link rel="stylesheet" href="../scss/basesJs.css" />
-	</head>
 
-	<body>
-		<header>
-			<h1 class="titre">JAVASCRIPT MEMO</h1>
-		</header>
-		<main>
-			<section id="liste">
-				<ul id="liste-p">
-					<li class="article">
-						<h2 class="titre-article">LES OBJETS</h2>
-						<p class="paragraphe explication">
-							Un objet est comme un livre contenant des chapitres ayant chacun
-							un titre et du contenu. <br /><br />
-							En version Javascript cela donne: <br />
-							<span
-								>Un objet est une donnée de type référence qui possède une ou
-								plusieurs propriétés. <br />
-								Une propriété est l'association d'un nom(key) et d'une
-								valeur(value).</span
-							><br /><br />
-							!!! PROPERTY = KEY / VALUE !!!<br />
-							Le contenu d'un objet s'écrit entre accolades <span>{}</span> et
-							chaque "propriété" est séparée par une virgule.<br />
-							ATTENTION: on peut stocker des fonctions dans un objet, elles sont
-							alors renommées "<span>méthodes</span>".
-						</p>
-						<p class="paragraphe example">
-							Example1: <br />
-							const user = { <br />
-							&emsp;name: "Jean-luc", <br />
-							&emsp;age: 36, <br />
-							&emsp;married: false, <br />
-							&emsp;greet: function(){ /* Version longue*/ <br />
-							&emsp;console.log("hello there!"); <br />
-							&emsp;}, <br />
-							};
-						</p>
-						<p class="paragraphe explication">
-							On peut utiliser un raccourci pour écrire une méthode en
-							supprimant ": function", cela correspond exactement à la même
-							chose en version simplifié.
-						</p>
-						<p class="paragraphe example">
-							Example2: <br />
-							const user = { <br />
-							&emsp;name: "Jean-luc", <br />
-							&emsp;age: 36, <br />
-							&emsp;married: false, <br />
-							&emsp;greet(){ /* Version simplifiée */ <br />
-							&emsp;console.log("hello there!"); <br />
-							&emsp;}, <br />
-							};
-						</p>
-						<p class="paragraphe explication">
-							Un objet peut par exemple identifier une personne et contenir des
-							informations concernant cette personne. <br />
-							Un objet est composé de propriétés qui se décompose en deux temps,
-							tout d'abord la clé, puis sa valeur. <br />
-							Dans notre example, "name" est la clé, et "Emmanuel" est la
-							valeur, l'ensemble formant la première propriété de l'objet
-							"user".
-						</p>
-						<p class="paragraphe explication">
-							pour acceder à une information dans un objet, il faut le nommer et
-							ajouter un point (.) avant de nommer la propriété qui nous
-							intéresse.
-						</p>
-						<p class="paragraphe example">
-							Example: <br />
-							console.log(user.name);
-						</p>
-						<p class="paragraphe explication">
-							ou directement dans la console avec:
-						</p>
-						<p class="paragraphe example">
-							user.name;
-						</p>
-					</li>
-					<li class="article">
-						<h2 class="titre-article">THIS - Qu'est ce que c'est?</h2>
-						<p class="paragraphe explication">
-							Il s'agit d'un pointeur qui cible un objet. Par default, si l'on
-							fait un console.log de "this", il va cibler l'objet "window".
-						</p>
-						<p class="paragraphe example">
-							console.log(this); <br /><br />
-							Résultat: <br />
-							Window {parent: Window, opener: null, top: Window, length: 0,
-							frames: Window, …}
-						</p>
-						<p class="paragraphe explication">
-							<u>"this" dans un objet:</u> <br />
-							Si on utilise "this" dans une méthode(fonction) se trouvant dans
-							un objet, <br />
-							"this" va pointer vers l'objet qui le contient.
-						</p>
-						<p class="paragraphe example">
-							Soit l'objet "user": <br /><br />
-							const user = { <br />
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>EmmanuelDev Mémo Javascript - TABLEAUX</title>
+	<link rel="stylesheet" href="../scss/basesJs.css" />
+</head>
+
+<body>
+	<header>
+		<h1 class="titre">JAVASCRIPT MEMO</h1>
+	</header>
+	<main>
+		<section id="liste">
+			<ul id="liste-p">
+				<li class="article">
+					<h2 class="titre-article">LES OBJETS</h2>
+					<p class="paragraphe explication">
+						Un objet est comme un livre contenant des chapitres ayant chacun
+						un titre et du contenu. <br /><br />
+						En version Javascript cela donne: <br />
+						<span>Un objet est une donnée de type référence qui possède une ou
+							plusieurs propriétés. <br />
+							Une propriété est l'association d'un nom(key) et d'une
+							valeur(value).</span><br /><br />
+						!!! PROPERTY = KEY / VALUE !!!<br />
+						Le contenu d'un objet s'écrit entre accolades <span>{}</span> et
+						chaque "propriété" est séparée par une virgule.<br />
+						ATTENTION: on peut stocker des fonctions dans un objet, elles sont
+						alors renommées "<span>méthodes</span>".
+					</p>
+					<p class="paragraphe example">
+						Example1: <br />
+						const user = { <br />
+						&emsp;name: "Jean-luc", <br />
+						&emsp;age: 36, <br />
+						&emsp;married: false, <br />
+						&emsp;greet: function(){ /* Version longue*/ <br />
+						&emsp;console.log("hello there!"); <br />
+						&emsp;}, <br />
+						};
+					</p>
+					<p class="paragraphe explication">
+						On peut utiliser un raccourci pour écrire une méthode en
+						supprimant ": function", cela correspond exactement à la même
+						chose en version simplifié.
+					</p>
+					<p class="paragraphe example">
+						Example2: <br />
+						const user = { <br />
+						&emsp;name: "Jean-luc", <br />
+						&emsp;age: 36, <br />
+						&emsp;married: false, <br />
+						&emsp;greet(){ /* Version simplifiée */ <br />
+						&emsp;console.log("hello there!"); <br />
+						&emsp;}, <br />
+						};
+					</p>
+					<p class="paragraphe explication">
+						Un objet peut par exemple identifier une personne et contenir des
+						informations concernant cette personne. <br />
+						Un objet est composé de propriétés qui se décompose en deux temps,
+						tout d'abord la clé, puis sa valeur. <br />
+						Dans notre example, "name" est la clé, et "Emmanuel" est la
+						valeur, l'ensemble formant la première propriété de l'objet
+						"user".
+					</p>
+					<p class="paragraphe explication">
+						pour acceder à une information dans un objet, il faut le nommer et
+						ajouter un point (.) avant de nommer la propriété qui nous
+						intéresse.
+					</p>
+					<p class="paragraphe example">
+						Example: <br />
+						console.log(user.name);
+					</p>
+					<p class="paragraphe explication">
+						ou directement dans la console avec:
+					</p>
+					<p class="paragraphe example">
+						user.name;
+					</p>
+				</li>
+				<li class="article">
+					<h2 class="titre-article">THIS - Qu'est ce que c'est?</h2>
+					<p class="paragraphe explication">
+						Il s'agit d'un pointeur qui cible un objet. Par default, si l'on
+						fait un console.log de "this", il va cibler l'objet "window".
+					</p>
+					<p class="paragraphe example">
+						console.log(this); <br /><br />
+						Résultat: <br />
+						Window {parent: Window, opener: null, top: Window, length: 0,
+						frames: Window, …}
+					</p>
+					<p class="paragraphe explication">
+						<u>"this" dans un objet:</u> <br />
+						Si on utilise "this" dans une méthode(fonction) se trouvant dans
+						un objet, <br />
+						"this" va pointer vers l'objet qui le contient.
+					</p>
+					<p class="paragraphe example">
+						Soit l'objet "user": <br /><br />
+						const user = { <br />
+						&emsp;name: "emmanueldev", <br />
+						&emsp;sayHi() { <br />
+						&emsp;&emsp;console.log(this);<br />
+						&emsp;},<br />
+						};<br /><br />
+						on appel la méthode se trouvant dans l'objet "user"<br />
+						user.sayHi();<br /><br />
+						le résultat qui s'affichera en console est l'objet "user": <br />
+						Object { name: "emmanueldev", sayHi: sayHi() }
+					</p>
+					<p class="paragraphe explication">
+						<u>"this" dans une fonction du scope global:</u> <br />
+						On peut créer une fonction dans le scope global contenant "this"
+						et l'insérer dans un objet.
+					</p>
+					<p class="paragraphe example">
+						Soit 2 objets "user" et "admin": <br />
+						<span style="color: rgb(133, 133, 211);">const user = { <br />
 							&emsp;name: "emmanueldev", <br />
-							&emsp;sayHi() { <br />
-							&emsp;&emsp;console.log(this);<br />
-							&emsp;},<br />
-							};<br /><br />
-							on appel la méthode se trouvant dans l'objet "user"<br />
-							user.sayHi();<br /><br />
-							le résultat qui s'affichera en console est l'objet "user": <br />
-							Object { name: "emmanueldev", sayHi: sayHi() }
-						</p>
-						<p class="paragraphe explication">
-							<u>"this" dans une fonction du scope global:</u> <br />
-							On peut créer une fonction dans le scope global contenant "this"
-							et l'insérer dans un objet.
-						</p>
-						<p class="paragraphe example">
-							Soit 2 objets "user" et "admin": <br />
-							<span style="color: rgb(133, 133, 211);"
-								>const user = { <br />
-								&emsp;name: "emmanueldev", <br />
-								};</span
-							><br /><br />
-							<span style="color: greenyellow;"
-								>const admin = { <br />
-								&emsp;name: "admin", <br />
-								};</span
-							><br /><br />
-							On crée la fonction "sayHi()" dans le scope global:<br />
-							function sayHi() { <br />
-							&emsp;console.log(this); <br />
-							}<br /><br />
-							On ajoute une propriété à l'objet "user" qui aura pour clé "fn" et
-							pour valeur "sayHi", <br />
-							"sayHi" étant la fonction que nous avons crée dans le scope
-							global.
-							<br />
-							<span style="color: rgb(133, 133, 211);">user.fn = sayHi;</span>
-							<br /><br />
-							Même chose avec l'objet "admin", on ajoute une propriété qui aura
-							pour clé "fn" et pour valeur "sayHi", <br />
-							<span style="color: greenyellow;">admin.fn = sayHi;</span>
-							<br /><br />
+							};</span><br /><br />
+						<span style="color: greenyellow;">const admin = { <br />
+							&emsp;name: "admin", <br />
+							};</span><br /><br />
+						On crée la fonction "sayHi()" dans le scope global:<br />
+						function sayHi() { <br />
+						&emsp;console.log(this); <br />
+						}<br /><br />
+						On ajoute une propriété à l'objet "user" qui aura pour clé "fn" et
+						pour valeur "sayHi", <br />
+						"sayHi" étant la fonction que nous avons crée dans le scope
+						global.
+						<br />
+						<span style="color: rgb(133, 133, 211);">user.fn = sayHi;</span>
+						<br /><br />
+						Même chose avec l'objet "admin", on ajoute une propriété qui aura
+						pour clé "fn" et pour valeur "sayHi", <br />
+						<span style="color: greenyellow;">admin.fn = sayHi;</span>
+						<br /><br />
 
-							pour appeler la fonction dans l'objet, il suffit simplement
-							d'utiliser le code suivant: <br />
-							<span style="color: rgb(133, 133, 211);">user.fn();</span><br />
-							<span style="color: greenyellow;">admin.fn();</span><br /><br />
-							on obtiendra dans la console: <br />
-							<span style="color: rgb(133, 133, 211);"
-								>Object { name: "emmanueldev", fn: sayHi() }</span
-							>
+						pour appeler la fonction dans l'objet, il suffit simplement
+						d'utiliser le code suivant: <br />
+						<span style="color: rgb(133, 133, 211);">user.fn();</span><br />
+						<span style="color: greenyellow;">admin.fn();</span><br /><br />
+						on obtiendra dans la console: <br />
+						<span style="color: rgb(133, 133, 211);">Object { name: "emmanueldev", fn: sayHi() }</span>
+						<br />
+						<span style="color: greenyellow;">Object { name: "admin", fn: sayHi() }</span>
+					</p>
+					<p class="paragraphe explication">
+						PAS BESOIN DE DUPLIQUER UNE FONCTION, ON LA DECLARE UNE SEULE FOIS
+						<br />
+						ET ON L'AJOUTE DANS LES OBJETS DE NOTRE CHOIX SANS RETAPER SON
+						CODE.
+					</p>
+					<p class="paragraphe example">
+						Example d'usage de this: <br />
+						function majuscule () {<br />
+						&emsp;console.log(this.name.toUpperCase());<br />
+						} <br /><br />
+						la fonction "majuscule()" va transformer le texte contenu dans la
+						propriété "name" en majuscule. <br />
+						"this" permet de cibler l'objet qui à fait appel à la fonction.
+					</p>
+					<p class="paragraphe explication">
+						<u><span>Cas particulier</span> - "this" dans une fonction faisant
+							partie d'une méthode contenue dans un objet.</u>
+					</p>
+					<p class="paragraphe explication">
+						Vous me suivez? non? je m'explique! <br />
+						Rappel: une fonction se trouvant à l'intérieur d'un objet est
+						appelée une "méthode". <br />
+						Et une fonction peut faire appel dans son propre scope à une autre
+						fonction. Une fonction dans une fonction! <br />
+						Donc, une méthode peut faire appel à une fonction dans son propre
+						scope. <br />
+						Vous me suivez maintenant?
+					</p>
+					<p class="paragraphe example">
+						const user = { <br />
+						name: "emmanueldev", <br />
+						videos: ["html", "css", "javascript", "react"], <br />
+						<span style="color: rgb(133, 133, 211);">greet(){ <br />
+							&emsp;console.log(`Hello there ${this.name}`);<br />
+							&emsp;//add function</span>
+						<br />
+						&emsp;<span style="color: greenyellow;">const getVideos = function() { <br />
+							&emsp;&emsp;console.log(`You currently have
+							${this.videos.length} videos`);
 							<br />
-							<span style="color: greenyellow;"
-								>Object { name: "admin", fn: sayHi() }</span
-							>
-						</p>
-						<p class="paragraphe explication">
-							PAS BESOIN DE DUPLIQUER UNE FONCTION, ON LA DECLARE UNE SEULE FOIS
-							<br />
-							ET ON L'AJOUTE DANS LES OBJETS DE NOTRE CHOIX SANS RETAPER SON
-							CODE.
-						</p>
-						<p class="paragraphe example">
-							Example d'usage de this: <br />
-							function majuscule () {<br />
-							&emsp;console.log(this.name.toUpperCase());<br />
-							} <br /><br />
-							la fonction "majuscule()" va transformer le texte contenu dans la
-							propriété "name" en majuscule. <br />
-							"this" permet de cibler l'objet qui à fait appel à la fonction.
-						</p>
-						<p class="paragraphe explication">
-							<u
-								><span>Cas particulier</span> - "this" dans une fonction faisant
-								partie d'une méthode contenue dans un objet.</u
-							>
-						</p>
-						<p class="paragraphe explication">
-							Vous me suivez? non? je m'explique! <br />
-							Rappel: une fonction se trouvant à l'intérieur d'un objet est
-							appelée une "méthode". <br />
-							Et une fonction peut faire appel dans son propre scope à une autre
-							fonction. Une fonction dans une fonction! <br />
-							Donc, une méthode peut faire appel à une fonction dans son propre
-							scope. <br />
-							Vous me suivez maintenant?
-						</p>
-						<p class="paragraphe example">
-							const user = { <br />
-							name: "emmanueldev", <br />
-							videos: ["html", "css", "javascript", "react"], <br />
-							<span style="color: rgb(133, 133, 211);"
-								>greet(){ <br />
-								&emsp;console.log(`Hello there ${this.name}`);<br />
-								&emsp;//add function</span
-							>
-							<br />
-							&emsp;<span style="color: greenyellow;"
-								>const getVideos = function() { <br />
-								&emsp;&emsp;console.log(`You currently have
-								${this.videos.length} videos`);
-								<br />
-								&emsp;&emsp;};</span
-							><br />
-							&emsp;<span style="color: rgb(133, 133, 211);"
-								>getVideos();<br />
-								&emsp;}</span
-							>
-							<br />
-							}; <br /><br />
-							user.greet(); <br />
-							On lance l'exécution de la méthode "greet()" faisant parti de
-							l'objet "user" <br />
-							ce qui induit que "this" va cibler l'objet "user". <br />
-							Ce qui est vrai dans la méthode, ne l'est plus dans la fonction
-							"getVideos()" <br /><br />
-							la fonction getVideos étant <u>"indirectement"</u> appelée dans
-							l'execution de la méthode "greet", <br />
-							<span
-								>le "this" qu'elle contient ne fais donc pas directement
-								référence à l'objet qui la contient</span
-							>, <br />
-							par conséquent nous obtiendrons un message d'erreur car sans
-							cibler directement un objet, <br />
-							this se réfèrera par défaut à l'objet "Window". <br /><br />
-							résultat dans la console: <br />
-							<span style="color: rgb(133, 133, 211);"
-								>Hello there emmanueldev</span
-							>
-							<br />
-							<span style="color: greenyellow;"
-								>TypeError: can't access property "length", this.videos is
-								undefined</span
-							>
-						</p>
-						<p class="paragraphe explication">
-							Pour pallier à ce problème, il faut utiliser une
-							<span><u>"fonction arrow"</u></span
-							>.<br />
-							Pour cela on retire le terme "function" et on place après les
-							paranthèses "()" le symbole "<span>=></span>"<br />
-							C'est actuellement une bonne pratique à utiliser qui correspond à
-							la norme ES6 cela évite bien des problèmes...
-						</p>
+							&emsp;&emsp;};</span><br />
+						&emsp;<span style="color: rgb(133, 133, 211);">getVideos();<br />
+							&emsp;}</span>
+						<br />
+						}; <br /><br />
+						user.greet(); <br />
+						On lance l'exécution de la méthode "greet()" faisant parti de
+						l'objet "user" <br />
+						ce qui induit que "this" va cibler l'objet "user". <br />
+						Ce qui est vrai dans la méthode, ne l'est plus dans la fonction
+						"getVideos()" <br /><br />
+						la fonction getVideos étant <u>"indirectement"</u> appelée dans
+						l'execution de la méthode "greet", <br />
+						<span>le "this" qu'elle contient ne fais donc pas directement
+							référence à l'objet qui la contient</span>, <br />
+						par conséquent nous obtiendrons un message d'erreur car sans
+						cibler directement un objet, <br />
+						this se réfèrera par défaut à l'objet "Window". <br /><br />
+						résultat dans la console: <br />
+						<span style="color: rgb(133, 133, 211);">Hello there emmanueldev</span>
+						<br />
+						<span style="color: greenyellow;">TypeError: can't access property "length", this.videos is
+							undefined</span>
+					</p>
+					<p class="paragraphe explication">
+						Pour pallier à ce problème, il faut utiliser une
+						<span><u>"fonction arrow"</u></span>.<br />
+						Pour cela on retire le terme "function" et on place après les
+						paranthèses "()" le symbole "<span>=></span>"<br />
+						C'est actuellement une bonne pratique à utiliser qui correspond à
+						la norme ES6 cela évite bien des problèmes...
+					</p>
 
-						<p class="paragraphe example">
-							<span style="color: rgb(133, 133, 211);"
-								>const user = {<br />
-								&emsp;name: "emmanueldev",<br />
-								&emsp;videos: ["html", "css", "javascript", "react"],<br />
-								&emsp;greet() {<br />
-								&emsp;&emsp;console.log(`Hello there ${this.name}`);<br />
-								&emsp;&emsp;//add function</span
-							>
-							<br />
-							&emsp;&emsp;<span style="color: greenyellow;"
-								>const getVideos = () => { <br />
-								&emsp;&emsp;&emsp;console.log(`You currently have
-								${this.videos.length} videos`);<br />
-								&emsp;&emsp;};</span
-							><br />
-							<span style="color: rgb(133, 133, 211);"
-								>&emsp;&emsp;getVideos();<br />
-								&emsp;}, <br />
-								};</span
-							><br /><br />
-							La fonction arrow est introduite avec l'écriture suivante =>.
-							<br />
-							<span
-								>Une fonction arrow ne crée pas un nouveau "this", elle prolonge
-								celui déjà existant</span
-							>, <br />
-							il n'y a donc pas de "reset" de this et la référence à l'objet est
-							conservée. <br /><br />
+					<p class="paragraphe example">
+						<span style="color: rgb(133, 133, 211);">const user = {<br />
+							&emsp;name: "emmanueldev",<br />
+							&emsp;videos: ["html", "css", "javascript", "react"],<br />
+							&emsp;greet() {<br />
+							&emsp;&emsp;console.log(`Hello there ${this.name}`);<br />
+							&emsp;&emsp;//add function</span>
+						<br />
+						&emsp;&emsp;<span style="color: greenyellow;">const getVideos = () => { <br />
+							&emsp;&emsp;&emsp;console.log(`You currently have
+							${this.videos.length} videos`);<br />
+							&emsp;&emsp;};</span><br />
+						<span style="color: rgb(133, 133, 211);">&emsp;&emsp;getVideos();<br />
+							&emsp;}, <br />
+							};</span><br /><br />
+						La fonction arrow est introduite avec l'écriture suivante =>.
+						<br />
+						<span>Une fonction arrow ne crée pas un nouveau "this", elle prolonge
+							celui déjà existant</span>, <br />
+						il n'y a donc pas de "reset" de this et la référence à l'objet est
+						conservée. <br /><br />
 
-							user.greet();<br /><br />
-							Résultat en console: <br />
-							<span style="color: rgb(133, 133, 211);"
-								>Hello there emmanueldev</span
-							>
-							<br />
-							<span style="color: greenyellow;"
-								>You currently have 4 videos</span
-							>
-							<br />
-						</p>
-					</li>
-					<li class="article">
-						<h2 class="titre-article">BIND - qu'est ce que c'est?</h2>
-						<p class="paragraphe explication">
-							<span
-								>"bind()"" est une méthode qui permet de lier une fonction
-								située dans le scope global à un objet.</span
-							><br /><br />
-							La fonction qui aura été associée à l'objet pourra accéder à
-							l'ensemble de son contenu grâce à l'usage de "this". <br /><br />
-							RAPPEL: Une fonction est soit: <br />
-							Déclarée dans le scope global, "this" fait référence à l'objet
-							"window" <br />
-							ou <br />
-							Déclarée dans un objet et on l'appelle alors une "méthode", "this"
-							fait référence à l'objet la contenant<br />
-							ou <br />
-							Déclarée au sein d'une méthode, "this" fait référence à l'objet
-							"window" <u>si on n'utilise pas de fonction arrow(=>)</u>.<br />
-							Si une fonction arrow (=>) est utilisée, alors "this" fera
-							référence à l'objet qui contient la méthode dans laquelle la
-							fonction est incluse.
-						</p>
-						<p class="paragraphe example">
-							Example: <br />
-							1-CREATION OBJET "PERSON" AVEC METHODE "<span
-								style="color: rgb(133, 133, 211);"
-								>GETFULLNAME</span
-							>" <br /><br />
-							const person = { <br />
-							&emsp;firstName: "emmanuel", <br />
-							&emsp;lastName: "dev", <br />
-							&emsp;<span style="color: rgb(133, 133, 211);"
-								>getFullName(){ <br />
-								&emsp;&emsp;console.log(this.firstName + this.lastName); <br />
-								&emsp;},</span
-							>
-							<br />
-							};<br /><br />
-							2-CREATION FONCTION "<span style="color: greenyellow;"
-								>REGISTERUSER</span
-							>" DANS LE SCOPE GLOBAL <br />
-							Au moment de la déclaration de la fonction, this n'est pas lié à
-							l'objet "person". <br /><br />
+						user.greet();<br /><br />
+						Résultat en console: <br />
+						<span style="color: rgb(133, 133, 211);">Hello there emmanueldev</span>
+						<br />
+						<span style="color: greenyellow;">You currently have 4 videos</span>
+						<br />
+					</p>
+				</li>
+				<li class="article">
+					<h2 class="titre-article">BIND - qu'est ce que c'est?</h2>
+					<p class="paragraphe explication">
+						<span>"bind()"" est une méthode qui permet de lier une fonction
+							située dans le scope global à un objet.</span><br /><br />
+						La fonction qui aura été associée à l'objet pourra accéder à
+						l'ensemble de son contenu grâce à l'usage de "this". <br /><br />
+						RAPPEL: Une fonction est soit: <br />
+						Déclarée dans le scope global, "this" fait référence à l'objet
+						"window" <br />
+						ou <br />
+						Déclarée dans un objet et on l'appelle alors une "méthode", "this"
+						fait référence à l'objet la contenant<br />
+						ou <br />
+						Déclarée au sein d'une méthode, "this" fait référence à l'objet
+						"window" <u>si on n'utilise pas de fonction arrow(=>)</u>.<br />
+						Si une fonction arrow (=>) est utilisée, alors "this" fera
+						référence à l'objet qui contient la méthode dans laquelle la
+						fonction est incluse.
+					</p>
+					<p class="paragraphe example">
+						Example: <br />
+						1-CREATION OBJET "PERSON" AVEC METHODE "<span
+							style="color: rgb(133, 133, 211);">GETFULLNAME</span>" <br /><br />
+						const person = { <br />
+						&emsp;firstName: "emmanuel", <br />
+						&emsp;lastName: "dev", <br />
+						&emsp;<span style="color: rgb(133, 133, 211);">getFullName(){ <br />
+							&emsp;&emsp;console.log(`hello my name is ${this.firstName} ${this.lastName}`); <br />
+							&emsp;},</span>
+						<br />
+						};<br /><br />
+						2-CREATION FONCTION "<span style="color: greenyellow;">REGISTERUSER</span>" DANS LE SCOPE GLOBAL
+						<br />
+						Au moment de la déclaration de la fonction, this n'est pas lié à
+						l'objet "person". <br /><br />
 
-							<span style="color: greenyellow;"
-								>function registerUser(country, lang, methode) {<br />
-								//fonctionnalitées additionnelles.... <br />
-								console.log(this);<br />
-								this.getFullName(); <br />
-								}</span
-							>
-							<br /><br />
-							3-CREATION D'UNE CONSTANTE REGISTER CONTENANT LA FONCTION
-							"REGISTERUSER" QU'ON LIE A L'OBJET "PERSON" <br /><br />
-							const register =
-							<span style="color: greenyellow;">registerUser</span
-							>.<span>bind(person)</span>; <br />
-							La fonction registerUser est liée à l'objet "person" en utilisant
-							".bind()", dont "person" est l'argument. <br /><br />
-							4-EXECUTION DE LA CONSTANTE CONTENANT LA FONCTION REGISTERUSER
-							POUR LAQUELLE ON FOURNIT 3 PARAMETRES:
-							<br />
-							register('France', 'Fr', 'BIND'); <br />
-						</p>
-					</li>
-					<!-- <li class="article">
+						<span style="color: greenyellow;">function registerUser() {<br />
+							//fonctionnalitées additionnelles.... <br />
+							console.log(this);<br />
+							this.getFullName(); <br />
+							}</span>
+						<br /><br />
+						3-CREATION D'UNE CONSTANTE REGISTER CONTENANT LA FONCTION
+						"REGISTERUSER" QU'ON LIE A L'OBJET "PERSON" <br /><br />
+						const register =
+						<span style="color: greenyellow;">registerUser</span>.<span>bind(person)</span>; <br /> <br>
+						La fonction registerUser est liée à l'objet "person" en utilisant
+						".bind()", dont "person" est l'argument. <br /><br>
+						si l'on fait un console.log(register) on obtient:<br />
+						function registerUser() | <u>on a donc sauvegardé une fonction dans la variable register</u><br>
+						name: "bound registerUser" | <u>"indique bien que la fonction est lié"</u><br><br>
+						4-EXECUTION DE LA FONCTION CONTENUE DANS LA VARIABLE REGISTER:
+						<br />
+						register(); <br />
+						Comme la variable "register" contient une fonction on peut l'exécuter en ajoutant les
+						paranthèses "()"
+						après son nom<br>
+						comme l'on executerai une fonction.<br><br>
+						Résultat en console: <br>
+						Object { firstName: "emmanuel", lastName: "dev", getFullName: getFullName() } <br>
+						Hello there emmanuel dev <br><br>
+						bind() a permis à la fonction "registerUser" de se connecter à l'objet "person" <br> et ainsi de
+						pouvoir accéder à ses
+						propriétés.
+
+					</p>
+				</li>
+				<!-- <li class="article">
 						<h2 class="titre-article">THIS - Qu'est ce que c'est?</h2>
 					</li> -->
-					<li class="article">
-						<p class="paragraphe example" style="color: green;">
-							La suite arrive bientôt, en cours d'intégration.
-						</p>
-					</li>
-					<li class="article"></li>
-				</ul>
-			</section>
-		</main>
-		<footer>
-			<h3>&copy;EmmanuelDev 2020</h3>
-		</footer>
-		<!-- <script src="../js/test.js"></script> -->
-	</body>
+				<li class="article">
+					<p class="paragraphe example" style="color: green;">
+						La suite arrive bientôt, en cours d'intégration.
+					</p>
+				</li>
+				<li class="article"></li>
+			</ul>
+		</section>
+	</main>
+	<footer>
+		<h3>&copy;EmmanuelDev 2020</h3>
+	</footer>
+	<script src="../js/test.js"></script>
+</body>
+
 </html>
