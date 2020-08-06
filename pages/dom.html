@@ -1,139 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>EmmanuelDev Mémo Javascript - TABLEAUX</title>
-		<link rel="stylesheet" href="../scss/basesJs.css" />
-	</head>
 
-	<body>
-		<header>
-			<h1 class="titre">JAVASCRIPT MEMO</h1>
-		</header>
-		<main>
-			<section id="liste">
-				<ul id="liste-p">
-					<li class="article">
-						<h2 class="titre-article">
-							DOM / DOCUMENT OBJET MODEL
-						</h2>
-						<p class="paragraphe explication">
-							On peut schématiser le DOM comme un arbre généalogique que l'on
-							appel l'objet "window" ou l' <u>objet global</u>. <br />
-							Il contient un ensemble de paramètres représentant
-							les éléments contenus dans une page web <br />
-							et dont l'<span>objet "document" est le point d'origine / la racine</span>.
-							<br />
-							Pour y accéder il suffit de taper dans la console
-							"window.document" ou "document". <br />
-                            <br />
-                            <h2>REPRESENTATION GRAPHIQUE DU DOM</h2>
-							<img src="../img/DOM.png" alt="représentation graphique du DOM" />
-						</p>
-					</li>
-					<li class="article">
-						<h2 class="titre-article"> NOTION DE CONTEXTE GLOBAL D'EXECUTION</h2>
-						<p class="paragraphe explication">Avant même que l'on ai codé quoi que ce soit, Javascript crée en arrière plan un environnement global de travail. <br> Celui-çi inclut la création de l'objet global "window" ainsi que du mot clé "this" dont nous allons parler plus loin. <br> Ce procédé est aussi appelé la <u>phase de création (creation phase)</u>. <br><br>Lors de cette phase, avant même d'avoir codé une ligne de code, Javascript crée et alloue un espace mémoire dans l'objet global <br> qui permettra de mémoriser nos fonctions et variables. On peut le schématiser comme le cache mémoire <br> d'un ordinateur, ou encore le local storage de notre navigateur web. <br><br> La seconde phase après la création est <u>la phase d'exécution (execution phase)</u>. <br>Il s'agit de la phase où notre code s'exécute et où un la notion de hissage (hoisting) entre en action.
-						</p>
-					</li>
-					<li class="article">
-						<h2 class="titre-article"> NOTION DE HOISTING - HISSAGE/LEVAGE</h2>
-						<p class="paragraphe explication">
-							Lorsque l'on déclare des fonctions ou/et des variables il est important de  garder à l'esprit la notion de "hoisting".<br><br>
-							Qu'est ce que c'est? <br><br>
-							<span>C'est la capacité à enregister dans la mémoire de l'objet global les fonctions et variables que l'on a déclaré.</span><br>
-							Pour résumer, une fois déclarées dans notre fichier js, il y'a une lecture passive <br> qui va les garder en mémoire dans l'objet global. <br> elles  restent accessibles à tout moment par l'intermédiaire de la console<br> et sont visibles dans l'objet global "window". <br><br>
-							Source MDN: <br> <cite>une définition stricte du hissage suggère que les déclarations de variables et de fonctions <br> sont déplacées physiquement en haut de votre code, mais ce n'est pas ce qui se passe en fait. <br> A la place, <u>les déclarations de variables et de fonctions sont mises en mémoire</u> <br> pendant la phase de compilation, mais restent exactement là où vous les avez tapées dans votre code.</cite>
-						</p>
-						<p class="paragraphe example">
-							Soit une fonction simple "sayHi()": <br><br>
-							1 - Appel de la fonction avant la déclaration <br>
-							sayHi();<br><br>
-							2 - Déclaration de la fonction: <br>
-							function sayHi(){ <br>
-								&emsp;console.log("Hello");<br>
-								} <br><br>
-								3 - Une lecture passive de la fonction s'effectue lorsque l'on sauvegarde (CTRL+S) <br> le fichier Javascript, ce qui entraine par la même occasion la mémorisation de la fonction. <br><br>
-								4 - La console affiche le message "Hello".
-						</p>
-						<p class="paragraphe explication"><span>ATTENTION: LES VALEURS DES VARIABLES NE SONT PAS MEMORISEES, JUSTE LEUR DECLARATIONS</span></p>
-						<p class="paragraphe example">!!!Rappel!!! <br>
-							Déclaration d'une variable: <br>
-							let mail;<br>
-							const nom;<br><br>
-							Affectation d'une valeur à la variable: <br>
-							let mail = 10;<br>
-							const nom = "Rick";<br><br>
-							A la différence des fonctions, au moment où l'on sauve (CTRL+S) <br>seul l'information sur le nom de la variable (sa déclaration) est enregistré en mémoire. <br>
-							L'objet global est conscient de son existence mais n'a pas connaissance de la valeur.  <br><br>
-							Cela signifie que si l'on tente d'afficher le contenu d'une variable <br> avant que sa valeur ait été attribuée, nous obtiendrons un message d'erreur. <br><br>
-							console.log(nom); <br>
-							const nom = "Rick"; <br>
-							Uncaught ReferenceError: Cannot access 'nom' before initialization <br><br>
-							const nom = "Rick";<br>
-							console.log(nom);<br>
-							La console affichera bien la valeur de la variable nom, pas de message d'erreur.
-						</p>
-					</li>
-					<li class="article">
-						<h2 class="titre-article"> CIBLER UN ELEMENT DU DOM</h2>
-						<p class="paragraphe explication">AVEC "GETELEMENTBY" qui va retourner une "HTMLCollection" dans la console. <br><br>1 - Selectionner un ou plusieurs éléments par leur nom de balise:</p>
-						<p class="paragraphe example">const headers = document. <span>getElementsByTagName( <span style="color: greenyellow;">"h2"</span>)</span>; </p>
-						<p class="paragraphe explication">2 - Sélectionner un ou plusieurs éléments par leur nom de classe:</p>
-						<p class="paragraphe example">const list = document. <span>getElementsByClassName( <span style="color: greenyellow;">"paragraphe"</span>)</span>; </p>
-						<p class="paragraphe explication">3 - Sélectionner un élément par son ID:</p>
-						<p class="paragraphe example">const section1 = document. <span>getElementById( <span style="color: greenyellow;">"liste"</span>)</span>;</p><br>
-						<p class="paragraphe explication">AVEC "QUERYSELECTOR" qui va retourner une "NodeList" dans la console. <br><u>On utilise les selecteurs CSS pour identifier ce que l'on veux cibler:</u> (.classe) / (#Id) / (balise) <br><br> 1 - Sélectionner un élément par son nom de balise: <br>!!! Si plusieurs éléments h2 existent, celui qui s'affichera dans la console sera le premier rencontré en partant du haut vers le bas. !!! </p>
-						<p class="paragraphe example">const header = document. <span>querySelector( <span style="color: greenyellow;">"h2"</span>)</span>;</p>
-						<p class="paragraphe explication">2 - Selectionner tous les éléments portant le même nom de balise:</p>
-						<p class="paragraphe example">const headers = document. <span>querySelectorAll( <span style="color: greenyellow;">"h2"</span>)</span>;</p>
-						<p class="paragraphe explication">3 - Sélectionner un éléments par son nom de classe: <br>!!! Si plusieurs éléments portent le même nom de classe, celui qui s'affichera dans la console sera le premier rencontré en partant du haut vers le bas. !!!</p>
-						<p class="paragraphe example">const liste = document. <span>querySelector( <span style="color: greenyellow;">".paragraphe"</span>)</span>;</p>
-						<p class="paragraphe explication">4 - Selectionner tous les éléments portant le même nom de classe:</p>
-						<p class="paragraphe example">const listeAll = document. <span>querySelectorAll( <span style="color: greenyellow;">".paragraphe"</span>)</span>;</p>
-						<p class="paragraphe explication">5 - Sélectionner un élément par son ID:</p>
-						<p class="paragraphe example">const section1 = document. <span>querySelector( <span style="color: greenyellow;">"#intro"</span>)</span>;</p>
-						<p class="paragraphe explication">PS: LA METHODE QUERYSELECTOR EST UN PEU PLUS LENTE A S'EXECUTER QUE GETELEMENTBY.</p>
-						<p class="paragraphe example">Quelques exemples: <br> const header3 = document. <span>querySelector( <span style="color: greenyellow;">"h2.item"</span>)</span>; <br>
-							dans cet example, on cible une balise h2 qui porte le nom de class "item". <br><br>
-							const lienSite1 = document. <span>querySelector( <span style="color: greenyellow;">"#liste a"</span>)</span>; <br>dans cet example, on cible un lien se trouvant dans un élément ayant pour ID "liste".</p>
-					</li>
-					<li class="article">
-						<h2 class="titre-article"> HTMLCollection Vs NodeList</h2>
-						<p class="paragraphe explication"><u>HTMLCollection:</u></p>
-						<p class="paragraphe example">
-							const collectionArticles = document. <span>getElementsByClassName( <span style="color: greenyellow;">"article"</span>)</span>; <br>
-							Sélection de tous les éléments ayant pour classe "article".
-						</p>
-						<p class="paragraphe explication">Si l'on effectue un console log, cela nous affichera une "HTMLcollection" contenant l'ensemble des éléments ayant pour classe "article".</p>
-						<p class="paragraphe example">HTMLCollection { 0: li.article, 1: li.article, 2: li.article, 3: li.article, 4: li.article, 5: li.article, 6: li.article, length: 7 }</p>
-						<p class="paragraphe explication">"li.article" est aussi appelé un node de type élément. <u>Il s'agit des balises HTML</u>. <br><span>HTMLCollection n'affiche que des nodes de types élément</span>, il ne peut pas en afficher d'autres. <br><br><span>Si l'on souhaite modifier le contenu d'une balise HTML avec Javascript, il faut le faire via une HTMLCollection</span></p>
-						<p class="paragraphe explication"><u>NodeList:</u></p>
-						<p class="paragraphe example">
-							const nodeArticles = document. <span>querySelectorAll( <span style="color: greenyellow;">".article"</span>)</span>; <br>
-							Sélection de tous les éléments ayant pour classe "article".
-						</p>
-						<p class="paragraphe explication">Si l'on effectue un console log, cela nous affichera une "NodeList" contenant l'ensemble des éléments ayant pour classe "article".</p>
-						<p class="paragraphe example">NodeList(7) [ li.article, li.article, li.article, li.article, li.article, li.article, li.article ]</p>
-						<p class="paragraphe explication"><span>NodeList peut afficher différents types de nodes: élément node, text node, comment node, etc..</p>
-							<p class="paragraphe example">Example: <br>const nodeArticles = document. <span>querySelector( <span style="color: greenyellow;">".liste-p"</span>)</span>;<br>console.log(nodeArticles.childNodes);<br>
-								childNodes demande à afficher les nodes enfant de l'élément ciblé(nodeArticles). <br><br>NodeList(27) [ #text, li.article, #text, li.article, #text, li.article, #text, li.article, #text, li.article, … ]</p>
-								<p class="paragraphe explication">!!! POUR ACCEDER UNIQUEMENT AUX "NODES ELEMENTS" DEPUIS UNE NODELIST, ON UTILISE LA METHODE "CHILDREN" SUR L'ELEMENT CIBLE !!!</p>
-								<p class="paragraphe example">Example: <br>console.log(nodeArticles.children);<br><br>HTMLCollection { 0: li.article, 1: li.article, 2: li.article, 3: li.article, 4: li.article, 5: li.article, 6: li.article, 7: li, 8: li, 9: li, … } <br><br> ON PEUT DONC UTILISER FACILEMENT QUERYSELECTOR POUR AFFICHER UNE HTMLCOLLECTION
-					</li>
-					<li class="article">
-						<p class="paragraphe example" style="color: green;">
-							La suite arrive bientôt, en cours d'intégration.
-						</p>
-					</li>
-					<li class="article"></li>
-				</ul>
-			</section>
-		</main>
-		<footer>
-			<h3>&copy;EmmanuelDev 2020</h3>
-		</footer>
-		<!-- <script src="../js/test.js"></script> -->
-	</body>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>EmmanuelDev Mémo Javascript - TABLEAUX</title>
+	<link rel="stylesheet" href="../scss/basesJs.css" />
+</head>
+
+<body>
+	<header>
+		<h1 class="titre">JAVASCRIPT MEMO</h1>
+	</header>
+	<main>
+		<section id="liste">
+			<ul id="liste-p">
+				<li class="article">
+					<h2 class="titre-article">
+						DOM / DOCUMENT OBJET MODEL
+					</h2>
+					<p class="paragraphe explication">
+						On peut schématiser le DOM comme un arbre généalogique que l'on
+						appel l'objet "window" ou l' <u>objet global</u>. <br />
+						Il contient un ensemble de paramètres représentant
+						les éléments contenus dans une page web <br />
+						et dont l'<span>objet "document" est le point d'origine / la racine</span>.
+						<br />
+						Pour y accéder il suffit de taper dans la console
+						"window.document" ou "document". <br />
+						<br />
+					<h2>REPRESENTATION GRAPHIQUE DU DOM</h2>
+					<img src="../img/DOM.png" alt="représentation graphique du DOM" />
+					</p>
+				</li>
+				<li class="article">
+					<h2 class="titre-article"> CIBLER UN ELEMENT DU DOM</h2>
+					<p class="paragraphe explication">AVEC "GETELEMENTBY" qui va retourner une "HTMLCollection" dans la
+						console. <br><br>1 - Selectionner un ou plusieurs éléments par leur nom de balise:</p>
+					<p class="paragraphe example">const headers = document. <span>getElementsByTagName( <span
+								style="color: greenyellow;">"h2"</span>)</span>; </p>
+					<p class="paragraphe explication">2 - Sélectionner un ou plusieurs éléments par leur nom de classe:
+					</p>
+					<p class="paragraphe example">const list = document. <span>getElementsByClassName( <span
+								style="color: greenyellow;">"paragraphe"</span>)</span>; </p>
+					<p class="paragraphe explication">3 - Sélectionner un élément par son ID:</p>
+					<p class="paragraphe example">const section1 = document. <span>getElementById( <span
+								style="color: greenyellow;">"liste"</span>)</span>;</p><br>
+					<p class="paragraphe explication">AVEC "QUERYSELECTOR" qui va retourner une "NodeList" dans la
+						console. <br><u>On utilise les selecteurs CSS pour identifier ce que l'on veux cibler:</u>
+						(.classe) / (#Id) / (balise) <br><br> 1 - Sélectionner un élément par son nom de balise: <br>!!!
+						Si plusieurs éléments h2 existent, celui qui s'affichera dans la console sera le premier
+						rencontré en partant du haut vers le bas. !!! </p>
+					<p class="paragraphe example">const header = document. <span>querySelector( <span
+								style="color: greenyellow;">"h2"</span>)</span>;</p>
+					<p class="paragraphe explication">2 - Selectionner tous les éléments portant le même nom de balise:
+					</p>
+					<p class="paragraphe example">const headers = document. <span>querySelectorAll( <span
+								style="color: greenyellow;">"h2"</span>)</span>;</p>
+					<p class="paragraphe explication">3 - Sélectionner un éléments par son nom de classe: <br>!!! Si
+						plusieurs éléments portent le même nom de classe, celui qui s'affichera dans la console sera le
+						premier rencontré en partant du haut vers le bas. !!!</p>
+					<p class="paragraphe example">const liste = document. <span>querySelector( <span
+								style="color: greenyellow;">".paragraphe"</span>)</span>;</p>
+					<p class="paragraphe explication">4 - Selectionner tous les éléments portant le même nom de classe:
+					</p>
+					<p class="paragraphe example">const listeAll = document. <span>querySelectorAll( <span
+								style="color: greenyellow;">".paragraphe"</span>)</span>;</p>
+					<p class="paragraphe explication">5 - Sélectionner un élément par son ID:</p>
+					<p class="paragraphe example">const section1 = document. <span>querySelector( <span
+								style="color: greenyellow;">"#intro"</span>)</span>;</p>
+					<p class="paragraphe explication">PS: LA METHODE QUERYSELECTOR EST UN PEU PLUS LENTE A S'EXECUTER
+						QUE GETELEMENTBY.</p>
+					<p class="paragraphe example">Quelques exemples: <br> const header3 = document. <span>querySelector(
+							<span style="color: greenyellow;">"h2.item"</span>)</span>; <br>
+						dans cet example, on cible une balise h2 qui porte le nom de class "item". <br><br>
+						const lienSite1 = document. <span>querySelector( <span style="color: greenyellow;">"#liste
+								a"</span>)</span>; <br>dans cet example, on cible un lien se trouvant dans un élément
+						ayant pour ID "liste".</p>
+				</li>
+				<li class="article">
+					<h2 class="titre-article"> HTMLCollection Vs NodeList</h2>
+					<p class="paragraphe explication"><u>HTMLCollection:</u></p>
+					<p class="paragraphe example">
+						const collectionArticles = document. <span>getElementsByClassName( <span
+								style="color: greenyellow;">"article"</span>)</span>; <br>
+						Sélection de tous les éléments ayant pour classe "article".
+					</p>
+					<p class="paragraphe explication">Si l'on effectue un console log, cela nous affichera une
+						"HTMLcollection" contenant l'ensemble des éléments ayant pour classe "article".</p>
+					<p class="paragraphe example">HTMLCollection { 0: li.article, 1: li.article, 2: li.article, 3:
+						li.article, 4: li.article, 5: li.article, 6: li.article, length: 7 }</p>
+					<p class="paragraphe explication">"li.article" est aussi appelé un node de type élément. <u>Il
+							s'agit des balises HTML</u>. <br><span>HTMLCollection n'affiche que des nodes de types
+							élément</span>, il ne peut pas en afficher d'autres. <br><br><span>Si l'on souhaite modifier
+							le contenu d'une balise HTML avec Javascript, il faut le faire via une HTMLCollection</span>
+					</p>
+					<p class="paragraphe explication"><u>NodeList:</u></p>
+					<p class="paragraphe example">
+						const nodeArticles = document. <span>querySelectorAll( <span
+								style="color: greenyellow;">".article"</span>)</span>; <br>
+						Sélection de tous les éléments ayant pour classe "article".
+					</p>
+					<p class="paragraphe explication">Si l'on effectue un console log, cela nous affichera une
+						"NodeList" contenant l'ensemble des éléments ayant pour classe "article".</p>
+					<p class="paragraphe example">NodeList(7) [ li.article, li.article, li.article, li.article,
+						li.article, li.article, li.article ]</p>
+					<p class="paragraphe explication"><span>NodeList peut afficher différents types de nodes: élément
+							node, text node, comment node, etc..</p>
+					<p class="paragraphe example">Example: <br>const nodeArticles = document. <span>querySelector( <span
+								style="color: greenyellow;">".liste-p"</span>)</span>;<br>console.log(nodeArticles.childNodes);<br>
+						childNodes demande à afficher les nodes enfant de l'élément ciblé(nodeArticles).
+						<br><br>NodeList(27) [ #text, li.article, #text, li.article, #text, li.article, #text,
+						li.article, #text, li.article, … ]</p>
+					<p class="paragraphe explication">!!! POUR ACCEDER UNIQUEMENT AUX "NODES ELEMENTS" DEPUIS UNE
+						NODELIST, ON UTILISE LA METHODE "CHILDREN" SUR L'ELEMENT CIBLE !!!</p>
+					<p class="paragraphe example">Example: <br>console.log(nodeArticles.children);<br><br>HTMLCollection
+						{ 0: li.article, 1: li.article, 2: li.article, 3: li.article, 4: li.article, 5: li.article, 6:
+						li.article, 7: li, 8: li, 9: li, … } <br><br> ON PEUT DONC UTILISER FACILEMENT QUERYSELECTOR
+						POUR AFFICHER UNE HTMLCOLLECTION
+				</li>
+				<li class="article">
+					<p class="paragraphe example" style="color: green;">
+						La suite arrive bientôt, en cours d'intégration.
+					</p>
+				</li>
+				<li class="article"></li>
+			</ul>
+		</section>
+	</main>
+	<footer>
+		<h3>&copy;EmmanuelDev 2020</h3>
+	</footer>
+	<!-- <script src="../js/test.js"></script> -->
+</body>
+
 </html>

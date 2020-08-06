@@ -1,830 +1,797 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>EmmanuelDev Mémo Javascript - BASES JS</title>
-		<link rel="stylesheet" href="../scss/basesJs.css" />
-	</head>
 
-	<body>
-		<header>
-			<h1 class="titre">JAVASCRIPT MEMO</h1>
-		</header>
-		<main>
-			<section id="liste">
-				<ul id="liste-p">
-					<li class="article">
-						<h2 class="titre-article">
-							INTRODUIRE UN FICHIER JS DANS SON CODE HTML
-						</h2>
-						<p class="paragraphe intro">
-							Pour insérer un fichier javascript dans notre code, il faut le
-							<span
-								>positionner à la fin de la balise "body" juste avant sa
-								fermeture "&lt;/body&gt;"</span
-							>.
-							<br />
-							la méthode pour insérer le fichier consiste à ajouter une balise
-							autofermante "&lt;script&gt;" en y indiquant l'attribut "src" qui
-							va pointer vers le dossier où se trouve le fichier Js voulu.
-						</p>
-						<p class="paragraphe example">
-							example: <br />
-							&lt;body&gt; <br />
-							&emsp;&lt;header&gt; <br />
-							&emsp;&emsp;ton code... <br />
-							&emsp;&lt;/header&gt; <br />
-							&emsp;&lt;main&gt; <br />
-							&emsp;&emsp;ton code... <br />
-							&emsp;&lt;/main&gt; <br />
-							&emsp;&lt;footer&gt; <br />
-							&emsp;&emsp;ton code... <br />
-							&emsp;&lt;/footer&gt; <br />
-							&lt;script src="./ton_fichier.js"&gt;&lt;/script&gt; <br />
-							&lt;/body&gt;
-						</p>
-					</li>
-					<li class="article">
-						<h2 class="titre-article">DIFFERENTS TYPES DE VARIABLES</h2>
-						<p class="paragraphe explication">
-							Javascript est un langage qui gère des informations, les
-							comparent, les utilisent. Pour ce faire, il utilise des "boites"
-							dans lesquelles il range ces informations.
-							<br />
-							Les "boites" sont étiquetées pour les identifier, ont leur
-							attribut un nom distinct. Il existe trois type de boites: <br />
-						</p>
-						<p class="paragraphe explication">
-							LA CONSTANTE (CONST) <br />
-							Permet de déclarer une variable qui doit avoir une valeur initiale
-							et ne peut pas être réassignée... <br />
-							<span
-								>Cela ne veut pas dire qu'une variable déclarée avec const est
-								une constante.</span
-							><br />
-							Par exemple, si la variable contient un objet, on peut modifier
-							les propriétés de cet objet.
-						</p>
-						<p class="paragraphe example">
-							Exemple: <br />
-							const idUser = "EmmanuelDev";
-						</p>
-						<p class="paragraphe explication">
-							LA VARIABLE (LET) <br />
-							Permet de déclarer une variable qui peut ne pas avoir de valeur
-							initiale et qui peut être réassignée. <br />
-							<span
-								>(sa valeur peut changer, on n'est pas obligé de la définir dès
-								le départ.)</span
-							>
-						</p>
-						<p class="paragraphe example">
-							Exemple: <br />
-							let age = 35; <br />
-							let country = "france"; <br />
-							let ville;
-						</p>
-						<p class="paragraphe explication">
-							LA VARIABLE (VAR) <br />
-							Elle a été utilisé depuis l'origine de Javascript, mais elle a une
-							"faiblesse", <br />
-							sa valeur peut être accidentellement modifié si l'on ne fait pas
-							attention. (cf.notions de scope) <br />
-							<u
-								>C'est pourquoi la bonne pratique est d'utiliser "let" plutot
-								que "var".</u
-							>
-							<br />
-							<span
-								>(sa valeur peut changer, on n'est pas obligé de la définir dès
-								le départ.)</span
-							>
-							<br />
-						</p>
-						<p class="paragraphe example">
-							Exemple: <br />
-							var age = 35; <br />
-							var country = "france"; <br />
-							var ville;
-						</p>
-					</li>
-					<li class="article">
-						<h2 class="titre-article">CONST vs LET</h2>
-						<p class="paragraphe explication">Prenons deux examples:</p>
-						<p class="paragraphe example">
-							Définissons une constante "bank", sa valeur est un nombre qui est
-							une donnée primitive. <br /><br />
-							const bank = 250; <br />
-							<br />
-							essayons de changer sa valeur! <br />
-							bank = 100; <br /><br />
-							cela ne fonctionnera pas et nous aurons en console un message
-							d'erreur: <br />
-							"Uncaught TypeError: Assignment to constant variable."
-							<br /><br />
-							<span
-								>Il n'est pas possible de modifier une valeur primitive
-								enregistrée dans une variable CONST.</span
-							>
-							<br /><br />
-							Avec une variable LET on peut changer cette valeur sans
-							difficultées, <br />
-							c'est pourquoi
-							<span style="color: greenyellow;"
-								><u
-									>on préférera l'utilisation de LET pour les données
-									primitives</u
-								>.</span
-							>
-						</p>
-						<p class="paragraphe example">
-							Meme principe que pour l'example1 mais cette fois avec une
-							variable qui contiendra une donnée de type référence. <br /><br />
-							on définit une constante contenant un tableau avec des
-							noms(strings).
-							<br />
-							const names = ["Eric", "Sophie", "Maria"]; <br /><br />
-							on définit une nouvelle constante contenant un tableau qui va
-							avoir pour "référence" le tableau "names". <br />
-							En gros, on copie le tableau names dans newNames <br />
-							const newNames = names; <br /><br />
-							on rajoute un nom dans le tableau newNames. <br />
-							newNames.push("Louis"); <br /><br />
-							on affiche le contenu du tableau "newNames"<br />
-							console.log(newNames); <br /><br />
-							on affiche le contenu du tableau "names"<br />
-							console.log(names); <br /><br />
-							Les deux console.log vont nous donner le même résultat, à savoir:
-							<br />
-							Array(4) [ "Eric", "Sophie", "Maria", "Louis" ] <br /><br />
-							Le tableau d'origine a été, lui aussi, modifié alors que nous
-							voulions ajouter un nom que dans le tableau "newNames", <br />
-							pourquoi? <br /><br />
-							Parce que le tableau "newNames" ne fait que faire
-							<u>référence</u> au tableau "names", <br />
-							ce n'est pas un nouveau tableau avec un contenu vierge (const
-							newNames = [];) <br />
-							il se réfère à "names" et fait office de "relais/rooter" avec le
-							tableau d'origine. <br /><br />
-							<span style="color: greenyellow;"
-								><u
-									>on préférera l'utilisation de CONST pour les données
-									références</u
-								>.</span
-							>
-						</p>
-					</li>
-					<li class="article">
-						<h2 class="titre-article">
-							FORMATS D'ECRITURES DES NOMS DE VARIABLE
-						</h2>
-						<p class="paragraphe explication">
-							<span>camel Case</span> <br />
-							(première lettre du premier mot en minuscule, première lettre du
-							deuxième mot en Majuscule)
-						</p>
-						<p class="paragraphe example">const yourVideos = 10;</p>
-						<p class="paragraphe explication">
-							<span>Pascal Case</span> <br />
-							(Majuscule à toutes les premières lettres des mots)
-						</p>
-						<p class="paragraphe example">const YourVideos = 20;</p>
-						<p class="paragraphe explication">
-							<span>under_score</span> <br />
-							(chaque mot est connecté par un symbole _)
-						</p>
-						<p class="paragraphe example">
-							const your_videos = 30;
-						</p>
-					</li>
-					<li class="article">
-						<h2 class="titre-article">
-							DIFFERENTS TYPES DE DONNEES QU'UNE VARIABLE PEUT STOCKER
-						</h2>
-						<p class="paragraphe explication">
-							Il existe <u>deux principaux groupes</u> de données:
-						</p>
-						<h3>"PRIMITIVE DATA TYPE"</h3>
-						<p class="paragraphe explication">
-							Une primitive (valeur primitive ou structure de donnée primitive)
-							est une donnée qui n'est pas un objet/tableau et n'a pas de
-							méthode. <br />
-							Une variable contenant l'une de ces données est appelé une
-							variable primitive. <br />
-							En JavaScript, il y a 6 types de données primitives:
-						</p>
-						<p class="paragraphe explication">UN NOMBRE</p>
-						<p class="paragraphe example">const a = 10;</p>
-						<p class="paragraphe explication">
-							UNE CHAINE DE CHARACTERS <br />
-							s'écrit entre guillemets(<span>""</span>)
-						</p>
-						<p class="paragraphe example">
-							const a = "toto"; <br />
-							const a = "4";
-						</p>
-						<p class="paragraphe explication">UN BOOLEANS</p>
-						<p class="paragraphe example">
-							const a = TRUE; <br />
-							const a = FALSE;
-						</p>
-						<p class="paragraphe explication">
-							VALEUR INDEFINIE <br />
-							(signifie qu'aucune valeur n'a été attribué à la variable). <br />
-							<span
-								>valable uniquement pour let, car (par défaut) la valeur d'une
-								constante doit être définie.</span
-							>
-						</p>
-						<p class="paragraphe example">
-							let a; <br />
-							console.log(a); affichera "undefined"
-						</p>
-						<p class="paragraphe explication">
-							VALEUR NULLE <br />
-							(on déclare ici une valeur égale à rien (null))
-						</p>
-						<p class="paragraphe example">let a = null;</p>
-						<p class="paragraphe explication">
-							SYMBOL <br />
-							(utile pour donner un ID unique à l'intérieur d'un objet)
-						</p>
-						<p class="paragraphe example">const a = symbol();</p>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>EmmanuelDev Mémo Javascript - BASES JS</title>
+	<link rel="stylesheet" href="../scss/basesJs.css" />
+</head>
+
+<body>
+	<header>
+		<h1 class="titre">JAVASCRIPT MEMO</h1>
+	</header>
+	<main>
+		<section id="liste">
+			<ul id="liste-p">
+				<li class="article">
+					<h2 class="titre-article">
+						INTRODUIRE UN FICHIER JS DANS SON CODE HTML
+					</h2>
+					<p class="paragraphe intro">
+						Pour insérer un fichier javascript dans notre code, il faut le
+						<span>positionner à la fin de la balise "body" juste avant sa
+							fermeture "&lt;/body&gt;"</span>.
 						<br />
-						<h3>"REFERENCE DATA TYPE"</h3>
-						<p class="paragraphe explication">
-							Javascript possède 3 types de données référence: <br />
-							Le Tableau (Array), <br />
-							La fonction (function), <br />
-							L'Objet (object) <br /><br />
-							Ce sont des données complexes qui peuvent contenir de nombreux
-							types de données primitives <br />
-							Une variable contenant l'une de ces données est appelé une
-							variable référence.
-						</p>
-						<p class="paragraphe example">
-							Example: <br /><br />
-							const voiture = ["renault", "peugeot","citroen"]; <br />
-							voiture est un tableau contenant des données primitives de type
-							"string". <br /><br />
-							console.log(voiture); <br />
-							pour afficher mon tableau je m'y réfère par son nom (voiture) avec
-							la méthode console log.
-						</p>
-						<p class="paragraphe explication">
-							<span
-								>ATTENTION: <br />
-								IL FAUT ETRE TRES PRUDENT QUAND ON DECIDE DE MODIFIER LA VALEUR
-								D'UNE DONNEE REFERENCE <br />
-								CAR CELA PEUT MODIFIER L'ORIGINAL AUSSI, CHOSE QUE L'ON NE
-								SOUHAITE PAS TOUJOURS!!!</span
-							>
-							<br />
-							J'expliquerai plus en détail ce cas de figure plus loin
-						</p>
-					</li>
-					<li class="article">
-						<h2 class="titre-article">OPERATEURS DE BASE EN JS</h2>
-						<p class="paragraphe explication">
-							soit 3 variables: <br />
-							let a = 10; (est définie) <br />
-							let b = 4; (est définie)<br />
-							let c; (est indéfinie / undefined)<br />
-						</p>
-						<p class="paragraphe explication">ADDITION (<span>+</span>)</p>
-						<p class="paragraphe example">let c = a + b;</p>
-						<p class="paragraphe explication">SOUSTRACTION (<span>-</span>)</p>
-						<p class="paragraphe example">let c = a - b;</p>
-						<p class="paragraphe explication">
-							MULTIPLICATION (<span>*</span>)
-						</p>
-						<p class="paragraphe example">let c = a * b;</p>
-						<p class="paragraphe explication">DIVISION (<span>/</span>)</p>
-						<p class="paragraphe example">let c = a / b;</p>
-						<p class="paragraphe explication">
-							MODULO (<span>%</span>)<br />
-							(c'est le chiffre restant, lors d'une division)
-						</p>
-						<p class="paragraphe example">
-							let c = a % b; <br />
-							let c = 10 % 4; <br />
-							let c = 2;
-						</p>
-						<p class="paragraphe explication">
-							PUISSANCE (<span>**</span>)<br />
-							(Le nombre de fois que l'on mutliplie un nombre par sa valeur)
-						</p>
-						<p class="paragraphe example">
-							let c = a ** b; <br />
-							let c = 10 ** 4; <br />
-							let c = 10 * 10 * 10 * 10; <br />
-							let c = 10000;
-						</p>
-						<p class="paragraphe explication">
-							AJOUTE 1 (<span>++</span>)<br />
-							(ajoute 1 à la valeur de la variable)
-						</p>
-						<p class="paragraphe example">
-							let c = 10; <br />
-							c++; <br />
-							signifie: c = c+1; <br />
-							console.log(c); affichera 11
-						</p>
-						<p class="paragraphe explication">
-							SOUSTRAIT 1 (<span>--</span>)<br />
-							(soustrait 1 à la valeur de la variable)
-						</p>
-						<p class="paragraphe example">
-							let c = 10; <br />
-							c--; <br />
-							signifie: c = c-1; <br />
-							console.log(c); affichera 9
-						</p>
-						<p class="paragraphe explication">
-							AJOUTE UN NOMBRE (<span>+=</span>)<br />
-							(ajoute un nombre de notre choix à la valeur de la variable)
-						</p>
-						<p class="paragraphe example">
-							let c = 10; <br />
-							c += 20; <br />
-							signifie: c = c + 20; <br />
-							console.log(c); affichera 30
-						</p>
-					</li>
-					<li class="article">
-						<h2 class="titre-article">CONCATENATION</h2>
-						<p class="paragraphe explication">
-							C'est comme relier les valeurs d'un ensemble de variables entre
-							elles
-						</p>
+						la méthode pour insérer le fichier consiste à ajouter une balise
+						autofermante "&lt;script&gt;" en y indiquant l'attribut "src" qui
+						va pointer vers le dossier où se trouve le fichier Js voulu.
+					</p>
+					<p class="paragraphe example">
+						example: <br />
+						&lt;body&gt; <br />
+						&emsp;&lt;header&gt; <br />
+						&emsp;&emsp;ton code... <br />
+						&emsp;&lt;/header&gt; <br />
+						&emsp;&lt;main&gt; <br />
+						&emsp;&emsp;ton code... <br />
+						&emsp;&lt;/main&gt; <br />
+						&emsp;&lt;footer&gt; <br />
+						&emsp;&emsp;ton code... <br />
+						&emsp;&lt;/footer&gt; <br />
+						&lt;script src="./ton_fichier.js"&gt;&lt;/script&gt; <br />
+						&lt;/body&gt;
+					</p>
+				</li>
+				<li class="article">
+					<h2 class="titre-article">DIFFERENTS TYPES DE VARIABLES</h2>
+					<p class="paragraphe explication">
+						Javascript est un langage qui gère des informations, les
+						comparent, les utilisent. Pour ce faire, il utilise des "boites"
+						dans lesquelles il range ces informations.
+						<br />
+						Les "boites" sont étiquetées pour les identifier, ont leur
+						attribut un nom distinct. Il existe trois type de boites: <br />
+					</p>
+					<p class="paragraphe explication">
+						LA CONSTANTE (CONST) <br />
+						Permet de déclarer une variable qui doit avoir une valeur initiale
+						et ne peut pas être réassignée... <br />
+						<span>Cela ne veut pas dire qu'une variable déclarée avec const est
+							une constante.</span><br />
+						Par exemple, si la variable contient un objet, on peut modifier
+						les propriétés de cet objet.
+					</p>
+					<p class="paragraphe example">
+						Exemple: <br />
+						const idUser = "EmmanuelDev";
+					</p>
+					<p class="paragraphe explication">
+						LA VARIABLE (LET) <br />
+						Permet de déclarer une variable qui peut ne pas avoir de valeur
+						initiale et qui peut être réassignée. <br />
+						<span>(sa valeur peut changer, on n'est pas obligé de la définir dès
+							le départ.)</span>
+					</p>
+					<p class="paragraphe example">
+						Exemple: <br />
+						let age = 35; <br />
+						let country = "france"; <br />
+						let ville;
+					</p>
+					<p class="paragraphe explication">
+						LA VARIABLE (VAR) <br />
+						Elle a été utilisé depuis l'origine de Javascript, mais elle a une
+						"faiblesse", <br />
+						sa valeur peut être accidentellement modifié si l'on ne fait pas
+						attention. (cf.notions de scope) <br />
+						<u>C'est pourquoi la bonne pratique est d'utiliser "let" plutot
+							que "var".</u>
+						<br />
+						<span>(sa valeur peut changer, on n'est pas obligé de la définir dès
+							le départ.)</span>
+						<br />
+					</p>
+					<p class="paragraphe example">
+						Exemple: <br />
+						var age = 35; <br />
+						var country = "france"; <br />
+						var ville;
+					</p>
+				</li>
+				<li class="article">
+					<h2 class="titre-article">CONST vs LET</h2>
+					<p class="paragraphe explication">Prenons deux examples:</p>
+					<p class="paragraphe example">
+						Définissons une constante "bank", sa valeur est un nombre qui est
+						une donnée primitive. <br /><br />
+						const bank = 250; <br />
+						<br />
+						essayons de changer sa valeur! <br />
+						bank = 100; <br /><br />
+						cela ne fonctionnera pas et nous aurons en console un message
+						d'erreur: <br />
+						"Uncaught TypeError: Assignment to constant variable."
+						<br /><br />
+						<span>Il n'est pas possible de modifier une valeur primitive
+							enregistrée dans une variable CONST.</span>
+						<br /><br />
+						Avec une variable LET on peut changer cette valeur sans
+						difficultées, <br />
+						c'est pourquoi
+						<span style="color: greenyellow;"><u>on préférera l'utilisation de LET pour les données
+								primitives</u>.</span>
+					</p>
+					<p class="paragraphe example">
+						Meme principe que pour l'example1 mais cette fois avec une
+						variable qui contiendra une donnée de type référence. <br /><br />
+						on définit une constante contenant un tableau avec des
+						noms(strings).
+						<br />
+						const names = ["Eric", "Sophie", "Maria"]; <br /><br />
+						on définit une nouvelle constante contenant un tableau qui va
+						avoir pour "référence" le tableau "names". <br />
+						En gros, on copie le tableau names dans newNames <br />
+						const newNames = names; <br /><br />
+						on rajoute un nom dans le tableau newNames. <br />
+						newNames.push("Louis"); <br /><br />
+						on affiche le contenu du tableau "newNames"<br />
+						console.log(newNames); <br /><br />
+						on affiche le contenu du tableau "names"<br />
+						console.log(names); <br /><br />
+						Les deux console.log vont nous donner le même résultat, à savoir:
+						<br />
+						Array(4) [ "Eric", "Sophie", "Maria", "Louis" ] <br /><br />
+						Le tableau d'origine a été, lui aussi, modifié alors que nous
+						voulions ajouter un nom que dans le tableau "newNames", <br />
+						pourquoi? <br /><br />
+						Parce que le tableau "newNames" ne fait que faire
+						<u>référence</u> au tableau "names", <br />
+						ce n'est pas un nouveau tableau avec un contenu vierge (const
+						newNames = [];) <br />
+						il se réfère à "names" et fait office de "relais/rooter" avec le
+						tableau d'origine. <br /><br />
+						<span style="color: greenyellow;"><u>on préférera l'utilisation de CONST pour les données
+								références</u>.</span>
+					</p>
+				</li>
+				<li class="article">
+					<h2 class="titre-article">
+						FORMATS D'ECRITURES DES NOMS DE VARIABLE
+					</h2>
+					<p class="paragraphe explication">
+						<span>camel Case</span> <br />
+						(première lettre du premier mot en minuscule, première lettre du
+						deuxième mot en Majuscule)
+					</p>
+					<p class="paragraphe example">const yourVideos = 10;</p>
+					<p class="paragraphe explication">
+						<span>Pascal Case</span> <br />
+						(Majuscule à toutes les premières lettres des mots)
+					</p>
+					<p class="paragraphe example">const YourVideos = 20;</p>
+					<p class="paragraphe explication">
+						<span>under_score</span> <br />
+						(chaque mot est connecté par un symbole _)
+					</p>
+					<p class="paragraphe example">
+						const your_videos = 30;
+					</p>
+				</li>
+				<li class="article">
+					<h2 class="titre-article">
+						DIFFERENTS TYPES DE DONNEES QU'UNE VARIABLE PEUT STOCKER
+					</h2>
+					<p class="paragraphe explication">
+						Il existe <u>deux principaux groupes</u> de données:
+					</p>
+					<h3>"PRIMITIVE DATA TYPE"</h3>
+					<p class="paragraphe explication">
+						Une primitive (valeur primitive ou structure de donnée primitive)
+						est une donnée qui n'est pas un objet/tableau et n'a pas de
+						méthode. <br />
+						Une variable contenant l'une de ces données est appelé une
+						variable primitive. <br />
+						En JavaScript, il y a 6 types de données primitives:
+					</p>
+					<p class="paragraphe explication">UN NOMBRE</p>
+					<p class="paragraphe example">const a = 10;</p>
+					<p class="paragraphe explication">
+						UNE CHAINE DE CHARACTERS <br />
+						s'écrit entre guillemets(<span>""</span>)
+					</p>
+					<p class="paragraphe example">
+						const a = "toto"; <br />
+						const a = "4";
+					</p>
+					<p class="paragraphe explication">UN BOOLEANS</p>
+					<p class="paragraphe example">
+						const a = TRUE; <br />
+						const a = FALSE;
+					</p>
+					<p class="paragraphe explication">
+						VALEUR INDEFINIE <br />
+						(signifie qu'aucune valeur n'a été attribué à la variable). <br />
+						<span>valable uniquement pour let, car (par défaut) la valeur d'une
+							constante doit être définie.</span>
+					</p>
+					<p class="paragraphe example">
+						let a; <br />
+						console.log(a); affichera "undefined"
+					</p>
+					<p class="paragraphe explication">
+						VALEUR NULLE <br />
+						(on déclare ici une valeur égale à rien (null))
+					</p>
+					<p class="paragraphe example">let a = null;</p>
+					<p class="paragraphe explication">
+						SYMBOL <br />
+						(utile pour donner un ID unique à l'intérieur d'un objet)
+					</p>
+					<p class="paragraphe example">const a = symbol();</p>
+					<br />
+					<h3>"REFERENCE DATA TYPE"</h3>
+					<p class="paragraphe explication">
+						Javascript possède 3 types de données référence: <br />
+						Le Tableau (Array), <br />
+						La fonction (function), <br />
+						L'Objet (object) <br /><br />
+						Ce sont des données complexes qui peuvent contenir de nombreux
+						types de données primitives <br />
+						Une variable contenant l'une de ces données est appelé une
+						variable référence.
+					</p>
+					<p class="paragraphe example">
+						Example: <br /><br />
+						const voiture = ["renault", "peugeot","citroen"]; <br />
+						voiture est un tableau contenant des données primitives de type
+						"string". <br /><br />
+						console.log(voiture); <br />
+						pour afficher mon tableau je m'y réfère par son nom (voiture) avec
+						la méthode console log.
+					</p>
+					<p class="paragraphe explication">
+						<span>ATTENTION: <br />
+							IL FAUT ETRE TRES PRUDENT QUAND ON DECIDE DE MODIFIER LA VALEUR
+							D'UNE DONNEE REFERENCE <br />
+							CAR CELA PEUT MODIFIER L'ORIGINAL AUSSI, CHOSE QUE L'ON NE
+							SOUHAITE PAS TOUJOURS!!!</span>
+						<br />
+						J'expliquerai plus en détail ce cas de figure plus loin
+					</p>
+				</li>
+				<li class="article">
+					<h2 class="titre-article">OPERATEURS DE BASE EN JS</h2>
+					<p class="paragraphe explication">
+						soit 3 variables: <br />
+						let a = 10; (est définie) <br />
+						let b = 4; (est définie)<br />
+						let c; (est indéfinie / undefined)<br />
+					</p>
+					<p class="paragraphe explication">ADDITION (<span>+</span>)</p>
+					<p class="paragraphe example">let c = a + b;</p>
+					<p class="paragraphe explication">SOUSTRACTION (<span>-</span>)</p>
+					<p class="paragraphe example">let c = a - b;</p>
+					<p class="paragraphe explication">
+						MULTIPLICATION (<span>*</span>)
+					</p>
+					<p class="paragraphe example">let c = a * b;</p>
+					<p class="paragraphe explication">DIVISION (<span>/</span>)</p>
+					<p class="paragraphe example">let c = a / b;</p>
+					<p class="paragraphe explication">
+						MODULO (<span>%</span>)<br />
+						(c'est le chiffre restant, lors d'une division)
+					</p>
+					<p class="paragraphe example">
+						let c = a % b; <br />
+						let c = 10 % 4; <br />
+						let c = 2;
+					</p>
+					<p class="paragraphe explication">
+						PUISSANCE (<span>**</span>)<br />
+						(Le nombre de fois que l'on mutliplie un nombre par sa valeur)
+					</p>
+					<p class="paragraphe example">
+						let c = a ** b; <br />
+						let c = 10 ** 4; <br />
+						let c = 10 * 10 * 10 * 10; <br />
+						let c = 10000;
+					</p>
+					<p class="paragraphe explication">
+						AJOUTE 1 (<span>++</span>)<br />
+						(ajoute 1 à la valeur de la variable)
+					</p>
+					<p class="paragraphe example">
+						let c = 10; <br />
+						c++; <br />
+						signifie: c = c+1; <br />
+						console.log(c); affichera 11
+					</p>
+					<p class="paragraphe explication">
+						SOUSTRAIT 1 (<span>--</span>)<br />
+						(soustrait 1 à la valeur de la variable)
+					</p>
+					<p class="paragraphe example">
+						let c = 10; <br />
+						c--; <br />
+						signifie: c = c-1; <br />
+						console.log(c); affichera 9
+					</p>
+					<p class="paragraphe explication">
+						AJOUTE UN NOMBRE (<span>+=</span>)<br />
+						(ajoute un nombre de notre choix à la valeur de la variable)
+					</p>
+					<p class="paragraphe example">
+						let c = 10; <br />
+						c += 20; <br />
+						signifie: c = c + 20; <br />
+						console.log(c); affichera 30
+					</p>
+				</li>
+				<li class="article">
+					<h2 class="titre-article">CONCATENATION</h2>
+					<p class="paragraphe explication">
+						C'est comme relier les valeurs d'un ensemble de variables entre
+						elles
+					</p>
 
-						<p class="paragraphe example">
-							example: <br />
-							const greeting = "Welcome to my website "<br />
-							let name = "Emmanuel"<br />
-							console.log(greeting + user);<br />
-							affichera: Welcome to my website Emmanuel
-						</p>
+					<p class="paragraphe example">
+						example: <br />
+						const greeting = "Welcome to my website "<br />
+						let name = "Emmanuel"<br />
+						console.log(greeting + user);<br />
+						affichera: Welcome to my website Emmanuel
+					</p>
 
-						<p class="paragraphe explication">
-							INCLURE UNE CITATION DANS UNE VARIABLE
-						</p>
-						<p class="paragraphe example">
-							Example: <br />
-							const citation = "Lafontaine nous dis: <span>"</span>La méfiance
-							est mère de la sûreté.<span>"</span>";<br />
-							console.log(citation);
-						</p>
+					<p class="paragraphe explication">
+						INCLURE UNE CITATION DANS UNE VARIABLE
+					</p>
+					<p class="paragraphe example">
+						Example: <br />
+						const citation = "Lafontaine nous dis: <span>"</span>La méfiance
+						est mère de la sûreté.<span>"</span>";<br />
+						console.log(citation);
+					</p>
 
-						<p class="paragraphe explication">
-							nous indiquera un message d'erreur car il considère que le
-							(<span>"</span>) rencontré au moment de citer l'auteur, a pour
-							action de fermer le premier (").<br />
-							Le contenu qui suit est alors en dehors des guillemets et donc au
-							mauvais endroit, d'où le message d'erreur.<br />
+					<p class="paragraphe explication">
+						nous indiquera un message d'erreur car il considère que le
+						(<span>"</span>) rencontré au moment de citer l'auteur, a pour
+						action de fermer le premier (").<br />
+						Le contenu qui suit est alors en dehors des guillemets et donc au
+						mauvais endroit, d'où le message d'erreur.<br />
 
-							Pour corriger cela, il faut "échaper" les guillemets
-							(<span>"</span>) se trouvant au début et à la fin de la citation à
-							l'aide du symbole <span>\</span> (alt+Gr 8).
-						</p>
+						Pour corriger cela, il faut "échaper" les guillemets
+						(<span>"</span>) se trouvant au début et à la fin de la citation à
+						l'aide du symbole <span>\</span> (alt+Gr 8).
+					</p>
 
-						<p class="paragraphe example">
-							Example:<br />
-							const citation = "Lafontaine nous dis:<span>\</span>"La méfiance
-							est mère de la sûreté.<span>\</span>"";<br />
-							console.log(citation);<br />
-							nous affichera le résultat attendu.
-						</p>
+					<p class="paragraphe example">
+						Example:<br />
+						const citation = "Lafontaine nous dis:<span>\</span>"La méfiance
+						est mère de la sûreté.<span>\</span>"";<br />
+						console.log(citation);<br />
+						nous affichera le résultat attendu.
+					</p>
 
-						<p class="paragraphe explication">
-							Une autre méthode consiste à utiliser les simples guillemets
-							(<span>'</span>) au lieu des doubles guillemets.
-						</p>
-						<p class="paragraphe example">
-							Example:<br />
-							const citation = <span>'</span>Lafontaine nous dis:"La méfiance
-							est mère de la sûreté."<span>'</span>;<br />
-							console.log(citation);
-						</p>
-						<p class="paragraphe explication">
-							nous affichera le résultat attendu.<br />
-							MAIS encore une fois, dans cette méthode, si l'on utilise quelque
-							part dans notre phrase un apostrophe ('), cela va casser le code..
-						</p>
-						<p class="paragraphe example">
-							Example:<br />
-							const citation = 'Lafontaine, l<span>'</span>a dit:"La méfiance
-							est mère de la sûreté."';<br />
-							console.log(citation);
-						</p>
-						<p class="paragraphe explication">
-							nous indiquera un message d'erreur car l'apostrophe situé après le
-							"l" de "l'a dit" casse le code.<br />
-							Pour solutionner le problème, il faut donc à nouveau utiliser la
-							méthode (alt+Gr 8) et ainsi "échaper" l'apostrophe en trop.
-						</p>
-						<p class="paragraphe example">
-							Example:<br />
-							const citation = 'Lafontaine, l<span>\</span>'a dit:"La méfiance
-							est mère de la sûreté."';<br />
-							console.log(citation); <br />nous affichera le résultat attendu.
-						</p>
-						<p class="paragraphe explication">
-							<span
-								>!!!METHODE ULTIME POUR NE PAS SE PRENDRE LA TETE AVEC
-								GUILLEMETS ET APOSTROPHES!!!</span
-							><br />il suffit d'utiliser (alt+Gr 7) qui nous donnera ces
-							apostrophes arrières (``). <br />Tout le texte se trouvant entre
-							ces deux guillemets arrière sera valide, peu importe qu'il
-							comprenne des gullemets ou des apostrophes.
-						</p>
-						<p class="paragraphe example">
-							Example:<br />
-							const citation = <span>`</span>Lafontaine, l'a dit:"La méfiance
-							est mère de la sûreté."<span>`</span>;<br />
-							console.log(citation); <br />
-							nous affichera le résultat attendu.
-						</p>
+					<p class="paragraphe explication">
+						Une autre méthode consiste à utiliser les simples guillemets
+						(<span>'</span>) au lieu des doubles guillemets.
+					</p>
+					<p class="paragraphe example">
+						Example:<br />
+						const citation = <span>'</span>Lafontaine nous dis:"La méfiance
+						est mère de la sûreté."<span>'</span>;<br />
+						console.log(citation);
+					</p>
+					<p class="paragraphe explication">
+						nous affichera le résultat attendu.<br />
+						MAIS encore une fois, dans cette méthode, si l'on utilise quelque
+						part dans notre phrase un apostrophe ('), cela va casser le code..
+					</p>
+					<p class="paragraphe example">
+						Example:<br />
+						const citation = 'Lafontaine, l<span>'</span>a dit:"La méfiance
+						est mère de la sûreté."';<br />
+						console.log(citation);
+					</p>
+					<p class="paragraphe explication">
+						nous indiquera un message d'erreur car l'apostrophe situé après le
+						"l" de "l'a dit" casse le code.<br />
+						Pour solutionner le problème, il faut donc à nouveau utiliser la
+						méthode (alt+Gr 8) et ainsi "échaper" l'apostrophe en trop.
+					</p>
+					<p class="paragraphe example">
+						Example:<br />
+						const citation = 'Lafontaine, l<span>\</span>'a dit:"La méfiance
+						est mère de la sûreté."';<br />
+						console.log(citation); <br />nous affichera le résultat attendu.
+					</p>
+					<p class="paragraphe explication">
+						<span>!!!METHODE ULTIME POUR NE PAS SE PRENDRE LA TETE AVEC
+							GUILLEMETS ET APOSTROPHES!!!</span><br />il suffit d'utiliser (alt+Gr 7) qui nous donnera
+						ces
+						apostrophes arrières (``). <br />Tout le texte se trouvant entre
+						ces deux guillemets arrière sera valide, peu importe qu'il
+						comprenne des gullemets ou des apostrophes.
+					</p>
+					<p class="paragraphe example">
+						Example:<br />
+						const citation = <span>`</span>Lafontaine, l'a dit:"La méfiance
+						est mère de la sûreté."<span>`</span>;<br />
+						console.log(citation); <br />
+						nous affichera le résultat attendu.
+					</p>
 
-						<p class="paragraphe explication">
-							<span>!!!METHODE ULTIME POUR UTILISER LA CONCATENATION!!!</span
-							><br />on abandonne la connection des valeurs en utilisant le
-							symbole (+) et on le remplace par ${variable} tout en conservant
-							l'écriture du contenu de la variable entre apostrophes arrières
-							(``) (alt+Gr 7).
-						</p>
-						<p class="paragraphe example">
-							Example:<br />
-							const auteur = "Lafontaine";<br />
-							const citation = <span>`</span><span>${auteur}</span> l'a dit:"La
-							méfiance est mère de la sûreté."<span>`</span>;<br />
-							console.log(citation);<br />
-							nous affichera le résultat attendu.
-						</p>
-						<p class="paragraphe explication">
-							Faire attention de bien déclarer les variables/constantes dans le
-							bon ordre, pour ne pas se retrouver avec un message d'erreur.<br />
-							En effet Js lis le code de haut en bas et donc si l'on déclare
-						</p>
-						<p class="paragraphe example">
-							par example:<br />
-							const citation = `${auteur} l'a dit:"La méfiance est mère de la
-							sûreté."`;<br />
-							const auteur = "Lafontaine";<br />
-							console.log(citation);
-						</p>
-						<p class="paragraphe explication">
-							nous affichera un message d'erreur car la constante "auteur" n'a
-							pas pu etre identifier puisque elle est déclaré après la constante
-							"citation".
-						</p>
-					</li>
-					<li class="article">
-						<h2 class="titre-article">LES COMPARAISONS</h2>
-						<p class="paragraphe explication">
-							pour comparer deux variables nous avons plusieurs notations à
-							notre disposition:
-							<br />
-						</p>
+					<p class="paragraphe explication">
+						<span>!!!METHODE ULTIME POUR UTILISER LA CONCATENATION!!!</span><br />on abandonne la connection
+						des valeurs en utilisant le
+						symbole (+) et on le remplace par ${variable} tout en conservant
+						l'écriture du contenu de la variable entre apostrophes arrières
+						(``) (alt+Gr 7).
+					</p>
+					<p class="paragraphe example">
+						Example:<br />
+						const auteur = "Lafontaine";<br />
+						const citation = <span>`</span><span>${auteur}</span> l'a dit:"La
+						méfiance est mère de la sûreté."<span>`</span>;<br />
+						console.log(citation);<br />
+						nous affichera le résultat attendu.
+					</p>
+					<p class="paragraphe explication">
+						Faire attention de bien déclarer les variables/constantes dans le
+						bon ordre, pour ne pas se retrouver avec un message d'erreur.<br />
+						En effet Js lis le code de haut en bas et donc si l'on déclare
+					</p>
+					<p class="paragraphe example">
+						par example:<br />
+						const citation = `${auteur} l'a dit:"La méfiance est mère de la
+						sûreté."`;<br />
+						const auteur = "Lafontaine";<br />
+						console.log(citation);
+					</p>
+					<p class="paragraphe explication">
+						nous affichera un message d'erreur car la constante "auteur" n'a
+						pas pu etre identifier puisque elle est déclaré après la constante
+						"citation".
+					</p>
+				</li>
+				<li class="article">
+					<h2 class="titre-article">LES COMPARAISONS</h2>
+					<p class="paragraphe explication">
+						pour comparer deux variables nous avons plusieurs notations à
+						notre disposition:
+						<br />
+					</p>
 
-						<p class="paragraphe explication"><span>==</span> est égal à</p>
-						<p class="paragraphe example">
-							Examples utilisés en console:<br />
-							5 == 5 le résultat est "true"<br />
-							5 == 4 le résultat est "false"
-						</p>
-						<p class="paragraphe explication">
-							<span>!=</span> n'est pas égal à
-						</p>
-						<p></p>
-						<p class="paragraphe example">
-							Examples utilisés en console:<br />
-							5 != 5 le résultat est "false"<br />
-							5 != 4 le résultat est "true"
-						</p>
-						<p class="paragraphe explication"><span>></span> supérieur à</p>
-						<p class="paragraphe example">
-							Examples utilisés en console:<br />
-							5 > 5 le résultat est "false"<br />
-							5 > 4 le résultat est "true"
-						</p>
+					<p class="paragraphe explication"><span>==</span> est égal à</p>
+					<p class="paragraphe example">
+						Examples utilisés en console:<br />
+						5 == 5 le résultat est "true"<br />
+						5 == 4 le résultat est "false"
+					</p>
+					<p class="paragraphe explication">
+						<span>!=</span> n'est pas égal à
+					</p>
+					<p></p>
+					<p class="paragraphe example">
+						Examples utilisés en console:<br />
+						5 != 5 le résultat est "false"<br />
+						5 != 4 le résultat est "true"
+					</p>
+					<p class="paragraphe explication"><span>></span> supérieur à</p>
+					<p class="paragraphe example">
+						Examples utilisés en console:<br />
+						5 > 5 le résultat est "false"<br />
+						5 > 4 le résultat est "true"
+					</p>
 
-						<p class="paragraphe explication"><span> < </span> inférieur à</p>
-						<p class="paragraphe example">
-							Examples utilisés en console:<br />
-							5 &lt; 5 le résultat est "false"<br />
-							4 &lt; 5 le résultat est "true"
-						</p>
+					<p class="paragraphe explication"><span>
+							< </span> inférieur à</p>
+					<p class="paragraphe example">
+						Examples utilisés en console:<br />
+						5 &lt; 5 le résultat est "false"<br />
+						4 &lt; 5 le résultat est "true"
+					</p>
 
-						<p class="paragraphe explication">
-							<span>>=</span> supérieur ou égal à
-						</p>
-						<p class="paragraphe example">
-							Examples utilisés en console:<br />
-							5 >= 5 le résultat est "true"<br />
-							4 >= 5 le résultat est "false"
-						</p>
+					<p class="paragraphe explication">
+						<span>>=</span> supérieur ou égal à
+					</p>
+					<p class="paragraphe example">
+						Examples utilisés en console:<br />
+						5 >= 5 le résultat est "true"<br />
+						4 >= 5 le résultat est "false"
+					</p>
 
-						<p class="paragraphe explication">
-							<span> <= </span> inférieur ou égal à
-						</p>
-						<p class="paragraphe example">
-							Examples utilisés en console:<br />
-							5 &lt;= 5 le résultat est "true"<br />
-							5 &lt;= 4 le résultat est "false"
-						</p>
+					<p class="paragraphe explication">
+						<span>
+							<= </span> inférieur ou égal à
+					</p>
+					<p class="paragraphe example">
+						Examples utilisés en console:<br />
+						5 &lt;= 5 le résultat est "true"<br />
+						5 &lt;= 4 le résultat est "false"
+					</p>
 
-						<p class="paragraphe explication">
-							<span>!!!CAS PARTICULIER!!!</span>
-						</p>
-						<p class="paragraphe example">
-							Examples utilisés en console:<br />
-							5 == "5" le résultat est "true"
-						</p>
-						<p class="paragraphe explication">
-							5 est un nombre et "5" est une chaine de charactères (string), on
-							devrait donc avoir false au lieu de true.<br />
-							pouv éviter ce type d'erreur il existe une solution qu'il faut
-							généraliser à notre code.<br />
-							c'est le cas suivant:
-						</p>
-						<p class="paragraphe explication">
-							<span>===</span> égal et strictement égal à
-						</p>
-						<p class="paragraphe example">
-							5 === 5 le résultat est "true"<br />
-							5 === "5" le résultat est "false"
-						</p>
-					</li>
-					<li class="article">
-						<h2 class="titre-article">LES CONDITIONS</h2>
-						<p class="paragraphe explication">
-							Une condition induit qu'elle est vérifiée ou non, en d'autre terme
-							qu'elle est vraie ou fausse. <br />
-							Si elle est vérifiée (true) alors le code entre accolades {...}
-							s'execute, si elle n'est pas vérifiée (false) alors le code entre
-							accolades {...} ne s'execute pas.
-						</p>
-						<p class="paragraphe explication">
-							ATTENTION: <br />
-							<span
-								><u
-									>une variable/constante peut prendre la valeur "false" de
-									plusieurs façons différentes.</u
-								></span
-							>
-							<br />
-							(Voir - CAS PARTICULIER: DIFFERENTES VALEURS FALSE)
-						</p>
-						<p class="paragraphe explication">
-							<u>IF:</u><br />
-							<span
-								>si ma condition est vraie (true), alors execute le code entre
-								les accolades {...}.</span
-							>
-						</p>
-						<p class="paragraphe example">
-							if(condition){ <br />
-							console.log("la condition est vraie"); <br />
-							}
-						</p>
-						<p class="paragraphe explication">
-							soit une constante avec pour valeur "true": <br />const condition
-							= true;
-						</p>
-						<p class="paragraphe example">
-							if(condition){ <br />
-							console.log("la condition est vraie"); <br />
-							} <br />
-							le message s'affichera dans la console car la condition est
-							vérifiée et égale à "true"
-						</p>
-						<p class="paragraphe explication">
-							soit une constante avec pour valeur "false": <br />const condition
-							= false;
-						</p>
-						<p class="paragraphe example">
-							if(condition){ <br />
-							console.log("la condition est vraie"); <br />
-							} <br />
-							rien se s'affichera dans la console car la condition n'est pas
-							vérifiée elle est égale à "false"
-						</p>
-						<p class="paragraphe explication">
-							soit une constante avec pour valeur le chiffre 20: <br />const
-							condition = 20;
-						</p>
-						<p class="paragraphe example">
-							if(condition > 10){ <br />
-							console.log("la condition1 est vraie"); <br />
-							} <br />
-							le message s'affichera dans la console car la condition est
-							vérifiée. <br />
-							20 est bien supérieur à 10.
-						</p>
-						<p class="paragraphe example">
-							if(condition < 10){ <br />
-							console.log("la condition est vraie"); <br />
-							} <br />
-							rien se s'affichera dans la console car la condition n'est pas
-							vérifiée. <br />
-							20 n'est pas inférieur à 10.
-						</p>
-						<p class="paragraphe explication">
-							soit une constante avec pour valeur une chaine de caractères:
-							<br />const condition = "emmanuel";
-						</p>
-						<p class="paragraphe example">
-							if(condition === "emmanuel"){ <br />
-							console.log("la condition est vraie"); <br />
-							} <br />
-							le message s'affichera dans la console car la condition est
-							vérifiée. <br />
-							la valeur contenue dans la constante condition est égale et
-							strictement égale à "emmanuel"
-						</p>
+					<p class="paragraphe explication">
+						<span>!!!CAS PARTICULIER!!!</span>
+					</p>
+					<p class="paragraphe example">
+						Examples utilisés en console:<br />
+						5 == "5" le résultat est "true"
+					</p>
+					<p class="paragraphe explication">
+						5 est un nombre et "5" est une chaine de charactères (string), on
+						devrait donc avoir false au lieu de true.<br />
+						pouv éviter ce type d'erreur il existe une solution qu'il faut
+						généraliser à notre code.<br />
+						c'est le cas suivant:
+					</p>
+					<p class="paragraphe explication">
+						<span>===</span> égal et strictement égal à
+					</p>
+					<p class="paragraphe example">
+						5 === 5 le résultat est "true"<br />
+						5 === "5" le résultat est "false"
+					</p>
+				</li>
+				<li class="article">
+					<h2 class="titre-article">LES CONDITIONS</h2>
+					<p class="paragraphe explication">
+						Une condition induit qu'elle est vérifiée ou non, en d'autre terme
+						qu'elle est vraie ou fausse. <br />
+						Si elle est vérifiée (true) alors le code entre accolades {...}
+						s'execute, si elle n'est pas vérifiée (false) alors le code entre
+						accolades {...} ne s'execute pas.
+					</p>
+					<p class="paragraphe explication">
+						ATTENTION: <br />
+						<span><u>une variable/constante peut prendre la valeur "false" de
+								plusieurs façons différentes.</u></span>
+						<br />
+						(Voir - CAS PARTICULIER: DIFFERENTES VALEURS FALSE)
+					</p>
+					<p class="paragraphe explication">
+						<u>IF:</u><br />
+						<span>si ma condition est vraie (true), alors execute le code entre
+							les accolades {...}.</span>
+					</p>
+					<p class="paragraphe example">
+						if(condition){ <br />
+						console.log("la condition est vraie"); <br />
+						}
+					</p>
+					<p class="paragraphe explication">
+						soit une constante avec pour valeur "true": <br />const condition
+						= true;
+					</p>
+					<p class="paragraphe example">
+						if(condition){ <br />
+						console.log("la condition est vraie"); <br />
+						} <br />
+						le message s'affichera dans la console car la condition est
+						vérifiée et égale à "true"
+					</p>
+					<p class="paragraphe explication">
+						soit une constante avec pour valeur "false": <br />const condition
+						= false;
+					</p>
+					<p class="paragraphe example">
+						if(condition){ <br />
+						console.log("la condition est vraie"); <br />
+						} <br />
+						rien se s'affichera dans la console car la condition n'est pas
+						vérifiée elle est égale à "false"
+					</p>
+					<p class="paragraphe explication">
+						soit une constante avec pour valeur le chiffre 20: <br />const
+						condition = 20;
+					</p>
+					<p class="paragraphe example">
+						if(condition > 10){ <br />
+						console.log("la condition1 est vraie"); <br />
+						} <br />
+						le message s'affichera dans la console car la condition est
+						vérifiée. <br />
+						20 est bien supérieur à 10.
+					</p>
+					<p class="paragraphe example">
+						if(condition
+						< 10){ <br />
+						console.log("la condition est vraie"); <br />
+						} <br />
+						rien se s'affichera dans la console car la condition n'est pas
+						vérifiée. <br />
+						20 n'est pas inférieur à 10.
+					</p>
+					<p class="paragraphe explication">
+						soit une constante avec pour valeur une chaine de caractères:
+						<br />const condition = "emmanuel";
+					</p>
+					<p class="paragraphe example">
+						if(condition === "emmanuel"){ <br />
+						console.log("la condition est vraie"); <br />
+						} <br />
+						le message s'affichera dans la console car la condition est
+						vérifiée. <br />
+						la valeur contenue dans la constante condition est égale et
+						strictement égale à "emmanuel"
+					</p>
 
-						<p class="paragraphe explication">
-							Cela fonctionne exactement de la même manière pour toutes les
-							autres formes de conditions. <br />
-							On vérifie l'exactitude de l'information / de la comparaison et on
-							execute ou pas le code.
-						</p>
+					<p class="paragraphe explication">
+						Cela fonctionne exactement de la même manière pour toutes les
+						autres formes de conditions. <br />
+						On vérifie l'exactitude de l'information / de la comparaison et on
+						execute ou pas le code.
+					</p>
 
-						<p class="paragraphe explication">
-							<u>IF / ELSE:</u><br />
-							<span
-								>si ma condition est vraie, alors on execute le code entre les
-								premières accolades {...}, <br />
-								sinon on execute le code entre les accolades {...} situées après
-								"else".</span
-							>
-						</p>
-						<p class="paragraphe example">
-							if(condition){ <br />
-							console.log("la condition est vraie"); <br />
-							} <br />
-							else{ <br />
-							console.log("la condition est fausse") <br />
-							}
-						</p>
-						<p class="paragraphe explication">
-							!!!à noter que plusieurs conditions peuvent être vraies, et donc
-							plusieurs codes peuvent s'executer!!!
-						</p>
-						<p class="paragraphe explication">
-							<u>IF / ELSE IF (conditions multiples):</u> <br />
-							<span
-								>si ma condition1 est vraie, alors on execute le code entre ses
-								accolades {...}, <br />
-								sinon si ma condition2 est vraie, alors on execute le code entre
-								ses accolades {...}, <br />
-								sinon on execute le code entre les accolades {...} situé après
-								"else".</span
-							>
-						</p>
-						<p class="paragraphe example">
-							if(condition1){ <br />
-							console.log("la condition1 est vraie"); <br />
-							} <br />
-							else if(condition2){ <br />
-							console.log("la condition2 est vraie") <br />
-							} <br />
-							else{ <br />
-							console.log("aucune des conditions est vraie") <br />
-							}
-						</p>
-						<p class="paragraphe explication">
-							Soit deux constantes "age" et "contacts": <br />
-							const age = 18; <br />
-							const contacts = 100;
-						</p>
-						<p class="paragraphe example">
-							if(age >= 18){ <br />
-							console.log("la condition1 est vraie"); <br />
-							} <br />
-							else if(contacts >= 50){ <br />
-							console.log("la condition2 est vraie") <br />
-							} <br />
-							else{ <br />
-							console.log("aucune des conditions est vraie") <br />
-							} <br />
-							le message de la première condition s'affichera car la condition
-							est vérifiée, age est bien supérieur ou égal à 18. <br />
-							le message de la deuxième condition s'affichera car la condition
-							est vérifiée, contacts est bien supérieur ou égal à 50.
-						</p>
-						<p class="paragraphe explication"><u>L'INSTRUCTION SWITCH</u></p>
-						<p class="paragraphe explication">
-							"switch(condition)" est une instruction qui en fonction du
-							résultat de la condition qui lui est appliqué, <br />
-							propose plusieurs cas de fonctionnement listés les uns à la suite
-							des autres. <br />
-							c'est comme utiliser IF / IF ELSE / IF ELSE IF à la différence que
-							le code globale est plus compact.
-						</p>
-						<p class="paragraphe example">
-							Example: <br /><br />
-							let userInput = prompt("Entrez le nom d'un fruit");<br /><br />
-							switch (userInput) {<br />
-							&emsp;&emsp;case "kiwi": <br />
-							&emsp;&emsp;&emsp;console.log("Le kiwi est un fruit vert");<br />
-							&emsp;&emsp;&emsp;<span>break</span>; <br /><br />
-							&emsp;&emsp;case "banane": <br />
-							&emsp;&emsp;&emsp;console.log("La banane est un fruit jaune");
-							<br />
-							&emsp;&emsp;&emsp;<span>break</span>; <br /><br />
-							&emsp;&emsp;case "abricot": <br />
-							&emsp;&emsp;&emsp;console.log("L'abricot est un fruit orange");
-							<br />
-							&emsp;&emsp;&emsp;<span>break</span>; <br /><br />
-							&emsp;&emsp;default: <br />
-							&emsp;&emsp;&emsp;console.log("Je n'ai pas reconnu de fruits.");
-							<br />
-							&emsp;&emsp;&emsp;<span>break</span>; <br />
-							}
-						</p>
-						<p class="paragraphe explication">
-							"<span>break</span>" permet de sortir du switch une fois que le
-							code correspondant au cas souhaité a été exécuté. <br />
-							Dans le cas contraire, le code continuerait de s'exécuter en
-							passant en revu tous les cas possibles, et en affichant en dernier
-							recours le message par defaut.
-						</p>
-					</li>
-					<li class="article">
-						<h2 class="titre-article">
-							CAS PARTICULIER: DIFFERENTES VALEURS FALSE
-						</h2>
-						<p class="paragraphe explication">
-							il est possible d'affecter à une constante / variable des valeurs
-							qui auront pour intérprétation par Javascript "faux" (false)
-							<br />
-							quand certaines pourrait sembler être "vraie" (true).
-						</p>
-						<p class="paragraphe example">
-							const age = 25; la valeur affectée à cette constante est égale à
-							"true" <br />
-							const name = "Emmanuel"; la valeur affectée à cette constante est
-							égale à "true"
-						</p>
-						<p class="paragraphe example">
-							const age = <span>0</span>; nombre 0 = "false" <br />
-							const age = <span>""</span>; guillemets vides ="false" <br />
-							const age = <span>false</span>; <br />
-							const age = <span>null</span>; null = "false" <br />
-							const age = <span>NaN</span>; Not a Number (n'est pas un nombre) =
-							"false" <br />
-							const age = <span>undefined</span>; la valeur undefined = "false"
-						</p>
-						<p class="paragraphe example">
-							<u>Rappel</u>: <br />
-							const age; <br />
-							<span
-								>une constante sans valeur definie affichera un message d'erreur
-								en console et bloquera l'exécution du code</span
-							>
-						</p>
-					</li>
-					<li class="article">
-						<h2 class="titre-article">LES BOUCLES</h2>
-						<p class="paragraphe explication">
-							Les boucles nous permettent d'éffectuer un balayage sur un
-							ensemble de données(variable, objet, tableau) <br />
-							et de répéter ou d’"itérer" des instructions(du code) tant qu'une
-							condition est vérifié.
-						</p>
-						<p class="paragraphe explication">
-							<u>FOR:</u><br />
-							"for" est une boucle qui va s'exécuter sur un nombre d'itérations
-							prédéfinies. <br />
-							à chaque répétition(itération), la/les conditions contenues dans
-							la boucle va/vont être controlé(es) et leur code exécuté si
-							reconnu comme "True". <br />
-							A moins de trouver un "break" dans le code, la boucle continuera
-							de se répéter jusqu'à avoir atteint sa valeur limite d'itération.
-						</p>
-						<p class="paragraphe example">
-							structure d'une boucle for: <br /><br />
-							for ( <span style="color: rgb(63, 63, 177);">X</span> ; Y ;
-							<span>Z</span> ){ <br />
-							&emsp;if(condition){ <br />
-							&emsp;&emsp;code... <br />
-							&emsp;} <br />
-							} <br /><br />
-							X= valeur de départ de la boucle <br />
-							Y= Condition déterminant de la valeur de fin de la boucle <br />
-							Z= Valeur d'incrémentation de X à chaque fin de cycle<br /><br />
-							Tant que Y est "true", la boucle se répète. <br />
-							Si la condition Y est "false", on sort de la boucle. <br />
-							Si une instruction "break" est executé dans le code, on sort de la
-							boucle. <br />
-							Si une instruction "continue" est exécuté dans le code, on passe
-							directement à l'itération suivante sans balayer le code restant.
-							<br /><br />
-							for (<span style="color: rgb(63, 63, 177);">let i = 0</span> ; i
-							<= 100 ; <span>i++</span> ) {
+					<p class="paragraphe explication">
+						<u>IF / ELSE:</u><br />
+						<span>si ma condition est vraie, alors on execute le code entre les
+							premières accolades {...}, <br />
+							sinon on execute le code entre les accolades {...} situées après
+							"else".</span>
+					</p>
+					<p class="paragraphe example">
+						if(condition){ <br />
+						console.log("la condition est vraie"); <br />
+						} <br />
+						else{ <br />
+						console.log("la condition est fausse") <br />
+						}
+					</p>
+					<p class="paragraphe explication">
+						!!!à noter que plusieurs conditions peuvent être vraies, et donc
+						plusieurs codes peuvent s'executer!!!
+					</p>
+					<p class="paragraphe explication">
+						<u>IF / ELSE IF (conditions multiples):</u> <br />
+						<span>si ma condition1 est vraie, alors on execute le code entre ses
+							accolades {...}, <br />
+							sinon si ma condition2 est vraie, alors on execute le code entre
+							ses accolades {...}, <br />
+							sinon on execute le code entre les accolades {...} situé après
+							"else".</span>
+					</p>
+					<p class="paragraphe example">
+						if(condition1){ <br />
+						console.log("la condition1 est vraie"); <br />
+						} <br />
+						else if(condition2){ <br />
+						console.log("la condition2 est vraie") <br />
+						} <br />
+						else{ <br />
+						console.log("aucune des conditions est vraie") <br />
+						}
+					</p>
+					<p class="paragraphe explication">
+						Soit deux constantes "age" et "contacts": <br />
+						const age = 18; <br />
+						const contacts = 100;
+					</p>
+					<p class="paragraphe example">
+						if(age >= 18){ <br />
+						console.log("la condition1 est vraie"); <br />
+						} <br />
+						else if(contacts >= 50){ <br />
+						console.log("la condition2 est vraie") <br />
+						} <br />
+						else{ <br />
+						console.log("aucune des conditions est vraie") <br />
+						} <br />
+						le message de la première condition s'affichera car la condition
+						est vérifiée, age est bien supérieur ou égal à 18. <br />
+						le message de la deuxième condition s'affichera car la condition
+						est vérifiée, contacts est bien supérieur ou égal à 50.
+					</p>
+					<p class="paragraphe explication"><u>L'INSTRUCTION SWITCH</u></p>
+					<p class="paragraphe explication">
+						"switch(condition)" est une instruction qui en fonction du
+						résultat de la condition qui lui est appliqué, <br />
+						propose plusieurs cas de fonctionnement listés les uns à la suite
+						des autres. <br />
+						c'est comme utiliser IF / IF ELSE / IF ELSE IF à la différence que
+						le code globale est plus compact.
+					</p>
+					<p class="paragraphe example">
+						Example: <br /><br />
+						let userInput = prompt("Entrez le nom d'un fruit");<br /><br />
+						switch (userInput) {<br />
+						&emsp;&emsp;case "kiwi": <br />
+						&emsp;&emsp;&emsp;console.log("Le kiwi est un fruit vert");<br />
+						&emsp;&emsp;&emsp;<span>break</span>; <br /><br />
+						&emsp;&emsp;case "banane": <br />
+						&emsp;&emsp;&emsp;console.log("La banane est un fruit jaune");
+						<br />
+						&emsp;&emsp;&emsp;<span>break</span>; <br /><br />
+						&emsp;&emsp;case "abricot": <br />
+						&emsp;&emsp;&emsp;console.log("L'abricot est un fruit orange");
+						<br />
+						&emsp;&emsp;&emsp;<span>break</span>; <br /><br />
+						&emsp;&emsp;default: <br />
+						&emsp;&emsp;&emsp;console.log("Je n'ai pas reconnu de fruits.");
+						<br />
+						&emsp;&emsp;&emsp;<span>break</span>; <br />
+						}
+					</p>
+					<p class="paragraphe explication">
+						"<span>break</span>" permet de sortir du switch une fois que le
+						code correspondant au cas souhaité a été exécuté. <br />
+						Dans le cas contraire, le code continuerait de s'exécuter en
+						passant en revu tous les cas possibles, et en affichant en dernier
+						recours le message par defaut.
+					</p>
+				</li>
+				<li class="article">
+					<h2 class="titre-article">
+						CAS PARTICULIER: DIFFERENTES VALEURS FALSE
+					</h2>
+					<p class="paragraphe explication">
+						il est possible d'affecter à une constante / variable des valeurs
+						qui auront pour intérprétation par Javascript "faux" (false)
+						<br />
+						quand certaines pourrait sembler être "vraie" (true).
+					</p>
+					<p class="paragraphe example">
+						const age = 25; la valeur affectée à cette constante est égale à
+						"true" <br />
+						const name = "Emmanuel"; la valeur affectée à cette constante est
+						égale à "true"
+					</p>
+					<p class="paragraphe example">
+						const age = <span>0</span>; nombre 0 = "false" <br />
+						const age = <span>""</span>; guillemets vides ="false" <br />
+						const age = <span>false</span>; <br />
+						const age = <span>null</span>; null = "false" <br />
+						const age = <span>NaN</span>; Not a Number (n'est pas un nombre) =
+						"false" <br />
+						const age = <span>undefined</span>; la valeur undefined = "false"
+					</p>
+					<p class="paragraphe example">
+						<u>Rappel</u>: <br />
+						const age; <br />
+						<span>une constante sans valeur definie affichera un message d'erreur
+							en console et bloquera l'exécution du code</span>
+					</p>
+				</li>
+				<li class="article">
+					<h2 class="titre-article">LES BOUCLES</h2>
+					<p class="paragraphe explication">
+						Les boucles nous permettent d'éffectuer un balayage sur un
+						ensemble de données(variable, objet, tableau) <br />
+						et de répéter ou d’"itérer" des instructions(du code) tant qu'une
+						condition est vérifié.
+					</p>
+					<p class="paragraphe explication">
+						<u>FOR:</u><br />
+						"for" est une boucle qui va s'exécuter sur un nombre d'itérations
+						prédéfinies. <br />
+						à chaque répétition(itération), la/les conditions contenues dans
+						la boucle va/vont être controlé(es) et leur code exécuté si
+						reconnu comme "True". <br />
+						A moins de trouver un "break" dans le code, la boucle continuera
+						de se répéter jusqu'à avoir atteint sa valeur limite d'itération.
+					</p>
+					<p class="paragraphe example">
+						structure d'une boucle for: <br /><br />
+						for ( <span style="color: rgb(63, 63, 177);">X</span> ; Y ;
+						<span>Z</span> ){ <br />
+						&emsp;if(condition){ <br />
+						&emsp;&emsp;code... <br />
+						&emsp;} <br />
+						} <br /><br />
+						X= valeur de départ de la boucle <br />
+						Y= Condition déterminant de la valeur de fin de la boucle <br />
+						Z= Valeur d'incrémentation de X à chaque fin de cycle<br /><br />
+						Tant que Y est "true", la boucle se répète. <br />
+						Si la condition Y est "false", on sort de la boucle. <br />
+						Si une instruction "break" est executé dans le code, on sort de la
+						boucle. <br />
+						Si une instruction "continue" est exécuté dans le code, on passe
+						directement à l'itération suivante sans balayer le code restant.
+						<br /><br />
+						for (<span style="color: rgb(63, 63, 177);">let i = 0</span> ; i
+						<= 100 ; <span>i++</span> ) {
 							<br />
 							&emsp;if (<span style="color: chartreuse;">i===20</span>){ <br />
 							&emsp;&emsp;console.log("Hey, tu as atteint 20!");<br />
@@ -838,561 +805,661 @@
 							} <br /><br />
 
 							Légende: <br />
-							<span style="color: rgb(63, 63, 177);"
-								>X: La variable i qui a pour valeur 0, on démarre donc de 0. </span
-							><br />
+							<span style="color: rgb(63, 63, 177);">X: La variable i qui a pour valeur 0, on démarre donc
+								de 0. </span><br />
 							Y: La condition qui va determiner combien d'itérations maximum il
 							faudra effectuer avant de sortir de la boucle. <br />
 							ici la condition est: tant que i est inférieur ou égal à 100 on
 							boucle. <br />
-							<span
-								>Z: A chaque itération(boucle) on ajoute +1 à la valeur de i
-								(X).</span
-							>
+							<span>Z: A chaque itération(boucle) on ajoute +1 à la valeur de i
+								(X).</span>
 							<br />
-							<span style="color: chartreuse;"
-								>Conditions à vérifier à chaque itération.</span
-							>
-						</p>
-						<p class="paragraphe explication">
-							<u>FOR OF:</u><br />
-							Il s'agit d'une variante de la boucle FOR, elle
-							<span>ne fonctionne pas avec Internet Explorer</span> et
-							<u>s'utilise principalement avec des Tableaux</u>.
-						</p>
-						<p class="paragraphe example">
-							Soit une constante "names" contenant un tableau de noms:
-							<br /><br />
-							const names = ["emmanuel", "georgia", "maria", "nikos", "roulis"];
-							<br /><br />
-							for (let name of names) { <br />
-							&emsp;console.log(name);<br />
-							} <br /><br />
-							Cela se lit de la manière suivante: <br />
-							Pour chaque nom du tableau "names", affiche moi, dans la console,
-							le nom. <br /><br />
-							for (let name of names) { <br />
-							&emsp;console.log(names.indexOf(name));<br />
-							} <br /><br />
-							Cela se lit de la manière suivante: <br />
-							Pour chaque nom du tableau "names", affiche moi, dans la console,
-							l'indice du nom. <br />
-							L'instruction "break", si présente dans le code de la boucle,
-							permet de sortir de la boucle.
-						</p>
-						<p class="paragraphe explication">
-							<u>FOR IN:</u><br />
-							C'est une version différente de FOR OF que l'on va
-							<u>utiliser avec des Objets</u>, cela
-							<span>ne fonctionne pas avec les tableaux</span>.
-						</p>
-						<p class="paragraphe example">
-							Rappel objet: <br />
-							Un objet est une variable/constante qui possède un nom et contient
-							<br />
-							des propriétées ayant chacune une clé d'identification(key) à
-							laquelle est associé une valeur(value). <br /><br />
-							Soit une constante "user" contenant un objet avec des propriétés:
-							<br /><br />
-							const user = { <br />
-							&emsp;name: "Laurent", <br />
-							&emsp;age: 36, <br />
-							&emsp;suscribers: 200, <br />
-							&emsp;passion: "histoire" <br />
-							}; <br /><br />
+							<span style="color: chartreuse;">Conditions à vérifier à chaque itération.</span>
+					</p>
+					<p class="paragraphe explication">
+						<u>FOR OF:</u><br />
+						Il s'agit d'une variante de la boucle FOR, elle
+						<span>ne fonctionne pas avec Internet Explorer</span> et
+						<u>s'utilise principalement avec des Tableaux</u>.
+					</p>
+					<p class="paragraphe example">
+						Soit une constante "names" contenant un tableau de noms:
+						<br /><br />
+						const names = ["emmanuel", "georgia", "maria", "nikos", "roulis"];
+						<br /><br />
+						for (let name of names) { <br />
+						&emsp;console.log(name);<br />
+						} <br /><br />
+						Cela se lit de la manière suivante: <br />
+						Pour chaque nom du tableau "names", affiche moi, dans la console,
+						le nom. <br /><br />
+						for (let name of names) { <br />
+						&emsp;console.log(names.indexOf(name));<br />
+						} <br /><br />
+						Cela se lit de la manière suivante: <br />
+						Pour chaque nom du tableau "names", affiche moi, dans la console,
+						l'indice du nom. <br />
+						L'instruction "break", si présente dans le code de la boucle,
+						permet de sortir de la boucle.
+					</p>
+					<p class="paragraphe explication">
+						<u>FOR IN:</u><br />
+						C'est une version différente de FOR OF que l'on va
+						<u>utiliser avec des Objets</u>, cela
+						<span>ne fonctionne pas avec les tableaux</span>.
+					</p>
+					<p class="paragraphe example">
+						Rappel objet: <br />
+						Un objet est une variable/constante qui possède un nom et contient
+						<br />
+						des propriétées ayant chacune une clé d'identification(key) à
+						laquelle est associé une valeur(value). <br /><br />
+						Soit une constante "user" contenant un objet avec des propriétés:
+						<br /><br />
+						const user = { <br />
+						&emsp;name: "Laurent", <br />
+						&emsp;age: 36, <br />
+						&emsp;suscribers: 200, <br />
+						&emsp;passion: "histoire" <br />
+						}; <br /><br />
 
-							for(let key in user){ <br />
-							console.log(key); <br />
-							} <br /><br />
-							Cela se lit de la manière suivante: <br />
-							Pour chaque "key" rencontré dans l'objet "user", affiche moi son
-							nom. <br /><br />
+						for(let key in user){ <br />
+						console.log(key); <br />
+						} <br /><br />
+						Cela se lit de la manière suivante: <br />
+						Pour chaque "key" rencontré dans l'objet "user", affiche moi son
+						nom. <br /><br />
 
-							for(let key in user){<br />
-							console.log(user[key]); <br />
-							} <br /><br />
-							Cela se lit de la manière suivante: <br />
-							Pour chaque "key" rencontré dans l'objet "user", affiche moi la
-							valeur correspondante. <br />
-						</p>
-						<p class="paragraphe explication">
-							<u>FOR EACH:</u><br />
-							Cette instruction
-							<span>s'utilise uniquement avec des tableaux</span> et <br />
-							<u>prend environ 25% de temps en plus à les parcourir</u> qu'une
-							boucle FOR OF. <br />
-							Un bon usage pour des petits tableaux.
-						</p>
-						<p class="paragraphe example">
-							Soit une constante "names" contenant un tableau de noms:
-							<br /><br />
-							const names = ["emmanuel", "georgia", "maria", "nikos", "roulis"];
-							<br /><br />
-							names.forEach(function(name, index) { <br />
-							&emsp;console.log(name, index);<br />
-							}) <br /><br />
-							Cela se lit de la manière suivante: <br />
-							Pour chaque élément/item du tableau "names", affiche moi, dans la
-							console, sa valeur et son index.
-							<br /><br />
-							"break" ne peut pas être utilisé car for each utilise une fonction
-							"callback" et pas une boucle. <br />
-							<span>On ne peut pas utiliser break dans une fonction</span>,
-							<u>uniquement dans une boucle ou un switch!!!</u>
-							<br />
-							L'explication sur ce qu'est une fonction "callback" se trouve dans
-							la partie "Tableaux" du site.
-						</p>
-						<p class="paragraphe explication">
-							<u>WHILE:</u><br />While est une boucle qui va s'itérer tant qu'on
-							a pas satisfait sa condition, <br />
-							le code qui est dans la boucle va donc être relancer à chaque
-							itérations tant qu'on a pas atteint la condition.
-						</p>
-						<p class="paragraphe example">
-							Soit une variable i égale à 20 <br />
-							let i = 20; <br /><br />
-							Structure: <br />
-							while (condition){ <br />
-							exécute ce code... ; <br />
-							i++; <br />
-							} <br /><br />
+						for(let key in user){<br />
+						console.log(user[key]); <br />
+						} <br /><br />
+						Cela se lit de la manière suivante: <br />
+						Pour chaque "key" rencontré dans l'objet "user", affiche moi la
+						valeur correspondante. <br />
+					</p>
+					<p class="paragraphe explication">
+						<u>FOR EACH:</u><br />
+						Cette instruction
+						<span>s'utilise uniquement avec des tableaux</span> et <br />
+						<u>prend environ 25% de temps en plus à les parcourir</u> qu'une
+						boucle FOR OF. <br />
+						Un bon usage pour des petits tableaux.
+					</p>
+					<p class="paragraphe example">
+						Soit une constante "names" contenant un tableau de noms:
+						<br /><br />
+						const names = ["emmanuel", "georgia", "maria", "nikos", "roulis"];
+						<br /><br />
+						names.forEach(function(name, index) { <br />
+						&emsp;console.log(name, index);<br />
+						}) <br /><br />
+						Cela se lit de la manière suivante: <br />
+						Pour chaque élément/item du tableau "names", affiche moi, dans la
+						console, sa valeur et son index.
+						<br /><br />
+						"break" ne peut pas être utilisé car for each utilise une fonction
+						"callback" et pas une boucle. <br />
+						<span>On ne peut pas utiliser break dans une fonction</span>,
+						<u>uniquement dans une boucle ou un switch!!!</u>
+						<br />
+						L'explication sur ce qu'est une fonction "callback" se trouve dans
+						la partie "Tableaux" du site.
+					</p>
+					<p class="paragraphe explication">
+						<u>WHILE:</u><br />While est une boucle qui va s'itérer tant qu'on
+						a pas satisfait sa condition, <br />
+						le code qui est dans la boucle va donc être relancer à chaque
+						itérations tant qu'on a pas atteint la condition.
+					</p>
+					<p class="paragraphe example">
+						Soit une variable i égale à 20 <br />
+						let i = 20; <br /><br />
+						Structure: <br />
+						while (condition){ <br />
+						exécute ce code... ; <br />
+						i++; <br />
+						} <br /><br />
 
-							Example: <br />
-							<span style="color: rgb(63, 63, 177);">while (i < 30)</span>{
-							<br />
-							console.log(i); <br />
-							<span>i++;</span><br />
-							} <br /><br />
+						Example: <br />
+						<span style="color: rgb(63, 63, 177);">while (i < 30)</span>{
+								<br />
+								console.log(i); <br />
+								<span>i++;</span><br />
+								} <br /><br />
 
-							Débriefing: <br />
-							<span style="color: rgb(63, 63, 177);"
-								>Tant que i est inférieur à 30,</span
-							>
-							<br />
-							affiche en console la valeur de i, <br />
-							<span> ajoute +1 à la variable i.</span><br /><br />
-							la console va nous afficher les nombres de 20 à 29 et la boucle va
-							s'arrêter <br />
-							car à partir de 30, la condition n'est plus vérifiée. <br />
-							Si la condition est "vraie" (true), le code entre accolade
-							s'execute. <br />
-							Si la condition est "fausse" (false), le code entre accolade ne
-							s'execute pas. <br />
-							C'est l'une ou l'autre. <br />
-						</p>
-						<p class="paragraphe explication">
-							<u>DO WHILE:</u><br />
-							Do while fonctionne de la même manière, à l'exeption que "do"
-							permet d'exécuter une première instruction
-							<br />
-							avant de verifier si la condition est vraie ou fausse. <br />
-							On a donc obligatoirement une instruction qui s'execute une fois
-							avant d'entrer dans la boucle while.
-						</p>
-						<p class="paragraphe example">
-							Soit une variable i égale à 20 <br />
-							let i = 20; <br /><br />
-							Structure: <br />
-							do { <br />
-							code... <br />
-							} while (condition); <br /><br />
+								Débriefing: <br />
+								<span style="color: rgb(63, 63, 177);">Tant que i est inférieur à 30,</span>
+								<br />
+								affiche en console la valeur de i, <br />
+								<span> ajoute +1 à la variable i.</span><br /><br />
+								la console va nous afficher les nombres de 20 à 29 et la boucle va
+								s'arrêter <br />
+								car à partir de 30, la condition n'est plus vérifiée. <br />
+								Si la condition est "vraie" (true), le code entre accolade
+								s'execute. <br />
+								Si la condition est "fausse" (false), le code entre accolade ne
+								s'execute pas. <br />
+								C'est l'une ou l'autre. <br />
+					</p>
+					<p class="paragraphe explication">
+						<u>DO WHILE:</u><br />
+						Do while fonctionne de la même manière, à l'exeption que "do"
+						permet d'exécuter une première instruction
+						<br />
+						avant de verifier si la condition est vraie ou fausse. <br />
+						On a donc obligatoirement une instruction qui s'execute une fois
+						avant d'entrer dans la boucle while.
+					</p>
+					<p class="paragraphe example">
+						Soit une variable i égale à 20 <br />
+						let i = 20; <br /><br />
+						Structure: <br />
+						do { <br />
+						code... <br />
+						} while (condition); <br /><br />
 
-							Example: <br />
-							<span style="color: rgb(63, 63, 177);">do</span>{<br />
-							console.log(i); <br />
-							i++; <br />
-							} <br />
-							<span>while(i < 30);</span><br /><br />
-							Débriefing: <br />
-							<span style="color: rgb(63, 63, 177);">Exécute,</span><br />
-							Affiche en console la valeur de i puis ajoute lui +1,<br />
-							<span>Tant que i est inférieur à 30,</span><br /><br />
-							La spécificité de la boucle DO WHILE est qu'elle éxécutera une
-							première fois le code<br />
-							peu importe que la condition soit vérifiée ou pas.<br />
-						</p>
-					</li>
+						Example: <br />
+						<span style="color: rgb(63, 63, 177);">do</span>{<br />
+						console.log(i); <br />
+						i++; <br />
+						} <br />
+						<span>while(i < 30);</span><br /><br />
+								Débriefing: <br />
+								<span style="color: rgb(63, 63, 177);">Exécute,</span><br />
+								Affiche en console la valeur de i puis ajoute lui +1,<br />
+								<span>Tant que i est inférieur à 30,</span><br /><br />
+								La spécificité de la boucle DO WHILE est qu'elle éxécutera une
+								première fois le code<br />
+								peu importe que la condition soit vérifiée ou pas.<br />
+					</p>
+				</li>
 
-					<li class="article">
-						<h2 class="titre-article">LES FONCTIONS</h2>
-						<p class="paragraphe explication">
-							Une fonction est un ensemble d'actions secondaires ayant pour but
-							d'accomplir une action globale. <br />
-							<br />
-							Example d'une fonction pour demander le nom d'une personne:
-						</p>
-						<p class="paragraphe example">
-							function askName(){ <br />
-							&emsp;&emsp;let nom = prompt('Quel est ton nom?'); <br />
-							&emsp;&emsp;console.log(`Bienvenue sur mon site ${nom}`); /*
-							version concaténation ultime */
-							<br />
-							&emsp;&emsp;console.log("Bienvenue sur mon site " + nom); /*
-							version concaténation normale. */
-							<br />
-							}
-						</p>
-						<p class="paragraphe explication">
-							Pour exécuter une fonction, il faut l'appeler par son doux nom :)
-						</p>
-						<p class="paragraphe example">
-							Example: <br />
-							askName(); <br />
-						</p>
-						<p class="paragraphe explication">
-							Une fonction peut faire appel à d'autres fonctions, ces appels
-							étant incluent dans la fonction.
-						</p>
-						<p class="paragraphe example">
-							Example: <br /><br />
-							1- création de la fonction "greet" <br /><br />
-							Ce qui se trouve en rouge entre paranthèses, après le nom de la
-							fonction, est appelé un "paramètre". <br />
-							Il peut y en avoir plusieurs, on appel cela les
-							<span><u>paramètres de la fonction</u></span
-							>. <br /><br />
-							function greet(<span>nom</span>){ <br />
-							&emsp;&emsp;console.log(`Bienvenue sur mon site ${nom}`); /*
-							version concaténation ultime */<br />
-							&emsp;&emsp;console.log("Bienvenue sur mon site " + nom); /*
-							version concaténation normale. */<br />
-							} <br /><br />
-							2- création de la fonction "signUp" faisant appel à la fonction
-							"greet": <br /><br />
-							function signUp(){ <br />
-							let nom = prompt('Quel est ton nom?');<br />
-							greet(<span style="color: rgb(0, 197, 0);">nom</span>); <br />
-							} <br /><br />
-							3- on appel la fonction signUp <br /><br />
-							signUp();<br /><br />
-							Quand on passe une information d'une variable à une fonction, on
-							appel ce qui se trouve entre paranthèses, <br />
-							<span style="color: rgb(0, 197, 0);"><u>un argument</u></span
-							>. <br />
-							Cet argument peut être un nombre, une chaine de charactères, un
-							booléen, etc... <br />
-							il peut y avoir plusieurs arguments en même temps, il suffit de
-							les séparer par une virgule (,). <br /><br />
+				<li class="article">
+					<h2 class="titre-article">LES FONCTIONS</h2>
+					<p class="paragraphe explication">
+						Une fonction est un ensemble d'actions secondaires ayant pour but
+						d'accomplir une action globale. <br />
+						<br />
+						Example d'une fonction pour demander le nom d'une personne:
+					</p>
+					<p class="paragraphe example">
+						function askName(){ <br />
+						&emsp;&emsp;let nom = prompt('Quel est ton nom?'); <br />
+						&emsp;&emsp;console.log(`Bienvenue sur mon site ${nom}`); /*
+						version concaténation ultime */
+						<br />
+						&emsp;&emsp;console.log("Bienvenue sur mon site " + nom); /*
+						version concaténation normale. */
+						<br />
+						}
+					</p>
+					<p class="paragraphe explication">
+						Pour exécuter une fonction, il faut l'appeler par son doux nom :)
+					</p>
+					<p class="paragraphe example">
+						Example: <br />
+						askName(); <br />
+					</p>
+					<p class="paragraphe explication">
+						Une fonction peut faire appel à d'autres fonctions, ces appels
+						étant incluent dans la fonction.
+					</p>
+					<p class="paragraphe example">
+						Example: <br /><br />
+						1- création de la fonction "greet" <br /><br />
+						Ce qui se trouve en rouge entre paranthèses, après le nom de la
+						fonction, est appelé un "paramètre". <br />
+						Il peut y en avoir plusieurs, on appel cela les
+						<span><u>paramètres de la fonction</u></span>. <br /><br />
+						function greet(<span>nom</span>){ <br />
+						&emsp;&emsp;console.log(`Bienvenue sur mon site ${nom}`); /*
+						version concaténation ultime */<br />
+						&emsp;&emsp;console.log("Bienvenue sur mon site " + nom); /*
+						version concaténation normale. */<br />
+						} <br /><br />
+						2- création de la fonction "signUp" faisant appel à la fonction
+						"greet": <br /><br />
+						function signUp(){ <br />
+						let nom = prompt('Quel est ton nom?');<br />
+						greet(<span style="color: rgb(0, 197, 0);">nom</span>); <br />
+						} <br /><br />
+						3- on appel la fonction signUp <br /><br />
+						signUp();<br /><br />
+						Quand on passe une information d'une variable à une fonction, on
+						appel ce qui se trouve entre paranthèses, <br />
+						<span style="color: rgb(0, 197, 0);"><u>un argument</u></span>. <br />
+						Cet argument peut être un nombre, une chaine de charactères, un
+						booléen, etc... <br />
+						il peut y avoir plusieurs arguments en même temps, il suffit de
+						les séparer par une virgule (,). <br /><br />
 
-							Debriefing: <br />
-							Lorsque la fonction "signUp" est appelée, une fenêtre popup
-							apparait, et demande l'information,<br /><br />
-							"Quel est ton nom?" <br /><br />
-							suivi d'un champ réponse à compléter. <br />
-							Lorsque l'utilisateur entre son nom dans le champ et valide, cette
-							information est enregistrée comme valeur de la variable "nom".
-							<br />
-							La valeur se trouvant dans la variable nom est alors passé en
-							argument de la fonction "greet" lors de son appel, <br />
-							Cet argument devient le paramètre de la fonction "greet", <br />
-							Le message correspondant à la fonction "greet" est affiché dans la
-							console. <br />
-							Fin.
-						</p>
-					</li>
-					<li class="article">
-						<h2 class="titre-article">
-							PRINCIPE DU "RETURN" DANS UNE FONCTION
-						</h2>
-						<p class="paragraphe explication">
-							Certaines fonctions ne retourne(renvoi) pas forcément une valeur /
-							argument, elles accomplissent ce qu'on leurs demande de faire,
-							puis passent le relais ou s'arrêtent.
-						</p>
-						<p class="paragraphe example">
-							Example 1: <br />
-							let greet = console.log("coucou c'est moi");
-							<br />console.log(greet); <br /><br />un message s'affichera dans
-							la console mais la valeur de la variable "greet" sera considéré
-							comme "undefined". <br />La variable contient le résultat de
-							l'application de la méthode(fonction) ".log" qui n'a pas pour but
-							de "retourner" une valeur <br />
-							mais simplement d'afficher ce qui est contenu entre ses
-							paranthèses. <br />Afin d'obtenir une valeur pour une variable
-							contenant une fonction, il faut que la fonction contienne une
-							instruction de "retour"(return).
-						</p>
-						<p class="paragraphe example">
-							Example 2: <br />
-							function max(nr1, nr2){ <br />
-							&emsp;&emsp;if(nr1 > nr2){ <br />
-							&emsp;&emsp;<span>return</span> nr1; <br />
-							} <br />
-							else{ <br />
-							&emsp;&emsp;<span>return</span> nr2; <br />
-							} <br /><br />
-							l'instruction "<span>return</span>" permet de renvoyer/retourner
-							le nombre1 si la condition est vérifiée (true), <br />
-							sinon de renvoyer / retourner le nombre2 si la condition n'est pas
-							vérifiée (false). <br /><br />
+						Debriefing: <br />
+						Lorsque la fonction "signUp" est appelée, une fenêtre popup
+						apparait, et demande l'information,<br /><br />
+						"Quel est ton nom?" <br /><br />
+						suivi d'un champ réponse à compléter. <br />
+						Lorsque l'utilisateur entre son nom dans le champ et valide, cette
+						information est enregistrée comme valeur de la variable "nom".
+						<br />
+						La valeur se trouvant dans la variable nom est alors passé en
+						argument de la fonction "greet" lors de son appel, <br />
+						Cet argument devient le paramètre de la fonction "greet", <br />
+						Le message correspondant à la fonction "greet" est affiché dans la
+						console. <br />
+						Fin.
+					</p>
+				</li>
+				<li class="article">
+					<h2 class="titre-article">
+						PRINCIPE DU "RETURN" DANS UNE FONCTION
+					</h2>
+					<p class="paragraphe explication">
+						Certaines fonctions ne retourne(renvoi) pas forcément une valeur /
+						argument, elles accomplissent ce qu'on leurs demande de faire,
+						puis passent le relais ou s'arrêtent.
+					</p>
+					<p class="paragraphe example">
+						Example 1: <br />
+						let greet = console.log("coucou c'est moi");
+						<br />console.log(greet); <br /><br />un message s'affichera dans
+						la console mais la valeur de la variable "greet" sera considéré
+						comme "undefined". <br />La variable contient le résultat de
+						l'application de la méthode(fonction) ".log" qui n'a pas pour but
+						de "retourner" une valeur <br />
+						mais simplement d'afficher ce qui est contenu entre ses
+						paranthèses. <br />Afin d'obtenir une valeur pour une variable
+						contenant une fonction, il faut que la fonction contienne une
+						instruction de "retour"(return).
+					</p>
+					<p class="paragraphe example">
+						Example 2: <br />
+						function max(nr1, nr2){ <br />
+						&emsp;&emsp;if(nr1 > nr2){ <br />
+						&emsp;&emsp;<span>return</span> nr1; <br />
+						} <br />
+						else{ <br />
+						&emsp;&emsp;<span>return</span> nr2; <br />
+						} <br /><br />
+						l'instruction "<span>return</span>" permet de renvoyer/retourner
+						le nombre1 si la condition est vérifiée (true), <br />
+						sinon de renvoyer / retourner le nombre2 si la condition n'est pas
+						vérifiée (false). <br /><br />
 
-							let inbox = max(1, 5); <br />
-							console.log(inbox); <br /><br />
-							Debriefing: <br />
-							on fait un console.log de la variable "inbox", ce qui doit nous
-							afficher son contenu, une valeur. <br />
-							Mais la variable inbox contient un appel vers une fonction, la
-							fonction "max" qui contient deux "paramètres". <br />
-							Si la fonction que nous avons écrit au dessus, n'existait pas,
-							nous aurions une valeur "indéfinie". <br />
-							Mais étant donné que cette fonction est prévu et qu'elle contient
-							dans son code l'instruction "return", <br />
-							la fonction "max" va nous renvoyer la valeur nr1 ou nr2 en
-							fonction que la condition IF/ELSE soit vérifiée ou pas. <br />
-							Nous aurons donc bien une valeur qui ici est un nombre et qui sera
-							attribuée à la variable "inbox". <br />
-							A partir de là, le console log de "inbox" nous affichera le nombre
-							"retourné" par la fonction "max" et non pas la valeur "undefined".
-						</p>
-					</li>
-					<li class="article">
-						<h2>OPERATEUR TERNAIRE - TERNARY OPERATOR</h2>
-						<p class="paragraphe explication">
-							Qu'est ce que c'est?<br />
-							<span
-								>C'est un ensemble d'éléments permettant d'effectuer une
-								opération qui retournera un résultat.</span
-							><br /><br />
-							Nos éléments sont au nombre de 3 et sont: <br />
-							<span style="color: blue;">Une condition,</span><br />
-							<span style="color: rgb(79, 117, 21);"
-								>Une valeur si la condition est vraie,</span
-							>
-							<br />
-							<span>Une valeur si la condition est fausse,</span> <br /><br />
-							Un opérateur ternaire se présente sous la forme suivante :
-							<br />
-							<span style="color: blue;">(condition) </span> ?
-							<span style="color: rgb(79, 117, 21);">(valeur si true)</span>
-							: <span>(valeur si false)</span>.
-						</p>
-						<p class="paragraphe example">
-							Example: <br />
-							const goodGame = games.map(function (game) { <br />
-							return <span style="color: blue;">game.rating > 8 </span> ?
-							<span style="color: rgb(79, 117, 21);">game</span> :
-							<span>"bad"</span>; <br />
-							}); <br />
-						</p>
-						<p class="paragraphe explication">Equivalent à:</p>
-						<p class="paragraphe example">
-							const goodGames = games.map(function (game) { <br />
-							if <span style="color: blue;">(game.rating > 8)</span> { <br />
-							&emsp;<span style="color: rgb(79, 117, 21);">return game;</span>
-							<br />
-							} else { <br />
-							&emsp;<span>return "bad";</span> <br />
-							} <br />
-							}); <br /><br />
-							<u
-								><span
-									>Il faut bien différencier l'opérateur ternaire de la
-									condition if/else</span
-								></u
-							>
-							. <br />
-							la condition if/else ne renverra pas de valeur <br />
-							si on ne lui indique pas avec l'instruction "return". <br />
-							L'opérateur ternaire, lui, renvoi toujours une valeur.
-						</p>
-					</li>
-					<li class="article">
-						<h2>FONCTION FLECHE - ARROW FUNCTIONS</h2>
-						<p class="paragraphe explication">
-							Qu'est ce que c'est?<br />
-							<span
-								>C'est une nouvelle façon d'écrire une fonction, un format
-								réduit adapté aux nouvelles normes d'écritures ES6.</span
-							>. <br /><br />
-						</p>
+						let inbox = max(1, 5); <br />
+						console.log(inbox); <br /><br />
+						Debriefing: <br />
+						on fait un console.log de la variable "inbox", ce qui doit nous
+						afficher son contenu, une valeur. <br />
+						Mais la variable inbox contient un appel vers une fonction, la
+						fonction "max" qui contient deux "paramètres". <br />
+						Si la fonction que nous avons écrit au dessus, n'existait pas,
+						nous aurions une valeur "indéfinie". <br />
+						Mais étant donné que cette fonction est prévu et qu'elle contient
+						dans son code l'instruction "return", <br />
+						la fonction "max" va nous renvoyer la valeur nr1 ou nr2 en
+						fonction que la condition IF/ELSE soit vérifiée ou pas. <br />
+						Nous aurons donc bien une valeur qui ici est un nombre et qui sera
+						attribuée à la variable "inbox". <br />
+						A partir de là, le console log de "inbox" nous affichera le nombre
+						"retourné" par la fonction "max" et non pas la valeur "undefined".
+					</p>
+				</li>
+				<li class="article">
+					<h2>OPERATEUR TERNAIRE - TERNARY OPERATOR</h2>
+					<p class="paragraphe explication">
+						Qu'est ce que c'est?<br />
+						<span>C'est un ensemble d'éléments permettant d'effectuer une
+							opération qui retournera un résultat.</span><br /><br />
+						Nos éléments sont au nombre de 3 et sont: <br />
+						<span style="color: blue;">Une condition,</span><br />
+						<span style="color: rgb(79, 117, 21);">Une valeur si la condition est vraie,</span>
+						<br />
+						<span>Une valeur si la condition est fausse,</span> <br /><br />
+						Un opérateur ternaire se présente sous la forme suivante :
+						<br />
+						<span style="color: blue;">(condition) </span> ?
+						<span style="color: rgb(79, 117, 21);">(valeur si true)</span>
+						: <span>(valeur si false)</span>.
+					</p>
+					<p class="paragraphe example">
+						Example: <br />
+						const goodGame = games.map(function (game) { <br />
+						return <span style="color: blue;">game.rating > 8 </span> ?
+						<span style="color: rgb(79, 117, 21);">game</span> :
+						<span>"bad"</span>; <br />
+						}); <br />
+					</p>
+					<p class="paragraphe explication">Equivalent à:</p>
+					<p class="paragraphe example">
+						const goodGames = games.map(function (game) { <br />
+						if <span style="color: blue;">(game.rating > 8)</span> { <br />
+						&emsp;<span style="color: rgb(79, 117, 21);">return game;</span>
+						<br />
+						} else { <br />
+						&emsp;<span>return "bad";</span> <br />
+						} <br />
+						}); <br /><br />
+						<u><span>Il faut bien différencier l'opérateur ternaire de la
+								condition if/else</span></u>
+						. <br />
+						la condition if/else ne renverra pas de valeur <br />
+						si on ne lui indique pas avec l'instruction "return". <br />
+						L'opérateur ternaire, lui, renvoi toujours une valeur.
+					</p>
+				</li>
+				<li class="article">
+					<h2>FONCTION FLECHE - ARROW FUNCTIONS</h2>
+					<p class="paragraphe explication">
+						Qu'est ce que c'est?<br />
+						<span>C'est une nouvelle façon d'écrire une fonction, un format
+							réduit adapté aux nouvelles normes d'écritures ES6.</span>. <br /><br />
+					</p>
 
-						<p class="paragraphe example">
-							Ecriturne native (AVANT): <br />
-							const goodGames = games.map(function (game) { <br />
-							if (game.rating > 8) { <br />
-							&emsp;return game; <br />
-							} else { <br />
-							&emsp;return "bad"; <br />
-							} <br />
-							}); <br /><br />
-						</p>
-						<p class="paragraphe explication">Equivalent à:</p>
-						<p class="paragraphe example">
-							Ecriturne ES6 (APRES): <br />
-							const goodGames = games.map (game => game.rating > 8 ? game :
-							"bad");
-						</p>
-						<p class="paragraphe explication">
-							<u>DECOMPOSITION DE LA FACTORISATION(SIMPLIFICATION):</u
-							><br /><br />
-						</p>
-						<p class="paragraphe example">
-							Original: <br />
-							const goodGames = games.map( <span>function (game)</span> { <br />
-							&emsp;return game.rating > 8 ? game : "bad"; <br />
-							}); <br /><br />
-							<span style="color: blue;">Step1:</span> suppréssion de "function"
-							au bénéfice du symbole "=>"
-							<br />
-							qui vient se placer après le paramètre dont on peut retirer les
-							paranthèses.
-							<br /><br />
-							const goodGames =games.map( <span>game => </span> { <br />
-							return game.rating >8 ? game : "bad"; <br />
-							}); <br /><br />
-						</p>
-						<p class="paragraphe explication">
-							SI LA FONCTION NECESSITE PLUS D'UN PARAMETRES POUR FONCTIONNER
-							ALORS ON
-							<br />
-							LES METS ENTRE PARANTHESES SINON JAVASCRIPT NE VA PAS COMPRENDRE
-							LE CODE.
-						</p>
-						<p class="paragraphe example">
-							Example: <br />
-							const goodGames =games.map(
-							<span style="color: greenyellow;">(game,index)</span> => { <br />
-							return game.rating >8 ? game : "bad"; <br />
-							}); <br /><br />
-						</p>
-						<p class="paragraphe example">
-							<span style="color: blue;">Step2:</span> Suppréssion des accolades
-							"{}" et du "return". <br /><br />
-							const arrowGames =games.map( game => game.rating >8 ? game :
-							"bad");
-						</p>
-						<p class="paragraphe explication">
-							<u
-								>TOUT CE QUI SE RETROUVE APRES LA FLECHE SERA IMPLICITEMENT
-								COMPRIS COMME UN RETOUR(RETURN) D'INFORMATIONS</u
-							>
-						</p>
-						<p class="paragraphe example">
-							Les trois écritures donnerons le même résultat: <br /><br />
-							const arrowGames1 = games.map(function (game) { <br />
-							return game.rating > 8 ? game : "bad"; <br />
-							}); <br /><br />
-							const arrowGames2 = games.map((game) => { <br />
-							return game.rating > 8 ? game : "bad"; <br />
-							}); <br /><br />
-							const arrowGames3 = games.map( game => game.rating > 8 ? game :
-							"bad");
-						</p>
-					</li>
+					<p class="paragraphe example">
+						Ecriturne native (AVANT): <br />
+						const goodGames = games.map(function (game) { <br />
+						if (game.rating > 8) { <br />
+						&emsp;return game; <br />
+						} else { <br />
+						&emsp;return "bad"; <br />
+						} <br />
+						}); <br /><br />
+					</p>
+					<p class="paragraphe explication">Equivalent à:</p>
+					<p class="paragraphe example">
+						Ecriturne ES6 (APRES): <br />
+						const goodGames = games.map (game => game.rating > 8 ? game :
+						"bad");
+					</p>
+					<p class="paragraphe explication">
+						<u>DECOMPOSITION DE LA FACTORISATION(SIMPLIFICATION):</u><br /><br />
+					</p>
+					<p class="paragraphe example">
+						Original: <br />
+						const goodGames = games.map( <span>function (game)</span> { <br />
+						&emsp;return game.rating > 8 ? game : "bad"; <br />
+						}); <br /><br />
+						<span style="color: blue;">Step1:</span> suppréssion de "function"
+						au bénéfice du symbole "=>"
+						<br />
+						qui vient se placer après le paramètre dont on peut retirer les
+						paranthèses.
+						<br /><br />
+						const goodGames =games.map( <span>game => </span> { <br />
+						return game.rating >8 ? game : "bad"; <br />
+						}); <br /><br />
+					</p>
+					<p class="paragraphe explication">
+						SI LA FONCTION NECESSITE PLUS D'UN PARAMETRES POUR FONCTIONNER
+						ALORS ON
+						<br />
+						LES METS ENTRE PARANTHESES SINON JAVASCRIPT NE VA PAS COMPRENDRE
+						LE CODE.
+					</p>
+					<p class="paragraphe example">
+						Example: <br />
+						const goodGames =games.map(
+						<span style="color: greenyellow;">(game,index)</span> => { <br />
+						return game.rating >8 ? game : "bad"; <br />
+						}); <br /><br />
+					</p>
+					<p class="paragraphe example">
+						<span style="color: blue;">Step2:</span> Suppréssion des accolades
+						"{}" et du "return". <br /><br />
+						const arrowGames =games.map( game => game.rating >8 ? game :
+						"bad");
+					</p>
+					<p class="paragraphe explication">
+						<u>TOUT CE QUI SE RETROUVE APRES LA FLECHE SERA IMPLICITEMENT
+							COMPRIS COMME UN RETOUR(RETURN) D'INFORMATIONS</u>
+					</p>
+					<p class="paragraphe example">
+						Les trois écritures donnerons le même résultat: <br /><br />
+						const arrowGames1 = games.map(function (game) { <br />
+						return game.rating > 8 ? game : "bad"; <br />
+						}); <br /><br />
+						const arrowGames2 = games.map((game) => { <br />
+						return game.rating > 8 ? game : "bad"; <br />
+						}); <br /><br />
+						const arrowGames3 = games.map( game => game.rating > 8 ? game :
+						"bad");
+					</p>
+				</li>
 
-					<li class="article">
-						<h2 class="titre-article">NOTION DE SCOPE</h2>
-						<p class="paragraphe explication">
-							<u>GLOBAL SCOPE:</u>
-						</p>
-						<p class="paragraphe explication">
-							Le scope global représente
-							<span>l'ensemble des lignes de code du fichier Javascript</span>,
-							de la ligne 1 jusqu'à la dernière.. <br />
-							Les variables/constantes définient dans le "global scope" sont
-							accèssibles depuis n'importe où dans le code.
-						</p>
-						<p class="paragraphe example" style="color: greenyellow;">
-							DEBUT// <br />
-							1// const userName = "Paul";<br />
-							2// let fruitFavorie = prompt("Quel est ton fruit préféré?");<br />
-							3// <br />
-							4// function info(){<br />
-							5// &emsp;console.log(`${userName} aime les ${fruitFavorie}`);
+				<li class="article">
+					<h2 class="titre-article">NOTION DE SCOPE</h2>
+					<p class="paragraphe explication">
+						<u>GLOBAL SCOPE:</u>
+					</p>
+					<p class="paragraphe explication">
+						Le scope global représente
+						<span>l'ensemble des lignes de code du fichier Javascript</span>,
+						de la ligne 1 jusqu'à la dernière.. <br />
+						Les variables/constantes définient dans le "global scope" sont
+						accèssibles depuis n'importe où dans le code.
+					</p>
+					<p class="paragraphe example" style="color: greenyellow;">
+						DEBUT// <br />
+						1// const userName = "Paul";<br />
+						2// let fruitFavorie = prompt("Quel est ton fruit préféré?");<br />
+						3// <br />
+						4// function info(){<br />
+						5// &emsp;console.log(`${userName} aime les ${fruitFavorie}`);
+						<br />
+						6// &emsp;if (fruitFavorie === "pomme"){ <br />
+						7// &emsp;&emsp;console.log(`Mangez des ${fruitFavorie}s`);<br />
+						8// &emsp;} <br />
+						9// } <br /><br />
+						<span style="color: white;">GLOBAL SCOPE = TOUTES LES LIGNES DE CODE DU FICHIER
+							<br /><br /></span>
+						FIN//
+					</p>
+					<p class="paragraphe explication">
+						<u>FUNCTION SCOPE:</u>
+					</p>
+					<p class="paragraphe explication">
+						Le scope de la fonction représente l'ensemble des
+						<span>lignes de code qui compose une fonction</span> . <br />
+						Tout ce qui se trouve en dehors n'est pas pris en compte. Le scope
+						se limite à la fonction. <br />
+						Les variables/constantes définient dans le "function scope" ne
+						sont accèssibles que sur l'ensemble du scope de la fonction en
+						question et nulle part ailleurs.
+					</p>
+					<p class="paragraphe example">
+						<span>DEBUT// <br />
+							1// <br />
+							2// <br /></span>
+
+						<span style="color: greenyellow;">3// function store(){<br />
+							4// &emsp;let food = prompt("Quel est le fruit choisi?");<br />
+							5// &emsp;let fruits = 50;<br />
+							6// &emsp;if (food === "banane"){ <br />
+							7// &emsp;&emsp;console.log(`vous avez ${fruits} bananes`);
 							<br />
-							6// &emsp;if (fruitFavorie === "pomme"){ <br />
-							7// &emsp;&emsp;console.log(`Mangez des ${fruitFavorie}s`);<br />
 							8// &emsp;} <br />
-							9// } <br /><br />
-							<span style="color: white;"
-								>GLOBAL SCOPE = TOUTES LES LIGNES DE CODE DU FICHIER <br /><br
-							/></span>
-							FIN//
-						</p>
-						<p class="paragraphe explication">
-							<u>FUNCTION SCOPE:</u>
-						</p>
-						<p class="paragraphe explication">
-							Le scope de la fonction représente l'ensemble des
-							<span>lignes de code qui compose une fonction</span> . <br />
-							Tout ce qui se trouve en dehors n'est pas pris en compte. Le scope
-							se limite à la fonction. <br />
-							Les variables/constantes définient dans le "function scope" ne
-							sont accèssibles que sur l'ensemble du scope de la fonction en
-							question et nulle part ailleurs.
-						</p>
-						<p class="paragraphe example">
-							<span
-								>DEBUT// <br />
-								1// <br />
-								2// <br
-							/></span>
+							9// } <br /><br /></span>
 
-							<span style="color: greenyellow;"
-								>3// function store(){<br />
-								4// &emsp;let food = prompt("Quel est le fruit choisi?");<br />
-								5// &emsp;let fruits = 50;<br />
-								6// &emsp;if (food === "banane"){ <br />
-								7// &emsp;&emsp;console.log(`vous avez ${fruits} bananes`);
-								<br />
-								8// &emsp;} <br />
-								9// } <br /><br
-							/></span>
+						FUNCTION SCOPE = TOUTES LES LIGNES DE CODE DE LA FONCTION<br /><br />
+						<span>FIN//</span>
+					</p>
+					<p class="paragraphe explication">
+						<u>BLOCK SCOPE:</u>
+					</p>
+					<p class="paragraphe explication">
+						Le scope de block représente l'ensemble des
+						<span>lignes de code se trouvant dans une condition ou une
+							boucle</span>
+						qui se trouveraient elles même dans une fonction. <br />
+						Tout ce qui se trouve en dehors n'est pas pris en compte. Le scope
+						se limite à la boucle ou la condition. <br />
+						Les variables/constantes définient dans le "block scope" ne sont
+						accessibles que dans ce block scope et nulle part ailleurs. <br />
+					</p>
+					<p class="paragraphe example">
+						<span>DEBUT// <br />
+							1// <br />
+							2// <br />
+							3// function store(){<br />
+							4// &emsp;let food = prompt("Quel est le fruit choisi?");<br /></span>
 
-							FUNCTION SCOPE = TOUTES LES LIGNES DE CODE DE LA FONCTION<br /><br />
-							<span>FIN//</span>
-						</p>
-						<p class="paragraphe explication">
-							<u>BLOCK SCOPE:</u>
-						</p>
-						<p class="paragraphe explication">
-							Le scope de block représente l'ensemble des
-							<span
-								>lignes de code se trouvant dans une condition ou une
-								boucle</span
-							>
-							qui se trouveraient elles même dans une fonction. <br />
-							Tout ce qui se trouve en dehors n'est pas pris en compte. Le scope
-							se limite à la boucle ou la condition. <br />
-							Les variables/constantes définient dans le "block scope" ne sont
-							accessibles que dans ce block scope et nulle part ailleurs. <br />
-						</p>
-						<p class="paragraphe example">
-							<span
-								>DEBUT// <br />
-								1// <br />
-								2// <br />
-								3// function store(){<br />
-								4// &emsp;let food = prompt("Quel est le fruit choisi?");<br
-							/></span>
+						<span style="color: greenyellow;">5// &emsp;if (food === "banane"){ <br />
+							6// &emsp;&emsp;let fruits = 50;<br />
+							7// &emsp;&emsp;console.log(`vous avez ${fruits} bananes`);
+							<br />
+							8// &emsp;} <br /></span>
 
-							<span style="color: greenyellow;"
-								>5// &emsp;if (food === "banane"){ <br />
-								6// &emsp;&emsp;let fruits = 50;<br />
-								7// &emsp;&emsp;console.log(`vous avez ${fruits} bananes`);
-								<br />
-								8// &emsp;} <br
-							/></span>
+						<span> 9// } <br /><br /></span>
+						BLOCK SCOPE = TOUTES LES LIGNES DE CODE DU BLOCK "CONDITION" OU
+						"BOUCLE"<br /><br />
+						<span>FIN//</span>
+					</p>
+				</li>
+				<li class="article">
+					<h2 class="titre-article"> NOTION DE CONTEXTE GLOBAL D'EXECUTION</h2>
+					<p class="paragraphe explication">Avant même que l'on ai codé quoi que ce soit, Javascript crée en
+						arrière plan un environnement global de travail. <br> Celui-çi inclut la création de l'objet
+						global "window" ainsi que du mot clé "this" dont nous allons parler plus loin. <br> Ce procédé
+						est aussi appelé la <u>phase de création (creation phase)</u>. <br><br>Lors de cette phase,
+						avant même d'avoir codé une ligne de code, Javascript crée et alloue un espace mémoire dans
+						l'objet global <br> qui permettra de mémoriser nos fonctions et variables. On peut le
+						schématiser comme le cache mémoire <br> d'un ordinateur, ou encore le local storage de notre
+						navigateur web. <br><br> La seconde phase après la création est <u>la phase d'exécution
+							(execution phase)</u>. <br>Il s'agit de la phase où notre code s'exécute et où un la notion
+						de hissage (hoisting) entre en action.
+					</p>
+				</li>
+				<li class="article">
+					<h2 class="titre-article"> NOTION DE HOISTING - HISSAGE/LEVAGE</h2>
+					<p class="paragraphe explication">
+						Lorsque l'on déclare des fonctions ou/et des variables il est important de garder à l'esprit la
+						notion de "hoisting".<br><br>
+						Qu'est ce que c'est? <br><br>
+						<span>C'est la capacité à enregister dans la mémoire de l'objet global les fonctions et
+							variables que l'on a déclaré.</span><br>
+						Pour résumer, une fois déclarées dans notre fichier js, il y'a une lecture passive <br> qui va
+						les garder en mémoire dans l'objet global. <br> elles restent accessibles à tout moment par
+						l'intermédiaire de la console<br> et sont visibles dans l'objet global "window". <br><br>
+						Source MDN: <br> <cite>une définition stricte du hissage suggère que les déclarations de
+							variables et de fonctions <br> sont déplacées physiquement en haut de votre code, mais ce
+							n'est pas ce qui se passe en fait. <br> A la place, <u>les déclarations de variables et de
+								fonctions sont mises en mémoire</u> <br> pendant la phase de compilation, mais restent
+							exactement là où vous les avez tapées dans votre code.</cite>
+					</p>
+					<p class="paragraphe example">
+						Soit une fonction simple "sayHi()": <br><br>
+						1 - Appel de la fonction avant la déclaration <br>
+						sayHi();<br><br>
+						2 - Déclaration de la fonction: <br>
+						function sayHi(){ <br>
+						&emsp;console.log("Hello");<br>
+						} <br><br>
+						3 - Une lecture passive de la fonction s'effectue lorsque l'on sauvegarde (CTRL+S) <br> le
+						fichier Javascript, ce qui entraine par la même occasion la mémorisation de la fonction.
+						<br><br>
+						4 - La console affiche le message "Hello".
+					</p>
+					<p class="paragraphe explication"><span>ATTENTION: LES VALEURS DES VARIABLES NE SONT PAS MEMORISEES,
+							JUSTE LEUR DECLARATIONS</span></p>
+					<p class="paragraphe example">!!!Rappel!!! <br>
+						Déclaration d'une variable: <br>
+						let mail;<br>
+						const nom;<br><br>
+						Affectation d'une valeur à la variable: <br>
+						let mail = 10;<br>
+						const nom = "Rick";<br><br>
+						A la différence des fonctions, au moment où l'on sauve (CTRL+S) <br>seul l'information sur le
+						nom de la variable (sa déclaration) est enregistré en mémoire. <br>
+						L'objet global est conscient de son existence mais n'a pas connaissance de la valeur. <br><br>
+						Cela signifie que si l'on tente d'afficher le contenu d'une variable <br> avant que sa valeur
+						ait été attribuée, nous obtiendrons un message d'erreur. <br><br>
+						console.log(nom); <br>
+						const nom = "Rick"; <br>
+						Uncaught ReferenceError: Cannot access 'nom' before initialization <br><br>
+						const nom = "Rick";<br>
+						console.log(nom);<br>
+						La console affichera bien la valeur de la variable nom, pas de message d'erreur.
+					</p>
+				</li>
 
-							<span> 9// } <br /><br /></span>
-							BLOCK SCOPE = TOUTES LES LIGNES DE CODE DU BLOCK "CONDITION" OU
-							"BOUCLE"<br /><br />
-							<span>FIN//</span>
-						</p>
-					</li>
-					<li class="article">
-						<p class="paragraphe example" style="color: green;">
-							La suite arrive bientôt, en cours d'intégration.
-						</p>
-					</li>
-					<li class="article"></li>
-				</ul>
-			</section>
-		</main>
-		<footer>
-			<h3>&copy;EmmanuelDev 2020</h3>
-		</footer>
-		<script src="../js/test.js"></script>
-	</body>
+				<li class="article">
+					<h2 class="titre-article">CALL STACK - Qu'est ce que c'est?</h2>
+					<p class="paragraphe explication"><span>C'est un méchanisme de file d'attente qui permet à
+							Javascript de
+							garder un suivi des étapes exécutées par notre code lors de la phase d'exécution.</span><br>
+						A chaque fois que l'on exécute un script, un call stack représentant les différentes
+						étapes de la phase d'exécution est crée.
+						context.</p>
+					<p class="paragraphe example">
+						on peut le schématiser de la manière suivante: <br>
+						Soit 2 fonctions "sayHi" et "changeName" <br><br>
+						function sayHi() {<br>
+						&emsp;console.log(`hello there ${name}`);<br>
+						&emsp;changeName();<br>
+						&emsp;console.log(`sayHi is finished`);<br>
+						} <br><br>
+						function changeName() { <br>
+						&emsp;name = "Bobby";<br>
+						&emsp;console.log(`we change it to ${name}`);<br>
+						&emsp;console.log(`changeName is finished`);<br>
+						} <br><br>
+						et une variable let "name" <br>
+						let name = "Emmanuel dev"; <br><br>
+						on appel ensuite la fonction "sayHi" <br>
+						sayHi();<br><br>
+						puis on éffectue un console.log pour afficher que notre script a atteint sa dernière ligne de
+						code. <br>
+						console.log(`j'ai lu toutes les lignes de code, c'est fini!`); <br><br>
+						<u>Comment le code s'est executé?</u><br><br>
+						1-Lecture passive des fonctions et variables avec mémorisation dans l'objet global, <br>
+						2-Exécution du script et lecture du code ligne par ligne,
+						<br>
+						3-Survol des fonctions sans aucunes actions déclenchées, <br>
+						4-Lecture de la valeur attribuée à la variable "name", <br>
+						5-Lecture de l'appel de la fonction "sayHi", <br>
+						6-Execution de la fonction "sayHi", <br>
+						7-Affichage dans la console du message "hello there Emmanuel dev", <br>
+						8-Lecture de l'appel de la fonction "changeName", <br>
+						9-Execution de la fonction "changeName", <br>
+						10-Affectation de la valeur "Bobby" à la variable "name",<br>
+						11-Affichage dans la console du message "we change it to Bobby", <br>
+						12-Affichage dans la console du message "changeName is finished",<br>
+						13-Affichage dans la console du message "sayHi is finished",<br>
+						14-Affichage dans la console du message "j'ai lu toutes les lignes de code, c'est
+						fini!". <br><br>
+						Pour résumer imaginons que le call stack représente une pile de documents à remplir: <br><br>
+						PILE DE DOCUMENTS / CALL STACK{ <br>
+						<span style="color: rgb(98, 98, 202);"><u>Haut de pile</u></span><br>
+						changeName(); <br> tant que cette fonction n'est pas fini, on ne peut pas passer à la suivante.
+						<br><br>
+						<u>Milieu de pile</u><br>
+						sayHi(); <br> ne peut se terminer que quand la fonction qui la précède est terminée. <br><br>
+						<span style="color: red;"><u>base de la pile</u></span><br>
+						global(); <br> Le code global ne peut s'achever que quand toutes les fonctions ont terminées
+						leurs
+						executions. <br>
+						}<br><br>
+						<span>Au cours de la phase d'exécution les fonctions s'imbriquent les unes dans les autres, <br>
+							et
+							pour que cela se termine il
+							faut que le code de chaque fonction se termine l'un après l'autre</span>
+
+
+					</p>
+				</li>
+				<li class="article">
+					<p class="paragraphe example" style="color: green;">
+						La suite arrive bientôt, en cours d'intégration.
+					</p>
+				</li>
+				<li class="article"></li>
+			</ul>
+		</section>
+	</main>
+	<footer>
+		<h3>&copy;EmmanuelDev 2020</h3>
+	</footer>
+	<script src="../js/test.js"></script>
+</body>
+
 </html>
