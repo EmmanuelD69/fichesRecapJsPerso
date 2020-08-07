@@ -387,9 +387,47 @@
 						<span>['France', 'Fr', 'CALL']</span>);
 					</p>
 				</li>
+				<li class="article">
+					<h2 class="titre-article">CONSTRUCTOR FUNCTION Qu'est ce que c'est?</h2>
+					<p class="paragraphe explication">
+						C'est une "fonction" qui va générer des "objets". <br>
+						C'est un moyen façile de créer autant d'objets que l'on souhaite. <br>
+						<span>De manière général, pour identifier une fonction constructor, on va écrire son nom en
+							UPPERCASE</span><br>
+						Chaque nouvel objet est crée en utilisant le mot clé "new". <br>Si le terme "NEW" est présent,
+						c'est qu'on à une fonction constructor à l'oeuvre. <br><br>
+						Chaque objet est unique, et toutes les propriétées qu'il contient lui sont unique, même si ces
+						<br>
+						propriétées ont exactement les mêmes déclarations de keys, values qu'un autre objet. <br><br>
+						<u>fonction constructor pour créer des objets "user"</u>
+					<p class="paragraphe example">
+						function User(name, surname) { <br>
+						&emsp;this.name = name; <br>
+						&emsp;this.surname = surname; <br>
+						&emsp;this.getName = function () { <br>
+						&emsp;&emsp;console.log(`${this.name} ${this.surname}`); <br>
+						};<br>
+						}</p>
+					</p>
+				</li>
 				<!-- <li class="article">
-						<h2 class="titre-article">THIS - Qu'est ce que c'est?</h2>
-					</li> -->
+					<h2 class="titre-article">PROTOTYPE - Qu'est ce que c'est?</h2>
+					<p class="paragraphe explication">
+						Ce qui veux dire que pour chaque objet créé, si une méthode est identique pour chaque objet,
+						elle sera quand même considérée comme une méthode différente et stocké dans la mémoire de
+						l'objet global
+						lors de la phase de création, surchargeant ainsi l'espace de stockage avec un
+						"doublon". <br><br>
+						Cela va vite devenir un problème, et pour le solutionner il existe ce qu'on appel le "prototype"
+						d'un objet. (Voir la partie suivante "prototype")
+					</p>
+				</li> -->
+				<!-- <li class="article">
+					<h2 class="titre-article">THIS - Qu'est ce que c'est?</h2>
+				</li> -->
+				<!-- <li class="article">
+					<h2 class="titre-article">THIS - Qu'est ce que c'est?</h2>
+				</li> -->
 				<li class="article">
 					<p class="paragraphe example" style="color: green;">
 						La suite arrive bientôt, en cours d'intégration.
@@ -402,7 +440,7 @@
 	<footer>
 		<h3>&copy;EmmanuelDev 2020</h3>
 	</footer>
-	<script src="../js/test.js"></script>
+	<script src="../js/objet.js"></script>
 </body>
 
 </html>
