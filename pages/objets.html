@@ -419,8 +419,9 @@
 						} <br><br>
 						"<span style="color: orange;">getName</span>" est une méthode qui sera créée à l'identique dans
 						tous les objets issus de cette fonction constructor, ce qui aura pour effet de créer une copie
-						de la
-						méthode <br> à chaque nouvel objet. <br><br>
+						de la méthode à chaque nouvel objet. <br>
+						Ce qui deviendra rapidement problématique si l'on crée trop de copies(voir article "Prototype
+						- qu'est ce que c'est?"). <br><br>
 						const user1 = new USER(<span style="color: rgb(133, 133, 211);">"Emmanuel"</span>, <span
 							style="color: greenyellow;">"Dev"</span>);<br>
 						const user2 = new USER(<span style="color: rgb(133, 133, 211);">"Laurent"</span>, <span
@@ -439,18 +440,61 @@
 					</p>
 					</p>
 				</li>
-				<!-- <li class="article">
+				<li class="article">
 					<h2 class="titre-article">PROTOTYPE - Qu'est ce que c'est?</h2>
 					<p class="paragraphe explication">
-						Ce qui veux dire que pour chaque objet créé, si une méthode est identique pour chaque objet,
-						elle sera quand même considérée comme une méthode différente et stocké dans la mémoire de
-						l'objet global
-						lors de la phase de création, surchargeant ainsi l'espace de stockage avec un
-						"doublon". <br><br>
-						Cela va vite devenir un problème, et pour le solutionner il existe ce qu'on appel le "prototype"
-						d'un objet. (Voir la partie suivante "prototype")
+						C'est une propriété présente dans tous les objets existants, c'est en quelques sorte une
+						propriété par default. <br>
+						Il faut l'imaginer comme une boite à outils, dont chaque objet dispose. <br>
+						A l'intérieur de cette boite à outils, on peut y ranger des "méthodes"(outils) qui seront
+						disponibles pour l'ensemble des objets issus de la même fonction constructor. <br>
+						On peut remplir/vider cette boite à outils avec de nouvelles méthodes(outils), qui ne seront pas
+						une copie de méthodes déjà existantes, mais bien un original unique. <br>
+						A la différence d'une méthode qui serait créer dans une fonction constructor et copié à chaque
+						création d'objet, ce qui finirai par saturer l'espace de stockage de l'objet global. <br><br>
+						!!! BONNE PRATIQUE: EVITER D'ASSOCIER DES METHODES A UNE FONCTION CONSTRUCTOR MAIS LES AJOUTER
+						AU PROTOTYPE DE LA FONCTION CONSTRUCTOR POUR EVITER DE LES DUPLIQUER !!! <br><br>
+						<span>Toutes les données primitives sont créées à partir de fonctions constructor</span>,<br>
+						c'est pour cela qu'on peut leur appliquer des méthodes, car ces méthodes sont stockées dans la
+						propriété prototype de la
+						fonction constructor qui les a créées.
 					</p>
-				</li> -->
+					<p class="paragraphe example">
+						Example: <br>
+						const name = "emmanueldev"; <br> Ceci est une donnée primitive de type string telle que nous la
+						déclarons. <br><br>
+						const objName = new String("emmanueldev"); <br>
+						Ceci est la même donnée primitive sous sa forme
+						originelle, sa véritable forme avant d'être convertie. <br>
+						C'est une conversion automatique qui nous est invisible mais qui apporte avec elle la propriété
+						"prototype" <br> contenant des méthodes utilisables par defaut sur notre donnée primitive.
+						<br><br>
+						Si on fait un console log de "objName": <br>
+						String { "emmanueldev" }​ <br>
+						0: "e"​<br>
+						1: "m"​<br>
+						2: "m"​<br>
+						3: "a"​<br>
+						4: "n"​<br>
+						5: "u"​<br>
+						6: "e"​<br>
+						7: "l"​<br>
+						8: "d"​<br>
+						9: "e"​<br>
+						10: "v"​<br>
+						length: 11​<br>
+						prototype: String { "" } <br><br>
+						Je vous invite à faire un essai et vous constaterez par vous même ce que la propriété prototype
+						contient. <br>
+						On a objet représentant une donnée primitive de type string avec une propriété prototype qui
+						contient tout un ensemble de méthodes. <br><br>
+						Ce qui se passe lorsque qu'on applique une méthode à une donnée primitive comme une string,
+						c'est que la string est temporairement introduite dans un objet de sorte à lui appliquer la
+						méthode souhaité se trouvant dans la propriété prototype, puis une fois cette action effectuée,
+						on ressort la string modifié pour lui redonner son status de "string" et non plus d'objet
+						string.
+					</p>
+				</li>
 				<!-- <li class="article">
 					<h2 class="titre-article">THIS - Qu'est ce que c'est?</h2>
 				</li> -->

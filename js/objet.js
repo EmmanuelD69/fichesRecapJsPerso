@@ -361,6 +361,9 @@ user2.getName();
  Tous sont issues des functions constructor utilisés pour créer nos données et qui agissent en arrière plan lors de la création, on ne s'en rend pas compte, mais à chaque création de données, il y'a une fonction constructor qui est derrière et qui transmet la propriété "prototype" avec les méthodes correspondant à la donnée créée. La nouvelle donnée hérite de la propriété "prototype".
 */
 
+const objName = new String("emmanueldev");
+console.log(objName);
+
 function Newuser(name, surname) {
   this.name = name;
   this.surname = surname;
