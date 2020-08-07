@@ -388,26 +388,55 @@
 					</p>
 				</li>
 				<li class="article">
-					<h2 class="titre-article">CONSTRUCTOR FUNCTION Qu'est ce que c'est?</h2>
+					<h2 class="titre-article">CONSTRUCTOR FUNCTION - Qu'est ce que c'est?</h2>
 					<p class="paragraphe explication">
-						C'est une "fonction" qui va générer des "objets". <br>
+						<span>C'est une "fonction" qui va générer des "objets".</span> <br>
 						C'est un moyen façile de créer autant d'objets que l'on souhaite. <br>
-						<span>De manière général, pour identifier une fonction constructor, on va écrire son nom en
-							UPPERCASE</span><br>
-						Chaque nouvel objet est crée en utilisant le mot clé "new". <br>Si le terme "NEW" est présent,
+						<u>De manière général, pour identifier une fonction constructor, on va écrire son nom en
+							UPPERCASE</u><br>
+						Chaque nouvel objet est créé en utilisant le mot clé "new". <br>Si le terme "new" est présent,
 						c'est qu'on à une fonction constructor à l'oeuvre. <br><br>
-						Chaque objet est unique, et toutes les propriétées qu'il contient lui sont unique, même si ces
+						Chaque objet est unique, et toutes les propriétés qu'il contient lui sont unique, même si ces
 						<br>
-						propriétées ont exactement les mêmes déclarations de keys, values qu'un autre objet. <br><br>
-						<u>fonction constructor pour créer des objets "user"</u>
+						propriétés ont exactement les mêmes déclarations de keys/ values que les propriétés d'un autre
+						objet.
+						<br><br>
+						<u>EXEMPLE: Fonction constructor pour créer des objets "user"</u>
 					<p class="paragraphe example">
-						function User(name, surname) { <br>
-						&emsp;this.name = name; <br>
-						&emsp;this.surname = surname; <br>
-						&emsp;this.getName = function () { <br>
+						Soit une fonction constructor USER avec laquelle je souhaite créer des objets simples comprenant
+						3 propriétés: <br>
+						-une pour le nom, <br>
+						-une autre pour le prénom, <br>
+						et une troisième pour afficher en
+						console le nom et le prénom. <br><br>
+						function USER(<span style="color: rgb(133, 133, 211);">name</span>, <span
+							style="color: greenyellow;">surname</span>) { <br>
+						&emsp;this.name = <span style="color: rgb(133, 133, 211);">name</span>; <br>
+						&emsp;this.surname = <span style="color: greenyellow;">surname</span>; <br>
+						&emsp;this.<span style="color: orange;">getName</span> = function () { <br>
 						&emsp;&emsp;console.log(`${this.name} ${this.surname}`); <br>
-						};<br>
-						}</p>
+						&emsp;};<br>
+						} <br><br>
+						"<span style="color: orange;">getName</span>" est une méthode qui sera créée à l'identique dans
+						tous les objets issus de cette fonction constructor, ce qui aura pour effet de créer une copie
+						de la
+						méthode <br> à chaque nouvel objet. <br><br>
+						const user1 = new USER(<span style="color: rgb(133, 133, 211);">"Emmanuel"</span>, <span
+							style="color: greenyellow;">"Dev"</span>);<br>
+						const user2 = new USER(<span style="color: rgb(133, 133, 211);">"Laurent"</span>, <span
+							style="color: greenyellow;">"Leblanc"</span>);<br><br>
+						<span>new user() crée un nouvel objet et utilise les arguments entre paranthèses <br> pour
+							completer
+							les
+							propriétées de l'objet nouvellement créé.</span><br><br>
+						Résultats en console: <br>
+						console.log(user1);<br>
+						Object { name: "Emmanuel", surname: "Dev", getName: getName() } <br><br>
+						console.log(user2);<br>
+						Object { name: "Laurent", surname: "Leblanc", getName: getName() }
+
+
+					</p>
 					</p>
 				</li>
 				<!-- <li class="article">
