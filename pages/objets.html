@@ -324,6 +324,38 @@
 
 					</p>
 				</li>
+				<li class="article">
+					<h2 class="titre-article">CALL - qu'est ce que c'est?</h2>
+					<p class="paragraphe explication">C'est exactement la même chose que BIND, à la différence que la
+						fonction n'est pas
+						sauvegardée <br> dans une variable mais lance un appel direct vers l'objet
+						auquel elle a été liée. <br><br>
+						Pour les paramètres, on passe en premier le nom de l'objet auquel on souhaite lier la fonction,
+						<br>
+						et ensuite d'autres arguments, si nécéssaire, en fonction de ce dont la fonction à besoin.</p>
+					<p class="paragraphe example">
+						<span style="color: rgb(133, 133, 211);">const person</span> = { <br />
+						&emsp;firstName: "emmanuel", <br />
+						&emsp;lastName: "dev", <br />
+						&emsp;getFullName(){ <br />
+						&emsp;&emsp;console.log(`hello my name is ${this.firstName} ${this.lastName}`); <br />
+						&emsp;},
+						<br />
+						};<br /><br />
+						<span style="color: greenyellow;">function registerUser</span>(country, lang, methode) {<br />
+						&emsp;//fonctionnalitées additionnelles.... <br />
+						&emsp;console.log(this);<br />
+						&emsp;this.getFullName(); <br />
+						&emsp;&emsp;console.log(`My country is ${country} and my language is ${lang} and i used
+						méthod
+						${methode}`
+						);<br>
+						}
+						<br /><br />
+						<span style="color: greenyellow;">registerUser</span>.call(<span
+							style="color: rgb(133, 133, 211);">person</span>, 'France', 'Fr', 'CALL');
+					</p>
+				</li>
 				<!-- <li class="article">
 						<h2 class="titre-article">THIS - Qu'est ce que c'est?</h2>
 					</li> -->
