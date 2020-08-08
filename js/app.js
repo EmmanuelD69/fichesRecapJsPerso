@@ -65,6 +65,12 @@ console.log("03/08/20: add Responsive design,");
 console.log("04/08/20: add OBJET > THIS - Qu'est-ce que c'est?,");
 console.log("05/08/20: add OBJET > BIND - Qu'est-ce que c'est?,");
 console.log("06/08/20: add Notions de base >Notion de CALL STACK,");
+console.log("07/08/20: add Objets > CALL - Qu'est-ce que c'est?,");
+console.log("07/08/20: add Objets > APPLY - Qu'est-ce que c'est?,");
+console.log(
+  "07/08/20: add Objets > CONSTRUCTOR FUNCTION - Qu'est-ce que c'est?,"
+);
+console.log("07/08/20: add Objets > PROTOTYPE - Qu'est-ce que c'est?,");
 console.log(
   "Bonjour et bienvenue sur mon espace Memo. \nJe rajoute du contenu au quotidien donc ne vous étonnez pas de trouver des parties en cours 'intégration\nBonne lecture!"
 );
