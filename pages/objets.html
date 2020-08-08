@@ -487,12 +487,53 @@
 						Je vous invite à faire un essai et vous constaterez par vous même ce que la propriété prototype
 						contient. <br>
 						On a objet représentant une donnée primitive de type string avec une propriété prototype qui
-						contient tout un ensemble de méthodes. <br><br>
+						contient tout un ensemble de méthodes que l'on peut appliquer à une string. <br><br>
 						Ce qui se passe lorsque qu'on applique une méthode à une donnée primitive comme une string,
 						c'est que la string est temporairement introduite dans un objet de sorte à lui appliquer la
 						méthode souhaité se trouvant dans la propriété prototype, puis une fois cette action effectuée,
 						on ressort la string modifié pour lui redonner son status de "string" et non plus d'objet
-						string.
+						string. <br><br>
+						Example: <br>
+						const name = "emmanueldev"; <br>
+						const upper = name.toUpperCase(); <br>
+						console.log(typeof upper); <br> le console log affichera un string. <br><br>
+						RESUME: <br>
+						Object,<br>
+						String,<br>
+						Number,<br>
+						Array,<br>
+						Tous sont le résultat de fonctions constructor utilisées pour créer nos données. <br>On ne s'en
+						rend pas compte, mais à chaque création de donnée,
+						il y'a une fonction constructor qui est derrière et qui transmet la propriété "prototype" avec
+						les méthodes correspondant à la donnée créée. <br>
+						Ainsi on pourra appliquer à un objet certaines méthodes et à un string d'autres méthodes qui
+						leurs sont propre. <br>
+						Chaque nouvelle donnée "hérite" de la propriété
+						"prototype" contenant les méthodes spécifiques à la donnée que l'on vient de créer. <br>
+					<p class="paragraphe explication"><u>Création d'une méthode que l'on ajoute à la propriété
+							"prototype"</u></p>
+					<p class="paragraphe example">
+						Soit une fonction constructor USER: <br><br>
+						function USER(<span style="color: rgb(133, 133, 211);">name</span>, <span
+							style="color: greenyellow;">surname</span>) { <br>
+						&emsp;this.name = <span style="color: rgb(133, 133, 211);">name</span>; <br>
+						&emsp;this.surname = <span style="color: greenyellow;">surname</span>; <br>
+						} <br><br>
+						USER.prototype.getName = function () { <br>
+						console.log(`${this.name} ${this.surname}`);<br>
+						};<br><br>
+						const newuser1 = new USER("Emmanuel", "Dev"); <br><br>
+						console.log(newuser1); <br><br>
+						newuser1.getName(); <br><br>
+						console.log(USER);<br><br>
+						function USER(name, surname) <br> ​
+						arguments: null <br> ​
+						caller: null <br> ​
+						length: 2 <br> ​
+						name: "USER" <br> ​
+						prototype: Object { getName: getName(), … } <br><br>
+						On constate que la fonction getName à bien été ajoutée à la propriété prototype.
+					</p>
 					</p>
 				</li>
 				<!-- <li class="article">

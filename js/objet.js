@@ -364,6 +364,11 @@ user2.getName();
 const objName = new String("emmanueldev");
 console.log(objName);
 
+const name2 = "emmanueldev";
+const upper = name2.toUpperCase();
+console.log(typeof name2);
+console.log(upper.fontcolor);
+
 function Newuser(name, surname) {
   this.name = name;
   this.surname = surname;
