@@ -72,16 +72,16 @@
 */
 
 function sayHello() {
-  console.log(`hello there ${name}`);
-  changeName();
-  console.log(`sayHello is finished`);
+	console.log(`hello there ${name}`);
+	changeName();
+	console.log(`sayHello is finished`);
 }
 function changeName() {
-  name = "Bobby";
-  console.log(`we change name to ${name}`);
-  console.log(`changeName is finished`);
+	name = 'Bobby';
+	console.log(`we change name to ${name}`);
+	console.log(`changeName is finished`);
 }
-let name = "Emmanuel dev";
+let name = 'Emmanuel dev';
 sayHello();
 console.log(`j'ai lu toutes les lignes de code, celui ci est terminé`);
 
@@ -182,28 +182,28 @@ console.log(`j'ai lu toutes les lignes de code, celui ci est terminé`);
  Une fonction arrow ne crée pas un nouveau "this", elle prolonge celui déjà existant, il n'y a donc pas de "reset" de this et la référence à l'objet qui contient la méthode incluant la nouvelle fonction appelant "this", est donc fontionnelle.
 */
 const user = {
-  name: "emmanueldev",
-  videos: ["html", "css", "javascript", "react"],
-  greet() {
-    console.log(`Hello there ${this.name}`);
-    //add function
-    const getVideos = () => {
-      console.log(`You currently have ${this.videos.length} videos`);
-    };
-    getVideos();
-  },
+	name: 'emmanueldev',
+	videos: ['html', 'css', 'javascript', 'react'],
+	greet() {
+		console.log(`Hello there ${this.name}`);
+		//add function
+		const getVideos = () => {
+			console.log(`You currently have ${this.videos.length} videos`);
+		};
+		getVideos();
+	},
 };
 
 const admin = {
-  name: "admin",
+	name: 'admin',
 };
 
 function sayHi() {
-  console.log(this);
+	console.log(this);
 }
 
 function majuscule() {
-  console.log(this.name.toUpperCase());
+	console.log(this.name.toUpperCase());
 }
 
 user.fn = sayHi;
@@ -253,39 +253,39 @@ user.greet();
 */
 
 const person = {
-  firstName: "emmanuel",
-  lastName: "dev",
-  getFullName() {
-    console.log(this.firstName + this.lastName);
-  },
+	firstName: 'emmanuel',
+	lastName: 'dev',
+	getFullName() {
+		console.log(this.firstName + this.lastName);
+	},
 };
 
 function registerUser(country, lang, methode) {
-  //fonctionnalitées additionnelles....
-  console.log(this);
-  this.getFullName();
-  console.log(
-    `My country is ${country} and my language is ${lang} and i used méthod ${methode}`
-  );
+	//fonctionnalitées additionnelles....
+	console.log(this);
+	this.getFullName();
+	console.log(
+		`My country is ${country} and my language is ${lang} and i used méthod ${methode}`
+	);
 }
 
 const register = registerUser.bind(person);
-console.log("ici la fonction");
+console.log('ici la fonction');
 console.log(register);
-register("France", "Fr", "BIND");
+register('France', 'Fr', 'BIND');
 
 /*** CALL qu'est ce que c'est? ***
  C'est exactement la même chose que BIND, à la différence que CALL ne sauvegarde pas la fonction dans une variable, mais lance un appel direct vers cette fonction dont il dépend. 
  Pour les paramètres/arguments, on passe en premier le nom de l'objet auxquel on souhaite lier la fonction, et ensuite d'autres arguments si nécéssaire, en fonction de ce dont la fonction à besoin.
 */
 
-registerUser.call(person, "France", "Fr", "CALL");
+registerUser.call(person, 'France', 'Fr', 'CALL');
 
 /*** APPLY qu'est ce que c'est? ***
  C'est le même cas de figure que CALL, la seule chose qui varie est le moyen utilisé pour déclarer les paramètres/arguments complémentaires de la méthode "apply".
  Au lieu d'utiliser directement des strings, on utilise un tableau de strings.
 */
-registerUser.apply(person, ["France", "Fr", "APPLY"]);
+registerUser.apply(person, ['France', 'Fr', 'APPLY']);
 
 /*** CONSTRUCTOR FUNCTION  Qu'est ce que c'est? ***
  C'est une "fonction" qui va générer des "objets" . 
@@ -301,18 +301,18 @@ registerUser.apply(person, ["France", "Fr", "APPLY"]);
 
 /* fonction constructor pour créer des objets "user" */
 function USER(name, surname) {
-  /* les arguments passés lors de la création du nouvel objet, viendrons remplir les propriétées de l'objet */
-  this.name = name;
-  this.surname = surname;
-  this.getName = function () {
-    /* une méthode random que l'on a crée mais qui va être copié d'objet en objet à l'identique, créant ainsi une copie à chaque nouvel objet. */
-    console.log(`${this.name} ${this.surname}`);
-  };
+	/* les arguments passés lors de la création du nouvel objet, viendrons remplir les propriétées de l'objet */
+	this.name = name;
+	this.surname = surname;
+	this.getName = function () {
+		/* une méthode random que l'on a crée mais qui va être copié d'objet en objet à l'identique, créant ainsi une copie à chaque nouvel objet. */
+		console.log(`${this.name} ${this.surname}`);
+	};
 }
 
-const user1 = new USER("Emmanuel", "Dev");
+const user1 = new USER('Emmanuel', 'Dev');
 /* new user() crée un nouvel objet et utilise les arguments entre paranthèses pour completer les propriétées de l'objet nouvellement crée */
-const user2 = new USER("Georgia", "LILITH"); /* même chose ici */
+const user2 = new USER('Georgia', 'LILITH'); /* même chose ici */
 console.log(user1);
 user1.getName();
 console.log(user2);
@@ -361,31 +361,31 @@ user2.getName();
  Tous sont issues des functions constructor utilisés pour créer nos données et qui agissent en arrière plan lors de la création, on ne s'en rend pas compte, mais à chaque création de données, il y'a une fonction constructor qui est derrière et qui transmet la propriété "prototype" avec les méthodes correspondant à la donnée créée. La nouvelle donnée hérite de la propriété "prototype".
 */
 
-const objName = new String("emmanueldev");
+const objName = new String('emmanueldev');
 console.log(objName);
 
-const name2 = "emmanueldev";
+const name2 = 'emmanueldev';
 const upper = name2.toUpperCase();
 console.log(typeof name2);
 console.log(upper.fontcolor);
 
 function Newuser(name, surname) {
-  this.name = name;
-  this.surname = surname;
+	this.name = name;
+	this.surname = surname;
 }
 
 /* Création d'une méthode que l'on ajoute au prototype de l'objet crée */
 Newuser.prototype.getName = function () {
-  console.log(`${this.name} ${this.surname}`);
+	console.log(`${this.name} ${this.surname}`);
 };
 
-const newuser1 = new Newuser("Emmanuel", "Dev");
+const newuser1 = new Newuser('Emmanuel', 'Dev');
 console.log(newuser1);
 newuser1.getName();
 console.log(Newuser);
 
-const nom = "emmanueldev";
-const objNom = new String("emmanueldev");
+const nom = 'emmanueldev';
+const objNom = new String('emmanueldev');
 console.log(objNom);
 
 /*** PROTOTYPAL INHERITENCE - HERITAGE DE PROTOTYPES ***
@@ -397,29 +397,29 @@ console.log(objNom);
 
 /* Fonction constructor Enemy */
 function Enemy(life, name, level) {
-  this.life = life;
-  this.name = name;
-  this.level = level;
+	this.life = life;
+	this.name = name;
+	this.level = level;
 }
 
 /* méthodes liées à la propriété prototype de la fonction constructor Enemy */
 Enemy.prototype.getInfos = function () {
-  console.log(this.life, this.name, this.level);
+	console.log(this.life, this.name, this.level);
 };
 Enemy.prototype.attack = function () {
-  console.log(`${this.name} has attacked!`);
+	console.log(`${this.name} has attacked!`);
 };
 Enemy.prototype.block = function () {
-  console.log(`${this.name} has blocked!`);
+	console.log(`${this.name} has blocked!`);
 };
 
 function Dragon(life, name, level, color, spell) {
-  /* Le mot clé "this" va faire référence à l'objet "Dragon" et c'est ainsi qu'en utilisant la fonction constructor dejà existante, on n'aura pas besoin de redéclarer les propriétées "life, name, level". On va hériter de celles ci en liant la fonction constructor "Enemy" à notre objet "Dragon" */
-  Enemy.call(this, life, name, level);
+	/* Le mot clé "this" va faire référence à l'objet "Dragon" et c'est ainsi qu'en utilisant la fonction constructor dejà existante, on n'aura pas besoin de redéclarer les propriétées "life, name, level". On va hériter de celles ci en liant la fonction constructor "Enemy" à notre objet "Dragon" */
+	Enemy.call(this, life, name, level);
 
-  /* Les dernières propriétés "color, spell" qui sont unique à l'objet "dragon" seront déclarés normalement. */
-  this.color = color;
-  this.spell = spell;
+	/* Les dernières propriétés "color, spell" qui sont unique à l'objet "dragon" seront déclarés normalement. */
+	this.color = color;
+	this.spell = spell;
 }
 
 /* !!! Héritage des méthodes spécifiques à l'objet "Enemy" pour l'objet "Dragon" !!! 
@@ -428,11 +428,11 @@ Dragon.prototype = Object.create(Enemy.prototype);
 
 /* Création d'une méthode spécifique à l'objet "Dragon" que l'on ajoute à son prototype */
 Dragon.prototype.fireBreath = function () {
-  console.log("FIRE BREATHHHHH!");
+	console.log('FIRE BREATHHHHH!');
 };
 
 /* Création d'un Dragon */
-const newDragon = new Dragon(100, "lucifer", 15, "red", "Fire Breath");
+const newDragon = new Dragon(100, 'lucifer', 15, 'red', 'Fire Breath');
 console.log(newDragon);
 newDragon.getInfos();
 
@@ -489,43 +489,43 @@ newDragon.getInfos();
 
 */
 class Dev {
-  constructor(country, name, level) {
-    this.country = country;
-    this.name = name;
-    this.level = level;
-  }
-  getInfos() {
-    console.log(this.country, this.name, this.level);
-  }
-  attack() {
-    console.log(`${this.name} has attacked!`);
-  }
-  block() {
-    console.log(`${this.name} has blocked!`);
-  }
+	constructor(country, name, level) {
+		this.country = country;
+		this.name = name;
+		this.level = level;
+	}
+	getInfos() {
+		console.log(this.country, this.name, this.level);
+	}
+	attack() {
+		console.log(`${this.name} has attacked!`);
+	}
+	block() {
+		console.log(`${this.name} has blocked!`);
+	}
 }
 console.log(Dev);
 
 /* CLASSE ETENDUE: AVEC L'USAGE DU TERME "EXTENDS" ON PERMET A LA CLASSE INSTRUCTOR D'HERITER DU CONTENU DE LA CLASSE DEV */
 class Instructor extends Dev {
-  constructor(country, name, level, age, course) {
-    /* "SUPER" EST LE MOT CLE QUI VA PERMETTRE D'ALLER CHERCHER DANS LA CLASSE DEV LE CONTENU DONT T'IL A BESOIN GRACE A LA LIAISION EFFECTUEE LORS DE LA DECLARATION DE LA CLASSE INSTRUCTOR VIA LE TERME EXTENDS */
-    super(country, name, level);
-    this.age = age;
-    this.course = course;
-  }
+	constructor(country, name, level, age, course) {
+		/* "SUPER" EST LE MOT CLE QUI VA PERMETTRE D'ALLER CHERCHER DANS LA CLASSE DEV LE CONTENU DONT T'IL A BESOIN GRACE A LA LIAISION EFFECTUEE LORS DE LA DECLARATION DE LA CLASSE INSTRUCTOR VIA LE TERME EXTENDS */
+		super(country, name, level);
+		this.age = age;
+		this.course = course;
+	}
 }
 
-const frenchDev = new Dev("France", "emmanuelDev", "junior");
+const frenchDev = new Dev('France', 'emmanuelDev', 'junior');
 console.log(frenchDev);
 frenchDev.getInfos();
 
 const instructorDev = new Instructor(
-  "Bulgaria",
-  "DevED",
-  "Experimented",
-  28,
-  "Javascript"
+	'Bulgaria',
+	'DevED',
+	'Experimented',
+	28,
+	'Javascript'
 );
 console.log(instructorDev);
 instructorDev.getInfos();

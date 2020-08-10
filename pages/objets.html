@@ -551,22 +551,37 @@
 						On va se retrouver avec une chaine de prototypes en cascade.
 					</p>
 					<p class="paragraphe example">
-						Soit une fonction constructor "Enemy": <br>
+						Prenons pour exemple un jeu de combat, je souhaite créer des monstres avec des points de vie, un nom, et un niveau. <br>
+						Pour cela je vais créer une fonction constructor que j'appelerai "Enemy": <br>
 						function ENEMY(life, name, level) { <br>
 							&emsp;this.life = life; <br>
 							&emsp;this.name = name; <br>
 							&emsp;this.level = level; <br>
 						} <br><br>
+						En plus de cela, je souhaite créer quelques méthodes qui seront utilisées pour tous les monstres et que je vais glisser dans la propriété prototype pour ne pas avoir une multitude de copies des méthodes avec tous les monstres que je vais créer. <br><br>
 						méthodes liées à la propriété prototype de la fonction constructor Enemy: <br>
+						1- getInfos pour obtenir toutes les infos sur le monstre(PVs, nom, Lvl). <br>
 						Enemy.prototype.getInfos = function () { <br>
 							&emsp;console.log(this.life, this.name, this.level);<br>
 						}; <br><br>
+						2- attack pour passer l'info lorsque le monstre attaque. <br>
 						Enemy.prototype.attack = function () { <br>
 							&emsp;console.log(`${this.name} has attacked!`); <br>
 						}; <br><br>
+						3- block pour passer l'info lorsque le monstre bloque une attaque. <br>
 						Enemy.prototype.block = function () { <br>
 							&emsp;console.log(`${this.name} has blocked!`); <br>
 						}; <br><br>
+						Maintenant il y'a certains boss de fin que je souhaite rendre unique en leurs associant d'autres attributs comme par example une couleur et un sort magique. <br>
+						Je me retrouve donc avec plus d'attributs que l'enemy de base, et pour ne pas avoir à reconstruire dans sa totalité la fonction constructor pour le dragon, je vais lier celle déja existante (Enemy) et simplement ajouter 2 paramètres supplémentaires. <br><br>
+						function Dragon(life, name, level, color, spell) { <br>
+							&emsp;Enemy.call(<span>this</span>, life, name, level); <br>
+							&emsp;this.color = color; <br>
+							&emsp;this.spell = spell; <br>
+						} <br><br>
+						Le mot clé "<span>this</span>" va cibler à l'objet "Dragon" nouvellement crée et ainsi lui attribuer toutes les propriétés nécéssaires en utilisant à la fois les paramètres de la fonction constructor Dragon et ceux de la fonction constructor Enemy grace à l'utilisation de la méthode "call". <br><br>
+						<u>On n'aura pas besoin de redéclarer les propriétées "life, name, level". On va hériter de celles ci en liant la fonction constructor "Enemy" à notre objet "Dragon".</u> <br><br>
+						Les dernières propriétés "color, spell" qui sont unique à l'objet "dragon" seront déclarées normalement. 
 					</p>
 
 				</li>
@@ -585,7 +600,7 @@
 	<footer>
 		<h3>&copy;EmmanuelDev 2020</h3>
 	</footer>
-	<script src="../js/test.js"></script>
+	<script src="../js/objet.js"></script>
 </body>
 
 </html>
