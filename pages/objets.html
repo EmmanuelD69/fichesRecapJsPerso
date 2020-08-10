@@ -599,10 +599,65 @@
 						Et pour voir si tout fonctionne correctement, effectuons un appel vers l'une des méthodes se trouvant dans le prototype de ce nouvel objet Dragon: <br>
 						newDragon.getInfos();<br>
 						résultat: 100 "lucifer" 15
-
 					</p>
-
 				</li>
+				<li class="article">
+					<h2 class="titre-article">CLASSES Qu'est ce que c'est???</h2>
+					<p class="paragraphe explication">
+						On ne va plus utiliser les fonctions constructors car nous allons les remplacer par des "Classes". <br>
+						<span>C'est une refactorisation / simplification / normalisation de notre code orienté objets.</span> 
+					</p>
+					<p class="paragraphe example">
+						!!! VERSION FUNCTION CONSTRUCTOR !!! <br><br>
+						function Enemy(life, name, level) { <br>
+							&emsp;this.life = life; <br>
+							&emsp;this.name = name; <br>
+							&emsp;this.level = level; <br>
+						} <br><br>
+						
+						Enemy.prototype.getInfos = function () { <br>
+							&emsp;console.log(this.life, this.name, this.level);<br>
+						};<br><br>
+						Enemy.prototype.attack = function () {<br>
+							&emsp;console.log(`${this.name} has attacked!`);<br>
+						};<br><br>
+						Enemy.prototype.block = function () {<br>
+							&emsp;console.log(`${this.name} has blocked!`);<br>
+						};<br><br>
+						!!! VERSION CLASSE !!! <br><br>
+						class Enemy { <br>
+							&emsp;constructor(life, name, level){ <br>
+    						&emsp;this.life = life;<br>
+    						&emsp;this.name = name;<br>
+    						&emsp;this.level = level;<br>
+							&emsp;} <br>
+							&emsp;getInfos(){<br>
+								&emsp;&emsp;console.log(this.life, this.name, this.level);<br>
+								&emsp;} <br>
+						&emsp;attack(){<br>
+    						&emsp;&emsp;console.log(`${this.name} has attacked!`);<br>
+							&emsp;} <br>
+						&emsp;block(){<br>
+    						&emsp;&emsp;console.log(`${this.name} has blocked!`);<br>
+							&emsp;} <br>
+						} <br><br>
+						<u>Héritage du contenu de la classe "Enemy" vers une autre</u><br>
+						Pour faire hériter du contenu d'une classe vers une autre, il suffit simplement d'utiliser le terme "<span style="color: greenyellow;">extends</span>" <br> dans la déclaration de la nouvelle classe <span style="color: cadetblue;">en se référent à la classe dont la nouvelle doit hériter.</span> <br><u>On appel cela une classe étendue et cela inclut les méthodes</u><br><br>
+						De plus, le mot clé "<span>super</span>" permet d'aller chercher dans <span style="color: cadetblue;">les propriétés de la classe indiquée en référence,</span> <br> toutes les informations dont à besoin la nouvelle classe. <br><br>
+						Example: <br>
+						class Boss <span style="color: greenyellow;">extends</span> <span style="color: cadetblue;">Enemy</span> { <br>
+							&emsp;constructor(life, name, level, color, spell){ <br>
+								&emsp;<span>super</span>(<span style="color: cadetblue;">life, name, level</span>);
+								<br>
+								&emsp;this.color = color;<br>
+								&emsp;this.spell = spell;<br>
+								&emsp;} <br>
+						} <br><br>
+					</p>
+				</li>
+				<!-- <li class="article">
+					<h2 class="titre-article">THIS - Qu'est ce que c'est?</h2>
+				</li> -->
 				<!-- <li class="article">
 					<h2 class="titre-article">THIS - Qu'est ce que c'est?</h2>
 				</li> -->
