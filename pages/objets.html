@@ -513,26 +513,32 @@
 					<p class="paragraphe explication"><u>Création d'une méthode que l'on ajoute à la propriété
 							"prototype"</u></p>
 					<p class="paragraphe example">
-						Soit une fonction constructor USER: <br><br>
+						1- création de la fonction constructor USER: <br>
 						function USER(<span style="color: rgb(133, 133, 211);">name</span>, <span
 							style="color: greenyellow;">surname</span>) { <br>
 						&emsp;this.name = <span style="color: rgb(133, 133, 211);">name</span>; <br>
 						&emsp;this.surname = <span style="color: greenyellow;">surname</span>; <br>
 						} <br><br>
+						2- création de la méthode getName et ajout à la propriété "prototype" de la fonction constructor USER: <br>
 						USER.prototype.getName = function () { <br>
 						console.log(`${this.name} ${this.surname}`);<br>
 						};<br><br>
-						const newuser1 = new USER("Emmanuel", "Dev"); <br><br>
-						console.log(newuser1); <br><br>
-						newuser1.getName(); <br><br>
-						console.log(USER);<br><br>
-						function USER(name, surname) <br> ​
-						arguments: null <br> ​
-						caller: null <br> ​
-						length: 2 <br> ​
-						name: "USER" <br> ​
-						prototype: Object { getName: getName(), … } <br><br>
-						On constate que la fonction getName à bien été ajoutée à la propriété prototype.
+						3- création d'un nouvel objet en utilisant la fonction contructor USER: <br>
+						const newUser1 = new USER("Emmanuel", "Dev"); <br><br>
+						4- affichons le résultat de notre travail: <br>
+						console.log(typeof newUser1);<br>
+						"object" <br><br>
+						newUser1.getName(); <br>
+						Emmanuel Dev <br><br>
+						console.log(newUser1); <br>
+						USER {name: "Emmanuel", surname: "Dev"} <br>
+						On constate la présence des propriétés name et surname avec leurs valeurs, tandis que la méthode getName n'apparait nulle part car elle se trouve dans la propriété prototype qui est présente par défaut mais "invisible" dans le compte des propriétés des objets.. <br><br>				
+						prototype: Object { getName: getName(), … } <br>
+						On constate que la fonction getName à bien été ajoutée à la propriété par défaut (boite à outils) prototype. <br><br>
+						console.log(Object.keys(newUser1).length);<br>
+						2 <br>
+						Et on a bien 2 éléments dans l'objet, pas 3! <br>Magique :) <br>
+						Cela veux dire qu'à chaque fois que l'on crée un nouvel objet avec la fonction constructor USER, la méthode getName est associée à tous les objets dont USER est à l'origine.
 					</p>
 					</p>
 				</li>
@@ -554,7 +560,7 @@
 	<footer>
 		<h3>&copy;EmmanuelDev 2020</h3>
 	</footer>
-	<script src="../js/objet.js"></script>
+	<script src="../js/test.js"></script>
 </body>
 
 </html>
