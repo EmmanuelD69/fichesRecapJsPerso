@@ -542,9 +542,34 @@
 					</p>
 					</p>
 				</li>
-				<!-- <li class="article">
-					<h2 class="titre-article">THIS - Qu'est ce que c'est?</h2>
-				</li> -->
+				<li class="article">
+					<h2 class="titre-article">PROTOTYPAL INHERITENCE - HERITAGE DE PROTOTYPES</h2>
+					<p class="paragraphe explication">
+						Qu'est ce que c'est???<br>
+						<span>Cela consiste à passer la propriété "prototype" d'une objet vers la propriété "prototype" d'un autre objet en lui faisant bénéficier de toutes les méthodes contenues dans le prototype du 1er objet.</span><br><br>
+						C'est donc le fait de "<u>faire hériter</u>" un objet du prototype d'un autre objet tout en rendant l'ensemble des méthodes des 2 objets disponibles au nouvel objet. <br>
+						On va se retrouver avec une chaine de prototypes en cascade.
+					</p>
+					<p class="paragraphe example">
+						Soit une fonction constructor "Enemy": <br>
+						function ENEMY(life, name, level) { <br>
+							&emsp;this.life = life; <br>
+							&emsp;this.name = name; <br>
+							&emsp;this.level = level; <br>
+						} <br><br>
+						méthodes liées à la propriété prototype de la fonction constructor Enemy: <br>
+						Enemy.prototype.getInfos = function () { <br>
+							&emsp;console.log(this.life, this.name, this.level);<br>
+						}; <br><br>
+						Enemy.prototype.attack = function () { <br>
+							&emsp;console.log(`${this.name} has attacked!`); <br>
+						}; <br><br>
+						Enemy.prototype.block = function () { <br>
+							&emsp;console.log(`${this.name} has blocked!`); <br>
+						}; <br><br>
+					</p>
+
+				</li>
 				<!-- <li class="article">
 					<h2 class="titre-article">THIS - Qu'est ce que c'est?</h2>
 				</li> -->
