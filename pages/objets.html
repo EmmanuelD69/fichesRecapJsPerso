@@ -581,7 +581,12 @@
 						} <br><br>
 						Le mot clé "<span>this</span>" va cibler à l'objet "Dragon" nouvellement crée et ainsi lui attribuer toutes les propriétés nécéssaires en utilisant à la fois les paramètres de la fonction constructor Dragon et ceux de la fonction constructor Enemy grace à l'utilisation de la méthode "call". <br><br>
 						<u>On n'aura pas besoin de redéclarer les propriétées "life, name, level". On va hériter de celles ci en liant la fonction constructor "Enemy" à notre objet "Dragon".</u> <br><br>
-						Les dernières propriétés "color, spell" qui sont unique à l'objet "dragon" seront déclarées normalement. 
+						Les dernières propriétés "color, spell" qui sont unique à l'objet "dragon" seront déclarées normalement. <br><br>
+						!!!<u>Héritage des méthodes spécifiques à l'objet "Enemy" pour l'objet "Dragon"</u>!!! <br>	
+						Maintenant, en plus des attributs, je souhaite faire bénéficier à la fonction constructor Dragon des méthodes que j'ai définies dans la fonction constructor Enemy. <br>
+						Comment? <br><br>
+						Dragon.prototype = Object.create(Enemy.prototype); <br><br>
+						ON CREER DANS LA PROPRIETE "PROTOTYPE" DE L'OBJET DRAGON, UN NOUVEL OBJET DONT LE CONTENU SERA L'ENSEMBLE DES METHODES CONTENUES DANS LA PROPRIETE "PROTOTYPE" DE L'OBJET "ENEMY".
 					</p>
 
 				</li>
