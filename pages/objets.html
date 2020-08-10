@@ -546,7 +546,7 @@
 					<h2 class="titre-article">PROTOTYPAL INHERITENCE - HERITAGE DE PROTOTYPES</h2>
 					<p class="paragraphe explication">
 						Qu'est ce que c'est???<br>
-						<span>Cela consiste à passer la propriété "prototype" d'une objet vers la propriété "prototype" d'un autre objet en lui faisant bénéficier de toutes les méthodes contenues dans le prototype du 1er objet.</span><br><br>
+						<span>Cela consiste à passer la propriété "prototype" d'un objet vers la propriété "prototype" d'un autre objet en lui faisant bénéficier de toutes les méthodes contenues dans le prototype du 1er objet.</span><br><br>
 						C'est donc le fait de "<u>faire hériter</u>" un objet du prototype d'un autre objet tout en rendant l'ensemble des méthodes des 2 objets disponibles au nouvel objet. <br>
 						On va se retrouver avec une chaine de prototypes en cascade.
 					</p>
@@ -574,7 +574,7 @@
 						}; <br><br>
 						Maintenant il y'a certains boss de fin que je souhaite rendre unique en leurs associant d'autres attributs comme par example une couleur et un sort magique. <br>
 						Je me retrouve donc avec plus d'attributs que l'enemy de base, et pour ne pas avoir à reconstruire dans sa totalité la fonction constructor pour le dragon, je vais lier celle déja existante (Enemy) et simplement ajouter 2 paramètres supplémentaires. <br><br>
-						function Dragon(life, name, level, color, spell) { <br>
+						function DRAGON(life, name, level, color, spell) { <br>
 							&emsp;Enemy.call(<span>this</span>, life, name, level); <br>
 							&emsp;this.color = color; <br>
 							&emsp;this.spell = spell; <br>
@@ -582,11 +582,24 @@
 						Le mot clé "<span>this</span>" va cibler à l'objet "Dragon" nouvellement crée et ainsi lui attribuer toutes les propriétés nécéssaires en utilisant à la fois les paramètres de la fonction constructor Dragon et ceux de la fonction constructor Enemy grace à l'utilisation de la méthode "call". <br><br>
 						<u>On n'aura pas besoin de redéclarer les propriétées "life, name, level". On va hériter de celles ci en liant la fonction constructor "Enemy" à notre objet "Dragon".</u> <br><br>
 						Les dernières propriétés "color, spell" qui sont unique à l'objet "dragon" seront déclarées normalement. <br><br>
-						!!!<u>Héritage des méthodes spécifiques à l'objet "Enemy" pour l'objet "Dragon"</u>!!! <br>	
+						<u>Héritage des méthodes spécifiques à l'objet "Enemy" pour l'objet "Dragon"</u><br>	
 						Maintenant, en plus des attributs, je souhaite faire bénéficier à la fonction constructor Dragon des méthodes que j'ai définies dans la fonction constructor Enemy. <br>
 						Comment? <br><br>
 						Dragon.prototype = Object.create(Enemy.prototype); <br><br>
-						ON CREER DANS LA PROPRIETE "PROTOTYPE" DE L'OBJET DRAGON, UN NOUVEL OBJET DONT LE CONTENU SERA L'ENSEMBLE DES METHODES CONTENUES DANS LA PROPRIETE "PROTOTYPE" DE L'OBJET "ENEMY".
+						ON CREER DANS LA PROPRIETE "PROTOTYPE" DE L'OBJET DRAGON, UN NOUVEL OBJET DONT LE CONTENU SERA L'ENSEMBLE DES METHODES CONTENUES DANS LA PROPRIETE "PROTOTYPE" DE L'OBJET "ENEMY". <br><br>
+						<u>Création d'une méthode spécifique à l'objet "Dragon" que l'on ajoute à son prototype</u><br><br>
+						Même procédé que pour la fonction constructor Enemy vu plus haut: <br>
+						Dragon.prototype.fireBreath = function () { <br>
+							&emsp;console.log('FIRE BREATHHHHH!'); <br>
+						}; <br><br>
+						<u>Création d'un Dragon</u><br>
+						const newDragon = new DRAGON(100, 'lucifer', 15, 'red', 'Fire Breath'); <br><br>
+						Et pour finir effectuons un console log de notre objet newDragon: <br>
+						Dragon {life: 100, name: "lucifer", level: 15, color: "red", spell: "Fire Breath"} <br><br>
+						Et pour voir si tout fonctionne correctement, effectuons un appel vers l'une des méthodes se trouvant dans le prototype de ce nouvel objet Dragon: <br>
+						newDragon.getInfos();<br>
+						résultat: 100 "lucifer" 15
+
 					</p>
 
 				</li>
