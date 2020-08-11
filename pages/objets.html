@@ -609,7 +609,7 @@
 					</p>
 					<p class="paragraphe example">
 						!!! VERSION FUNCTION CONSTRUCTOR !!! <br><br>
-						function Enemy(life, name, level) { <br>
+						function ENEMY(life, name, level) { <br>
 							&emsp;this.life = life; <br>
 							&emsp;this.name = name; <br>
 							&emsp;this.level = level; <br>
@@ -625,7 +625,7 @@
 							&emsp;console.log(`${this.name} has blocked!`);<br>
 						};<br><br>
 						!!! VERSION CLASSE !!! <br><br>
-						class Enemy { <br>
+						class ENEMY { <br>
 							&emsp;constructor(life, name, level){ <br>
     						&emsp;this.life = life;<br>
     						&emsp;this.name = name;<br>
@@ -645,7 +645,7 @@
 						Pour faire hériter du contenu d'une classe vers une autre, il suffit simplement d'utiliser le terme "<span style="color: greenyellow;">extends</span>" <br> dans la déclaration de la nouvelle classe <span style="color: cadetblue;">en se référent à la classe dont la nouvelle doit hériter.</span> <br><u>On appel cela une classe étendue et cela inclut les méthodes</u><br><br>
 						De plus, le mot clé "<span>super</span>" permet d'aller chercher dans <span style="color: cadetblue;">les propriétés de la classe indiquée en référence,</span> <br> toutes les informations dont à besoin la nouvelle classe. <br><br>
 						Example: <br>
-						class Boss <span style="color: greenyellow;">extends</span> <span style="color: cadetblue;">Enemy</span> { <br>
+						class BOSS <span style="color: greenyellow;">extends</span> <span style="color: cadetblue;">ENEMY</span> { <br>
 							&emsp;constructor(life, name, level, color, spell){ <br>
 								&emsp;<span>super</span>(<span style="color: cadetblue;">life, name, level</span>);
 								<br>
@@ -653,6 +653,10 @@
 								&emsp;this.spell = spell;<br>
 								&emsp;} <br>
 						} <br><br>
+						Mettons en application la classe BOSS: <br>
+						const bossFinal = new BOSS(1000,"Lucifer", 100, "red", "fireBreath");<br><br>
+						console.log(bossFinal);<br>
+						BOSS {life: 1000, name: "Lucifer", level: 100, color: "red", spell: "fireBreath"}
 					</p>
 				</li>
 				<!-- <li class="article">
