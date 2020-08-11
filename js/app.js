@@ -74,6 +74,8 @@ console.log("07/08/20: add Objets > PROTOTYPE - Qu'est-ce que c'est?,");
 console.log(
 	'08/08/20: add Objets > Créer et ajouter un méthode dans prototype,'
 );
+console.log('10/08/20: add Objets > Héritage du prototype,');
+console.log("10/08/20: add Objets > Classes - Qu'est ce que c'est?,");
 console.log(
 	"Bonjour et bienvenue sur mon espace Memo. \nJe rajoute du contenu au quotidien donc ne vous étonnez pas de trouver des parties en cours 'intégration\nBonne lecture!"
 );
