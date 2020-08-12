@@ -200,6 +200,27 @@
 						pour n'en citer que quelques uns...
 					</p>
 				</li>
+				<li class="article">
+					<h2>INSTALLER UN EVENT LISTENER (un capteur)</h2>
+					<p class="paragraphe explication">
+						C'est une procédure qui s'effectue en 2 temps:
+					</p>
+					<p class="paragraphe example">
+						1-<u>CIBLER L'ELEMENT A SURVEILLER:</u>  <br>
+						const (ou let) nom-de-la-variable = document.querySelector("classe ou id de l'élément ciblé") <br><br>
+						Si plusieurs éléments portant le même nom de classe doivent être sélectionner, on utilisera la méthode "querySelectorAll" <br><br>
+						Example: <br>
+						const button = document.querySelector("#submit"); <br><br>
+						2-<u>INSTALLER L'EVENT LISTENER AVEC "ADDEVENTLISTENER":</u><br>
+						(<span style="color: greenyellow;">cible</span>)<span>.addEventListener</span>("event", function anonyme ou pas() { <br>
+							&emsp;action(s) à effectuer... <br>
+						}); <br><br>
+						Example, Si je clic sur le bouton, un message s'affichera dans la console: <br>
+						<span style="color: greenyellow;">button</span><span>.addEventListener</span>("click", function() { <br>
+							&emsp;console.log("coucou c'est moi"); <br>
+						});
+					</p>
+				</li>
 <!-- 				<ul id="liste-articles">
 					<li class="articletest">article 1</li>
 					<li class="articletest">article 2</li>
