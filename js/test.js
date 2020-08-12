@@ -281,9 +281,12 @@ const newUser2 = {
 };
 console.log(Object.keys(newUser1).length);
 
-const listeArticles = document.getElementById('liste-articles');
-const collectionArticles = document.getElementsByClassName('articletest');
-const articlesCount = document.getElementsByClassName('articles-count')[0];
+const listeArticles = document.querySelector('#liste-articles');
+console.log(listeArticles);
+const collectionArticles = listeArticles.children;
+// const collectionArticles = document.querySelectorAll('.articletest');
+console.log(collectionArticles);
+const articlesCount = document.querySelector('.articles-count');
 console.log(articlesCount);
 
 const newArticleTest = document.createElement('li');

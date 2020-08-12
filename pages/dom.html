@@ -166,14 +166,34 @@
 							8- Affichage du total d'articles: <br>
 							articlesCount.innerText = collectionArticles.length;
 						</p>
-						<ul id="liste-articles">
-							<li class="articletest">article 1</li>
-							<li class="articletest">article 2</li>
-							<li class="articletest">article 3</li>
-						</ul>
-						<h3 class="articles-count"></h3>
+						<p class="paragraphe explication">Avec NodeList - (querySelector)</p>
+						<p class="paragraphe example">							
+							1- Ciblage de l'élément Node "Parent" contenant la liste des articles: <br>
+							const listArticles = document.querySelector("#liste-articles"); <br><br>
+							2- On récupère la liste des éléments Node "enfants" à partir du parent: <br>
+							const collectionArticles = listeArticles<span>.children</span>;<br>
+							<u>L'utilisation de "children" sur l'élément Node "parent" permet d'obtenir une HTMLCollection.</u><br><br>
+							3- Ciblage du Node HTML "h3" qui va nous permettre d'afficher le nombre total d'articles: <br>
+							const articlesCount = document.querySelector('.articles-count');<br><br>
+							4- Création d'un Node HTML "li": <br>
+							const newArticle = document<span>.createElement</span>("li"); <br><br>
+							5- Ajout de la classe "article" au Node HTML "li" nouvellement créé: <br>
+							newArticle<span>.classList.add</span>("article"); <br><br>
+							6- Ajout d'un texte à l'article nouvellement créé: <br>
+							newArticle<span>.innerText</span> = "article 4."; <br><br>
+							7- Ajout du nouvel article à la liste d'article: <br>
+							listArticles<span>.appendChild</span>(newArticle); <br><br>
+							8- Affichage du total d'articles: <br>
+							articlesCount.innerText = collectionArticles.length;
+						</p>
 					</p>
 				</li>
+<!-- 				<ul id="liste-articles">
+					<li class="articletest">article 1</li>
+					<li class="articletest">article 2</li>
+					<li class="articletest">article 3</li>
+				</ul> -->
+				<h3 class="articles-count"></h3>
 				<li class="article">
 					<p class="paragraphe example" style="color: green;">
 						La suite arrive bientôt, en cours d'intégration.
