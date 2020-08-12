@@ -117,7 +117,7 @@
 					<p class="paragraphe example">Example: <br>console.log(nodeArticles.children);<br><br>HTMLCollection
 						{ 0: li.article, 1: li.article, 2: li.article, 3: li.article, 4: li.article, 5: li.article, 6:
 						li.article, 7: li, 8: li, 9: li, … } <br><br> ON PEUT DONC UTILISER FACILEMENT QUERYSELECTOR
-						POUR AFFICHER UNE HTMLCOLLECTION
+						POUR AFFICHER UNE HTMLCOLLECTION</p>
 				</li>
 				<li class="article">
 					<h2>BOUCLES AVEC HTMLCollection & NodeList?</h2>
@@ -133,7 +133,45 @@
 						NodeList = Fonctionne <br><br>
 						4-<u>FOR EACH:</u><br>
 						HTMLCollection = Ne fonctionne pas<br>
-						NodeList = Fonctionne 
+						NodeList = Fonctionne
+					</p>
+				</li>
+				<li class="article">
+						<h2>AJOUT D'UN NODE ELEMENT</h2>
+						<p class="paragraphe example">
+							Soit une liste d'articles: <br>
+							&lt;ul id=&quot;liste-articles&quot;&gt; <br>
+							&emsp;&lt;li class=&quot;article&quot;&gt;article 1&lt;/li&gt;<br>
+							&emsp;&lt;li class=&quot;article&quot;&gt;article 2&lt;/li&gt;<br>
+							&emsp;&lt;li class=&quot;article&quot;&gt;article 3&lt;/li&gt;<br>
+							&lt;/ul&gt;
+						</p>
+						<p class="paragraphe explication">Avec HTMLCollection - (getElementById)</p>
+						<p class="paragraphe example">							
+							1- Ciblage des nodes HTML "li" contenant la classe "article": <br>
+							const collectionArticles = document.getElementsByClassName("article");<br><br>
+							2- Ciblage du Node HTML "ul" contenant la classe "liste-articles": <br>
+							const listArticles = document.getElementById("liste-articles"); <br><br>
+							3- Ciblage du Node HTML "h3" qui va nous permettre d'afficher le nombre total d'articles: <br>
+							const articlesCount = document.getElementsByClassName('articles-count')<span>[0]</span>; <br>
+							<u>le [0] spécifie le node HTML sur lequel on veut agir, car par défaut getElementsByClassName va nous afficher une HTMLCollection et ici h3 est le seul et unique élément situé en position 0 de celle ci. </u> <br><br>
+							4- Création d'un Node HTML "li": <br>
+							const newArticle = document<span>.createElement</span>("li"); <br><br>
+							5- Ajout de la classe "article" au Node HTML "li" nouvellement créé: <br>
+							newArticle<span>.classList.add</span>("article"); <br><br>
+							6- Ajout d'un texte à l'article nouvellement créé: <br>
+							newArticle<span>.innerText</span> = "article 4."; <br><br>
+							7- Ajout du nouvel article à la liste d'article: <br>
+							listArticles<span>.appendChild</span>(newArticle); <br><br>
+							8- Affichage du total d'articles: <br>
+							articlesCount.innerText = collectionArticles.length;
+						</p>
+						<ul id="liste-articles">
+							<li class="articletest">article 1</li>
+							<li class="articletest">article 2</li>
+							<li class="articletest">article 3</li>
+						</ul>
+						<h3 class="articles-count"></h3>
 					</p>
 				</li>
 				<li class="article">
@@ -148,7 +186,7 @@
 	<footer>
 		<h3>&copy;EmmanuelDev 2020</h3>
 	</footer>
-	<!-- <script src="../js/app.js"></script> -->
+	<!-- <script src="../js/test.js"></script> -->
 </body>
 
 </html>

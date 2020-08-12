@@ -280,3 +280,15 @@ const newUser2 = {
 	surname: 'Durouge',
 };
 console.log(Object.keys(newUser1).length);
+
+const listeArticles = document.getElementById('liste-articles');
+const collectionArticles = document.getElementsByClassName('articletest');
+const articlesCount = document.getElementsByClassName('articles-count')[0];
+console.log(articlesCount);
+
+const newArticleTest = document.createElement('li');
+newArticleTest.classList.add('articletest');
+newArticleTest.innerText = 'article 4';
+listeArticles.appendChild(newArticleTest);
+
+articlesCount.innerText = collectionArticles.length;
