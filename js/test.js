@@ -295,9 +295,3 @@ newArticleTest.innerText = 'article 4';
 listeArticles.appendChild(newArticleTest);
 
 articlesCount.innerText = collectionArticles.length;
-
-const button = document
-	.querySelector('#submit')
-	.addEventListener('click', function () {
-		console.log('clic!');
-	});

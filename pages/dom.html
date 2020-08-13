@@ -287,6 +287,36 @@
 								});</span>
 					</p>
 				</li>
+				<li class="article">
+					<h2>FUNCTION(EVENT) à quoi sert "EVENT"?</h2>
+					<p class="paragraphe explication">
+					lorsqu'on souhaite utiliser certains évènements déclencheurs comme l'utilisation d'une touche du clavier, ou un scroll up/down, etc... <br>
+					function(event) ou function(e) va nous permettre de passer en paramètre de la fonction l'information indiquant sur quoi l'utilisateur est en train d'agir. <br>
+					Pour y parvenir, il faut indiquer à notre fonction quel est  le type d'évènement déclencheur(click/keydown/scroll/etc...). <br>
+					Pour consulter les différents types d'events qui existent: <br>
+					<a href="https://developer.mozilla.org/fr/docs/Web/Events" target="_blank">liste des évènements déclencheurs</a> 
+					</p>
+					<p class="paragraphe example">
+						Partons du principe que l'on crée un bouton sur lequel on install un eventlistener: <br>
+						<span style="color: greenyellow;">button.addEventListener("keydown", function (event) {<br>
+							&emsp;console.log(event);<br>
+						}); </span><br><br>
+						Quand on appuiera sur le bouton cela va déclencher le capteur "keydown" qui va detecter quelle touche du clavier est préssée par l'utilisateur et la fonction nous affichera les détails de celle ci dans la console grâce à la propriété "event" placé en paramètre de la fonction anonyme. <br><br>
+						résultat en console: <br>
+						keydown { target: button#submit , key: "s", charCode: 0, keyCode: 83 } <br>
+						keydown { target: button#submit , key: "a", charCode: 0, keyCode: 65 } <br>
+						keydown { target: button#submit , key: "l", charCode: 0, keyCode: 76 } <br>
+						keydown { target: button#submit , key: "u", charCode: 0, keyCode: 85 } <br>
+						keydown { target: button#submit, key: "t", charCode: 0, keyCode: 84 } <br><br>
+						Ainsi, en utilisant les informations obtenues sur le "keycode", on peut facilement décider de la touche qui va être le déclencheur de l'action. <br> En fonction que cette touche soit préssé ou non (true ou false), alors on lance notre code. <br><br>
+						<span style="color: greenyellow;">button.addEventListener("keydown", function (event) { <br>
+							&emsp;if (event.keyCode === 65) { <span>si le keycode est égal à 65</span><br>
+								&emsp;&emsp;title.classList.toggle("nouvelArticle"); <span>changer la classe du h3</span><br>
+								&emsp;} <br>
+						});</span><br><br>
+						!!! Dans le cas présent il faut presser le bouton 1 fois pour que que l'event soit actif !!!
+					</p>
+				</li>
 <!-- 				<ul id="liste-articles">
 					<li class="articletest">article 1</li>
 					<li class="articletest">article 2</li>
