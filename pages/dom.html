@@ -144,7 +144,8 @@
 							&emsp;&lt;li class=&quot;article&quot;&gt;article 1&lt;/li&gt;<br>
 							&emsp;&lt;li class=&quot;article&quot;&gt;article 2&lt;/li&gt;<br>
 							&emsp;&lt;li class=&quot;article&quot;&gt;article 3&lt;/li&gt;<br>
-							&lt;/ul&gt;
+							&lt;/ul&gt;<br>
+							&lt;h3 class="articles-count"&gt;&lt;b&gt;&lt;/b&gt;&lt;/h3&gt;
 						</p>
 						<p class="paragraphe explication">Avec HTMLCollection - (getElementById)</p>
 						<p class="paragraphe example">							
@@ -153,7 +154,7 @@
 							2- Ciblage du Node HTML "ul" contenant la classe "liste-articles": <br>
 							const listArticles = document.getElementById("liste-articles"); <br><br>
 							3- Ciblage du Node HTML "h3" qui va nous permettre d'afficher le nombre total d'articles: <br>
-							const articlesCount = document.getElementsByClassName('articles-count')<span>[0]</span>; <br>
+							const articlesCount = document.getElementsByClassName('articles-count b')<span>[0]</span>; <br>
 							<u>le [0] spécifie le node HTML sur lequel on veut agir, car par défaut getElementsByClassName va nous afficher une HTMLCollection et ici h3 est le seul et unique élément situé en position 0 de celle ci. </u> <br><br>
 							4- Création d'un Node HTML "li": <br>
 							const newArticle = document<span>.createElement</span>("li"); <br><br>
@@ -174,7 +175,7 @@
 							const collectionArticles = listeArticles<span>.children</span>;<br>
 							<u>L'utilisation de "children" sur l'élément Node "parent" permet d'obtenir une HTMLCollection.</u><br><br>
 							3- Ciblage du Node HTML "h3" qui va nous permettre d'afficher le nombre total d'articles: <br>
-							const articlesCount = document.querySelector('.articles-count');<br><br>
+							const articlesCount = document.querySelector('.articles-count b');<br><br>
 							4- Création d'un Node HTML "li": <br>
 							const newArticle = document<span>.createElement</span>("li"); <br><br>
 							5- Ajout de la classe "article" au Node HTML "li" nouvellement créé: <br>
@@ -189,7 +190,7 @@
 					</p>
 				</li>
 				<li class="article">
-					<h2>INTRODUCTION AUX EVENTS</h2>
+					<h2>INTRODUCTION AUX EVENT LISTENERS</h2>
 					<p class="paragraphe explication">Les "events" sont comme des capteurs qui attendent patiemment qu'un action précise se produise sur un élément déterminé. Une fois cette action détectée elle déclenche une réaction de notre choix. </p>
 					<p class="paragraphe example">
 						Ces évènements peuvent être de plusieurs types comme: <br>
@@ -218,7 +219,34 @@
 						Example, Si je clic sur le bouton, un message s'affichera dans la console: <br>
 						<span style="color: greenyellow;">button</span><span>.addEventListener</span>("click", function() { <br>
 							&emsp;console.log("coucou c'est moi"); <br>
-						});
+						}); <br><br>
+						3-<u>SIMPLIFICATION / FACTORISATION:</u><br>
+						const button = document.querySelector("#submit").addEventListener</span>("click", function() { <br>
+							&emsp;console.log("coucou c'est moi"); <br>
+						}); <br><br>ou <br><br>
+						const button = document<br>&emsp;.querySelector("#submit") <br> &emsp;.addEventListener</span>("click", function() { <br>
+							&emsp;&emsp;console.log("coucou c'est moi"); <br>
+						}); <br><br>
+					</p>
+				</li>
+				<li class="article">
+					<h2>AJOUTER UN ELEMENT</h2>
+					<p class="paragraphe explication">
+						ajouter un article suppémentaire dans une liste d'articles quand on click sur le bouton "submit":
+					</p>
+					<p class="paragraphe example">
+						const button = document.querySelector("#submit"); <span style="color: greenyellow;">cible le button</span> <br>
+						const listeArticles = document.querySelector("#liste-articles"); <span style="color: greenyellow;">cible l'ul</span> <br>
+						const articles = listeArticles.children; <span style="color: greenyellow;">affiche HTMLCollection de l'ul</span> <br>
+						const articlesCount = document.querySelector(".articles-count b"); <span style="color: greenyellow;">cible balise b du header3</span> <br>
+						articlesCount.innerText = articles.length; <span style="color: greenyellow;">affiche le nombre d'article dans header3</span><br><br>
+						button.addEventListener("click", function () { <span style="color: greenyellow;">ajout d'un event sur le click du bouton</span> <br>
+						&emsp;const newArticle = document.createElement("li"); <span style="color: greenyellow;">création d'un élément li</span> <br>
+						&emsp;newArticle.classList.add("article"); <span style="color: greenyellow;">ajout de la classe "article" à l'élément li</span> <br>
+						&emsp;newArticle.innerText = `cet article est le n° ${articles.length + 1}`; <span style="color: greenyellow;">ajout du texte à l'élément li</span> <br>
+						&emsp;listeArticles.appendChild(newArticle); <span style="color: greenyellow;">ajout du nouvel élément li dans l'ul</span> <br>
+						&emsp;articlesCount.innerText = articles.length; <span style="color: greenyellow;">affichage du nombre d'article dans le h3</span> <br>
+					});
 					</p>
 				</li>
 <!-- 				<ul id="liste-articles">
