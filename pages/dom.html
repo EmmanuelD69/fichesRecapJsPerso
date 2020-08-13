@@ -249,6 +249,44 @@
 					});
 					</p>
 				</li>
+				<li class="article">
+					<h2>MODIFIER CSS AVEC JS</h2>
+					<p class="paragraphe explication">
+						Nous allons voir plusieurs méthodes simples pour intégrer du CSS en utilisant Javascript.
+					</p>
+					<p class="paragraphe example">
+						1-<u>Cibler l'élément dont ont veux modifier le css:</u><br>
+						const (ou let) nom-de-la-variable = document.querySelector("class ou id de l'élément ciblé") <br><br>
+						<span style="color: greenyellow;">const title = document.querySelector(".titre");</span> <br><br>
+						2- <u>Placer un capteur(eventlistener) sur l'élément que l'on souhaite utiliser comme déclencheur d'action:</u><br>
+						élément.addEventListener("event", function anonyme ou non() { <br>
+							&emsp;code à executer... <br>
+						});<br><br>
+						<span style="color: greenyellow;">button.addEventListener("click", function () { <br>
+							&emsp;code à executer... <br>
+						}); </span><br><br>
+						3-<u>Modifier le CSS avec Javascript en utilisant l'élément déclencheur:</u><br>
+						Example1: !!! solution qui peut rapidement devenir trop chargée !!! <br>
+						<span style="color: greenyellow;">button.addEventListener("click", function () { <span>ajout de l'event sur le bouton</span><br>
+							title.style.color = "red"; <span>modification de la couleur du titre avec style.color</span><br>
+							title.style.fontSize = "30px"; <span>modification de la taille de la font avec style.fontSize</span><br>
+						});</span><br><br>
+						Example2: SOLUTION COMMUNE ET SIMPLE! <br>
+						Elle consiste à créer une classe dans le fichier Css du projet et d'ajouter celle çi à l'élément ciblé avec Javascript. <br><br>
+						fichier css: "style.css" (création d'une classe) <br>
+						<span style="color: greenyellow;">.nouvelArticle { <br>
+							&emsp;color: red; <br>
+							&emsp;font-size: 30px; <br>
+						} </span><br><br>
+						<span style="color: greenyellow;">button.addEventListener("click", function () { <br>
+							&emsp;title.classList.add("nouvelArticle"); <span>ajout de la classe "nouvelArticle" à l'élément h3</span><br>
+							});</span><br><br>
+							<u>Solution pour ajouter / supprimer une classe:</u><br>
+							<span style="color: greenyellow;">button.addEventListener("click", function () { <br>
+								title.classList.toggle("nouvelArticle"); <span>ajoute ou supprime la classe "nouvelArticle" de l'élément h3 grâce à "toggle".</span><br>
+								});</span>
+					</p>
+				</li>
 <!-- 				<ul id="liste-articles">
 					<li class="articletest">article 1</li>
 					<li class="articletest">article 2</li>
