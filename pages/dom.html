@@ -317,6 +317,29 @@
 						!!! Dans le cas présent il faut presser le bouton 1 fois pour que que l'event soit actif !!!
 					</p>
 				</li>
+				<li class="article">
+					<h2>AJOUTER UN EVENT LISTENER A UN ENSEMBLE D'ELEMENTS</h2>
+					<p class="paragraphe explication">
+						Prenons l'exemple de notre liste d'articles, et imaginons qu'après avoir créer plusieurs articles, nous souhaitons en supprimer certains.
+						Pour que cela puisse être possible il nous faut alors ajouter un eventListener sur chacun des articles et indiquer que l'action qui sera effectué lorsque l'on click sur l'article est une suppression(delete).
+					</p>
+					<p class="paragraphe example">
+						Tout d'abord, un exemple simple: <br>
+						Nous avons déjà quelques articles présents, et nous souhaitons implémenter l'option de suppréssion d'articles. <br>
+						On va dans un premier temps, "looper" sur la liste d'articles déjà existante afin d'ajouter à chaque article un eventListener en précisant que le déclencheur d'action sera un "click" et que l'action sera d'afficher un message(delete). <br><br>
+						<span style="color: greenyellow;">const listeArticles = document.querySelector("#liste-articles");</span> <span>ciblage de l'ul contenant les articles</span> <br>
+						<span style="color: greenyellow;">const articles = listeArticles.children; </span> <span>affichage de la liste des articles dans une HTMLCollection.</span><br><br>
+						<span style="color: greenyellow;">for(article of articles){<span>Pour chaque article de la liste d'articles.</span><br>
+						&emsp;article.addEventListener("click", deleteArticle); <span>ajoute un eventListener de type "click" qui déclenchera l'action "deleteArticle".</span><br>
+						}</span><br><br>
+						il faut définir l'action "deleteArticle" qui est une fonction: <br>
+						<span style="color: greenyellow;">function deleteArticle() { <br>
+							&emsp;console.log("delete article"); <span>affiche dans la console le message "delete article".</span><br>
+						} </span><br><br>
+						A chaque fois que l'on va click sur un article, le message "delete article" apparaitra dans la console. On peut donc envisager de supprimer un article en appuyant dessus, au lieu d'écrire un message en console. <br><br>
+						Cette Example fonctionne dans le cas où une liste d'article existe déjà et nécéssite l'ajout d'une option "delete". <br> Si l'on souhaite ajouter de nouveau articles et y greffer l'option de suppression, il va falloir utiliser une autre méthode. 
+					</p>
+				</li>
 <!-- 				<ul id="liste-articles">
 					<li class="articletest">article 1</li>
 					<li class="articletest">article 2</li>
