@@ -340,6 +340,47 @@
 						Cette Example fonctionne dans le cas où une liste d'article existe déjà et nécéssite l'ajout d'une option "delete". <br> Si l'on souhaite ajouter de nouveau articles et y greffer l'option de suppression, il va falloir utiliser une autre méthode. 
 					</p>
 				</li>
+			</li>
+			<li class="article">
+				<h2>AJOUTER DE NOUVEAUX ELEMENTS AVEC EVENT LISTENERS</h2>
+				<p class="paragraphe explication">
+					Partons du principe que nous n'avons pas d'article sur notre page, et que nous souhaitons pouvoir en ajouter, mais aussi les supprimer à notre convenance. <br>
+					Nous savons déjà comment faire pour ajouter un nouvel élément.Il nous suffit d'ajouter un eventListener sur chaque nouvel article pour pouvoir intéragir dessus à notre souhait. <br>
+					Dans le cas présent, nous souhaitons utiliser l'eventListener de sorte que lorsque l'on clic sur un article cela déclenchera sa suppréssion(deleteArticle).
+				</p>
+				<p class="paragraphe example">
+					<span style="color: greenyellow;">button.addEventListener("click", function () {<span>ajout d'un eventListener qui déclenche une série d'actions au click.</span><br>
+					&emsp;const newArticle = document.createElement("li"); <span>création d'une li </span><br>
+					&emsp;newArticle.classList.add("article"); <span>ajout d'une classe</span><br>
+					&emsp;newArticle.innerText = `cet article est le n° ${articles.length + 1}`; <span>ajout d'un texte</span><br>
+					&emsp;listeArticles.appendChild(newArticle); <span>ajout de la "li" et tout ce qu'elle contient dans la liste</span><br>
+					&emsp;articlesCount.innerText = articles.length; <span>Affichage du nombre d'article dans la liste.</span><br>
+					&emsp;newArticle.addEventListener("click", deleteArticle); <span>ajout d'un eventlistener sur chaque nouvel article avec pour évènement déclencheur un "click" et pour action la suppression de l'article(deleteArticle).</span><br>
+				});</span>
+				</p>
+				<p class="paragraphe explication">
+					Bien évidemment, cela ne suffit pas, il faut aussi définir la fonction qui va permettre d'effacer l'article. <br> On viens juste de placer un eventListener qui pour le moment ne fais rien tant que la fonction "deleteArticle" n'existe pas. <br><br>
+					<u>logique derrière la fonction:</u><br>
+					Nous savons que lorsque l'on click sur un élément qui possède un eventListener, des informations sont collectées et rendues disponibles grâce au paramètre "event" si celui ci est intégré à la fonction. <br>
+					Parmis ces informations se trouve l'identifiant unique de l'élément qui a été activé, on peut le trouver sous la propriété ayant pour key "target". <br>
+					Pour pouvoir visualiser la valeur de "target", il nous faut d'abord créer une fonction qui aura pour paramètre l'évènement(e ou event). <br>
+					Il ne reste plus qu'a afficher en console le contenu => console.log(e);<br>
+					Dans notre cas, la fonction que l'on cherche à créer est la fonction supprimer un article(deleteArticle). <br>
+				</p>
+				<p class="paragraphe example">
+					<span style="color: greenyellow;">function deleteArticle(e) { <span>définition d'une fonction que l'on appel "deleteArticle" et pour laquelle on passe en paramètre l'évènement(e ou event ou click ou hover etc...).</span>  <br>
+					&emsp;console.log(e); <span>on affiche en console les information sur l'évènement</span><br>
+					} </span><br><br>				  
+					on obtient, en console, l'objet suivant en cliquant sur l'article fraichement crée: <br>				  
+					MouseEvent {isTrusted: true, screenX: 116, screenY: 502, clientX: 116, clientY: 399, …} <br><br>
+					Ce qui nous donne un tas d'infos, dont l'identifiant unique de l'élément ciblé(target). <br>
+					on peut utiliser cette information pour localiser et supprimer l'élément lorsqu'on clic dessus. <br>
+					Pour cela il suffit simplement de rajouter à notre fonction cette commande. <br><br>
+					<span style="color: greenyellow;">function deleteArticle(click) { <br>
+						&emsp;click.target.remove(); <span>supprime l'élément cible du click.</span><br>
+						}</span>
+				</p>
+			</li>
 <!-- 				<ul id="liste-articles">
 					<li class="articletest">article 1</li>
 					<li class="articletest">article 2</li>
