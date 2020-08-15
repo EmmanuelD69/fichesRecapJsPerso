@@ -381,6 +381,20 @@
 						}</span>
 				</p>
 			</li>
+			<li class="article">
+				<h2>EVENT BUBBLING - SUPERPOSITION D'EVENEMENTS</h2>
+				<p class="paragraphe explication">Nous avons vu qu'il est possible de placer des eventListeners sur autant d'éléments que nous le souhaitons. Cependant, il faut garder à l'esprit qu'un click peut déclencher plusieurs actions à la fois! <br><br>
+					Par example si une "ul" avec un "eventListener" contient plusieurs "li" avec elles aussi des "eventListener", lorsque l'on va cliquer sur l'une des "li" cela va déclencher à la fois l'action de la "ul" et celle de la "li". <br>
+					Il va donc y avoir conflit, et on veux faire en sorte que cela n'arrive pas.  </p>
+					<p class="paragraphe example">
+						Il existe pour cela une solution très simple qui consiste à ajouter dans la fonction la commande suivant: <br>
+						click.stopPropagation();<br><br>
+						<span style="color: greenyellow;">function deleteArticle(click) { <br>
+							&emsp;click<span>.stopPropagation();</span><br>
+							&emsp;click.target.remove(); <br>
+							}</span>
+					</p>
+			</li>
 <!-- 				<ul id="liste-articles">
 					<li class="articletest">article 1</li>
 					<li class="articletest">article 2</li>
