@@ -395,6 +395,35 @@
 							}</span>
 					</p>
 			</li>
+			<li class="article">
+				<h2>EVENT.PREVENTDEFAULT() - EMPECHER LE FONCTIONNEMENT NORMAL D'UN EVENT</h2>
+				<p class="paragraphe explication">Annule l'action par défaut déclenché par un événement si et seulement si la propriété "cancelable" de l'event vaut true, sinon n'a aucun effet.<br><br>
+					<u>Le comportement par défaut peut être par exemple :</u>
+				</p>
+					<p class="paragraphe example">
+						- l'affichage d'une erreur JavaScript dans la console. <br>	
+						- la non prise en compte d'une frappe de clavier si le caractère n'est pas autorisé. <br>
+						- le renvoi vers une URL lorsqu'on clic sur un lien. <br>
+						- la soumission d'un formulaire sur l'évènement submit. <br><br>
+						EXEMPLE: <br>
+						---DECLARATION D'UNE CONSTANTE POUR CIBLER LE BOUTTON SUBMIT--- <br>
+						C'est un bouton qui se trouve dans un formulaire et qui a pour action lorsqu'on click dessus de collecter et envoyer les informations saisies dans le formulaire puis de "raffraichir" la page en la remettant à son état originel <br><br>
+						<span style="color: greenyellow;">const button = document.querySelector("#submit");</span> <br><br>
+						---AJOUT D'UN ARTICLE--- <br>
+						Ici, nous allons empécher l'action par défaut du bouton "submit" pour la remplacer par l'ajout d'un article. <br><br>
+						<span style="color: greenyellow;">button.addEventListener("click", function (e) { <br>
+							&emsp;<span>e.preventDefault();</span><br>
+							&emsp;const newArticle = document.createElement("li"); <br>
+							&emsp;newArticle.classList.add("article"); <br>
+							&emsp;newArticle.innerText = `cet article est le n° ${articles.length + 1}`; <br>
+							&emsp;listeArticles.appendChild(newArticle); <br>
+							&emsp;articlesCount.innerText = articles.length; <br>
+							&emsp;newArticle.addEventListener("click", deleteArticle); <br>
+						}); </span><br><br>
+						Au "click" sure le bouton on empêche immédiatement l'action par default de celui ci qui est de refresh la page en envoyant les données collectées. Si nous n'avions pas interrompu l'action par defaut cela aurait eu pour effet d'effacer l'article créé et de revenir aux formulaire vide par defaut.
+
+					</p>
+			</li>
 <!-- 				<ul id="liste-articles">
 					<li class="articletest">article 1</li>
 					<li class="articletest">article 2</li>
