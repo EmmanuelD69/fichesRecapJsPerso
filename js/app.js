@@ -76,6 +76,18 @@ console.log(
 );
 console.log('10/08/20: add Objets > Héritage du prototype,');
 console.log("10/08/20: add Objets > Classes - Qu'est ce que c'est?,");
+console.log('12/08/20: add DOM > Boucles avec HTMLCollection & NodeList');
+console.log("12/08/20: add DOM > Ajout d'un node élément - HTMLCollection");
+console.log("12/08/20: add DOM > Ajout d'un node élément - NodeList");
+console.log('12/08/20: add DOM > introduction aux events');
+console.log('12/08/20: add DOM > Installer un event listener');
+console.log('13/08/20: add DOM > Ajouter un élément');
+console.log('13/08/20: add DOM > Modifier CSS avec Javascript');
+console.log('13/08/20: add DOM > FUNCTION(EVENT) à quoi sert EVENT?');
+console.log('14/08/20: add DOM > Ajouter un eventlistener sur un ensemble');
+console.log('14/08/20: add DOM > ajouter nouveaux éléments avec eventlisten');
+console.log('15/08/20: add DOM > Event Bubbling');
+console.log('15/08/20: add DOM > EVENT.PREVENTDEFAULT()');
 console.log(
 	"Bonjour et bienvenue sur mon espace Memo. \nJe rajoute du contenu au quotidien donc ne vous étonnez pas de trouver des parties en cours 'intégration\nBonne lecture!"
 );
