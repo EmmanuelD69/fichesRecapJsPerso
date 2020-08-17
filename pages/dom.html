@@ -550,6 +550,37 @@
 					console.log(sessionStorage.couleur);</span>
 				</p>
 			</li>
+			<li class="article">
+				<h2>UTILISATION DE JSON POUR STOCKER ET RECUPERER DES DONNEES DANS LE WEB STORAGE</h2>
+				<p class="paragraphe explication">
+					Web Storage est bien pratique pour stocker de simples chaînes de texte. <br>
+					Lorsqu'il s'agit de manipuler des données plus complexes, entre autres des objets / tableaux JavaScript, il faut les linéariser au préalable en chaînes de texte puisque Web Storage n'accepte que ce type de données. <br><br>
+					Le format JSON (JavaScript Object Notation) est la solution de prédilection. 
+				</p>
+				<p class="paragraphe example">
+					Deux méthodes équipent les navigateurs modernes: <br>
+					1-<span style="color: greenyellow;">JSON.stringify() </span>qui prend en paramètre un objet et renvoie une chaîne de texte linéarisée et son inverse... <br>
+					2-<span style="color: greenyellow;">JSON.parse()</span> qui reforme un objet à partir de la chaîne linéarisée. <br><br>
+				</p>
+				<p class="paragraphe explication">
+					Des frameworks populaires tels que jQuery sont équipés de fonctions similaires (parseJSON) pour les anciens navigateurs qui ne seraient pas équipés en natifs de telles méthodes de conversion.
+				</p>
+				<p class="paragraphe example">
+					---Stockage--- <br>
+					let monObjet  = { <br>
+						&emsp;propriete1 : "valeur1", <br>
+						&emsp;propriete2 : "valeur2" <br>
+					}; <br>
+					let monObjet_json = JSON.stringify(monObjet); <br>
+					sessionStorage.setItem("objet", monObjet_json); <br>
+					objet = key / monObjet_json = valeur <br><br>
+					---Lecture--- <br>
+					let monObjet_json = sessionStorage.getItem("objet"); <br>
+					let monObjet = JSON.parse(monObjet_json); <br><br>
+					// Affichage dans la console <br>
+					console.log(monObjet);
+				</p>
+			</li>
 <!-- 				<ul id="liste-articles">
 					<li class="articletest">article 1</li>
 					<li class="articletest">article 2</li>
