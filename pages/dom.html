@@ -514,6 +514,42 @@
 					Pour ces raisons et d'autres, certains navigateurs exigent de consulter la page appelant le stockage via un domaine, (c'est-à-dire avec une url en http://, que ce soit localhost ou bien un nom de domaine complet) et non pas en fichier local (adresse file://). Sinon, une exception de sécurité peut être déclenchée. Ceci peut sembler logique car les données sont en théorie attachées à un domaine.
 				</p>
 			</li>
+			<li class="article">
+				<h2>COMMANDES POUR ACCEDER AU WEB STORAGE</h2>
+				<p class="paragraphe explication">
+					Hormis les spécificités concernant la persistance des données, les méthodes d'accès communes sont:
+				</p>
+				<p class="paragraphe example">
+					-setItem(clé,valeur) : stocke une paire clé/valeur <br>
+					-getItem(clé) : retourne la valeur associée à une clé <br>
+					-removeItem(clé) : supprime la paire clé/valeur en indiquant le nom de la clé <br>
+					-key(index): retourne la clé stockée à l'index spécifié <br>
+					-clear(): efface toutes les paires <br><br>
+					la propriété .length renvoie le nombre de paires stockées.
+				</p>
+				<p class="paragraphe explication">
+					La console Javascript des navigateurs est un outil essentiel pour tester et vérifier le bon fonctionnement de Web Storage. <br><br>
+					Les exemples suivants se basent sur sessionStorage mais fonctionneront de la même façon avec localStorage.
+				</p>
+				<p class="paragraphe example">
+					---Stockage--- <br>
+					<span style="color: greenyellow;">sessionStorage.setItem("couleur","vert") </span><br>
+					Le premier argument de setItem est la clé (toujours de type String). Elle précise l'endroit où sont stockées les données afin de pouvoir les y retrouver ultérieurement. <br><br>
+					---Récupération--- <br>
+					<span style="color: greenyellow;">let couleur = sessionStorage.getItem("couleur");</span><br>
+					Grâce à la clé initialement créée avec setItem il est possible de récupérer facilement les données. Ces dernières sont renvoyées sous la forme d'une chaîne de caractère. <br><br>
+					---Suppression--- <br>
+					<span style="color: greenyellow;">sessionStorage.removeItem("couleur");</span><br>
+					Nous supprimons l'élément de session "couleur". <br><br>
+					---Suppression totale--- <br>
+					<span style="color: greenyellow;">sessionStorage.clear();</span> <br>
+					Suppression complète de toutes les valeurs de session. <br><br>
+					---Accès direct--- <br>
+					Dans la plupart des situations les variables seront accessibles directement en tant que membres de l'interface. <br>
+					<span style="color: greenyellow;">sessionStorage.couleur = "vert"; <br>
+					console.log(sessionStorage.couleur);</span>
+				</p>
+			</li>
 <!-- 				<ul id="liste-articles">
 					<li class="articletest">article 1</li>
 					<li class="articletest">article 2</li>
