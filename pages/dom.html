@@ -496,6 +496,24 @@
 					La portée de localStorage est de facto plus large: <br> il est possible de l'exploiter à travers plusieurs onglets ouverts pour le même domaine ou plusieurs fenêtres; <br> à partir du moment où il s'agit bien sûr du même navigateur.
 				</p>
 			</li>
+			<li class="article">
+				<h2>USAGE ET PRECAUTIONS</h2>
+				<p class="paragraphe explication">
+					Le stockage de données dans le navigateur web se prête à différentes applications, particulièrement lorsqu'il s'agit d'exécuter des traitements sans faire intervenir le serveur, ou lorsqu'il faut mémoriser facilement de petites quantités de données pour l'utilisateur pour les faire persister durant sa navigation.
+				</p>
+				<p class="paragraphe example">
+					Parmi ces avantages : <br>
+					1- Stocker rapidement des données en cache sans faire intervenir le serveur (par exemple via AJAX), <br><br>
+					2- Augmenter la performance ressentie et faciliter les développements, <br><br>
+					3- Se passer des cookies et du trafic HTTP supplémentaire qu'ils représentent (un cookie est envoyé à chaque requête effectuée sur un domaine), <br><br>
+					4- Exploiter un espace alloué plus important que la limite imposée par les cookies (fixée à 4 Ko), <br><br>
+					5- Retrouver des données immédiatement à la re-connexion ou les mémoriser pour éviter la perte s'il y a une déconnexion. <br><br>
+				</p>
+				<p class="paragraphe explication">
+					<span>Attention : les données ne sont pas cryptées, accessibles facilement à tout utilisateur ayant accès au navigateur, et modifiables de la même façon. Il ne faut donc pas y placer d'informations sensibles.</span><br><br>
+					Pour ces raisons et d'autres, certains navigateurs exigent de consulter la page appelant le stockage via un domaine, (c'est-à-dire avec une url en http://, que ce soit localhost ou bien un nom de domaine complet) et non pas en fichier local (adresse file://). Sinon, une exception de sécurité peut être déclenchée. Ceci peut sembler logique car les données sont en théorie attachées à un domaine.
+				</p>
+			</li>
 <!-- 				<ul id="liste-articles">
 					<li class="articletest">article 1</li>
 					<li class="articletest">article 2</li>
