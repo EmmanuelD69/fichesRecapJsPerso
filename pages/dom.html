@@ -448,6 +448,29 @@
 						}); </span><br><br>
 					</p>
 			</li>
+			<li class="article">
+				<h2>EFFACER LE TEXTE D'UN INPUT</h2>
+				<p class="paragraphe explication">
+					on souhaite qu'à chaque fois que l'on click sur notre bouton "Add Article", le champ HTML input soit reset. <br>
+					Il suffit pour cela d'attribuer une valeur vide à la propriété de l'élément HTML input une fois que l'information a été envoyé. <br><br>
+					nous devons donc ajouter la commande suivante: <br> nameInput.value = "";
+				</p>
+					<p class="paragraphe example">
+						On s'y prend de la façon suivante: <br>
+						newArticle.innerText = nameInput.value; <br><br>
+						---AJOUT D'UN ARTICLE--- <br>
+						<span style="color: greenyellow;">button.addEventListener("click", function (e) { <br>
+							&emsp;e.preventDefault();<br>
+							&emsp;const newArticle = document.createElement("li"); <br>
+							&emsp;newArticle.classList.add("article"); <br>
+							&emsp;newArticle.innerText = nameInput.value;<br>
+							&emsp;listeArticles.appendChild(newArticle); <br>
+							&emsp;articlesCount.innerText = articles.length; <br>
+							&emsp;<span>nameInput.value = '';</span><br>
+							&emsp;newArticle.addEventListener("click", deleteArticle); <br>
+						}); </span><br><br>
+					</p>
+			</li>
 <!-- 				<ul id="liste-articles">
 					<li class="articletest">article 1</li>
 					<li class="articletest">article 2</li>
