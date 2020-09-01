@@ -303,7 +303,7 @@
 						<p class="paragraphe example">
 							Soit une variable "mixes" contenant un tableau: <br />
 							const mixes = ["Techno", "House", "Disco", "Funk"];<br /><br />
-							<span style="color: greenyellow;"
+							<span style="color: greenyellow"
 								>1- Création de la variable newMixes qui va cloner grâce à la
 								méthode
 								<br />
@@ -316,31 +316,31 @@
 							const newMixes = mixes.map(function(mix){<br />
 							&emsp;return mix.toUpperCase();<br />
 							});<br /><br />
-							<span style="color: greenyellow;"
+							<span style="color: greenyellow"
 								>2- Affichage du tableau contenu dans la variable
 								d'origine:</span
 							><br />
 							console.log(mixes);<br />
 							Array(4) [ "Techno", "House", "Disco", "Funk" ] <br /><br />
-							<span style="color: greenyellow;"
+							<span style="color: greenyellow"
 								>3- Affichage du tableau contenu dans la nouvelle
 								variable:</span
 							><br />
 							console.log(newMixes);<br />
 							Array(4) [ "TECHNO", "HOUSE", "DISCO", "FUNK" ] <br /><br />
-							<span style="color: greenyellow;"
+							<span style="color: greenyellow"
 								>4- On "push"/ajoute un nouvel item dans le tableau de la
 								nouvelle variable(newMixes):</span
 							><br />
 							newMixes.push("Deep");<br /><br />
-							<span style="color: greenyellow;"
+							<span style="color: greenyellow"
 								>5- Affichage du tableau contenu dans la variable
 								newMixes:</span
 							><br />
 							console.log(newMixes);<br />
 							Array(5) [ "TECHNO", "HOUSE", "DISCO", "FUNK", "Deep" ]
 							<br /><br />
-							<span style="color: greenyellow;"
+							<span style="color: greenyellow"
 								>6- Affichage du tableau contenu dans la variable
 								d'origine:</span
 							><br />
@@ -467,7 +467,7 @@
 							&emsp;{ title: 'God of War', rating: 10 },<br />
 							&emsp;{ title: 'WWE 2k20', rating: 4 },<br />
 							];<br /><br />
-							<span style="color: greenyellow;">Example some(): </span><br />
+							<span style="color: greenyellow">Example some(): </span><br />
 							const checkRating = games.some(function (game) { <br />
 							&emsp;return game.rating > 8; <br />
 							}); <br /><br />
@@ -489,7 +489,7 @@
 							Si nous n'avions pas trouvé de valeurs rating supérieur à 8 sur
 							l'ensemble des objets du tableau, nous aurions eu "false".
 							<br /><br />
-							<span style="color: greenyellow;">Example every(): </span><br />
+							<span style="color: greenyellow">Example every(): </span><br />
 							const checkRating = games.every(function (game) { <br />
 							&emsp;return game.rating > 8; <br />
 							}); <br /><br />
@@ -547,7 +547,7 @@
 							appliquons la méthode "sort()" à ce tableau en lui appliquant une
 							fonction callback de comparaison. <br /><br />
 							points.sort(function(a,b){ <br />
-							return <span style="color: greenyellow;">a - b</span>; <br />
+							return <span style="color: greenyellow">a - b</span>; <br />
 							});<br /><br />
 							3 possibilitées: <br />
 							1) a - b est un nombre négatif alors "a" sera compris comme
@@ -569,7 +569,7 @@
 							Example, si le tableau référence d'origine est: <br />
 							const points = [10, 95, 1, 16, 45, 3, 12, 25, 76]; <br /><br />
 							points.sort(function(a,b){ <br />
-							return <span style="color: greenyellow;">b - a</span>; <br />
+							return <span style="color: greenyellow">b - a</span>; <br />
 							});<br /><br />
 							Le résultat sera un tableau ordonnée par ordre décroissant, du
 							plus grand au plus petit: <br />
@@ -603,7 +603,7 @@
 							le tableau d'origine "points" puisque "decroissant" ne s'y réfère
 							pas. <br />
 							decroissant.sort(function(a,b){ <br />
-							return <span style="color: greenyellow;">b - a</span>; <br />
+							return <span style="color: greenyellow">b - a</span>; <br />
 							});<br /><br />
 							si on fait un console log de "points", on obtient: <br />
 							Array(9) [10, 95, 1, 16, 45, 3, 12, 25, 76] <br />
@@ -681,7 +681,104 @@
 						</p>
 					</li>
 					<li class="article">
-						<p class="paragraphe example" style="color: green;">
+						<h2>CREER UN TABLEAU A PARTIR D'UNE VARIABLE STRING</h2>
+						<p class="paragraphe explication">
+							Il existe plusieurs façons de procéder et nous allons en voir 2:
+						</p>
+						<p class="paragraphe example">
+							-1ère version avec la méthode "split()" que nous avons évoquée
+							plus haut dans la liste: <br /><br />
+							Soit une variable "titre" contenant du texte(string). <br />
+							const titre = "leboncoin"; <br /><br />
+							pour transformer cette variable en tableau, il nous suffit de lui
+							<br />
+							appliquer la méthode "split()" de sorte qu'elle convertisse le
+							texte
+							<br />
+							contenu dans la variable "titre" en tableau de lettres. <br />
+							Pour cela on crée une nouvelle variable: <br />
+							const lettresTitre = titre.split(""); <br /><br />
+							si on effectue maintenant un console log de notre variable
+							"lettresTitre", on obtiendra le résultat suivant: <br />
+							Array(9) [ "l", "e", "b", "o", "n", "c", "o", "i", "n" ]
+							<br /><br /><br />
+							-2ème version en utilisant la méthode "...": <br /><br />
+							On va utiliser la même variable "titre" et tranformer son contenu
+							en tableau par l'utilisation des "..." <br />
+							que nous avons vu plus tôt pour créer une copie d'un tableau:
+							<br />
+							const lettresTitre2 = [...titre]; <br /><br />
+							si on effectue maintenant un console log de notre tableau
+							"lettresTitre2", on obtiendra le résultat suivant: <br />
+							Array(9) [ "l", "e", "b", "o", "n", "c", "o", "i", "n" ]
+						</p>
+					</li>
+					<li class="article">
+						<h2>DECOMPOSER DES TABLEAUX / DESCTRUCTURING</h2>
+						<p class="paragraphe explication">
+							L'affectation par décomposition (destructuring en anglais) est une
+							expression JavaScript qui permet d'extraire (unpack en anglais)
+							des données d'un tableau ou d'un objet grâce à une syntaxe dont la
+							forme ressemble à la structure du tableau ou de l'objet.
+						</p>
+						<p class="paragraphe example">
+							Partons du principe que nous avons un tableau de données et que
+							nous souhaitons accéder à celles ci facilement sans sytaxe
+							complexe. <br />
+							Soit le tableau véhicules: <br /><br />
+							const véhicules = ["peugeot", "renault", "citroen", "fiat",
+							"mercedes", "honda", "skoda"];<br /><br />
+							Nous allons "extraire" les données de ce tableau pour les rendre
+							facilement accéssible.<br />
+							pour cela nous allons utiliser la méthode suivante:
+							<br /><br />
+							On utilise l'ensemble des données du tableau, ou celles qui nous
+							intéressent, pour nommer la variable. Le tout entre crochets "[]".
+							<br />
+							const [peugeot, renault, citroen, fiat, mercedes, honda, skoda] =
+							véhicules;<br /><br />
+							si l'on fait un console log d'un des éléments du nom de la
+							variable on obtient: <br />
+							console.log(peugeot);<br />
+							affichage en console: "peugeot" <br /><br />
+							quel intérêt??? <br />
+							On appel directement une donnée par sa valeur et plus en passant
+							par son index. <br />
+							example: const peugeot = véhicule[0]; <br /><br />
+							on peut aussi utiliser "...rest" pour regrouper une partie des
+							données. <br />
+							example: const [peugeot, renault, citroen, ...rest] = véhicules;
+							<br /><br />
+							si l'on fait un console log de "rest" on obtient: <br />
+							console.log(rest);<br />
+							(2) ["fiat", "mercedes"] <br />
+							0: "fiat" <br />
+							1: "mercedes" <br />
+							2: "honda" <br />
+							3: "skoda" <br />
+							length: 4 <br />
+							__proto__: Array(0) <br /><br />
+							Il est aussi possible d'affecter un nom à la valeur en gardant le
+							princide de décomposition: <br />
+							example: const [véhicule1, véhicule2, véhicule3, ...rest] =
+							véhicules; <br /><br />
+							Et il reste encore d'autres possibilitées, pour les consulter
+							allez voir la ressources MDN
+							<a
+								href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition"
+								target="_blank"
+								style="color: chartreuse"
+								>ici</a
+							>. <br /><br />
+							<span
+								><u
+									>Cette pratique est aussi valable pour les objets!!!
+								</u></span
+							>
+						</p>
+					</li>
+					<li class="article">
+						<p class="paragraphe example" style="color: green">
 							La suite arrive bientôt, en cours d'intégration.
 						</p>
 					</li>

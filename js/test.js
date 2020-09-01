@@ -283,15 +283,27 @@ console.log(Object.keys(newUser1).length);
 
 const listeArticles = document.querySelector('#liste-articles');
 console.log(listeArticles);
-const collectionArticles = listeArticles.children;
+// const collectionArticles = listeArticles.children;
 // const collectionArticles = document.querySelectorAll('.articletest');
-console.log(collectionArticles);
-const articlesCount = document.querySelector('.articles-count');
-console.log(articlesCount);
+// console.log(collectionArticles);
+// const articlesCount = document.querySelector('.articles-count');
+// console.log(articlesCount);
 
-const newArticleTest = document.createElement('li');
-newArticleTest.classList.add('articletest');
-newArticleTest.innerText = 'article 4';
-listeArticles.appendChild(newArticleTest);
+// const newArticleTest = document.createElement('li');
+// newArticleTest.classList.add('articletest');
+// newArticleTest.innerText = 'article 4';
+// listeArticles.appendChild(newArticleTest);
 
-articlesCount.innerText = collectionArticles.length;
+// articlesCount.innerText = collectionArticles.length;
+
+const véhicules = [
+	'peugeot',
+	' renault',
+	'citroen',
+	'fiat',
+	'mercedes',
+	'honda',
+	'skoda',
+];
+const [véhicule1, véhicule2, véhicule3, ...rest] = véhicules;
+console.log(véhicule2);
