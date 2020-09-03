@@ -307,3 +307,52 @@ const véhicules = [
 ];
 const [véhicule1, véhicule2, véhicule3, ...rest] = véhicules;
 console.log(véhicule2);
+
+/* Asynchrone Javascript And Xml - AJAX*/
+/* Qu'est ce que le Javascript Asynchrone?
+Synchrone = une action se déroulant en direct, quelque chose qui se passe en même temps, une action synchrone.
+Asynchrone = une action qui se déroule en différé, quelque chose qui se passe après une période de temps, un action asynchrone.
+
+*/
+//Sync code example:
+
+/* 1- Javascript read the function and memorize it */
+function synchrone() {
+	console.log('we are in another function');
+	console.log('do some stuff');
+}
+
+/* 2- Javascript execute the console.log */
+console.log('start');
+/* 3- Javascript execute the function and show its content in console */
+synchrone();
+/* 4- Javascript execute the console.log */
+console.log('end');
+/* console log:
+test.js:325 start
+test.js:320 we are in another function
+test.js:321 do some stuff
+test.js:329 end
+*/
+
+//Async code example:
+
+/* 1- Javascript read the function and memorize it */
+
+/* 1- Javascript execute the console.log */
+console.log('start');
+/* 3- Javascript execute the function and show its content in console */
+setTimeout(() => {
+	console.log('we are in the timeout');
+}, 2000);
+/* 2- Javascript execute the console.log */
+console.log('end');
+/* console log:
+test.js:342 start
+test.js:348 end
+test.js:345 we are in the timeout
+*/
+
+/* Javascript est très mauvais pour faire du multitasking, il lit le code ligne par ligne et exécute une action à la fois. lorsqu'il tombe sur une action asynchrone plutot que de patienter le temps indiqué dans le "timeout" il va transférer l'action au browser (navigateur) qui contient un système de gestion (Web API) de ces actions asynchrone et poursuivre l'exécution du code. Lorsque le timeout s'achève, le navigateur renvoi l'action asynchrone pour que javascript puisse l'exécuter. */
+
+/* Il existe d'autres actions asynchrones comme par exemple les EVENTLISTENERS, lorsqu'on place un event listener sur un élément, javascript confie la gestion de celui ci au navigateur. javascript ne va pas attendre qu'une action se produise pour continuer de lire le code, il va transférer cette action au browser qui va lui patientez qu'un clic s'effectue avant d'en informer javascript.  */
