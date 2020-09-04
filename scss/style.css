@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 html {
@@ -23,14 +24,14 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #e9b526;
-  overflow: hidden;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 header {
-  min-height: 10vh;
+  max-height: 10vh;
   width: 80%;
   margin: auto;
   font-family: "Quicksand", sans-serif;
@@ -43,16 +44,16 @@ header {
 }
 
 main {
-  max-height: 80vh;
   width: 80%;
+  height: 80vh;
   margin: auto;
   background-color: #e9b526;
   font-size: 2rem;
 }
 
 main .menu {
-  height: 80vh;
   width: 100%;
+  height: auto;
   border: 1px solid black;
   display: flex;
   flex-wrap: wrap;
@@ -62,12 +63,12 @@ main .menu {
 }
 
 main .menu .section {
-  flex-basis: 25%;
-  flex-grow: 1;
   background: #333333;
   color: whitesmoke;
-  height: 30rem;
-  margin: 1rem;
+  width: 33%;
+  height: auto;
+  margin: 0.5rem;
+  padding: 10rem;
   font-size: calc(1.7rem + 1vw);
   border: 1px solid white;
   display: flex;
@@ -83,7 +84,7 @@ main .menu .section:hover {
 }
 
 footer {
-  min-height: 10vh;
+  max-height: 10vh;
   width: 80%;
   margin: auto;
   text-align: center;

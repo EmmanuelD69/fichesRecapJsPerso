@@ -1,13 +1,13 @@
 main {
-	max-height: 80vh;
 	width: 80%;
+	height: 80vh;
 	margin: auto;
 	background-color: $bgColor3;
 	font-size: $size3;
 
 	.menu {
-		height: 80vh;
 		width: 100%;
+		height: auto;
 		border: 1px solid black;
 		display: flex;
 		flex-wrap: wrap;
@@ -15,17 +15,19 @@ main {
 		align-items: center;
 		background-color: blue;
 		.section {
-			flex-basis: 25%;
-			flex-grow: 1;
+			// flex-grow: 1;
 			background: rgb(51, 51, 51);
 			color: whitesmoke;
-			height: 30rem;
-			margin: 1rem;
+			width: 33%;
+			height: auto;
+			margin: 0.5rem;
+			padding: 10rem;
 			font-size: calc(1.7rem + 1vw);
 			border: 1px solid white;
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			// align-content: center;
 			transition: all 0.5s ease-in-out;
 			&:hover {
 				background-color: whitesmoke;
