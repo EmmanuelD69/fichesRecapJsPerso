@@ -9,9 +9,9 @@ main {
 		@include flex(row, center, center);
 		width: 100%;
 		min-height: 80vh;
-		border: 1px solid black;
+		// border: 1px solid black;
 		flex-wrap: wrap;
-		background-color: blue;
+		// background-color: blue;
 		.section {
 			flex-grow: 1;
 			width: 30%;
@@ -23,10 +23,10 @@ main {
 			transition: all 1s ease-in-out;
 			@include flex(row, center, center);
 			&:hover {
-				background-color: rgb(163, 79, 79);
+				background-color: whitesmoke;
 				color: black;
 				border: 0.2rem solid black;
-				transform: rotate(360deg) scale(1.1) translateY(200px);
+				transform: scale(1.1) translateY(200px);
 			}
 		}
 	}

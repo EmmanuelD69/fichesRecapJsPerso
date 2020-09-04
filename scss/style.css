@@ -32,7 +32,6 @@ header {
   margin: auto;
   font-family: "Quicksand", sans-serif;
   font-size: 2rem;
-  background-color: green;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,9 +53,7 @@ main .menu {
   align-items: center;
   width: 100%;
   min-height: 80vh;
-  border: 1px solid black;
   flex-wrap: wrap;
-  background-color: blue;
 }
 
 main .menu .section {
@@ -75,10 +72,10 @@ main .menu .section {
 }
 
 main .menu .section:hover {
-  background-color: #a34f4f;
+  background-color: whitesmoke;
   color: black;
   border: 0.2rem solid black;
-  transform: rotate(360deg) scale(1.1) translateY(200px);
+  transform: scale(1.1) translateY(200px);
 }
 
 footer {
@@ -86,7 +83,6 @@ footer {
   width: 80%;
   margin: auto;
   text-align: center;
-  background-color: red;
   font-size: 2rem;
   display: flex;
   flex-direction: row;

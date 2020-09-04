@@ -32,7 +32,6 @@ header {
   margin: auto;
   font-family: "Quicksand", sans-serif;
   font-size: 2rem;
-  background-color: green;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,7 +43,6 @@ footer {
   width: 80%;
   margin: auto;
   text-align: center;
-  background-color: red;
   font-size: 2rem;
   display: flex;
   flex-direction: row;

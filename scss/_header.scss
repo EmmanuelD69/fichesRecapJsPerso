@@ -4,6 +4,6 @@ header {
 	margin: auto;
 	font-family: $family1;
 	font-size: $size3;
-	background-color: green;
+	// background-color: green;
 	@include flex(column, center, center);
 }
