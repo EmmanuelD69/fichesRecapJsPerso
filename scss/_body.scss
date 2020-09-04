@@ -1,4 +1,8 @@
 body {
 	@include flex(column, center, center);
 	background-color: $bgColor3;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

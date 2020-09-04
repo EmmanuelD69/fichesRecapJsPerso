@@ -1,9 +1,9 @@
 footer {
 	min-height: 10vh;
-	width: 90%;
+	width: 80%;
 	margin: auto;
 	text-align: center;
-	background-color: $bgColor3;
+	background-color: red;
 	font-size: $size3;
 	@include flex(row, space-around, center);
 	h4 {

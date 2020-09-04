@@ -23,15 +23,19 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #e9b526;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 header {
   min-height: 10vh;
-  width: 90%;
+  width: 80%;
   margin: auto;
   font-family: "Quicksand", sans-serif;
   font-size: 2rem;
-  background-color: #e9b526;
+  background-color: green;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,24 +44,32 @@ header {
 
 main {
   max-height: 80vh;
-  width: 90%;
-  background-color: whitesmoke;
+  width: 80%;
+  margin: auto;
+  background-color: #e9b526;
   font-size: 2rem;
 }
 
 main .menu {
   height: 80vh;
+  width: 100%;
+  border: 1px solid black;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: blue;
 }
 
 main .menu .section {
+  flex-basis: 25%;
+  flex-grow: 1;
   background: #333333;
   color: whitesmoke;
-  height: 50%;
-  width: 50%;
+  height: 30rem;
+  margin: 1rem;
   font-size: calc(1.7rem + 1vw);
-  border: 0.2rem solid whitesmoke;
+  border: 1px solid white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,10 +84,10 @@ main .menu .section:hover {
 
 footer {
   min-height: 10vh;
-  width: 90%;
+  width: 80%;
   margin: auto;
   text-align: center;
-  background-color: #e9b526;
+  background-color: red;
   font-size: 2rem;
   display: flex;
   flex-direction: row;

@@ -23,15 +23,19 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #e9b526;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 header {
   min-height: 10vh;
-  width: 90%;
+  width: 80%;
   margin: auto;
   font-family: "Quicksand", sans-serif;
   font-size: 2rem;
-  background-color: #e9b526;
+  background-color: green;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,10 +44,10 @@ header {
 
 footer {
   min-height: 10vh;
-  width: 90%;
+  width: 80%;
   margin: auto;
   text-align: center;
-  background-color: #e9b526;
+  background-color: red;
   font-size: 2rem;
   display: flex;
   flex-direction: row;
