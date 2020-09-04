@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 html {
@@ -24,14 +23,11 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #e9b526;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
 }
 
 header {
-  max-height: 10vh;
+  height: 10vh;
   width: 80%;
   margin: auto;
   font-family: "Quicksand", sans-serif;
@@ -45,46 +41,48 @@ header {
 
 main {
   width: 80%;
-  height: 80vh;
+  min-height: 80vh;
   margin: auto;
   background-color: #e9b526;
   font-size: 2rem;
 }
 
 main .menu {
-  width: 100%;
-  height: auto;
-  border: 1px solid black;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  width: 100%;
+  min-height: 80vh;
+  border: 1px solid black;
+  flex-wrap: wrap;
   background-color: blue;
 }
 
 main .menu .section {
+  flex-grow: 1;
+  width: 30%;
+  height: 39vh;
+  margin: 2px;
   background: #333333;
   color: whitesmoke;
-  width: 33%;
-  height: auto;
-  margin: 0.5rem;
-  padding: 10rem;
-  font-size: calc(1.7rem + 1vw);
-  border: 1px solid white;
+  font-size: calc(1.5rem + 1vh);
+  transition: all 1s ease-in-out;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  transition: all 0.5s ease-in-out;
 }
 
 main .menu .section:hover {
-  background-color: whitesmoke;
+  background-color: #a34f4f;
   color: black;
   border: 0.2rem solid black;
+  transform: rotate(360deg) scale(1.1) translateY(200px);
 }
 
 footer {
-  max-height: 10vh;
+  height: 10vh;
   width: 80%;
   margin: auto;
   text-align: center;

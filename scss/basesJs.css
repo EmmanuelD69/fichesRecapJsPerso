@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 html {
@@ -24,14 +23,11 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #e9b526;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
 }
 
 header {
-  max-height: 10vh;
+  height: 10vh;
   width: 80%;
   margin: auto;
   font-family: "Quicksand", sans-serif;
@@ -44,7 +40,7 @@ header {
 }
 
 footer {
-  max-height: 10vh;
+  height: 10vh;
   width: 80%;
   margin: auto;
   text-align: center;
