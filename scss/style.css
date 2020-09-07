@@ -71,13 +71,6 @@ main .menu .section {
   align-items: center;
 }
 
-main .menu .section:hover {
-  background-color: whitesmoke;
-  color: black;
-  border: 0.2rem solid black;
-  transform: scale(1.1) translateY(200px);
-}
-
 footer {
   height: 10vh;
   width: 80%;

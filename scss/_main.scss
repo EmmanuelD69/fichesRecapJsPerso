@@ -22,12 +22,12 @@ main {
 			font-size: calc(1.5rem + 1vh);
 			transition: all 1s ease-in-out;
 			@include flex(row, center, center);
-			&:hover {
-				background-color: whitesmoke;
-				color: black;
-				border: 0.2rem solid black;
-				transform: scale(1.1) translateY(200px);
-			}
+			// &:hover {
+			// 	background-color: whitesmoke;
+			// 	color: black;
+			// 	border: 0.2rem solid black;
+			// 	transform: scale(1.1) translateY(200px);
+			// }
 		}
 	}
 }

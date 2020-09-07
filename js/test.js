@@ -336,17 +336,17 @@ test.js:329 end
 */
 
 //Async code example:
-
-/* 1- Javascript read the function and memorize it */
+/* Nous allons utiliser la fonction "setTimout" qui permet de mettre en place une temporisation au bout de laquelle les actions qu'elle contient vont s'exécuter. */
 
 /* 1- Javascript execute the console.log */
 console.log('start');
-/* 3- Javascript execute the function and show its content in console */
+/* 2- Javascript read the setTimout function and transfer it to the web API because a timer (asynchrone action) has been found. */
 setTimeout(() => {
 	console.log('we are in the timeout');
 }, 2000);
-/* 2- Javascript execute the console.log */
+/* 3- Javascript execute the console.log */
 console.log('end');
+/* 4- Javascript execute the _setTimout_ function */
 /* console log:
 test.js:342 start
 test.js:348 end
@@ -355,4 +355,4 @@ test.js:345 we are in the timeout
 
 /* Javascript est très mauvais pour faire du multitasking, il lit le code ligne par ligne et exécute une action à la fois. lorsqu'il tombe sur une action asynchrone plutot que de patienter le temps indiqué dans le "timeout" il va transférer l'action au browser (navigateur) qui contient un système de gestion (Web API) de ces actions asynchrone et poursuivre l'exécution du code. Lorsque le timeout s'achève, le navigateur renvoi l'action asynchrone pour que javascript puisse l'exécuter. */
 
-/* Il existe d'autres actions asynchrones comme par exemple les EVENTLISTENERS, lorsqu'on place un event listener sur un élément, javascript confie la gestion de celui ci au navigateur. javascript ne va pas attendre qu'une action se produise pour continuer de lire le code, il va transférer cette action au browser qui va lui patientez qu'un clic s'effectue avant d'en informer javascript.  */
+/* Il existe d'autres actions asynchrones comme par exemple les EVENTLISTENERS, Lorsqu'on place un event listener sur un élément, javascript confie la gestion de celui ci au navigateur. il ne va pas attendre qu'une action se produise pour continuer de lire le code, il va transférer la charge de cette action au browser qui va patientez qu'un clic s'effectue avant d'en informer javascript pour executer le code de la fonction contenant l'event.  */

@@ -5,9 +5,10 @@ const Menu = document.querySelector('.menu');
 const htmlChildrenMenu = Menu.children;
 // console.log(htmlChildrenMenu);
 
-/* AJOUTS EVENTS */
+/* AJOUTS EVENTS LISTENERS */
 for (div of htmlChildrenMenu) {
 	div.addEventListener('click', detectClick);
+	div.addEventListener('mouseover', centerDiv);
 }
 
 /* FONCTIONS */
@@ -32,6 +33,27 @@ function detectClick(click) {
 			break;
 	}
 }
+
+function centerDiv(e) {
+	const targetName = e.target.classList.constains('tableaux');
+	const targetDiv = e.target;
+	console.log(targetName);
+	console.log(targetDiv);
+
+	// targetDiv.classList.add('toto');
+	if (targetDiv.contains('tableaux')) {
+		console.log("c'est la div tableaux");
+	}
+	// switch (targetName) {
+	// 	case targetName.contains('tableaux'):
+	// 		console.log("c'est la div tableaux");
+	// 		break;
+
+	// 	default:
+	// 		break;
+	// }
+}
+
 console.log('LOG des mises à jour:');
 console.log('17/07/20: add Notions de base > BOUCLES Part1,');
 console.log('18/07/20: add Notions de base > BOUCLES Part2,');
